@@ -11,7 +11,7 @@ class SessionForm extends React.Component{
         }
 
     this.handleSubmit = this.handleSubmit.bind(this)
-
+    this.renderErrors = this.renderErrors.bind(this)
     }
 
     handleSubmit(e){
@@ -24,6 +24,18 @@ class SessionForm extends React.Component{
         return e => this.setState({
             [field]: e.target.value
         })
+    }
+
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
     }
 
     render(){
@@ -48,11 +60,12 @@ class SessionForm extends React.Component{
                     </label>
                     <br />
                     <input className="session-submit" type="submit" value={this.props.formType} />
+                {this.renderErrors()}
                 </form>
             </div>
         )
     }
-
+    
 }
 
 

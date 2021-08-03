@@ -16,11 +16,9 @@ import SignUpFormContainer from './session_form/signup_form_container';
 
 const App = () => (
     <div>
-        <nav>
-
-        </nav>
-        <LogInFormContainer />
+        {/* <LogInFormContainer /> */}
         <SignUpFormContainer />
+        <LogInFormContainer />
     </div>
 );
 
