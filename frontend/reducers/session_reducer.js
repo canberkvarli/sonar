@@ -19,4 +19,4 @@ const SessionReducer = (oldState = _nullUser, action) => {
 
 
 
-export default SessionReducer
+export default SessionReducer;
