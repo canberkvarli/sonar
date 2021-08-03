@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {openModal, closeModal} from '../../actions/modal_actions';
 
 class SessionForm extends React.Component{
     constructor(props){
@@ -18,7 +19,6 @@ class SessionForm extends React.Component{
         e.preventDefault()
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
-        console.log(e);
     }
 
     update(field){
@@ -29,7 +29,7 @@ class SessionForm extends React.Component{
 
     renderErrors() {
         return (
-            <ul>
+            <ul className="session-form" id="session-errors">
                 {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}>
                         {error}
@@ -42,28 +42,33 @@ class SessionForm extends React.Component{
     render(){
 
         return(
-            <div>
-                <h3>Please {this.props.formType} or {this.props.navLink}</h3>
-                {this.clearErrors}
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="username">Username
-                        <input 
+            <div className="root-session-form">
+                <h4 className="session-form" id="session-form-title"> Please {this.props.formType} or <span id="navLink">{this.props.navLink}</span></h4>
+                <form className="session-form" onSubmit={this.handleSubmit}>
+                    <label className="session-form-label" htmlFor="username">Username
+
+                        <input
+                            className="session-form-input"
                             type="text" 
                             placeholder="Your username"
                             value={this.state.username}
                             onChange={this.update('username')}/>
                     </label>
                     <br />
-                    <label htmlFor="password">Password
+                    <br />
+                    <label className="session-form-label"htmlFor="password">Password
+
                         <input
+                            className="session-form-input"
                             type="password"
                             value={this.state.password}
                             onChange={this.update('password')} />
                     </label>
                     <br />
-                    <input className="session-submit" type="submit" value={this.props.formType} />
-                    {this.renderErrors()}
+                    <input className="session-form-submit" type="submit" value={this.props.formType} />
+                    <br />
                 </form>
+                    {this.renderErrors()}
             </div>
         )
     }
