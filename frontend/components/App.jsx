@@ -16,7 +16,9 @@ import SignUpFormContainer from './session_form/signup_form_container';
 
 const App = () => (
     <div>
-        <h1>Welcome to Sonar</h1>
+        <nav>
+
+        </nav>
         <LogInFormContainer />
         <SignUpFormContainer />
     </div>
