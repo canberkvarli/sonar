@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 class SessionForm extends React.Component{
     constructor(props){
         super(props)
@@ -12,12 +11,14 @@ class SessionForm extends React.Component{
 
     this.handleSubmit = this.handleSubmit.bind(this)
     this.renderErrors = this.renderErrors.bind(this)
+
     }
 
     handleSubmit(e){
         e.preventDefault()
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
+        console.log(e);
     }
 
     update(field){
@@ -43,6 +44,7 @@ class SessionForm extends React.Component{
         return(
             <div>
                 <h3>Please {this.props.formType} or {this.props.navLink}</h3>
+                {this.clearErrors}
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="username">Username
                         <input 
@@ -60,7 +62,7 @@ class SessionForm extends React.Component{
                     </label>
                     <br />
                     <input className="session-submit" type="submit" value={this.props.formType} />
-                {this.renderErrors()}
+                    {this.renderErrors()}
                 </form>
             </div>
         )
