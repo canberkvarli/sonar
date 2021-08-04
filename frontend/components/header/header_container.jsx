@@ -1,8 +1,9 @@
-
 import { connect } from 'react-redux';
-import { signup, login, logout } from '../actions/session_actions';
+import { openModal } from '../../actions/modal_actions';
+import { signup, login, logout } from '../../actions/session_actions';
+import Header from './header'
 
-const mSTP = ({session, entities: { users }, errors}) => (
+const mSTP = ({session, entities: { users }, errors, ui}) => (
     {
         currentUser: users[session.id],
         errors: errors.session,
@@ -14,7 +15,8 @@ const mSTP = ({session, entities: { users }, errors}) => (
 const mDTP = (dispatch) => ({
     signup: (user) => dispatch(signup(user)),
     login: (user) => dispatch(login(user)),
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    openModal: (modal) => dispatch(openModal(modal))
 });
 
 
