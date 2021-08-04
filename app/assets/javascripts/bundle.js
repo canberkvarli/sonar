@@ -37393,10 +37393,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  var root = document.getElementById("root");
+  var root = document.getElementById("root"); // let store;
+  // if (window.currentUser) {
+  //     const preloadedState = {
+  //         entities: {
+  //             users: { [window.currentUser.id]: window.currentUser }
+  //         },
+  //         session: { id: window.currentUser.id }
+  //     };
+  //     store = configureStore(preloadedState);
+  //     delete window.currentUser;
+  // } else {
+  //     store = configureStore();
+  // }
+
   var store = (0,_store_store__WEBPACK_IMPORTED_MODULE_2__.default)(); //TESTING
 
-  window.getState = store.getState;
+  window.getState = store.getState; //TESTING
+
   react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__.default, {
     store: store
   }), root);
