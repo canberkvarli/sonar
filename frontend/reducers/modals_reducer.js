@@ -2,8 +2,10 @@ import { OPEN_MODAL, CLOSE_MODAL } from "../actions/modal_actions";
 
 const initialState = {
   modal: null,
-  props: {
-    open: false
+  modal: {
+    props: {
+        open: false
+    }
   }
 }
 
@@ -16,8 +18,8 @@ const ModalsReducer = (oldState = initialState, action) => {
             return {
                 modal: action.modal,
                 type: action.type,
-                props: action.props
-            }
+                modal: action.props
+            }           
         case CLOSE_MODAL:
             return {
                 initialState

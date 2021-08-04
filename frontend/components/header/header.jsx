@@ -1,12 +1,12 @@
-const Header = ({ logout, currentUser }) => {
-    const session_links = () => (
+const Header = ({ logout, login, signup, currentUser, ui, errors }) => {
+    const root_header = () => (
         <div>
-
+            
         </div>
     )
 
 
-    const personal_greeting = () => (
+    const main_content_header = () => (
         <div>
 
         </div>
@@ -14,10 +14,10 @@ const Header = ({ logout, currentUser }) => {
 
 
     if (currentUser) {
-        personal_greeting()
+        main_content_header()
     } else {
-        session_links()
+        root_header()
     };
 }
 
-export default Greeting;
+export default Header;
