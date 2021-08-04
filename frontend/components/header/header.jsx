@@ -1,6 +1,4 @@
-import React from 'react'
-
-const Greeting = ({logout, currentUser}) => {
+const Header = ({ logout, currentUser }) => {
     const session_links = () => (
         <div>
 
@@ -10,14 +8,14 @@ const Greeting = ({logout, currentUser}) => {
 
     const personal_greeting = () => (
         <div>
-            
+
         </div>
     )
 
 
-    if(currentUser){
+    if (currentUser) {
         personal_greeting()
-    }else{
+    } else {
         session_links()
     };
 }
