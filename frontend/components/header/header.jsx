@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import Modal from 'react-modal';
+import Modal from '../modal/modal.jsx';
 import LogInFormContainer from '../session_form/login_form_container';
 import SignUpFormContainer from '../session_form/signup_form_container';
 
@@ -11,26 +11,26 @@ class Header extends React.Component{
     constructor(props){
         super(props)
 
+        this.state = {
+            show: false
+        }
 
         this.handleClickTab = this.handleClickTab.bind(this);
-        this.state = {
-            modal: false
-        }
         this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
     }
 
-    showModal(){
+    showModal = () => {
         this.setState({
-            modal: true
+            show: true
         })
-    }
+    };
 
-    hideModal(){
+    hideModal = () => {
         this.setState({
-            modal: false
+            show: false
         })
-    }
+    };
 
     handleClickTab(e){
         const currEle = e.currentTarget;
@@ -48,16 +48,16 @@ class Header extends React.Component{
     render(){
         const {signup, login, logout, currentUser} = this.props
         const search = <FontAwesomeIcon icon={faSearch}/>
-        const customStyles = {
-            content: {
-                top: '50%',
-                left: '50%',
-                right: 'auto',
-                bottom: 'auto',
-                marginRight: '-50%',
-                transform: 'translate(-50%, -50%)',
-            },
-        };
+        // const customStyles = {
+        //     content: {
+        //         top: '50%',
+        //         left: '50%',
+        //         right: 'auto',
+        //         bottom: 'auto',
+        //         marginRight: '-50%',
+        //         transform: 'translate(-50%, -50%)',
+        //     },
+        // };
 
 
         // Not Logged In
@@ -66,25 +66,31 @@ class Header extends React.Component{
             <div>
                 <nav className="nav-header">
                     <Modal show={this.state.show}
-                        handleClose={this.hideModal}>
-                            <LogInFormContainer />
+                        handleClose={this.hideModal}
+                        formType={this.state.formType}
+                        
+                        >
+                        <LogInFormContainer />
                     </Modal>
                     <button 
+                        type="button"
                         className="nav-button"
                         id="sign-in-button"
-                        onClick={() => this.showModal}
+                        onClick={this.showModal}
                     >Sign in
                     </button>
 
                     <br />
                     <Modal show={this.state.show}
-                        handleClose={this.hideModal}>
+                        handleClose={this.hideModal}
+                        formType={this.state.formType}
+                        >
                         <SignUpFormContainer />
                     </Modal>
                     <button 
                         className="nav-button" 
                         id="sign-up-button"
-                        onClick={() => this.showModal}
+                        onClick={this.showModal}
                         >
                     Create account</button>
                     <br />

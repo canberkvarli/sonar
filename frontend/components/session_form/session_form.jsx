@@ -1,5 +1,4 @@
 import React from 'react';
-import {openModal, closeModal} from '../../actions/modal_actions';
 
 class SessionForm extends React.Component{
     constructor(props){
@@ -7,12 +6,11 @@ class SessionForm extends React.Component{
 
         this.state = {
             username: '',
-            password: ''
+            password: '',
         }
 
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.renderErrors = this.renderErrors.bind(this)
-
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.renderErrors = this.renderErrors.bind(this)
     }
 
     handleSubmit(e){
@@ -20,6 +18,7 @@ class SessionForm extends React.Component{
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
     }
+
 
     update(field){
         return e => this.setState({
@@ -43,7 +42,12 @@ class SessionForm extends React.Component{
 
         return(
             <div className="root-session-form">
-                <h4 className="session-form" id="session-form-title"> Please {this.props.formType} or <span id="navLink">{this.props.navLink}</span></h4>
+                <h4 className="session-form" id="session-form-title"> 
+
+                Please {this.props.formType} or <span id="navLink"> {this.props.navLink}</span>
+
+                </h4>
+
                 <form className="session-form" onSubmit={this.handleSubmit}>
                     <label className="session-form-label" htmlFor="username">Username
 

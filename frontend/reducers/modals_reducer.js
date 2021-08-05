@@ -1,7 +1,6 @@
 import { OPEN_MODAL, CLOSE_MODAL } from "../actions/modal_actions";
 
 const initialState = {
-  modal: null,
   modal: {
     props: {
         open: false

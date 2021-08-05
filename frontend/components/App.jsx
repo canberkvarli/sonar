@@ -18,7 +18,10 @@ import HeaderContainer from "./header/header_container";
 
 const App = () => (
     <div>
-        <HeaderContainer />
+        <header>
+            <Link to="/" className="header-link">Sonar</Link>
+            <HeaderContainer />
+        </header>
         <Switch>
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />

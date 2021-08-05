@@ -5,7 +5,6 @@ class CreateTracks < ActiveRecord::Migration[5.2]
       t.string :title, null: false
       t.string :description
 
-
       t.timestamps
     end
     add_index :tracks, [:artist_id, :title]
