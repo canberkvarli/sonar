@@ -7,8 +7,51 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-user1 = User.create!([{username: 'canberko560', password: 1251624, artist_name: 'Ebuzehir'} ]);
-user2 = User.create!([{username: 'nottaken', password: 'zxczxc',session_token: 'XZCXZV', artist_name: 'MUSE', age: 25, bio: 'somebio', city:'SF', country: 'USA', first_name: 'C', last_name: 'V'}]);
 
-user3 = User.create!([{username: 'yyy', artist_name: 'Tarkan', password: 'xyxyxy'}]);
-user4 = User.create!([{username: 'aaa', artist_name: 'Mor ve Otesi', password: 'abaabb'}]);
+# USERS
+
+canberk = User.create!([{
+            username: 'canberko560',
+            artist_name: 'Ebu Zehir',
+            age: '25',
+            bio: 'An artist on a journey to uncover the magical truth by mixing authentic sounds together and create the world of music.',
+            city: 'San Francisco',
+            country: 'USA',
+            first_name: 'Canberk',
+            last_name: 'Varli', } ]);
+
+taleofus = User.create!([{
+            username: 'taleofus99',
+            artist_name: 'Tale of Us',}]);
+
+muse = User.create!([{
+            username: 'MattChrisDom',
+            artist_name: 'MUSE',
+            city: "Glasgow",
+            country: "Scotland"}]);
+
+aurora = User.create!([{
+            username: 'longlivethetrees', 
+            artist_name: 'Aurora'
+            }]);
+
+
+#  TRACKS
+
+track1 = Track.create!([{
+    title: "W.R.A.A.T.S",
+    artist_id: canberk.id,
+    description: "(W)hat (R)emains (A)fter (A) (T)hunder (S)trike"
+}])
+
+track2 = Track.create!([{
+    title: "Boiler Plate",
+    artist_id: muse.id,
+    description: "Mixed with effort and detailed work, this song is the everything a person will need before a good start."
+}])
+
+track3 = Track.create!([{
+    title: "Running with The Wolves",
+    artist_id: muse.id,
+    description: "Only Love"
+}])
