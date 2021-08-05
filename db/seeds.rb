@@ -45,13 +45,13 @@ aurora = User.create!([{
 
 track1 = Track.create!([{
     title: "W.R.A.A.T.S",
-    artist_id: 5,
+    artist_id: 1,
     description: "(W)hat (R)emains (A)fter (A) (T)hunder (S)trike"
 }])
 
 track2 = Track.create!([{
     title: "Boiler Plate",
-    artist_id: 4,
+    artist_id: 2,
     description: "Mixed with effort and detailed work, this song is the everything a person will need before a good start."
 }])
 

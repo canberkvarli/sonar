@@ -14,4 +14,8 @@
 #  index_tracks_on_artist_id_and_title  (artist_id,title)
 #
 class Track < ApplicationRecord
+    validates :artist_id, :title, presence: true
+    validates :artist_id, uniqueness: true
+
+
 end
