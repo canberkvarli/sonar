@@ -7,7 +7,7 @@ const mSTP = ({session, entities: { users }, errors, ui}) => (
     {
         currentUser: users[session.id],
         errors: errors.session,
-        ui: ui.modal.props.open
+        modal: ui.modal.props.open
     }
 );
 
