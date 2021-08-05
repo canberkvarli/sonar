@@ -2,6 +2,7 @@ class Api::TracksController < ApplicationController
     def index
         @tracks = Track.all
         render json: @tracks
+        
     end
 
 
@@ -22,7 +23,7 @@ class Api::TracksController < ApplicationController
     def destroy
         @track = Track.find(params[:id])
         if @track.destroy!
-            render @tracks
+            render :index
         else
             render json: @track.errors.full_messages
         end

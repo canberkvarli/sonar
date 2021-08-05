@@ -10,7 +10,7 @@
 
 # USERS
 
-canberk = User.create!([{
+canberk = User.create!({
             username: 'canberko560',
             password_digest: "some_digest",
             artist_name: 'Ebu Zehir',
@@ -19,44 +19,44 @@ canberk = User.create!([{
             city: 'San Francisco',
             country: 'USA',
             first_name: 'Canberk',
-            last_name: 'Varli', } ]);
+            last_name: 'Varli', } );
 
 
-taleofus = User.create!([{
+taleofus = User.create!({
             username: 'taleofus99',
             password_digest: "some_digest",
-            artist_name: 'Tale of Us',}]);
+            artist_name: 'Tale of Us',});
 
-muse = User.create!([{
+muse = User.create!({
             username: 'MattChrisDom',
             password_digest: "some_digest",
             artist_name: 'MUSE',
             city: "Glasgow",
-            country: "Scotland"}]);
+            country: "Scotland"});
 
-aurora = User.create!([{
+aurora = User.create!({
             username: 'longlivethetrees', 
             password_digest: "some_digest",
             artist_name: 'Aurora'
-            }]);
+            });
 
 
 #  TRACKS
 
-track1 = Track.create!([{
+track1 = Track.create!({
     title: "W.R.A.A.T.S",
-    artist_id: 1,
+    artist_id: canberk.id,
     description: "(W)hat (R)emains (A)fter (A) (T)hunder (S)trike"
-}])
+})
 
-track2 = Track.create!([{
+track2 = Track.create!({
     title: "Boiler Plate",
-    artist_id: 2,
+    artist_id: taleofus.id,
     description: "Mixed with effort and detailed work, this song is the everything a person will need before a good start."
-}])
+})
 
-track3 = Track.create!([{
+track3 = Track.create!({
     title: "Running with The Wolves",
-    artist_id: 3,
+    artist_id: aurora.id,
     description: "Only Love"
-}])
+})
