@@ -10303,6 +10303,12 @@ var Header = /*#__PURE__*/function (_React$Component) {
       currEle.classList.add('selected');
     }
   }, {
+    key: "handleLogout",
+    value: function handleLogout() {
+      var result = window.location.origin;
+      this.props.logout().then(window.location.href = result);
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -10370,15 +10376,16 @@ var Header = /*#__PURE__*/function (_React$Component) {
           id: "icon-search"
         }, search))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "right-nav-header"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
           htmlFor: "Logout",
+          className: "header-nav-setting",
           onClick: function onClick() {
-            return logout;
+            return _this2.handleLogout();
           }
-        }, "Logout"))));
+        }, "Log out"))));
       };
 
-      if (this.currentUser) {
+      if (this.props.currentUser) {
         return personalSpace();
       } else {
         return sessionLinks();
@@ -47490,26 +47497,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  var root = document.getElementById("root"); // let store;
-  // if (window.currentUser) {
-  //     const preloadedState = {
-  //         entities: {
-  //             users: { [window.currentUser.id]: window.currentUser }
-  //         },
-  //         session: { id: window.currentUser.id }
-  //     };
-  //     store = configureStore(preloadedState);
-  //     delete window.currentUser;
-  // } else {
-  //     store = configureStore();
-  // }
+  var root = document.getElementById("root");
+  var store;
 
-  var store = (0,_store_store__WEBPACK_IMPORTED_MODULE_2__.default)(); //TESTING
+  if (window.currentUser) {
+    var preloadedState = {
+      entities: {
+        users: _defineProperty({}, window.currentUser.id, window.currentUser)
+      },
+      session: {
+        id: window.currentUser.id
+      }
+    };
+    store = (0,_store_store__WEBPACK_IMPORTED_MODULE_2__.default)(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = (0,_store_store__WEBPACK_IMPORTED_MODULE_2__.default)();
+  } //TESTING
+
 
   window.getState = store.getState; //TESTING
 

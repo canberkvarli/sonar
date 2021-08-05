@@ -18,6 +18,14 @@ class Header extends React.Component{
         currEle.classList.add('selected');
     }
 
+    handleLogout(){
+
+        const result = window.location.origin;
+        this.props.logout().then(
+            window.location.href = result
+        )
+    }
+
     render(){
         const {signup, login, logout, openModal} = this.props
         const search = <FontAwesomeIcon icon={faSearch}/>
@@ -75,14 +83,15 @@ class Header extends React.Component{
                     </div>
                     <div className="right-nav-header">
 
-                    <label htmlFor="Logout"
-                    onClick={() => logout}>Logout</label>
+                    <a htmlFor="Logout"
+                    className="header-nav-setting"
+                    onClick={() => this.handleLogout()}>Log out</a>
                     </div>
                 </nav>
             </div>
         )
 
-            if(this.currentUser){
+            if(this.props.currentUser){
                 return personalSpace();
             }else{
                 return sessionLinks();
