@@ -3,7 +3,7 @@ import { RECEIVE_TRACKS, REMOVE_TRACK, RECEIVE_TRACK } from "../actions/track_ac
 
 
 
-const TracksReducer = (oldState, action) => {
+const tracksReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
 
     switch (action.type) {
@@ -20,4 +20,4 @@ const TracksReducer = (oldState, action) => {
     }
 }
 
-export default TracksReducer;
+export default tracksReducer;
