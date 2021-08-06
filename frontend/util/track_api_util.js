@@ -2,14 +2,12 @@
 export const fetchTracks = () => (
     $.ajax({
         url: '/api/tracks',
-        method: "GET",
         error: (err) => console.log(err)
     })
 )
 
 export const fetchTrack = (trackId) => (
     $.ajax({
-        method: "GET",
         url: `/api/tracks/${trackId}`,
         error: (err) => console.log(err)
 

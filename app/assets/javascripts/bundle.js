@@ -10195,6 +10195,84 @@ var signup = function signup(user) {
 
 /***/ }),
 
+/***/ "./frontend/actions/track_actions.js":
+/*!*******************************************!*\
+  !*** ./frontend/actions/track_actions.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "RECEIVE_TRACK": () => (/* binding */ RECEIVE_TRACK),
+/* harmony export */   "RECEIVE_TRACKS": () => (/* binding */ RECEIVE_TRACKS),
+/* harmony export */   "REMOVE_TRACK": () => (/* binding */ REMOVE_TRACK),
+/* harmony export */   "UPLOAD_TRACK": () => (/* binding */ UPLOAD_TRACK),
+/* harmony export */   "fetchTrack": () => (/* binding */ fetchTrack),
+/* harmony export */   "fetchTracks": () => (/* binding */ fetchTracks),
+/* harmony export */   "deleteTrack": () => (/* binding */ deleteTrack),
+/* harmony export */   "uploadTrack": () => (/* binding */ uploadTrack)
+/* harmony export */ });
+/* harmony import */ var _util_track_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/track_api_util */ "./frontend/util/track_api_util.js");
+
+var RECEIVE_TRACK = "RECEIVE_TRACK";
+var RECEIVE_TRACKS = "RECEIVE_TRACKS";
+var REMOVE_TRACK = "REMOVE_TRACK";
+var UPLOAD_TRACK = "UPLOAD_TRACK"; // regular actions
+
+var receiveTrack = function receiveTrack(track) {
+  return {
+    type: RECEIVE_TRACK,
+    track: track
+  };
+};
+
+var receiveTracks = function receiveTracks(tracks) {
+  return {
+    type: RECEIVE_TRACKS,
+    tracks: tracks
+  };
+};
+
+var removeTrack = function removeTrack(trackId) {
+  return {
+    type: REMOVE_TRACK,
+    trackId: trackId
+  };
+}; //thunk actions
+
+
+var fetchTrack = function fetchTrack(trackId) {
+  return function (dispatch) {
+    return _util_track_api_util__WEBPACK_IMPORTED_MODULE_0__.fetchTrack(trackId).then(function (track) {
+      return dispatch(receiveTrack(track));
+    });
+  };
+};
+var fetchTracks = function fetchTracks() {
+  return function (dispatch) {
+    return _util_track_api_util__WEBPACK_IMPORTED_MODULE_0__.fetchTracks().then(function (tracks) {
+      return dispatch(receiveTracks(tracks));
+    });
+  };
+};
+var deleteTrack = function deleteTrack(trackId) {
+  return function (dispatch) {
+    return _util_track_api_util__WEBPACK_IMPORTED_MODULE_0__.deleteTrack(trackId).then(function () {
+      return dispatch(removeTrack(trackId));
+    });
+  };
+};
+var uploadTrack = function uploadTrack(track) {
+  return function (dispatch) {
+    return _util_track_api_util__WEBPACK_IMPORTED_MODULE_0__.uploadTrack(track).then(function (track) {
+      return dispatch(receiveTrack(track.id));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/components/App.jsx":
 /*!*************************************!*\
   !*** ./frontend/components/App.jsx ***!
@@ -11141,6 +11219,60 @@ var logout = function logout() {
   return $.ajax({
     method: 'DELETE',
     url: '/api/session'
+  });
+};
+
+/***/ }),
+
+/***/ "./frontend/util/track_api_util.js":
+/*!*****************************************!*\
+  !*** ./frontend/util/track_api_util.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "fetchTracks": () => (/* binding */ fetchTracks),
+/* harmony export */   "fetchTrack": () => (/* binding */ fetchTrack),
+/* harmony export */   "uploadTrack": () => (/* binding */ uploadTrack),
+/* harmony export */   "deleteTrack": () => (/* binding */ deleteTrack)
+/* harmony export */ });
+var fetchTracks = function fetchTracks() {
+  return $.ajax({
+    url: '/api/tracks',
+    error: function error(err) {
+      return console.log(err);
+    }
+  });
+};
+var fetchTrack = function fetchTrack(trackId) {
+  return $.ajax({
+    url: "/api/tracks/".concat(trackId),
+    error: function error(err) {
+      return console.log(err);
+    }
+  });
+};
+var uploadTrack = function uploadTrack(track) {
+  return $.ajax({
+    method: "POST",
+    url: 'api/tracks',
+    data: {
+      track: track
+    },
+    error: function error(err) {
+      return console.log(err);
+    }
+  });
+};
+var deleteTrack = function deleteTrack(trackId) {
+  return $.ajax({
+    method: "DELETE",
+    url: "/api/tracks/".concat(trackId),
+    error: function error(err) {
+      return console.log(err);
+    }
   });
 };
 
@@ -47567,7 +47699,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
+/* harmony import */ var _actions_track_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actions/track_actions */ "./frontend/actions/track_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -47593,7 +47727,8 @@ document.addEventListener("DOMContentLoaded", function () {
   } //TESTING
 
 
-  window.getState = store.getState; //TESTING
+  window.getState = store.getState;
+  window.fetchTracks = _actions_track_actions__WEBPACK_IMPORTED_MODULE_4__.fetchTracks; //TESTING
 
   react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__.default, {
     store: store

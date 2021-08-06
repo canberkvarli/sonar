@@ -1,21 +1,52 @@
 import * as APITrackUtil from '../util/track_api_util';
 
-export const RETRIEVE_TRACK = "RETRIEVE_TRACK";
-export const RETRIEVE_TRACKS = "RETRIEVE_TRACKS";
+export const RECEIVE_TRACK = "RECEIVE_TRACK";
+export const RECEIVE_TRACKS = "RECEIVE_TRACKS";
 export const REMOVE_TRACK = "REMOVE_TRACK";
 
-const UPLOAD_TRACK = "UPLOAD_TRACK";
+export const UPLOAD_TRACK = "UPLOAD_TRACK";
 
 
 
 // regular actions
 
-const retrieveTrack = (track) => ({
-    type: RETRIEVE_TRACK,
+const receiveTrack = (track) => ({
+    type: RECEIVE_TRACK,
     track
 })
 
-const retrieveTracks = (tracks) => ({
-    type: RETRIEVE_TRACKS,
+const receiveTracks = (tracks) => ({
+    type: RECEIVE_TRACKS,
     tracks
 })
+
+const removeTrack = (trackId) => ({
+    type: REMOVE_TRACK,
+    trackId
+})
+
+//thunk actions
+
+
+export const fetchTrack = (trackId) => dispatch => (
+    APITrackUtil.fetchTrack(trackId).then(
+        (track) => dispatch(receiveTrack(track))
+    )
+);
+
+export const fetchTracks = () => dispatch => (
+    APITrackUtil.fetchTracks().then(
+        (tracks) => dispatch(receiveTracks(tracks))
+    )
+);
+
+export const deleteTrack = trackId => dispatch => (
+    APITrackUtil.deleteTrack(trackId)
+    .then(() => dispatch(removeTrack(trackId)))
+);
+
+export const uploadTrack = track => dispatch => (
+    APITrackUtil.uploadTrack(track)
+    .then((track) => dispatch(receiveTrack(track.id)))
+);
+
