@@ -1,14 +1,16 @@
 import React from 'react';
 
 
+const TrackIndexItem = (props) => 
+    {
+        
+        return(
 
-const TrackIndexItem = ({title, username}) => 
-    (
         <div>
-            <span id="track-title">{title}</span>
+            <span id="track-title">Title: {props.track.title}</span>
             <br />
-            <span id="track-username">{username}</span>
-        </div>  
-    )
+        </div> 
+        ) 
+    }
 
 export default TrackIndexItem

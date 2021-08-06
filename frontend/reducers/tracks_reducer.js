@@ -8,7 +8,7 @@ const tracksReducer = (oldState = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_TRACKS:
-            return Object.assign({}, oldState, action.tracks)
+            return action.tracks;
         case RECEIVE_TRACK:
             return Object.assign({}, oldState, {[action.track.id]: action.track})
         case REMOVE_TRACK:

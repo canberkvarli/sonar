@@ -1,8 +1,9 @@
 
-export const fetchTracks = () => (
+export const fetchTracks = (data) => (
     $.ajax({
         url: '/api/tracks',
-        error: (err) => console.log(err)
+        error: (err) => console.log(err),
+        data
     })
 )
 
@@ -14,11 +15,13 @@ export const fetchTrack = (trackId) => (
     })
 )
 
-export const uploadTrack = (track) => (
+export const uploadTrack = (trackForm) => (
     $.ajax({
         method: "POST",
         url: 'api/tracks',
-        data: { track },
+        data: { trackFrom },
+        contentType: false,
+        processData: false,
         error: (err) => console.log(err)
 
     })

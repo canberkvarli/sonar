@@ -10,7 +10,8 @@ class Api::TracksController < ApplicationController
         @track = Track.new(track_params)
         
         if @track.save
-            render :show
+            # render :show
+            render json: @track
         else
             render json: @track.errors.full_messages, status: 402
         end

@@ -10286,13 +10286,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.js");
 /* harmony import */ var _header_header_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./header/header_container */ "./frontend/components/header/header_container.jsx");
 /* harmony import */ var _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./session_form/login_form_container */ "./frontend/components/session_form/login_form_container.jsx");
 /* harmony import */ var _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./session_form/signup_form_container */ "./frontend/components/session_form/signup_form_container.jsx");
 /* harmony import */ var _tracks_track_index_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tracks/track_index_container */ "./frontend/components/tracks/track_index_container.jsx");
+/* harmony import */ var _search_search__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./search/search */ "./frontend/components/search/search.jsx");
+
 
 
 
@@ -10303,10 +10305,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
     to: "/",
     className: "header-link"
-  }, "Sonar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_3__.default, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Switch, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_2__.AuthRoute, {
+  }, "Sonar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_search_search__WEBPACK_IMPORTED_MODULE_7__.default, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Switch, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_2__.AuthRoute, {
     exact: true,
     path: "/login",
     component: _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_4__.default
@@ -10314,7 +10316,11 @@ var App = function App() {
     exact: true,
     path: "/signup",
     component: _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_5__.default
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+    exact: true,
+    path: "/discover",
+    component: _tracks_track_index_container__WEBPACK_IMPORTED_MODULE_6__.default
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
     exact: true,
     path: "/",
     component: _tracks_track_index_container__WEBPACK_IMPORTED_MODULE_6__.default
@@ -10641,6 +10647,49 @@ var Root = function Root(_ref) {
 
 /***/ }),
 
+/***/ "./frontend/components/search/search.jsx":
+/*!***********************************************!*\
+  !*** ./frontend/components/search/search.jsx ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
+/* harmony import */ var _tracks_track_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../tracks/track_index */ "./frontend/components/tracks/track_index.jsx");
+
+
+
+
+
+var Search = function Search(_ref) {
+  var tracks = _ref.tracks;
+  var search = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__.FontAwesomeIcon, {
+    icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faSearch
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
+    action: "/",
+    method: "get"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    id: "header-nav-searchbar",
+    type: "text",
+    placeholder: "Search",
+    name: "s"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    type: "submit",
+    id: "icon-search"
+  }, search)));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Search);
+
+/***/ }),
+
 /***/ "./frontend/components/session_form/login_form_container.jsx":
 /*!*******************************************************************!*\
   !*** ./frontend/components/session_form/login_form_container.jsx ***!
@@ -10914,20 +10963,18 @@ var TrackIndex = /*#__PURE__*/function (_React$Component) {
   _createClass(TrackIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchTracks;
+      this.props.fetchTracks();
     }
   }, {
     key: "render",
     value: function render() {
-      var tracks = this.props.tracks.tracks;
-      debugger;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, tracks.map(track, function (idx) {
-        /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_track_index_item__WEBPACK_IMPORTED_MODULE_1__.default, {
+      var tracks = this.props.tracks;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, tracks.map(function (track, idx) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_track_index_item__WEBPACK_IMPORTED_MODULE_1__.default, {
           track: track,
           key: idx
         });
-      }));
+      })));
     }
   }]);
 
@@ -10958,7 +11005,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var mSTP = function mSTP(state) {
   return {
-    tracks: Object.values(state.tracks)
+    tracks: Object.values(state.entities.tracks)
   };
 };
 
@@ -10997,14 +11044,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 
-var TrackIndexItem = function TrackIndexItem(_ref) {
-  var title = _ref.title,
-      username = _ref.username;
+var TrackIndexItem = function TrackIndexItem(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
     id: "track-title"
-  }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    id: "track-username"
-  }, username));
+  }, "Title: ", props.track.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TrackIndexItem);
@@ -11239,7 +11282,7 @@ var tracksReducer = function tracksReducer() {
 
   switch (action.type) {
     case _actions_track_actions__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_TRACKS:
-      return Object.assign({}, oldState, action.tracks);
+      return action.tracks;
 
     case _actions_track_actions__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_TRACK:
       return Object.assign({}, oldState, _defineProperty({}, action.track.id, action.track));
@@ -11438,12 +11481,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "uploadTrack": () => (/* binding */ uploadTrack),
 /* harmony export */   "deleteTrack": () => (/* binding */ deleteTrack)
 /* harmony export */ });
-var fetchTracks = function fetchTracks() {
+var fetchTracks = function fetchTracks(data) {
   return $.ajax({
     url: '/api/tracks',
     error: function error(err) {
       return console.log(err);
-    }
+    },
+    data: data
   });
 };
 var fetchTrack = function fetchTrack(trackId) {
@@ -11454,13 +11498,15 @@ var fetchTrack = function fetchTrack(trackId) {
     }
   });
 };
-var uploadTrack = function uploadTrack(track) {
+var uploadTrack = function uploadTrack(trackForm) {
   return $.ajax({
     method: "POST",
     url: 'api/tracks',
     data: {
-      track: track
+      trackFrom: trackFrom
     },
+    contentType: false,
+    processData: false,
     error: function error(err) {
       return console.log(err);
     }

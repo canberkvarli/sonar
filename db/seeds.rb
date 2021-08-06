@@ -60,3 +60,9 @@ track3 = Track.create!({
     artist_id: aurora.id,
     description: "Only Love"
 })
+
+track4 = Track.create!({
+    title: "Oath of GOd",
+    artist_id: canberk.id,
+    description: "Once upon a time"
+})

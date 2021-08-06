@@ -15,7 +15,6 @@
 #
 class Track < ApplicationRecord
     validates :artist_id, :title, presence: true
-    validates :artist_id, uniqueness: true
-
+    
 
 end
