@@ -10966,7 +10966,7 @@ var TrackIndex = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var tracks = this.props.tracks;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, tracks.map(function (track, idx) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, tracks.map(function (track) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_track_index_item__WEBPACK_IMPORTED_MODULE_1__.default, {
           track: track,
           key: idx
@@ -11042,7 +11042,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var TrackIndexItem = function TrackIndexItem(props) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+  console.log(props);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    src: props.track.photoUrl,
+    alt: ""
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
     id: "track-title"
   }, "Title: ", props.track.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null));
 };

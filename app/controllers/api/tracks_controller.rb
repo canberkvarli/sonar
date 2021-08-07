@@ -1,7 +1,9 @@
 class Api::TracksController < ApplicationController
+  before_action :require_logged_in, only: [:create]
+
     def index
         @tracks = Track.all
-        render json: @tracks
+        render :index
         
     end
 
@@ -10,8 +12,8 @@ class Api::TracksController < ApplicationController
         @track = Track.new(track_params)
         
         if @track.save
-            # render :show
-            render json: @track
+            render :show
+            # render json: @track
         else
             render json: @track.errors.full_messages, status: 402
         end
@@ -19,6 +21,7 @@ class Api::TracksController < ApplicationController
 
     def show
         @track = Track.find(params[:id])
+        render :show
     end
 
     def destroy
