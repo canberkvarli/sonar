@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import Modal from '../modal/modal.jsx';
+// import Modal from '../modal/modal.jsx';
+import Modal from 'react-responsive-modal';
 import LogInFormContainer from '../session_form/login_form_container';
 import SignUpFormContainer from '../session_form/signup_form_container';
 import SearchContainer from '../search/search_container';
@@ -13,26 +14,39 @@ class Header extends React.Component{
         super(props)
 
         this.state = {
-            show: false
+            signup: false,
+            signin: false
         }
 
         this.handleClickTab = this.handleClickTab.bind(this);
-        this.showModal = this.showModal.bind(this);
-        this.hideModal = this.hideModal.bind(this);
+        this.openModalSignUp = this.openModalSignUp.bind(this);
+        this.openModalSignIn = this.openModalSignIn.bind(this);
     }
 
-    
-    showModal = () => {
+
+    openModalSignUp = () => {
         this.setState({
-            show: true
+            signup: true
         })
     };
 
-    hideModal = () => {
+    hideModalSignUp = () => {
         this.setState({
-            show: false
+            signup: false
         })
     };
+
+    openModalSignIn= () => {
+        this.setState({
+            signin: true
+        })
+    }
+
+    hideModalSignIn = () => {
+        this.setState({
+            signin: false
+        })
+    }
 
     handleClickTab(e){
         const currEle = e.currentTarget;
@@ -68,33 +82,35 @@ class Header extends React.Component{
             
             <div>
                 <nav className="nav-header">
-                    <Modal show={this.state.show}
-                        handleClose={this.hideModal}
-                        formType={this.state.formType}
-                        >
-                        <LogInFormContainer />
-                    </Modal>
                     <button 
                         type="button"
                         className="nav-button"
                         id="sign-in-button"
-                        onClick={this.showModal}
-                    >Sign in
+                        onClick={this.openModalSignIn}
+                        >Sign in
                     </button>
+                        <Modal 
+                            open={this.state.signin} 
+                            onClose={this.onCloseModal}
+                            formType={this.state.formType}
+                            >
+                            <LogInFormContainer />
+                        </Modal>
 
                     <br />
-                    <Modal show={this.state.show}
-                        handleClose={this.hideModal}
-                        formType={this.state.formType}
-                        >
-                        <SignUpFormContainer />
-                    </Modal>
                     <button 
                         className="nav-button" 
                         id="sign-up-button"
-                        onClick={this.showModal}
+                        onClick={this.openModalSignUp}
                         >
                     Create account</button>
+                        <Modal 
+                            open={this.state.signup}
+                            onClose={this.onCloseModal}
+                            formType={this.state.formType}
+                            >
+                            <SignUpFormContainer />
+                        </Modal>
                     <br />
 
                     <label htmlFor="For Creators" id="nav-label-creator">For Creators</label>

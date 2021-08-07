@@ -26,10 +26,8 @@ const App = () => (
             <HeaderContainer />
         </header>
         <Switch>
-            <Modal>
-                <AuthRoute exact path="/" component={LogInFormContainer} />
-                <AuthRoute exact path="/" component={SignUpFormContainer} />
-            </Modal>
+                <AuthRoute exact path="/login" component={LogInFormContainer} />
+                <AuthRoute exact path="/signup" component={SignUpFormContainer} />
             <Route exact path="/discover" component={TrackIndexContainer} />
             <Route exact path="/" component={TrackIndexContainer} />
         </Switch>
