@@ -5,6 +5,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import Modal from '../modal/modal.jsx';
 import LogInFormContainer from '../session_form/login_form_container';
 import SignUpFormContainer from '../session_form/signup_form_container';
+import SearchContainer from '../search/search_container';
 
 class Header extends React.Component{
     
@@ -20,6 +21,7 @@ class Header extends React.Component{
         this.hideModal = this.hideModal.bind(this);
     }
 
+    
     showModal = () => {
         this.setState({
             show: true
@@ -48,6 +50,7 @@ class Header extends React.Component{
     render(){
         const {signup, login, logout, currentUser} = this.props
         const search = <FontAwesomeIcon icon={faSearch}/>
+        console.log(this.props)
         // const customStyles = {
         //     content: {
         //         top: '50%',
@@ -68,7 +71,6 @@ class Header extends React.Component{
                     <Modal show={this.state.show}
                         handleClose={this.hideModal}
                         formType={this.state.formType}
-                        
                         >
                         <LogInFormContainer />
                     </Modal>
@@ -122,11 +124,7 @@ class Header extends React.Component{
                         </Link>
                     </div>
                     <div className="middle-nav-hedaer">
-                        <form action="/"
-                        method="get">
-                            <input id="header-nav-searchbar" type="text" placeholder="Search"/>
-                            <span id="icon-search">{search}</span>
-                        </form>
+                        <SearchContainer />
                     </div>
                     <div className="right-nav-header">
 

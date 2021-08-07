@@ -13,6 +13,7 @@ import HeaderContainer from "./header/header_container";
 import LogInFormContainer from "./session_form/login_form_container"
 import SignUpFormContainer from './session_form/signup_form_container';
 import TrackIndexContainer from "./tracks/track_index_container";
+import Modal from './modal/modal'
 import Search from './search/search'
 
 
@@ -23,11 +24,12 @@ const App = () => (
         <header>
             <Link to="/" className="header-link">Sonar</Link>
             <HeaderContainer />
-            <Search />
         </header>
         <Switch>
-            <AuthRoute exact path="/login" component={LogInFormContainer} />
-            <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+            <Modal>
+                <AuthRoute exact path="/" component={LogInFormContainer} />
+                <AuthRoute exact path="/" component={SignUpFormContainer} />
+            </Modal>
             <Route exact path="/discover" component={TrackIndexContainer} />
             <Route exact path="/" component={TrackIndexContainer} />
         </Switch>

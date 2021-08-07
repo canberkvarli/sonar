@@ -9,7 +9,7 @@ const Search = (props) => {
 
     
     return(
-        <div>
+        <div className="search-bar-div">
             <form action="/"
                 method="get">
                 <input id="header-nav-searchbar" type="text" placeholder="Search" name="s"/>
