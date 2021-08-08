@@ -1,0 +1,61 @@
+.nav-header{
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+}
+
+#header-link{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+#sign-in-button{
+    display: flex;
+    position: absolute;
+    margin-left: 930px;
+    margin-top: 18px;
+    border: 1px solid #1a202c;
+    border-radius: 3.4px;
+    padding: 5px;
+    min-width: 60px;
+    background-color:transparent;
+    transition: all 0.1s ease-in;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 4px;
+    width: 53px;
+    height: 18px;
+}
+
+#sign-up-button{
+    display: flex;
+    position: absolute;
+    margin-left: 1010px;
+    margin-top: 18px;
+
+    display: flex;
+    position: absolute;
+    border: 1px solid #1a202c;
+    border-radius: 3.4px;
+    padding: 5px;
+    min-width: 60px;
+    background-color:darkorange;
+    transition: all 0.1s ease-in;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 4px;
+    width: 120px;
+    height: 18px;
+}
+
+#nav-label-creator{
+    display: flex;
+    position: absolute;
+    margin-left: 1155px;
+    margin-top: 23px;
+
+}

@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-// import Modal from '../modal/modal.jsx';
+import { Carousel } from 'react-responsive-carousel';
+
 import Modal from 'react-responsive-modal';
 import LogInFormContainer from '../session_form/login_form_container';
 import SignUpFormContainer from '../session_form/signup_form_container';
@@ -64,24 +65,15 @@ class Header extends React.Component{
     render(){
         const {signup, login, logout, currentUser} = this.props
         const search = <FontAwesomeIcon icon={faSearch}/>
-        console.log(this.props)
-        // const customStyles = {
-        //     content: {
-        //         top: '50%',
-        //         left: '50%',
-        //         right: 'auto',
-        //         bottom: 'auto',
-        //         marginRight: '-50%',
-        //         transform: 'translate(-50%, -50%)',
-        //     },
-        // };
-
 
         // Not Logged In
         const sessionLinks = () => (
             
             <div>
+                
                 <nav className="nav-header">
+                    <Link to="/" id="header-link">Sonar</Link>
+
                     <button 
                         type="button"
                         className="nav-button"
@@ -115,6 +107,10 @@ class Header extends React.Component{
 
                     <label htmlFor="For Creators" id="nav-label-creator">For Creators</label>
                 </nav>
+            <Carousel>
+                <div>
+                </div>
+            </Carousel>
             </div>
         )
 
