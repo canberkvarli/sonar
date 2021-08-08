@@ -10331,6 +10331,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./session_form/signup_form_container */ "./frontend/components/session_form/signup_form_container.jsx");
 /* harmony import */ var _tracks_track_index_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tracks/track_index_container */ "./frontend/components/tracks/track_index_container.jsx");
 /* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
+/* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modal_modal__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _search_search__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./search/search */ "./frontend/components/search/search.jsx");
 
 
@@ -10633,33 +10634,23 @@ var mDTP = function mDTP(dispatch) {
 /*!*********************************************!*\
   !*** ./frontend/components/modal/modal.jsx ***!
   \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-
-var Modal = function Modal(_ref) {
-  var handleClose = _ref.handleClose,
-      show = _ref.show,
-      children = _ref.children,
-      formType = _ref.formType;
-  var showHideClassName = show ? "modal display-block" : "modal display-none";
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: showHideClassName
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
-    className: "modal-main"
-  }, children, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-    type: "button",
-    onClick: handleClose
-  }, "X")));
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Modal);
+// import React from 'react';
+// const Modal = ({ handleClose, show, children, formType }) => {
+//   const showHideClassName = show ? "modal display-block" : "modal display-none";
+//   return (
+//     <div className={showHideClassName}>
+//       <section className="modal-main">
+//         {children}
+//         <button type="button" onClick={handleClose}>
+//           X
+//         </button>
+//       </section>
+//     </div>
+//   );
+// };
+// export default Modal;
 
 /***/ }),
 
@@ -10909,38 +10900,83 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "root-session-form"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
-        className: "session-form",
-        id: "session-form-title"
-      }, "Please ", this.props.formType, " or ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-        id: "navLink"
-      }, " ", this.props.navLink)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
-        className: "session-form",
-        onSubmit: this.handleSubmit
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-        className: "session-form-label",
-        htmlFor: "username"
-      }, "Username", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-        className: "session-form-input",
-        type: "text",
-        placeholder: "Your username",
-        value: this.state.username,
-        onChange: this.update('username')
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-        className: "session-form-label",
-        htmlFor: "password"
-      }, "Password", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-        className: "session-form-input",
-        type: "password",
-        value: this.state.password,
-        onChange: this.update('password')
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-        className: "session-form-submit",
-        type: "submit",
-        value: this.props.formType
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null)), this.renderErrors());
+      var _this3 = this;
+
+      var SessionFormSignIn = function SessionFormSignIn() {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "root-session-form"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
+          className: "session-form",
+          id: "session-form-title"
+        }, "Please ", _this3.props.formType, " or ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+          id: "navLink"
+        }, " ", _this3.props.navLink)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
+          className: "session-form",
+          onSubmit: _this3.handleSubmit
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+          className: "session-form-label",
+          htmlFor: "username"
+        }, "Username", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+          className: "session-form-input",
+          type: "text",
+          placeholder: "Your username",
+          value: _this3.state.username,
+          onChange: _this3.update('username')
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+          className: "session-form-label",
+          htmlFor: "password"
+        }, "Password", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+          className: "session-form-input",
+          type: "password",
+          value: _this3.state.password,
+          onChange: _this3.update('password')
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+          className: "session-form-submit",
+          type: "submit",
+          value: _this3.props.formType
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null)), _this3.renderErrors());
+      };
+
+      var SessionFormSignUp = function SessionFormSignUp() {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "root-session-form"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
+          className: "session-form",
+          id: "session-form-title"
+        }, "Please ", _this3.props.formType, " or ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+          id: "navLink"
+        }, " ", _this3.props.navLink)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
+          className: "session-form",
+          onSubmit: _this3.handleSubmit
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+          className: "session-form-label",
+          htmlFor: "username"
+        }, "Username", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+          className: "session-form-input",
+          type: "text",
+          placeholder: "Your username",
+          value: _this3.state.username,
+          onChange: _this3.update('username')
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+          className: "session-form-label",
+          htmlFor: "password"
+        }, "Password", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+          className: "session-form-input",
+          type: "password",
+          value: _this3.state.password,
+          onChange: _this3.update('password')
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+          className: "session-form-submit",
+          type: "submit",
+          value: _this3.props.formType
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null)), _this3.renderErrors());
+      };
+
+      if (this.props.formType === "Log In") {
+        return SessionFormSignIn();
+      } else if (this.props.formType === "Sign Up") {
+        return SessionFormSignUp();
+      }
     }
   }]);
 

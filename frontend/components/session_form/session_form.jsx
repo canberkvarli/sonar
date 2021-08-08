@@ -39,8 +39,8 @@ class SessionForm extends React.Component{
     }
 
     render(){
-
-        return(
+        const SessionFormSignIn = () => (
+           
             <div className="root-session-form">
                 <h4 className="session-form" id="session-form-title"> 
 
@@ -74,10 +74,53 @@ class SessionForm extends React.Component{
                 </form>
                     {this.renderErrors()}
             </div>
+            )
+
+        const SessionFormSignUp = () => (
+
+            <div className="root-session-form">
+                <h4 className="session-form" id="session-form-title">
+
+                    Please {this.props.formType} or <span id="navLink"> {this.props.navLink}</span>
+
+                </h4>
+
+                <form className="session-form" onSubmit={this.handleSubmit}>
+                    <label className="session-form-label" htmlFor="username">Username
+
+                        <input
+                            className="session-form-input"
+                            type="text"
+                            placeholder="Your username"
+                            value={this.state.username}
+                            onChange={this.update('username')} />
+                    </label>
+                    <br />
+                    <br />
+                    <label className="session-form-label" htmlFor="password">Password
+
+                        <input
+                            className="session-form-input"
+                            type="password"
+                            value={this.state.password}
+                            onChange={this.update('password')} />
+                    </label>
+                    <br />
+                    <input className="session-form-submit" type="submit" value={this.props.formType} />
+                    <br />
+                    
+                </form>
+                {this.renderErrors()}
+            </div>
         )
+
+            if(this.props.formType === "Log In"){
+                return SessionFormSignIn();
+            }else if(this.props.formType === "Sign Up"){
+                return SessionFormSignUp();
+            }
+        }
     }
-    
-}
 
 
 export default SessionForm
