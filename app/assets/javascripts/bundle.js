@@ -10490,11 +10490,10 @@ var Header = /*#__PURE__*/function (_React$Component) {
       var settings = {
         dots: true,
         fade: true,
-        infinite: true,
-        slideToShow: 1,
-        className: "slides",
-        slidesToScroll: 1,
-        arrows: true
+        arrows: true,
+        adaptiveHeight: true,
+        variableWidth: true,
+        slidesToShow: 1
       };
       var sliderPhotos = [{
         name: "Slider1",

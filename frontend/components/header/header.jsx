@@ -70,11 +70,10 @@ class Header extends React.Component{
         const settings = {
             dots: true,
             fade: true,
-            infinite: true,
-            slideToShow: 1,
-            className: "slides",
-            slidesToScroll: 1,
-            arrows: true
+            arrows: true,
+            adaptiveHeight: true,
+            variableWidth: true,
+            slidesToShow: 1
         }
         const sliderPhotos = [
             {

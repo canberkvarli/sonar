@@ -65,20 +65,25 @@
 }
 
 .slider-photos{
-    width: 1200px;
+    width: 1268px;
     height: 450px;
     position: relative;
     margin-top: -24px;
     margin-right: 50px;
+    margin-left: 20px;
     padding-top: 10px;
     background-color: darkorange;
 }
 
 #header-link{
-    // position: absolute;
-    // z-index: 1;
+    position: absolute;
+    z-index: 1;
+    color: rgb(221, 221, 221);
 }
-// .slider{
-//     width: 1200px;
-//     height: 450px;
-// }
+.slick-track{
+    width: 1300px;
+}
+
+.slick-slide{
+    left: 0px;
+}
