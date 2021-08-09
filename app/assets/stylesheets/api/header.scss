@@ -13,10 +13,12 @@
 
 #sign-in-button{
     display: flex;
+    z-index: 1;
     position: absolute;
     margin-left: 930px;
     margin-top: 18px;
-    border: 1px solid #1a202c;
+    color: rgb(221, 221, 221);
+    border: 1px solid rgb(221, 221, 221);
     border-radius: 3.4px;
     padding: 5px;
     min-width: 60px;
@@ -35,10 +37,10 @@
     position: absolute;
     margin-left: 1010px;
     margin-top: 18px;
-
+    z-index: 1;
     display: flex;
     position: absolute;
-    border: 1px solid #1a202c;
+    border: 1px solid rgb(221, 221, 221);
     border-radius: 3.4px;
     padding: 5px;
     min-width: 60px;
@@ -57,15 +59,25 @@
     position: absolute;
     margin-left: 1155px;
     margin-top: 23px;
+    z-index: 1;
+    color: rgb(221, 221, 221);
 
 }
 
 .slider-photos{
     width: 1200px;
     height: 450px;
-    position: absolute;
+    position: relative;
+    margin-top: -24px;
+    margin-right: 50px;
+    padding-top: 10px;
+    background-color: darkorange;
 }
 
+#header-link{
+    // position: absolute;
+    // z-index: 1;
+}
 // .slider{
 //     width: 1200px;
 //     height: 450px;
