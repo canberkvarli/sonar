@@ -6,7 +6,7 @@ const TrackIndexItem = (props) =>
         console.log(props)
         return(
         <div className="track-index-item">
-            <img className="track-photo" src={props.track.photoUrl} />
+            <img className="track-photos" src={props.track.photoUrl} />
             <span className="track-title">{props.track.title}</span>
             <br />
         </div> 

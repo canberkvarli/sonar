@@ -18,9 +18,10 @@ import TrackIndexContainer from "./tracks/track_index_container";
 
 const App = () => (
     <div>
-        <header>
+        {/* <header>
             <HeaderContainer />
-        </header>
+        </header> */}
+            <HeaderContainer />
         <Switch>
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />

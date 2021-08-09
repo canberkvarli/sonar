@@ -17,7 +17,7 @@ class TrackIndex extends React.Component{
         const {tracks} = this.props;        
         return(
             <div>
-                <ul>
+                <ul className="track-index">
                     {tracks.map((track,idx) => (
                             <TrackIndexItem track={track} key={idx}/>
                     ))}

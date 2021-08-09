@@ -2,12 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import { Carousel } from 'react-responsive-carousel';
-
+import Slider from "react-slick";
 import Modal from 'react-responsive-modal';
 import LogInFormContainer from '../session_form/login_form_container';
 import SignUpFormContainer from '../session_form/signup_form_container';
 import SearchContainer from '../search/search_container';
+
+// import mars from '../../../app/assets/images/moon.jpg';
+
 
 class Header extends React.Component{
     
@@ -65,7 +67,29 @@ class Header extends React.Component{
     render(){
         const {signup, login, logout, currentUser} = this.props
         const search = <FontAwesomeIcon icon={faSearch}/>
-
+        const settings = {
+            dots: true,
+            fade: true,
+            infinite: true,
+            slideToShow: 1,
+            className: "slides",
+            slidesToScroll: 1,
+            arrows: true
+        }
+        const sliderPhotos = [
+            {
+                name: "Slider1",
+                url: "https://images.unsplash.com/photo-1583871201364-dd5ce92379e7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fG5pZ2h0bGlmZXxlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+            },
+            {
+                name: "Slider2",
+                url: "https://images.unsplash.com/photo-1466907840060-8934465084e5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDF8fG5pZ2h0bGlmZXxlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+            },
+            {
+                name: "Slider3",
+                url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNvbmNlcnR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+            }
+        ]
         // Not Logged In
         const sessionLinks = () => (
             
@@ -106,11 +130,17 @@ class Header extends React.Component{
                     <br />
 
                     <label htmlFor="For Creators" id="nav-label-creator">For Creators</label>
-                </nav>
-            <Carousel>
-                <div>
-                </div>
-            </Carousel>
+                    <Slider {...settings}>
+                    {sliderPhotos.map((photo, idx) => {
+                        return(
+                            <div>
+                                
+                                <img key={idx} className="slider-photos" src={photo.url} alt={photo.name} />
+                            </div>
+                        )
+                    })}
+                    </Slider>
+                </nav> 
             </div>
         )
 
