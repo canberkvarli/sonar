@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import Slider from "react-slick";
+import { Carousel } from 'react-responsive-carousel';
 import Modal from 'react-responsive-modal';
 import LogInFormContainer from '../session_form/login_form_container';
 import SignUpFormContainer from '../session_form/signup_form_container';
@@ -68,17 +68,22 @@ class Header extends React.Component{
         const {signup, login, logout, currentUser} = this.props
         const search = <FontAwesomeIcon icon={faSearch}/>
         const settings = {
-            dots: true,
-            fade: true,
-            arrows: true,
-            adaptiveHeight: true,
-            variableWidth: true,
-            slidesToShow: 1
+            dynamicHeigt: true,
+            infiniteLoop: true,
+            autoPlay: true,
+            interval: 5000,
+            showArrows: false,
+            showStatus: false,
+            showIndicators: false,
+            showThumbs: false,
+            swipeable: false,
+            centerMode: true,
+            width: 1268
         }
         const sliderPhotos = [
             {
                 name: "Slider1",
-                url: "https://images.unsplash.com/photo-1583871201364-dd5ce92379e7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fG5pZ2h0bGlmZXxlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+                url: "https://srv4.imgonline.com.ua/result_img/imgonline-com-ua-resize-BO1new8u9s.jpg"
             },
             {
                 name: "Slider2",
@@ -129,16 +134,15 @@ class Header extends React.Component{
                     <br />
 
                     <label htmlFor="For Creators" id="nav-label-creator">For Creators</label>
-                    <Slider {...settings}>
+                    <Carousel {...settings} className="carousel">
                     {sliderPhotos.map((photo, idx) => {
                         return(
                             <div>
-                                
-                                <img key={idx} className="slider-photos" src={photo.url} alt={photo.name} />
+                                <img key={idx} className="carousel-photo" src={photo.url} alt={photo.name} />
                             </div>
                         )
                     })}
-                    </Slider>
+                    </Carousel>
                 </nav> 
             </div>
         )
