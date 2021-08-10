@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+
 import WaveSurfer from 'wavesurfer.js';
 
-import { WaveformContianer, Wave, PlayButton } from './Waveform.styled';
 
 class Waveform extends Component {
     state = {
@@ -35,13 +35,9 @@ class Waveform extends Component {
         const url = 'https://www.mfiles.co.uk/mp3-downloads/gs-cd-track2.mp3';
 
         return (
-            <WaveformContianer>
-                <PlayButton onClick={this.handlePlay} >
-                    {!this.state.playing ? 'Play' : 'Pause'}
-                </PlayButton>
-                <Wave id="waveform" />
-                <audio id="track" src={url} />
-            </WaveformContianer>
+            <div id="waveform">
+                <audio src={url} id="track" />
+            </div>
         );
     }
 };

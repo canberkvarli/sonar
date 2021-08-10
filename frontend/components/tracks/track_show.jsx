@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Waveform from '../waveform/waveform';
 
 class TrackShow extends React.Component{
     constructor(props){
@@ -17,13 +18,10 @@ class TrackShow extends React.Component{
 
         if ((track === undefined)){
             return null
-        }else if (currentUser){
+        }else if(currentUser){
             return (
                 <> 
-                    <div className="playhead">
-                        
-                        hello
-                    </div>
+                    <Waveform />    
                 </>
             )
         }
