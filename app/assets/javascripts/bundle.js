@@ -1,6 +1,27 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _assertThisInitialized)
+/* harmony export */ });
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js":
 /*!*******************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/defineProperty.js ***!
@@ -10130,6 +10151,859 @@ var convertCurry = convert.bind(null, react__WEBPACK_IMPORTED_MODULE_2__.createE
 
 /***/ }),
 
+/***/ "./node_modules/@iconify/icons-mdi/fast-forward.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@iconify/icons-mdi/fast-forward.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+var data = {
+	"body": "<path d=\"M13 6v12l8.5-6M4 18l8.5-6L4 6v12z\" fill=\"currentColor\"/>",
+	"width": 24,
+	"height": 24
+};
+exports.__esModule = true;
+exports.default = data;
+
+
+/***/ }),
+
+/***/ "./node_modules/@iconify/icons-mdi/pause-circle.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@iconify/icons-mdi/pause-circle.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+var data = {
+	"body": "<path d=\"M15 16h-2V8h2m-4 8H9V8h2m1-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2z\" fill=\"currentColor\"/>",
+	"width": 24,
+	"height": 24
+};
+exports.__esModule = true;
+exports.default = data;
+
+
+/***/ }),
+
+/***/ "./node_modules/@iconify/icons-mdi/play-circle.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@iconify/icons-mdi/play-circle.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+var data = {
+	"body": "<path d=\"M10 16.5v-9l6 4.5M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2z\" fill=\"currentColor\"/>",
+	"width": 24,
+	"height": 24
+};
+exports.__esModule = true;
+exports.default = data;
+
+
+/***/ }),
+
+/***/ "./node_modules/@iconify/icons-mdi/repeat-off.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/@iconify/icons-mdi/repeat-off.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+var data = {
+	"body": "<path d=\"M2 5.27L3.28 4L20 20.72L18.73 22l-3-3H7v3l-4-4l4-4v3h6.73L7 10.27V11H5V8.27l-3-3M17 13h2v4.18l-2-2V13m0-8V2l4 4l-4 4V7H8.82l-2-2H17z\" fill=\"currentColor\"/>",
+	"width": 24,
+	"height": 24
+};
+exports.__esModule = true;
+exports.default = data;
+
+
+/***/ }),
+
+/***/ "./node_modules/@iconify/icons-mdi/repeat.js":
+/*!***************************************************!*\
+  !*** ./node_modules/@iconify/icons-mdi/repeat.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+var data = {
+	"body": "<path d=\"M17 17H7v-3l-4 4l4 4v-3h12v-6h-2M7 7h10v3l4-4l-4-4v3H5v6h2V7z\" fill=\"currentColor\"/>",
+	"width": 24,
+	"height": 24
+};
+exports.__esModule = true;
+exports.default = data;
+
+
+/***/ }),
+
+/***/ "./node_modules/@iconify/icons-mdi/rewind.js":
+/*!***************************************************!*\
+  !*** ./node_modules/@iconify/icons-mdi/rewind.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+var data = {
+	"body": "<path d=\"M11.5 12l8.5 6V6m-9 12V6l-8.5 6l8.5 6z\" fill=\"currentColor\"/>",
+	"width": 24,
+	"height": 24
+};
+exports.__esModule = true;
+exports.default = data;
+
+
+/***/ }),
+
+/***/ "./node_modules/@iconify/icons-mdi/skip-next.js":
+/*!******************************************************!*\
+  !*** ./node_modules/@iconify/icons-mdi/skip-next.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+var data = {
+	"body": "<path d=\"M16 18h2V6h-2M6 18l8.5-6L6 6v12z\" fill=\"currentColor\"/>",
+	"width": 24,
+	"height": 24
+};
+exports.__esModule = true;
+exports.default = data;
+
+
+/***/ }),
+
+/***/ "./node_modules/@iconify/icons-mdi/skip-previous.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@iconify/icons-mdi/skip-previous.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+var data = {
+	"body": "<path d=\"M6 18V6h2v12H6m3.5-6L18 6v12l-8.5-6z\" fill=\"currentColor\"/>",
+	"width": 24,
+	"height": 24
+};
+exports.__esModule = true;
+exports.default = data;
+
+
+/***/ }),
+
+/***/ "./node_modules/@iconify/icons-mdi/volume-high.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@iconify/icons-mdi/volume-high.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+var data = {
+	"body": "<path d=\"M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.84-5 6.7v2.07c4-.91 7-4.49 7-8.77c0-4.28-3-7.86-7-8.77M16.5 12c0-1.77-1-3.29-2.5-4.03V16c1.5-.71 2.5-2.24 2.5-4M3 9v6h4l5 5V4L7 9H3z\" fill=\"currentColor\"/>",
+	"width": 24,
+	"height": 24
+};
+exports.__esModule = true;
+exports.default = data;
+
+
+/***/ }),
+
+/***/ "./node_modules/@iconify/icons-mdi/volume-mute.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@iconify/icons-mdi/volume-mute.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+var data = {
+	"body": "<path d=\"M3 9h4l5-5v16l-5-5H3V9m13.59 3L14 9.41L15.41 8L18 10.59L20.59 8L22 9.41L19.41 12L22 14.59L20.59 16L18 13.41L15.41 16L14 14.59L16.59 12z\" fill=\"currentColor\"/>",
+	"width": 24,
+	"height": 24
+};
+exports.__esModule = true;
+exports.default = data;
+
+
+/***/ }),
+
+/***/ "./node_modules/@iconify/react/dist/icon.js":
+/*!**************************************************!*\
+  !*** ./node_modules/@iconify/react/dist/icon.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.default = exports.InlineIcon = exports.Icon = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+/**
+ * Unique id counter
+ *
+ * @type {number}
+ */
+var idCounter = 0;
+/**
+ * Regex used to split dimensions
+ *
+ * @type {RegExp}
+ * @private
+ */
+
+var unitsSplit = /(-?[0-9.]*[0-9]+[0-9.]*)/g;
+var unitsTest = /^-?[0-9.]*[0-9]+[0-9.]*$/g;
+/**
+ * Attributes used for icon
+ *
+ * @type {string[]}
+ */
+
+var iconAttributes = ['width', 'height', 'inline', 'hFlip', 'vFlip', 'flip', 'rotate', 'align', 'color', 'box'];
+/**
+ * Default attribute values
+ *
+ * @type {object}
+ */
+
+var defaultAttributes = {
+  left: 0,
+  top: 0,
+  width: 16,
+  height: 16,
+  rotate: 0,
+  hFlip: false,
+  vFlip: false
+};
+/**
+ * Add missing properties to icon
+ *
+ * Important: in PHP version of this library this function is part of Collection class: Collection::addMissingAttributes()
+ *
+ * JavaScript version uses separate file so this function could be used in React and other components without loading
+ * entire Collection class.
+ *
+ * @param {object} data
+ * @return {object}
+ */
+
+function normalize(data) {
+  // Object.create, compatible with IE11
+  var item = Object.create(null);
+  var key;
+
+  for (key in defaultAttributes) {
+    item[key] = defaultAttributes[key];
+  }
+
+  for (key in data) {
+    item[key] = data[key];
+  } // Attributes derived from other attributes
+
+
+  if (item.inlineTop === void 0) {
+    item.inlineTop = item.top;
+  }
+
+  if (item.inlineHeight === void 0) {
+    item.inlineHeight = item.height;
+  }
+
+  if (item.verticalAlign === void 0) {
+    // -0.143 if icon is designed for 14px height,
+    // otherwise assume icon is designed for 16px height
+    item.verticalAlign = item.height % 7 === 0 && item.height % 8 !== 0 ? -0.143 : -0.125;
+  }
+
+  return item;
+}
+/**
+ * Get preserveAspectRatio attribute value
+ *
+ * @param {object} align
+ * @return {string}
+ * @private
+ */
+
+
+function getAlignment(align) {
+  var result;
+
+  switch (align.horizontal) {
+    case 'left':
+      result = 'xMin';
+      break;
+
+    case 'right':
+      result = 'xMax';
+      break;
+
+    default:
+      result = 'xMid';
+  }
+
+  switch (align.vertical) {
+    case 'top':
+      result += 'YMin';
+      break;
+
+    case 'bottom':
+      result += 'YMax';
+      break;
+
+    default:
+      result += 'YMid';
+  }
+
+  result += align.slice ? ' slice' : ' meet';
+  return result;
+}
+/**
+ * SVG class
+ *
+ * @see @iconify/json-tools/src/svg.js
+ */
+
+
+var SVG = /*#__PURE__*/function () {
+  /**
+   * Constructor
+   *
+   * @param icon Icon data
+   *  Use Collection.getIconData() to retrieve icon data
+   */
+  function SVG(icon) {
+    _classCallCheck(this, SVG);
+
+    this._item = icon;
+  }
+  /**
+   * Get SVG attributes
+   *
+   * @param {object} props Custom properties (same as query string in Iconify API)
+   * @returns {string}
+   */
+
+
+  _createClass(SVG, [{
+    key: "getAttributes",
+    value: function getAttributes(props) {
+      var item = this._item;
+
+      if (_typeof(props) !== 'object') {
+        props = Object.create(null);
+      } // Set data
+
+
+      var align = {
+        horizontal: 'center',
+        vertical: 'middle',
+        slice: false
+      };
+      var transform = {
+        rotate: item.rotate,
+        hFlip: item.hFlip,
+        vFlip: item.vFlip
+      };
+      var style = Object.create(null);
+      var attributes = Object.create(null); // Get width/height
+
+      var inline = props.inline === true || props.inline === 'true' || props.inline === '1';
+      var box = {
+        left: item.left,
+        top: inline ? item.inlineTop : item.top,
+        width: item.width,
+        height: inline ? item.inlineHeight : item.height
+      }; // Transformations
+
+      ['hFlip', 'vFlip'].forEach(function (key) {
+        if (props[key] !== void 0 && (props[key] === true || props[key] === 'true' || props[key] === '1')) {
+          transform[key] = !transform[key];
+        }
+      });
+
+      if (props.flip !== void 0) {
+        props.flip.toLowerCase().split(/[\s,]+/).forEach(function (value) {
+          switch (value) {
+            case 'horizontal':
+              transform.hFlip = !transform.hFlip;
+              break;
+
+            case 'vertical':
+              transform.vFlip = !transform.vFlip;
+          }
+        });
+      }
+
+      if (props.rotate !== void 0) {
+        var value = props.rotate;
+
+        if (typeof value === 'number') {
+          transform.rotate += value;
+        } else if (typeof value === 'string') {
+          var units = value.replace(/^-?[0-9.]*/, '');
+
+          if (units === '') {
+            value = parseInt(value);
+
+            if (!isNaN(value)) {
+              transform.rotate += value;
+            }
+          } else if (units !== value) {
+            var split = false;
+
+            switch (units) {
+              case '%':
+                // 25% -> 1, 50% -> 2, ...
+                split = 25;
+                break;
+
+              case 'deg':
+                // 90deg -> 1, 180deg -> 2, ...
+                split = 90;
+            }
+
+            if (split) {
+              value = parseInt(value.slice(0, value.length - units.length));
+
+              if (!isNaN(value)) {
+                transform.rotate += Math.round(value / split);
+              }
+            }
+          }
+        }
+      } // Apply transformations to box
+
+
+      var transformations = [],
+          tempValue;
+
+      if (transform.hFlip) {
+        if (transform.vFlip) {
+          transform.rotate += 2;
+        } else {
+          // Horizontal flip
+          transformations.push('translate(' + (box.width + box.left) + ' ' + (0 - box.top) + ')');
+          transformations.push('scale(-1 1)');
+          box.top = box.left = 0;
+        }
+      } else if (transform.vFlip) {
+        // Vertical flip
+        transformations.push('translate(' + (0 - box.left) + ' ' + (box.height + box.top) + ')');
+        transformations.push('scale(1 -1)');
+        box.top = box.left = 0;
+      }
+
+      switch (transform.rotate % 4) {
+        case 1:
+          // 90deg
+          tempValue = box.height / 2 + box.top;
+          transformations.unshift('rotate(90 ' + tempValue + ' ' + tempValue + ')'); // swap width/height and x/y
+
+          if (box.left !== 0 || box.top !== 0) {
+            tempValue = box.left;
+            box.left = box.top;
+            box.top = tempValue;
+          }
+
+          if (box.width !== box.height) {
+            tempValue = box.width;
+            box.width = box.height;
+            box.height = tempValue;
+          }
+
+          break;
+
+        case 2:
+          // 180deg
+          transformations.unshift('rotate(180 ' + (box.width / 2 + box.left) + ' ' + (box.height / 2 + box.top) + ')');
+          break;
+
+        case 3:
+          // 270deg
+          tempValue = box.width / 2 + box.left;
+          transformations.unshift('rotate(-90 ' + tempValue + ' ' + tempValue + ')'); // swap width/height and x/y
+
+          if (box.left !== 0 || box.top !== 0) {
+            tempValue = box.left;
+            box.left = box.top;
+            box.top = tempValue;
+          }
+
+          if (box.width !== box.height) {
+            tempValue = box.width;
+            box.width = box.height;
+            box.height = tempValue;
+          }
+
+          break;
+      } // Calculate dimensions
+      // Values for width/height: null = default, 'auto' = from svg, false = do not set
+      // Default: if both values aren't set, height defaults to '1em', width is calculated from height
+
+
+      var customWidth = props.width ? props.width : null;
+      var customHeight = props.height ? props.height : null;
+      var width, height;
+
+      if (customWidth === null && customHeight === null) {
+        customHeight = '1em';
+      }
+
+      if (customWidth !== null && customHeight !== null) {
+        width = customWidth;
+        height = customHeight;
+      } else if (customWidth !== null) {
+        width = customWidth;
+        height = SVG.calculateDimension(width, box.height / box.width);
+      } else {
+        height = customHeight;
+        width = SVG.calculateDimension(height, box.width / box.height);
+      }
+
+      if (width !== false) {
+        attributes.width = width === 'auto' ? box.width : width;
+      }
+
+      if (height !== false) {
+        attributes.height = height === 'auto' ? box.height : height;
+      } // Add vertical-align for inline icon
+
+
+      if (inline && item.verticalAlign !== 0) {
+        style['vertical-align'] = item.verticalAlign + 'em';
+      } // Check custom alignment
+
+
+      if (props.align !== void 0) {
+        props.align.toLowerCase().split(/[\s,]+/).forEach(function (value) {
+          switch (value) {
+            case 'left':
+            case 'right':
+            case 'center':
+              align.horizontal = value;
+              break;
+
+            case 'top':
+            case 'bottom':
+            case 'middle':
+              align.vertical = value;
+              break;
+
+            case 'crop':
+              align.slice = true;
+              break;
+
+            case 'meet':
+              align.slice = false;
+          }
+        });
+      } // Generate viewBox and preserveAspectRatio attributes
+
+
+      attributes.preserveAspectRatio = getAlignment(align);
+      attributes.viewBox = box.left + ' ' + box.top + ' ' + box.width + ' ' + box.height; // Generate body
+
+      var body = SVG.replaceIDs(item.body);
+
+      if (props.color !== void 0) {
+        body = body.replace(/currentColor/g, props.color);
+      }
+
+      if (transformations.length) {
+        body = '<g transform="' + transformations.join(' ') + '">' + body + '</g>';
+      }
+
+      if (props.box === true || props.box === 'true' || props.box === '1') {
+        // Add transparent bounding box
+        body += '<rect x="' + box.left + '" y="' + box.top + '" width="' + box.width + '" height="' + box.height + '" fill="rgba(0, 0, 0, 0)" />';
+      }
+
+      return {
+        attributes: attributes,
+        body: body,
+        style: style
+      };
+    }
+    /**
+     * Generate SVG
+     *
+     * @param {object} props Custom properties (same as query string in Iconify API)
+     * @param {boolean} [addExtra] True if extra attributes should be added to SVG.
+     *  Due to lack of functions in JavaScript for escaping attributes, it is your job to make sure key and value are both properly escaped. Default value is false.
+     * @returns {string}
+     */
+
+  }, {
+    key: "getSVG",
+    value: function getSVG(props, addExtra) {
+      var attributes = SVG.splitAttributes(props),
+          data = this.getAttributes(attributes.icon);
+      var svg = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"'; // Add extra attributes - assume that their names and values are escaped
+
+      if (addExtra) {
+        Object.keys(attributes.node).forEach(function (attr) {
+          svg += ' ' + attr + '="' + attributes.node[attr] + '"';
+        });
+      } // Add SVG attributes
+
+
+      Object.keys(data.attributes).forEach(function (attr) {
+        svg += ' ' + attr + '="' + data.attributes[attr] + '"';
+      }); // Add style with 360deg transformation to style to prevent subpixel rendering bug
+
+      svg += ' style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);';
+      Object.keys(data.style).forEach(function (attr) {
+        svg += ' ' + attr + ': ' + data.style[attr] + ';';
+      });
+
+      if (props && props.style !== void 0) {
+        svg += props.style;
+      }
+
+      svg += '">';
+      svg += data.body + '</svg>';
+      return svg;
+    }
+    /**
+     * Split attributes
+     *
+     * @param props
+     * @return {{icon: {}, node: {}}}
+     */
+
+  }], [{
+    key: "splitAttributes",
+    value: function splitAttributes(props) {
+      var result = {
+        icon: Object.create(null),
+        node: Object.create(null)
+      };
+      Object.keys(props).forEach(function (name) {
+        result[iconAttributes.indexOf(name) === -1 ? 'node' : 'icon'][name] = props[name];
+      });
+      return result;
+    }
+    /**
+     * Calculate second dimension when only 1 dimension is set
+     *
+     * @param {string|number} size One dimension (such as width)
+     * @param {number} ratio Width/height ratio.
+     *      If size == width, ratio = height/width
+     *      If size == height, ratio = width/height
+     * @param {number} [precision] Floating number precision in result to minimize output. Default = 100
+     * @return {string|number|null} Another dimension, null on error
+     */
+
+  }, {
+    key: "calculateDimension",
+    value: function calculateDimension(size, ratio, precision) {
+      if (ratio === 1) {
+        return size;
+      }
+
+      precision = precision === void 0 ? 100 : precision;
+
+      if (typeof size === 'number') {
+        return Math.ceil(size * ratio * precision) / precision;
+      } // split code into sets of strings and numbers
+
+
+      var split = size.split(unitsSplit);
+
+      if (split === null || !split.length) {
+        return null;
+      }
+
+      var results = [],
+          code = split.shift(),
+          isNumber = unitsTest.test(code),
+          num;
+
+      while (true) {
+        if (isNumber) {
+          num = parseFloat(code);
+
+          if (isNaN(num)) {
+            results.push(code);
+          } else {
+            results.push(Math.ceil(num * ratio * precision) / precision);
+          }
+        } else {
+          results.push(code);
+        } // next
+
+
+        code = split.shift();
+
+        if (code === void 0) {
+          return results.join('');
+        }
+
+        isNumber = !isNumber;
+      }
+    }
+    /**
+     * Replace IDs in SVG output with unique IDs
+     * Fast replacement without parsing XML, assuming commonly used patterns.
+     *
+     * @param {string} body
+     * @return {string}
+     */
+
+  }, {
+    key: "replaceIDs",
+    value: function replaceIDs(body) {
+      var regex = /\sid="(\S+)"/g,
+          ids = [],
+          match,
+          prefix;
+
+      function strReplace(search, replace, subject) {
+        var pos = 0;
+
+        while ((pos = subject.indexOf(search, pos)) !== -1) {
+          subject = subject.slice(0, pos) + replace + subject.slice(pos + search.length);
+          pos += replace.length;
+        }
+
+        return subject;
+      } // Find all IDs
+
+
+      while (match = regex.exec(body)) {
+        ids.push(match[1]);
+      }
+
+      if (!ids.length) {
+        return body;
+      }
+
+      prefix = 'IconifyId-' + Date.now().toString(16) + '-' + (Math.random() * 0x1000000 | 0).toString(16) + '-'; // Replace with unique ids
+
+      ids.forEach(function (id) {
+        var newID = prefix + idCounter;
+        idCounter++;
+        body = strReplace('="' + id + '"', '="' + newID + '"', body);
+        body = strReplace('="#' + id + '"', '="#' + newID + '"', body);
+        body = strReplace('(#' + id + ')', '(#' + newID + ')', body);
+      });
+      return body;
+    }
+  }]);
+
+  return SVG;
+}();
+/**
+ * Create React component with SVG data
+ *
+ * @param {object} props
+ * @param {boolean} inline
+ * @return {null|React.Component}
+ */
+
+
+function component(props, inline) {
+  if (_typeof(props.icon) !== 'object') {
+    return null;
+  } // Split properties into SVG properties and icon properties
+
+
+  var split = SVG.splitAttributes(props),
+      iconProps = split.icon,
+      customAttributes = split.node;
+  delete customAttributes.icon; // Set default inline value
+
+  if (iconProps.inline === void 0) {
+    iconProps.inline = inline;
+  } // Get SVG data
+
+
+  var svg = new SVG(normalize(props.icon));
+  var iconData = svg.getAttributes(iconProps); // Set style
+
+  var style = {
+    transform: 'rotate(360deg)'
+  };
+
+  if (iconData.style['vertical-align'] !== void 0) {
+    style.verticalAlign = iconData.style['vertical-align'];
+  }
+
+  if (props.style !== void 0) {
+    for (var _key in props.style) {
+      style[_key] = props.style[_key];
+    }
+  } // Generate element attributes
+
+
+  var attributes = {
+    xmlns: 'http://www.w3.org/2000/svg',
+    focusable: false,
+    style: style
+  };
+  var key;
+
+  for (key in customAttributes) {
+    attributes[key] = customAttributes[key];
+  }
+
+  for (key in iconData.attributes) {
+    attributes[key] = iconData.attributes[key];
+  }
+
+  attributes.dangerouslySetInnerHTML = {
+    __html: iconData.body
+  }; // Generate SVG
+
+  return _react["default"].createElement('svg', attributes, null);
+}
+/**
+ * Icon without vertical alignment
+ *
+ * @param {object} props
+ * @return {React.Component}
+ * @constructor
+ */
+
+
+var Icon = function Icon(props) {
+  return component(props, false);
+};
+/**
+ * Icon with vertical alignment
+ *
+ * @param {object} props
+ * @return {React.Component}
+ * @constructor
+ */
+
+
+exports.Icon = Icon;
+
+var InlineIcon = function InlineIcon(props) {
+  return component(props, true);
+};
+/**
+ * Default export
+ */
+
+
+exports.InlineIcon = InlineIcon;
+var _default = Icon;
+exports.default = _default;
+
+/***/ }),
+
 /***/ "./frontend/actions/modal_actions.js":
 /*!*******************************************!*\
   !*** ./frontend/actions/modal_actions.js ***!
@@ -10323,12 +11197,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.js");
 /* harmony import */ var _header_header_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./header/header_container */ "./frontend/components/header/header_container.jsx");
 /* harmony import */ var _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./session_form/login_form_container */ "./frontend/components/session_form/login_form_container.jsx");
 /* harmony import */ var _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./session_form/signup_form_container */ "./frontend/components/session_form/signup_form_container.jsx");
 /* harmony import */ var _tracks_track_index_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tracks/track_index_container */ "./frontend/components/tracks/track_index_container.jsx");
+/* harmony import */ var _tracks_track_show_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./tracks/track_show_container */ "./frontend/components/tracks/track_show_container.jsx");
+/* harmony import */ var _playhead_playhead__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./playhead/playhead */ "./frontend/components/playhead/playhead.jsx");
+
+
 
 
 
@@ -10339,7 +11217,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Switch, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_2__.AuthRoute, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Switch, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+    exact: true,
+    path: "/discover",
+    component: _tracks_track_index_container__WEBPACK_IMPORTED_MODULE_6__.default
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_2__.AuthRoute, {
     exact: true,
     path: "/login",
     component: _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_4__.default
@@ -10347,15 +11229,15 @@ var App = function App() {
     exact: true,
     path: "/signup",
     component: _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_5__.default
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
-    exact: true,
-    path: "/discover",
-    component: _tracks_track_index_container__WEBPACK_IMPORTED_MODULE_6__.default
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
     exact: true,
     path: "/",
     component: _tracks_track_index_container__WEBPACK_IMPORTED_MODULE_6__.default
-  })));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+    exact: true,
+    path: "/tracks/:trackId",
+    component: _tracks_track_show_container__WEBPACK_IMPORTED_MODULE_7__.default
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_playhead_playhead__WEBPACK_IMPORTED_MODULE_8__.default, null));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
@@ -10554,7 +11436,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
 
       var personalSpace = function personalSpace() {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("nav", {
-          className: "nav-header-personal"
+          className: "nav-header"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "left-nav-header"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
@@ -10645,6 +11527,31 @@ var mDTP = function mDTP(dispatch) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_0__.connect)(mSTP, mDTP)(_header__WEBPACK_IMPORTED_MODULE_3__.default));
+
+/***/ }),
+
+/***/ "./frontend/components/playhead/playhead.jsx":
+/*!***************************************************!*\
+  !*** ./frontend/components/playhead/playhead.jsx ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_h5_audio_player__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-h5-audio-player */ "./node_modules/react-h5-audio-player/es/index.js");
+
+
+
+var Playhead = function Playhead(props) {
+  console.log(props);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null);
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Playhead);
 
 /***/ }),
 
@@ -11064,15 +11971,23 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var TrackIndex = /*#__PURE__*/function (_React$Component) {
   _inherits(TrackIndex, _React$Component);
 
   var _super = _createSuper(TrackIndex);
 
   function TrackIndex(props) {
+    var _this;
+
     _classCallCheck(this, TrackIndex);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    _this.state = {
+      displayPlayhead: false
+    };
+    console.log(props);
+    return _this;
   }
 
   _createClass(TrackIndex, [{
@@ -11081,17 +11996,26 @@ var TrackIndex = /*#__PURE__*/function (_React$Component) {
       this.props.fetchTracks();
     }
   }, {
+    key: "handleOnclick",
+    value: function handleOnclick(e) {
+      e.preventDefault();
+      this.setState({
+        displayPlayhead: true
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var tracks = this.props.tracks;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
-        className: "track-index"
+        className: "track-index",
+        onClick: this.handleOnClick
       }, tracks.map(function (track, idx) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_track_index_item__WEBPACK_IMPORTED_MODULE_1__.default, {
           track: track,
           key: idx
         });
-      })));
+      }), this.state.displayPlayhead ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Playhead, null) : null));
     }
   }]);
 
@@ -11159,6 +12083,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_h5_audio_player__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-h5-audio-player */ "./node_modules/react-h5-audio-player/es/index.js");
+
 
 
 var TrackIndexItem = function TrackIndexItem(props) {
@@ -11170,10 +12096,135 @@ var TrackIndexItem = function TrackIndexItem(props) {
     src: props.track.photoUrl
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
     className: "track-title"
-  }, props.track.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null));
+  }, props.track.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("audio", {
+    src: props.track.audioUrl
+  }, "EXAMPLE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TrackIndexItem);
+
+/***/ }),
+
+/***/ "./frontend/components/tracks/track_show.jsx":
+/*!***************************************************!*\
+  !*** ./frontend/components/tracks/track_show.jsx ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+var TrackShow = /*#__PURE__*/function (_React$Component) {
+  _inherits(TrackShow, _React$Component);
+
+  var _super = _createSuper(TrackShow);
+
+  function TrackShow(props) {
+    _classCallCheck(this, TrackShow);
+
+    return _super.call(this, props);
+  }
+
+  _createClass(TrackShow, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchTrack(this.props.trackId);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          track = _this$props.track,
+          currentUser = _this$props.currentUser;
+
+      if (track === undefined) {
+        return null;
+      } else if (currentUser) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "playhead"
+        }, "hello"));
+      }
+    }
+  }]);
+
+  return TrackShow;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TrackShow);
+
+/***/ }),
+
+/***/ "./frontend/components/tracks/track_show_container.jsx":
+/*!*************************************************************!*\
+  !*** ./frontend/components/tracks/track_show_container.jsx ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_track_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/track_actions */ "./frontend/actions/track_actions.js");
+/* harmony import */ var _track_show__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./track_show */ "./frontend/components/tracks/track_show.jsx");
+
+
+
+
+var mSTP = function mSTP(state, ownProps) {
+  var trackLoaded = function trackLoaded() {
+    if (state.entities.tracks[ownProps.match.params.trackId]) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  return {
+    currentUser: state.entities.users[state.session.id],
+    trackId: ownProps.match.params.trackId,
+    track: state.entities.tracks[ownProps.match.params.trackId],
+    trackUrl: trackLoaded() ? state.entities.tracks[ownProps.match.params.trackId].trackUrl : ''
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {
+    fetchTrack: function fetchTrack(trackId) {
+      return dispatch((0,_actions_track_actions__WEBPACK_IMPORTED_MODULE_1__.fetchTrack)(trackId));
+    }
+  };
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_0__.connect)(mSTP, mDTP)(_track_show__WEBPACK_IMPORTED_MODULE_2__.default));
 
 /***/ }),
 
@@ -41217,6 +42268,1552 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   };
   exports.default = ReactSwipe;
 });
+
+/***/ }),
+
+/***/ "./node_modules/react-h5-audio-player/es/CurrentTime.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/react-h5-audio-player/es/CurrentTime.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/inheritsLoose */ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils */ "./node_modules/react-h5-audio-player/es/utils.js");
+
+
+
+
+
+
+var CurrentTime = function (_PureComponent) {
+  (0,_babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__.default)(CurrentTime, _PureComponent);
+
+  function CurrentTime(props) {
+    var _this;
+
+    _this = _PureComponent.call(this, props) || this;
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "audio", void 0);
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "hasAddedAudioEventListener", false);
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "state", {
+      currentTime: _this.props.defaultCurrentTime
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "handleAudioCurrentTimeChange", function (e) {
+      var audio = e.target;
+      var _this$props = _this.props,
+          isLeftTime = _this$props.isLeftTime,
+          timeFormat = _this$props.timeFormat,
+          defaultCurrentTime = _this$props.defaultCurrentTime;
+
+      _this.setState({
+        currentTime: (0,_utils__WEBPACK_IMPORTED_MODULE_4__.getDisplayTimeBySeconds)(isLeftTime ? audio.duration - audio.currentTime : audio.currentTime, audio.duration, timeFormat) || defaultCurrentTime
+      });
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "addAudioEventListeners", function () {
+      var audio = _this.props.audio;
+
+      if (audio && !_this.hasAddedAudioEventListener) {
+        _this.audio = audio;
+        _this.hasAddedAudioEventListener = true;
+        audio.addEventListener('timeupdate', _this.handleAudioCurrentTimeChange);
+        audio.addEventListener('loadedmetadata', _this.handleAudioCurrentTimeChange);
+      }
+    });
+
+    var _audio = props.audio,
+        _defaultCurrentTime = props.defaultCurrentTime,
+        _isLeftTime = props.isLeftTime,
+        _timeFormat = props.timeFormat;
+    var currentTime = _defaultCurrentTime;
+
+    if (_audio) {
+      currentTime = (0,_utils__WEBPACK_IMPORTED_MODULE_4__.getDisplayTimeBySeconds)(_isLeftTime ? _audio.duration - _audio.currentTime : _audio.currentTime, _audio.duration, _timeFormat);
+    }
+
+    _this.state = {
+      currentTime: currentTime
+    };
+    return _this;
+  }
+
+  var _proto = CurrentTime.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    this.addAudioEventListeners();
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate() {
+    this.addAudioEventListeners();
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.audio && this.hasAddedAudioEventListener) {
+      this.audio.removeEventListener('timeupdate', this.handleAudioCurrentTimeChange);
+      this.audio.removeEventListener('loadedmetadata', this.handleAudioCurrentTimeChange);
+    }
+  };
+
+  _proto.render = function render() {
+    return this.state.currentTime;
+  };
+
+  return CurrentTime;
+}(react__WEBPACK_IMPORTED_MODULE_3__.PureComponent);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CurrentTime);
+
+/***/ }),
+
+/***/ "./node_modules/react-h5-audio-player/es/Duration.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/react-h5-audio-player/es/Duration.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/inheritsLoose */ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils */ "./node_modules/react-h5-audio-player/es/utils.js");
+
+
+
+
+
+
+var Duration = function (_PureComponent) {
+  (0,_babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__.default)(Duration, _PureComponent);
+
+  function Duration(props) {
+    var _this;
+
+    _this = _PureComponent.call(this, props) || this;
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "audio", void 0);
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "hasAddedAudioEventListener", false);
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "state", {
+      duration: _this.props.audio ? (0,_utils__WEBPACK_IMPORTED_MODULE_4__.getDisplayTimeBySeconds)(_this.props.audio.duration, _this.props.audio.duration, _this.props.timeFormat) : _this.props.defaultDuration
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "handleAudioDurationChange", function (e) {
+      var audio = e.target;
+      var _this$props = _this.props,
+          timeFormat = _this$props.timeFormat,
+          defaultDuration = _this$props.defaultDuration;
+
+      _this.setState({
+        duration: (0,_utils__WEBPACK_IMPORTED_MODULE_4__.getDisplayTimeBySeconds)(audio.duration, audio.duration, timeFormat) || defaultDuration
+      });
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "addAudioEventListeners", function () {
+      var audio = _this.props.audio;
+
+      if (audio && !_this.hasAddedAudioEventListener) {
+        _this.audio = audio;
+        _this.hasAddedAudioEventListener = true;
+        audio.addEventListener('durationchange', _this.handleAudioDurationChange);
+        audio.addEventListener('abort', _this.handleAudioDurationChange);
+      }
+    });
+
+    var _audio = props.audio,
+        _timeFormat = props.timeFormat,
+        _defaultDuration = props.defaultDuration;
+    _this.state = {
+      duration: _audio ? (0,_utils__WEBPACK_IMPORTED_MODULE_4__.getDisplayTimeBySeconds)(_audio.duration, _audio.duration, _timeFormat) : _defaultDuration
+    };
+    return _this;
+  }
+
+  var _proto = Duration.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    this.addAudioEventListeners();
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate() {
+    this.addAudioEventListeners();
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.audio && this.hasAddedAudioEventListener) {
+      this.audio.removeEventListener('durationchange', this.handleAudioDurationChange);
+      this.audio.removeEventListener('abort', this.handleAudioDurationChange);
+    }
+  };
+
+  _proto.render = function render() {
+    return this.state.duration;
+  };
+
+  return Duration;
+}(react__WEBPACK_IMPORTED_MODULE_3__.PureComponent);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Duration);
+
+/***/ }),
+
+/***/ "./node_modules/react-h5-audio-player/es/ProgressBar.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/react-h5-audio-player/es/ProgressBar.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "ProgressBar": () => (/* binding */ ProgressBar),
+/* harmony export */   "ProgressBarForwardRef": () => (/* binding */ ProgressBarForwardRef)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/inheritsLoose */ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils */ "./node_modules/react-h5-audio-player/es/utils.js");
+
+
+
+
+
+
+
+var ProgressBar = function (_Component) {
+  (0,_babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_2__.default)(ProgressBar, _Component);
+
+  function ProgressBar() {
+    var _this;
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1__.default)(_this), "audio", void 0);
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1__.default)(_this), "timeOnMouseMove", 0);
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1__.default)(_this), "hasAddedAudioEventListener", false);
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1__.default)(_this), "downloadProgressAnimationTimer", void 0);
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1__.default)(_this), "state", {
+      isDraggingProgress: false,
+      currentTimePos: '0%',
+      hasDownloadProgressAnimation: false,
+      downloadProgressArr: [],
+      waitingForSeekCallback: false
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1__.default)(_this), "getCurrentProgress", function (event) {
+      var _this$props = _this.props,
+          audio = _this$props.audio,
+          progressBar = _this$props.progressBar;
+      var isSingleFileProgressiveDownload = audio.src.indexOf('blob:') !== 0 && typeof _this.props.srcDuration === 'undefined';
+
+      if (isSingleFileProgressiveDownload && (!audio.src || !isFinite(audio.currentTime) || !progressBar.current)) {
+        return {
+          currentTime: 0,
+          currentTimePos: '0%'
+        };
+      }
+
+      var progressBarRect = progressBar.current.getBoundingClientRect();
+      var maxRelativePos = progressBarRect.width;
+      var relativePos = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.getPosX)(event) - progressBarRect.left;
+
+      if (relativePos < 0) {
+        relativePos = 0;
+      } else if (relativePos > maxRelativePos) {
+        relativePos = maxRelativePos;
+      }
+
+      var duration = _this.getDuration();
+
+      var currentTime = duration * relativePos / maxRelativePos;
+      return {
+        currentTime: currentTime,
+        currentTimePos: (relativePos / maxRelativePos * 100).toFixed(2) + "%"
+      };
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1__.default)(_this), "handleContextMenu", function (event) {
+      event.preventDefault();
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1__.default)(_this), "handleMouseDownOrTouchStartProgressBar", function (event) {
+      event.stopPropagation();
+
+      var _this$getCurrentProgr = _this.getCurrentProgress(event.nativeEvent),
+          currentTime = _this$getCurrentProgr.currentTime,
+          currentTimePos = _this$getCurrentProgr.currentTimePos;
+
+      if (isFinite(currentTime)) {
+        _this.timeOnMouseMove = currentTime;
+
+        _this.setState({
+          isDraggingProgress: true,
+          currentTimePos: currentTimePos
+        });
+
+        if (event.nativeEvent instanceof MouseEvent) {
+          window.addEventListener('mousemove', _this.handleWindowMouseOrTouchMove);
+          window.addEventListener('mouseup', _this.handleWindowMouseOrTouchUp);
+        } else {
+          window.addEventListener('touchmove', _this.handleWindowMouseOrTouchMove);
+          window.addEventListener('touchend', _this.handleWindowMouseOrTouchUp);
+        }
+      }
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1__.default)(_this), "handleWindowMouseOrTouchMove", function (event) {
+      if (event instanceof MouseEvent) {
+        event.preventDefault();
+      }
+
+      event.stopPropagation();
+      var windowSelection = window.getSelection();
+
+      if (windowSelection && windowSelection.type === 'Range') {
+        windowSelection.empty();
+      }
+
+      var isDraggingProgress = _this.state.isDraggingProgress;
+
+      if (isDraggingProgress) {
+        var _this$getCurrentProgr2 = _this.getCurrentProgress(event),
+            currentTime = _this$getCurrentProgr2.currentTime,
+            currentTimePos = _this$getCurrentProgr2.currentTimePos;
+
+        _this.timeOnMouseMove = currentTime;
+
+        _this.setState({
+          currentTimePos: currentTimePos
+        });
+      }
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1__.default)(_this), "handleWindowMouseOrTouchUp", function (event) {
+      event.stopPropagation();
+      var newTime = _this.timeOnMouseMove;
+      var _this$props2 = _this.props,
+          audio = _this$props2.audio,
+          onChangeCurrentTimeError = _this$props2.onChangeCurrentTimeError,
+          onSeek = _this$props2.onSeek;
+
+      if (onSeek) {
+        _this.setState({
+          isDraggingProgress: false,
+          waitingForSeekCallback: true
+        }, function () {
+          onSeek(audio, newTime).then(function () {
+            return _this.setState({
+              waitingForSeekCallback: false
+            });
+          }, function (err) {
+            throw new Error(err);
+          });
+        });
+      } else {
+        var newProps = {
+          isDraggingProgress: false
+        };
+
+        if (audio.readyState === audio.HAVE_NOTHING || audio.readyState === audio.HAVE_METADATA || !isFinite(newTime)) {
+          newProps.currentTimePos = '0%';
+          onChangeCurrentTimeError && onChangeCurrentTimeError();
+        } else {
+          audio.currentTime = newTime;
+        }
+
+        _this.setState(newProps);
+      }
+
+      if (event instanceof MouseEvent) {
+        window.removeEventListener('mousemove', _this.handleWindowMouseOrTouchMove);
+        window.removeEventListener('mouseup', _this.handleWindowMouseOrTouchUp);
+      } else {
+        window.removeEventListener('touchmove', _this.handleWindowMouseOrTouchMove);
+        window.removeEventListener('touchend', _this.handleWindowMouseOrTouchUp);
+      }
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1__.default)(_this), "handleAudioTimeUpdate", (0,_utils__WEBPACK_IMPORTED_MODULE_5__.throttle)(function (e) {
+      var isDraggingProgress = _this.state.isDraggingProgress;
+      var audio = e.target;
+      if (isDraggingProgress || _this.state.waitingForSeekCallback === true) return;
+      var currentTime = audio.currentTime;
+
+      var duration = _this.getDuration();
+
+      _this.setState({
+        currentTimePos: (currentTime / duration * 100 || 0).toFixed(2) + "%"
+      });
+    }, _this.props.progressUpdateInterval));
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1__.default)(_this), "handleAudioDownloadProgressUpdate", function (e) {
+      var audio = e.target;
+
+      var duration = _this.getDuration();
+
+      var downloadProgressArr = [];
+
+      for (var i = 0; i < audio.buffered.length; i++) {
+        var bufferedStart = audio.buffered.start(i);
+        var bufferedEnd = audio.buffered.end(i);
+        downloadProgressArr.push({
+          left: (Math.round(100 / duration * bufferedStart) || 0) + "%",
+          width: (Math.round(100 / duration * (bufferedEnd - bufferedStart)) || 0) + "%"
+        });
+      }
+
+      clearTimeout(_this.downloadProgressAnimationTimer);
+
+      _this.setState({
+        downloadProgressArr: downloadProgressArr,
+        hasDownloadProgressAnimation: true
+      });
+
+      _this.downloadProgressAnimationTimer = setTimeout(function () {
+        _this.setState({
+          hasDownloadProgressAnimation: false
+        });
+      }, 200);
+    });
+
+    return _this;
+  }
+
+  var _proto = ProgressBar.prototype;
+
+  _proto.getDuration = function getDuration() {
+    var _this$props3 = this.props,
+        audio = _this$props3.audio,
+        srcDuration = _this$props3.srcDuration;
+    return typeof srcDuration === 'undefined' ? audio.duration : srcDuration;
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate() {
+    var audio = this.props.audio;
+
+    if (audio && !this.hasAddedAudioEventListener) {
+      this.audio = audio;
+      this.hasAddedAudioEventListener = true;
+      audio.addEventListener('timeupdate', this.handleAudioTimeUpdate);
+      audio.addEventListener('progress', this.handleAudioDownloadProgressUpdate);
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.audio && this.hasAddedAudioEventListener) {
+      this.audio.removeEventListener('timeupdate', this.handleAudioTimeUpdate);
+      this.audio.removeEventListener('progress', this.handleAudioDownloadProgressUpdate);
+    }
+
+    clearTimeout(this.downloadProgressAnimationTimer);
+  };
+
+  _proto.render = function render() {
+    var _this$props4 = this.props,
+        showDownloadProgress = _this$props4.showDownloadProgress,
+        showFilledProgress = _this$props4.showFilledProgress,
+        progressBar = _this$props4.progressBar;
+    var _this$state = this.state,
+        currentTimePos = _this$state.currentTimePos,
+        downloadProgressArr = _this$state.downloadProgressArr,
+        hasDownloadProgressAnimation = _this$state.hasDownloadProgressAnimation;
+    return react__WEBPACK_IMPORTED_MODULE_4__.createElement("div", {
+      className: "rhap_progress-container",
+      ref: progressBar,
+      "aria-label": "Audio Progress Control",
+      role: "progressbar",
+      "aria-valuemin": 0,
+      "aria-valuemax": 100,
+      "aria-valuenow": Number(currentTimePos.split('%')[0]),
+      tabIndex: 0,
+      onMouseDown: this.handleMouseDownOrTouchStartProgressBar,
+      onTouchStart: this.handleMouseDownOrTouchStartProgressBar,
+      onContextMenu: this.handleContextMenu
+    }, react__WEBPACK_IMPORTED_MODULE_4__.createElement("div", {
+      className: "rhap_progress-bar " + (showDownloadProgress ? 'rhap_progress-bar-show-download' : '')
+    }, react__WEBPACK_IMPORTED_MODULE_4__.createElement("div", {
+      className: "rhap_progress-indicator",
+      style: {
+        left: currentTimePos
+      }
+    }), showFilledProgress && react__WEBPACK_IMPORTED_MODULE_4__.createElement("div", {
+      className: "rhap_progress-filled",
+      style: {
+        width: currentTimePos
+      }
+    }), showDownloadProgress && downloadProgressArr.map(function (_ref, i) {
+      var left = _ref.left,
+          width = _ref.width;
+      return react__WEBPACK_IMPORTED_MODULE_4__.createElement("div", {
+        key: i,
+        className: "rhap_download-progress",
+        style: {
+          left: left,
+          width: width,
+          transitionDuration: hasDownloadProgressAnimation ? '.2s' : '0s'
+        }
+      });
+    })));
+  };
+
+  return ProgressBar;
+}(react__WEBPACK_IMPORTED_MODULE_4__.Component);
+
+var ProgressBarForwardRef = function ProgressBarForwardRef(props, ref) {
+  return react__WEBPACK_IMPORTED_MODULE_4__.createElement(ProgressBar, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, props, {
+    progressBar: ref
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react__WEBPACK_IMPORTED_MODULE_4__.forwardRef)(ProgressBarForwardRef));
+
+
+/***/ }),
+
+/***/ "./node_modules/react-h5-audio-player/es/VolumeBar.js":
+/*!************************************************************!*\
+  !*** ./node_modules/react-h5-audio-player/es/VolumeBar.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/inheritsLoose */ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils */ "./node_modules/react-h5-audio-player/es/utils.js");
+
+
+
+
+
+
+var VolumeControls = function (_Component) {
+  (0,_babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__.default)(VolumeControls, _Component);
+
+  function VolumeControls() {
+    var _this;
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "audio", void 0);
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "hasAddedAudioEventListener", false);
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "volumeBar", (0,react__WEBPACK_IMPORTED_MODULE_3__.createRef)());
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "volumeAnimationTimer", 0);
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "lastVolume", _this.props.volume);
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "state", {
+      currentVolumePos: (_this.lastVolume / 1 * 100 || 0).toFixed(2) + "%",
+      hasVolumeAnimation: false,
+      isDraggingVolume: false
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "getCurrentVolume", function (event) {
+      var audio = _this.props.audio;
+
+      if (!_this.volumeBar.current) {
+        return {
+          currentVolume: audio.volume,
+          currentVolumePos: _this.state.currentVolumePos
+        };
+      }
+
+      var volumeBarRect = _this.volumeBar.current.getBoundingClientRect();
+
+      var maxRelativePos = volumeBarRect.width;
+      var relativePos = (0,_utils__WEBPACK_IMPORTED_MODULE_4__.getPosX)(event) - volumeBarRect.left;
+      var currentVolume;
+      var currentVolumePos;
+
+      if (relativePos < 0) {
+        currentVolume = 0;
+        currentVolumePos = '0%';
+      } else if (relativePos > volumeBarRect.width) {
+        currentVolume = 1;
+        currentVolumePos = '100%';
+      } else {
+        currentVolume = relativePos / maxRelativePos;
+        currentVolumePos = relativePos / maxRelativePos * 100 + "%";
+      }
+
+      return {
+        currentVolume: currentVolume,
+        currentVolumePos: currentVolumePos
+      };
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "handleContextMenu", function (event) {
+      event.preventDefault();
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "handleClickVolumeButton", function () {
+      var audio = _this.props.audio;
+
+      if (audio.volume > 0) {
+        _this.lastVolume = audio.volume;
+        audio.volume = 0;
+      } else {
+        audio.volume = _this.lastVolume;
+      }
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "handleVolumnControlMouseOrTouchDown", function (event) {
+      event.stopPropagation();
+      var audio = _this.props.audio;
+
+      var _this$getCurrentVolum = _this.getCurrentVolume(event.nativeEvent),
+          currentVolume = _this$getCurrentVolum.currentVolume,
+          currentVolumePos = _this$getCurrentVolum.currentVolumePos;
+
+      audio.volume = currentVolume;
+
+      _this.setState({
+        isDraggingVolume: true,
+        currentVolumePos: currentVolumePos
+      });
+
+      if (event.nativeEvent instanceof MouseEvent) {
+        window.addEventListener('mousemove', _this.handleWindowMouseOrTouchMove);
+        window.addEventListener('mouseup', _this.handleWindowMouseOrTouchUp);
+      } else {
+        window.addEventListener('touchmove', _this.handleWindowMouseOrTouchMove);
+        window.addEventListener('touchend', _this.handleWindowMouseOrTouchUp);
+      }
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "handleWindowMouseOrTouchMove", function (event) {
+      if (event instanceof MouseEvent) {
+        event.preventDefault();
+      }
+
+      event.stopPropagation();
+      var audio = _this.props.audio;
+      var windowSelection = window.getSelection();
+
+      if (windowSelection && windowSelection.type === 'Range') {
+        windowSelection.empty();
+      }
+
+      var isDraggingVolume = _this.state.isDraggingVolume;
+
+      if (isDraggingVolume) {
+        var _this$getCurrentVolum2 = _this.getCurrentVolume(event),
+            currentVolume = _this$getCurrentVolum2.currentVolume,
+            currentVolumePos = _this$getCurrentVolum2.currentVolumePos;
+
+        audio.volume = currentVolume;
+
+        _this.setState({
+          currentVolumePos: currentVolumePos
+        });
+      }
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "handleWindowMouseOrTouchUp", function (event) {
+      event.stopPropagation();
+
+      _this.setState({
+        isDraggingVolume: false
+      });
+
+      if (event instanceof MouseEvent) {
+        window.removeEventListener('mousemove', _this.handleWindowMouseOrTouchMove);
+        window.removeEventListener('mouseup', _this.handleWindowMouseOrTouchUp);
+      } else {
+        window.removeEventListener('touchmove', _this.handleWindowMouseOrTouchMove);
+        window.removeEventListener('touchend', _this.handleWindowMouseOrTouchUp);
+      }
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "handleAudioVolumeChange", function (e) {
+      var isDraggingVolume = _this.state.isDraggingVolume;
+      var _ref = e.target,
+          volume = _ref.volume;
+
+      if (_this.lastVolume > 0 && volume === 0 || _this.lastVolume === 0 && volume > 0) {
+        _this.props.onMuteChange();
+      }
+
+      _this.lastVolume = volume;
+      if (isDraggingVolume) return;
+
+      _this.setState({
+        hasVolumeAnimation: true,
+        currentVolumePos: (volume / 1 * 100 || 0).toFixed(2) + "%"
+      });
+
+      clearTimeout(_this.volumeAnimationTimer);
+      _this.volumeAnimationTimer = setTimeout(function () {
+        _this.setState({
+          hasVolumeAnimation: false
+        });
+      }, 100);
+    });
+
+    return _this;
+  }
+
+  var _proto = VolumeControls.prototype;
+
+  _proto.componentDidUpdate = function componentDidUpdate() {
+    var audio = this.props.audio;
+
+    if (audio && !this.hasAddedAudioEventListener) {
+      this.audio = audio;
+      this.hasAddedAudioEventListener = true;
+      audio.addEventListener('volumechange', this.handleAudioVolumeChange);
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (this.audio && this.hasAddedAudioEventListener) {
+      this.audio.removeEventListener('volumechange', this.handleAudioVolumeChange);
+    }
+
+    clearTimeout(this.volumeAnimationTimer);
+  };
+
+  _proto.render = function render() {
+    var _this$props = this.props,
+        audio = _this$props.audio,
+        showFilledVolume = _this$props.showFilledVolume;
+    var _this$state = this.state,
+        currentVolumePos = _this$state.currentVolumePos,
+        hasVolumeAnimation = _this$state.hasVolumeAnimation;
+
+    var _ref2 = audio || {},
+        volume = _ref2.volume;
+
+    return react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", {
+      ref: this.volumeBar,
+      onMouseDown: this.handleVolumnControlMouseOrTouchDown,
+      onTouchStart: this.handleVolumnControlMouseOrTouchDown,
+      onContextMenu: this.handleContextMenu,
+      role: "progressbar",
+      "aria-label": "volume Control",
+      "aria-valuemin": 0,
+      "aria-valuemax": 100,
+      "aria-valuenow": Number((volume * 100).toFixed(0)),
+      tabIndex: 0,
+      className: "rhap_volume-bar-area"
+    }, react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", {
+      className: "rhap_volume-bar"
+    }, react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", {
+      className: "rhap_volume-indicator",
+      style: {
+        left: currentVolumePos,
+        transitionDuration: hasVolumeAnimation ? '.1s' : '0s'
+      }
+    }), showFilledVolume && react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", {
+      className: "rhap_volume-filled",
+      style: {
+        width: currentVolumePos
+      }
+    })));
+  };
+
+  return VolumeControls;
+}(react__WEBPACK_IMPORTED_MODULE_3__.Component);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (VolumeControls);
+
+/***/ }),
+
+/***/ "./node_modules/react-h5-audio-player/es/constants.js":
+/*!************************************************************!*\
+  !*** ./node_modules/react-h5-audio-player/es/constants.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "RHAP_UI": () => (/* binding */ RHAP_UI)
+/* harmony export */ });
+var RHAP_UI;
+
+(function (RHAP_UI) {
+  RHAP_UI["CURRENT_TIME"] = "CURRENT_TIME";
+  RHAP_UI["CURRENT_LEFT_TIME"] = "CURRENT_LEFT_TIME";
+  RHAP_UI["PROGRESS_BAR"] = "PROGRESS_BAR";
+  RHAP_UI["DURATION"] = "DURATION";
+  RHAP_UI["ADDITIONAL_CONTROLS"] = "ADDITIONAL_CONTROLS";
+  RHAP_UI["MAIN_CONTROLS"] = "MAIN_CONTROLS";
+  RHAP_UI["VOLUME_CONTROLS"] = "VOLUME_CONTROLS";
+  RHAP_UI["LOOP"] = "LOOP";
+  RHAP_UI["VOLUME"] = "VOLUME";
+})(RHAP_UI || (RHAP_UI = {}));
+
+/***/ }),
+
+/***/ "./node_modules/react-h5-audio-player/es/index.js":
+/*!********************************************************!*\
+  !*** ./node_modules/react-h5-audio-player/es/index.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "RHAP_UI": () => (/* reexport safe */ _constants__WEBPACK_IMPORTED_MODULE_19__.RHAP_UI)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/inheritsLoose */ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _iconify_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @iconify/react */ "./node_modules/@iconify/react/dist/icon.js");
+/* harmony import */ var _iconify_icons_mdi_play_circle__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @iconify/icons-mdi/play-circle */ "./node_modules/@iconify/icons-mdi/play-circle.js");
+/* harmony import */ var _iconify_icons_mdi_pause_circle__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @iconify/icons-mdi/pause-circle */ "./node_modules/@iconify/icons-mdi/pause-circle.js");
+/* harmony import */ var _iconify_icons_mdi_skip_previous__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @iconify/icons-mdi/skip-previous */ "./node_modules/@iconify/icons-mdi/skip-previous.js");
+/* harmony import */ var _iconify_icons_mdi_skip_next__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @iconify/icons-mdi/skip-next */ "./node_modules/@iconify/icons-mdi/skip-next.js");
+/* harmony import */ var _iconify_icons_mdi_fast_forward__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @iconify/icons-mdi/fast-forward */ "./node_modules/@iconify/icons-mdi/fast-forward.js");
+/* harmony import */ var _iconify_icons_mdi_rewind__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @iconify/icons-mdi/rewind */ "./node_modules/@iconify/icons-mdi/rewind.js");
+/* harmony import */ var _iconify_icons_mdi_volume_high__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @iconify/icons-mdi/volume-high */ "./node_modules/@iconify/icons-mdi/volume-high.js");
+/* harmony import */ var _iconify_icons_mdi_volume_mute__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @iconify/icons-mdi/volume-mute */ "./node_modules/@iconify/icons-mdi/volume-mute.js");
+/* harmony import */ var _iconify_icons_mdi_repeat__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @iconify/icons-mdi/repeat */ "./node_modules/@iconify/icons-mdi/repeat.js");
+/* harmony import */ var _iconify_icons_mdi_repeat_off__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @iconify/icons-mdi/repeat-off */ "./node_modules/@iconify/icons-mdi/repeat-off.js");
+/* harmony import */ var _ProgressBar__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./ProgressBar */ "./node_modules/react-h5-audio-player/es/ProgressBar.js");
+/* harmony import */ var _CurrentTime__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./CurrentTime */ "./node_modules/react-h5-audio-player/es/CurrentTime.js");
+/* harmony import */ var _Duration__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./Duration */ "./node_modules/react-h5-audio-player/es/Duration.js");
+/* harmony import */ var _VolumeBar__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./VolumeBar */ "./node_modules/react-h5-audio-player/es/VolumeBar.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./constants */ "./node_modules/react-h5-audio-player/es/constants.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./utils */ "./node_modules/react-h5-audio-player/es/utils.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var H5AudioPlayer = function (_Component) {
+  (0,_babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__.default)(H5AudioPlayer, _Component);
+
+  function H5AudioPlayer() {
+    var _this;
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "audio", (0,react__WEBPACK_IMPORTED_MODULE_3__.createRef)());
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "progressBar", (0,react__WEBPACK_IMPORTED_MODULE_3__.createRef)());
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "container", (0,react__WEBPACK_IMPORTED_MODULE_3__.createRef)());
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "lastVolume", _this.props.volume);
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "listenTracker", void 0);
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "volumeAnimationTimer", void 0);
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "downloadProgressAnimationTimer", void 0);
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "togglePlay", function (e) {
+      e.stopPropagation();
+      var audio = _this.audio.current;
+
+      if ((audio.paused || audio.ended) && audio.src) {
+        _this.playAudioPromise();
+      } else if (!audio.paused) {
+        audio.pause();
+      }
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "playAudioPromise", function () {
+      var playPromise = _this.audio.current.play();
+
+      if (playPromise) {
+        playPromise.then(null).catch(function (err) {
+          var onPlayError = _this.props.onPlayError;
+          onPlayError && onPlayError(new Error(err));
+        });
+      } else {
+        _this.forceUpdate();
+      }
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "isPlaying", function () {
+      var audio = _this.audio.current;
+      if (!audio) return false;
+      return !audio.paused && !audio.ended;
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "handlePlay", function (e) {
+      _this.forceUpdate();
+
+      _this.props.onPlay && _this.props.onPlay(e);
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "handlePause", function (e) {
+      if (!_this.audio) return;
+
+      _this.forceUpdate();
+
+      _this.props.onPause && _this.props.onPause(e);
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "handleEnded", function (e) {
+      if (!_this.audio) return;
+
+      _this.forceUpdate();
+
+      _this.props.onEnded && _this.props.onEnded(e);
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "handleAbort", function (e) {
+      _this.props.onAbort && _this.props.onAbort(e);
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "handleClickVolumeButton", function () {
+      var audio = _this.audio.current;
+
+      if (audio.volume > 0) {
+        _this.lastVolume = audio.volume;
+        audio.volume = 0;
+      } else {
+        audio.volume = _this.lastVolume;
+      }
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "handleMuteChange", function () {
+      _this.forceUpdate();
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "handleClickLoopButton", function () {
+      _this.audio.current.loop = !_this.audio.current.loop;
+
+      _this.forceUpdate();
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "handleClickRewind", function () {
+      var _this$props = _this.props,
+          progressJumpSteps = _this$props.progressJumpSteps,
+          progressJumpStep = _this$props.progressJumpStep;
+      var jumpStep = progressJumpSteps.backward || progressJumpStep;
+
+      _this.setJumpTime(-jumpStep);
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "handleClickForward", function () {
+      var _this$props2 = _this.props,
+          progressJumpSteps = _this$props2.progressJumpSteps,
+          progressJumpStep = _this$props2.progressJumpStep;
+      var jumpStep = progressJumpSteps.forward || progressJumpStep;
+
+      _this.setJumpTime(jumpStep);
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "setJumpTime", function (time) {
+      var audio = _this.audio.current;
+      var duration = audio.duration,
+          prevTime = audio.currentTime;
+
+      if (audio.readyState === audio.HAVE_NOTHING || audio.readyState === audio.HAVE_METADATA || !isFinite(duration) || !isFinite(prevTime)) {
+        return _this.props.onChangeCurrentTimeError && _this.props.onChangeCurrentTimeError();
+      }
+
+      var currentTime = prevTime + time / 1000;
+
+      if (currentTime < 0) {
+        audio.currentTime = 0;
+        currentTime = 0;
+      } else if (currentTime > duration) {
+        audio.currentTime = duration;
+        currentTime = duration;
+      } else {
+        audio.currentTime = currentTime;
+      }
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "setJumpVolume", function (volume) {
+      var newVolume = _this.audio.current.volume + volume;
+      if (newVolume < 0) newVolume = 0;else if (newVolume > 1) newVolume = 1;
+      _this.audio.current.volume = newVolume;
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "handleKeyDown", function (e) {
+      if (_this.props.hasDefaultKeyBindings) {
+        switch (e.key) {
+          case ' ':
+            if (e.target === _this.container.current || e.target === _this.progressBar.current) {
+              e.preventDefault();
+
+              _this.togglePlay(e);
+            }
+
+            break;
+
+          case 'ArrowLeft':
+            _this.handleClickRewind();
+
+            break;
+
+          case 'ArrowRight':
+            _this.handleClickForward();
+
+            break;
+
+          case 'ArrowUp':
+            e.preventDefault();
+
+            _this.setJumpVolume(_this.props.volumeJumpStep);
+
+            break;
+
+          case 'ArrowDown':
+            e.preventDefault();
+
+            _this.setJumpVolume(-_this.props.volumeJumpStep);
+
+            break;
+
+          case 'l':
+            _this.handleClickLoopButton();
+
+            break;
+
+          case 'm':
+            _this.handleClickVolumeButton();
+
+            break;
+        }
+      }
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "renderUIModules", function (modules) {
+      return modules.map(function (comp, i) {
+        return _this.renderUIModule(comp, i);
+      });
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__.default)(_this), "renderUIModule", function (comp, key) {
+      var _this$props3 = _this.props,
+          defaultCurrentTime = _this$props3.defaultCurrentTime,
+          progressUpdateInterval = _this$props3.progressUpdateInterval,
+          showDownloadProgress = _this$props3.showDownloadProgress,
+          showFilledProgress = _this$props3.showFilledProgress,
+          showFilledVolume = _this$props3.showFilledVolume,
+          defaultDuration = _this$props3.defaultDuration,
+          customIcons = _this$props3.customIcons,
+          showSkipControls = _this$props3.showSkipControls,
+          onClickPrevious = _this$props3.onClickPrevious,
+          onClickNext = _this$props3.onClickNext,
+          onChangeCurrentTimeError = _this$props3.onChangeCurrentTimeError,
+          showJumpControls = _this$props3.showJumpControls,
+          customAdditionalControls = _this$props3.customAdditionalControls,
+          customVolumeControls = _this$props3.customVolumeControls,
+          muted = _this$props3.muted,
+          timeFormat = _this$props3.timeFormat,
+          volumeProp = _this$props3.volume,
+          loopProp = _this$props3.loop,
+          mse = _this$props3.mse;
+
+      switch (comp) {
+        case _constants__WEBPACK_IMPORTED_MODULE_19__.RHAP_UI.CURRENT_TIME:
+          return react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", {
+            key: key,
+            id: "rhap_current-time",
+            className: "rhap_time rhap_current-time"
+          }, react__WEBPACK_IMPORTED_MODULE_3__.createElement(_CurrentTime__WEBPACK_IMPORTED_MODULE_16__.default, {
+            audio: _this.audio.current,
+            isLeftTime: false,
+            defaultCurrentTime: defaultCurrentTime,
+            timeFormat: timeFormat
+          }));
+
+        case _constants__WEBPACK_IMPORTED_MODULE_19__.RHAP_UI.CURRENT_LEFT_TIME:
+          return react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", {
+            key: key,
+            id: "rhap_current-left-time",
+            className: "rhap_time rhap_current-left-time"
+          }, react__WEBPACK_IMPORTED_MODULE_3__.createElement(_CurrentTime__WEBPACK_IMPORTED_MODULE_16__.default, {
+            audio: _this.audio.current,
+            isLeftTime: true,
+            defaultCurrentTime: defaultCurrentTime,
+            timeFormat: timeFormat
+          }));
+
+        case _constants__WEBPACK_IMPORTED_MODULE_19__.RHAP_UI.PROGRESS_BAR:
+          return react__WEBPACK_IMPORTED_MODULE_3__.createElement(_ProgressBar__WEBPACK_IMPORTED_MODULE_15__.default, {
+            key: key,
+            ref: _this.progressBar,
+            audio: _this.audio.current,
+            progressUpdateInterval: progressUpdateInterval,
+            showDownloadProgress: showDownloadProgress,
+            showFilledProgress: showFilledProgress,
+            onSeek: mse && mse.onSeek,
+            onChangeCurrentTimeError: onChangeCurrentTimeError,
+            srcDuration: mse && mse.srcDuration
+          });
+
+        case _constants__WEBPACK_IMPORTED_MODULE_19__.RHAP_UI.DURATION:
+          return react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", {
+            key: key,
+            className: "rhap_time rhap_total-time"
+          }, mse && mse.srcDuration ? (0,_utils__WEBPACK_IMPORTED_MODULE_20__.getDisplayTimeBySeconds)(mse.srcDuration, mse.srcDuration, _this.props.timeFormat) : react__WEBPACK_IMPORTED_MODULE_3__.createElement(_Duration__WEBPACK_IMPORTED_MODULE_17__.default, {
+            audio: _this.audio.current,
+            defaultDuration: defaultDuration,
+            timeFormat: timeFormat
+          }));
+
+        case _constants__WEBPACK_IMPORTED_MODULE_19__.RHAP_UI.ADDITIONAL_CONTROLS:
+          return react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", {
+            key: key,
+            className: "rhap_additional-controls"
+          }, _this.renderUIModules(customAdditionalControls));
+
+        case _constants__WEBPACK_IMPORTED_MODULE_19__.RHAP_UI.MAIN_CONTROLS:
+          {
+            var isPlaying = _this.isPlaying();
+
+            var actionIcon;
+
+            if (isPlaying) {
+              actionIcon = customIcons.pause ? customIcons.pause : react__WEBPACK_IMPORTED_MODULE_3__.createElement(_iconify_react__WEBPACK_IMPORTED_MODULE_4__.Icon, {
+                icon: _iconify_icons_mdi_pause_circle__WEBPACK_IMPORTED_MODULE_6__.default
+              });
+            } else {
+              actionIcon = customIcons.play ? customIcons.play : react__WEBPACK_IMPORTED_MODULE_3__.createElement(_iconify_react__WEBPACK_IMPORTED_MODULE_4__.Icon, {
+                icon: _iconify_icons_mdi_play_circle__WEBPACK_IMPORTED_MODULE_5__.default
+              });
+            }
+
+            return react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", {
+              key: key,
+              className: "rhap_main-controls"
+            }, showSkipControls && react__WEBPACK_IMPORTED_MODULE_3__.createElement("button", {
+              "aria-label": "Previous",
+              className: "rhap_button-clear rhap_main-controls-button rhap_skip-button",
+              type: "button",
+              onClick: onClickPrevious
+            }, customIcons.previous ? customIcons.previous : react__WEBPACK_IMPORTED_MODULE_3__.createElement(_iconify_react__WEBPACK_IMPORTED_MODULE_4__.Icon, {
+              icon: _iconify_icons_mdi_skip_previous__WEBPACK_IMPORTED_MODULE_7__.default
+            })), showJumpControls && react__WEBPACK_IMPORTED_MODULE_3__.createElement("button", {
+              "aria-label": "Rewind",
+              className: "rhap_button-clear rhap_main-controls-button rhap_rewind-button",
+              type: "button",
+              onClick: _this.handleClickRewind
+            }, customIcons.rewind ? customIcons.rewind : react__WEBPACK_IMPORTED_MODULE_3__.createElement(_iconify_react__WEBPACK_IMPORTED_MODULE_4__.Icon, {
+              icon: _iconify_icons_mdi_rewind__WEBPACK_IMPORTED_MODULE_10__.default
+            })), react__WEBPACK_IMPORTED_MODULE_3__.createElement("button", {
+              "aria-label": isPlaying ? 'Pause' : 'Play',
+              className: "rhap_button-clear rhap_main-controls-button rhap_play-pause-button",
+              type: "button",
+              onClick: _this.togglePlay
+            }, actionIcon), showJumpControls && react__WEBPACK_IMPORTED_MODULE_3__.createElement("button", {
+              "aria-label": "Forward",
+              className: "rhap_button-clear rhap_main-controls-button rhap_forward-button",
+              type: "button",
+              onClick: _this.handleClickForward
+            }, customIcons.forward ? customIcons.forward : react__WEBPACK_IMPORTED_MODULE_3__.createElement(_iconify_react__WEBPACK_IMPORTED_MODULE_4__.Icon, {
+              icon: _iconify_icons_mdi_fast_forward__WEBPACK_IMPORTED_MODULE_9__.default
+            })), showSkipControls && react__WEBPACK_IMPORTED_MODULE_3__.createElement("button", {
+              "aria-label": "Skip",
+              className: "rhap_button-clear rhap_main-controls-button rhap_skip-button",
+              type: "button",
+              onClick: onClickNext
+            }, customIcons.next ? customIcons.next : react__WEBPACK_IMPORTED_MODULE_3__.createElement(_iconify_react__WEBPACK_IMPORTED_MODULE_4__.Icon, {
+              icon: _iconify_icons_mdi_skip_next__WEBPACK_IMPORTED_MODULE_8__.default
+            })));
+          }
+
+        case _constants__WEBPACK_IMPORTED_MODULE_19__.RHAP_UI.VOLUME_CONTROLS:
+          return react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", {
+            key: key,
+            className: "rhap_volume-controls"
+          }, _this.renderUIModules(customVolumeControls));
+
+        case _constants__WEBPACK_IMPORTED_MODULE_19__.RHAP_UI.LOOP:
+          {
+            var loop = _this.audio.current ? _this.audio.current.loop : loopProp;
+            var loopIcon;
+
+            if (loop) {
+              loopIcon = customIcons.loop ? customIcons.loop : react__WEBPACK_IMPORTED_MODULE_3__.createElement(_iconify_react__WEBPACK_IMPORTED_MODULE_4__.Icon, {
+                icon: _iconify_icons_mdi_repeat__WEBPACK_IMPORTED_MODULE_13__.default
+              });
+            } else {
+              loopIcon = customIcons.loopOff ? customIcons.loopOff : react__WEBPACK_IMPORTED_MODULE_3__.createElement(_iconify_react__WEBPACK_IMPORTED_MODULE_4__.Icon, {
+                icon: _iconify_icons_mdi_repeat_off__WEBPACK_IMPORTED_MODULE_14__.default
+              });
+            }
+
+            return react__WEBPACK_IMPORTED_MODULE_3__.createElement("button", {
+              key: key,
+              "aria-label": loop ? 'Enable Loop' : 'Disable Loop',
+              className: "rhap_button-clear rhap_repeat-button",
+              type: "button",
+              onClick: _this.handleClickLoopButton
+            }, loopIcon);
+          }
+
+        case _constants__WEBPACK_IMPORTED_MODULE_19__.RHAP_UI.VOLUME:
+          {
+            var _ref = _this.audio.current || {},
+                _ref$volume = _ref.volume,
+                volume = _ref$volume === void 0 ? muted ? 0 : volumeProp : _ref$volume;
+
+            var volumeIcon;
+
+            if (volume) {
+              volumeIcon = customIcons.volume ? customIcons.volume : react__WEBPACK_IMPORTED_MODULE_3__.createElement(_iconify_react__WEBPACK_IMPORTED_MODULE_4__.Icon, {
+                icon: _iconify_icons_mdi_volume_high__WEBPACK_IMPORTED_MODULE_11__.default
+              });
+            } else {
+              volumeIcon = customIcons.volume ? customIcons.volumeMute : react__WEBPACK_IMPORTED_MODULE_3__.createElement(_iconify_react__WEBPACK_IMPORTED_MODULE_4__.Icon, {
+                icon: _iconify_icons_mdi_volume_mute__WEBPACK_IMPORTED_MODULE_12__.default
+              });
+            }
+
+            return react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", {
+              key: key,
+              className: "rhap_volume-container"
+            }, react__WEBPACK_IMPORTED_MODULE_3__.createElement("button", {
+              "aria-label": volume ? 'Mute' : 'Unmute',
+              onClick: _this.handleClickVolumeButton,
+              type: "button",
+              className: "rhap_button-clear rhap_volume-button"
+            }, volumeIcon), react__WEBPACK_IMPORTED_MODULE_3__.createElement(_VolumeBar__WEBPACK_IMPORTED_MODULE_18__.default, {
+              audio: _this.audio.current,
+              volume: volume,
+              onMuteChange: _this.handleMuteChange,
+              showFilledVolume: showFilledVolume
+            }));
+          }
+
+        default:
+          if (!(0,react__WEBPACK_IMPORTED_MODULE_3__.isValidElement)(comp)) {
+            return null;
+          }
+
+          return comp.key ? comp : (0,react__WEBPACK_IMPORTED_MODULE_3__.cloneElement)(comp, {
+            key: key
+          });
+      }
+    });
+
+    return _this;
+  }
+
+  var _proto = H5AudioPlayer.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    var _this2 = this;
+
+    this.forceUpdate();
+    var audio = this.audio.current;
+
+    if (this.props.muted) {
+      audio.volume = 0;
+    } else {
+      audio.volume = this.lastVolume;
+    }
+
+    audio.addEventListener('error', function (e) {
+      _this2.props.onError && _this2.props.onError(e);
+    });
+    audio.addEventListener('canplay', function (e) {
+      _this2.props.onCanPlay && _this2.props.onCanPlay(e);
+    });
+    audio.addEventListener('canplaythrough', function (e) {
+      _this2.props.onCanPlayThrough && _this2.props.onCanPlayThrough(e);
+    });
+    audio.addEventListener('play', this.handlePlay);
+    audio.addEventListener('abort', this.handleAbort);
+    audio.addEventListener('ended', this.handleEnded);
+    audio.addEventListener('playing', function (e) {
+      _this2.props.onPlaying && _this2.props.onPlaying(e);
+    });
+    audio.addEventListener('seeking', function (e) {
+      _this2.props.onSeeking && _this2.props.onSeeking(e);
+    });
+    audio.addEventListener('seeked', function (e) {
+      _this2.props.onSeeked && _this2.props.onSeeked(e);
+    });
+    audio.addEventListener('waiting', function (e) {
+      _this2.props.onWaiting && _this2.props.onWaiting(e);
+    });
+    audio.addEventListener('emptied', function (e) {
+      _this2.props.onEmptied && _this2.props.onEmptied(e);
+    });
+    audio.addEventListener('stalled', function (e) {
+      _this2.props.onStalled && _this2.props.onStalled(e);
+    });
+    audio.addEventListener('suspend', function (e) {
+      _this2.props.onSuspend && _this2.props.onSuspend(e);
+    });
+    audio.addEventListener('loadstart', function (e) {
+      _this2.props.onLoadStart && _this2.props.onLoadStart(e);
+    });
+    audio.addEventListener('loadedmetadata', function (e) {
+      _this2.props.onLoadedMetaData && _this2.props.onLoadedMetaData(e);
+    });
+    audio.addEventListener('loadeddata', function (e) {
+      _this2.props.onLoadedData && _this2.props.onLoadedData(e);
+    });
+    audio.addEventListener('pause', this.handlePause);
+    audio.addEventListener('timeupdate', (0,_utils__WEBPACK_IMPORTED_MODULE_20__.throttle)(function (e) {
+      _this2.props.onListen && _this2.props.onListen(e);
+    }, this.props.listenInterval));
+    audio.addEventListener('volumechange', function (e) {
+      _this2.props.onVolumeChange && _this2.props.onVolumeChange(e);
+    });
+    audio.addEventListener('encrypted', function (e) {
+      var mse = _this2.props.mse;
+      mse && mse.onEcrypted && mse.onEcrypted(e);
+    });
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    var _this$props4 = this.props,
+        src = _this$props4.src,
+        autoPlayAfterSrcChange = _this$props4.autoPlayAfterSrcChange;
+
+    if (prevProps.src !== src) {
+      if (autoPlayAfterSrcChange) {
+        this.playAudioPromise();
+      } else {
+        this.forceUpdate();
+      }
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    var audio = this.audio.current;
+
+    if (audio) {
+      audio.removeEventListener('play', this.handlePlay);
+      audio.removeEventListener('pause', this.handlePause);
+      audio.removeEventListener('abort', this.handleAbort);
+      audio.removeAttribute('src');
+      audio.load();
+    }
+  };
+
+  _proto.render = function render() {
+    var _this$props5 = this.props,
+        className = _this$props5.className,
+        src = _this$props5.src,
+        loopProp = _this$props5.loop,
+        preload = _this$props5.preload,
+        autoPlay = _this$props5.autoPlay,
+        crossOrigin = _this$props5.crossOrigin,
+        mediaGroup = _this$props5.mediaGroup,
+        header = _this$props5.header,
+        footer = _this$props5.footer,
+        layout = _this$props5.layout,
+        customProgressBarSection = _this$props5.customProgressBarSection,
+        customControlsSection = _this$props5.customControlsSection,
+        children = _this$props5.children,
+        style = _this$props5.style;
+    var loop = this.audio.current ? this.audio.current.loop : loopProp;
+    return react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", {
+      role: "group",
+      tabIndex: 0,
+      "aria-label": "Audio Player",
+      className: "rhap_container " + className,
+      onKeyDown: this.handleKeyDown,
+      ref: this.container,
+      style: style
+    }, react__WEBPACK_IMPORTED_MODULE_3__.createElement("audio", {
+      src: src,
+      controls: false,
+      loop: loop,
+      autoPlay: autoPlay,
+      preload: preload,
+      crossOrigin: crossOrigin,
+      mediaGroup: mediaGroup,
+      ref: this.audio
+    }, children), header && react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", {
+      className: "rhap_header"
+    }, header), react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", {
+      className: "rhap_main " + (0,_utils__WEBPACK_IMPORTED_MODULE_20__.getMainLayoutClassName)(layout)
+    }, react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", {
+      className: "rhap_progress-section"
+    }, this.renderUIModules(customProgressBarSection)), react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", {
+      className: "rhap_controls-section"
+    }, this.renderUIModules(customControlsSection))), footer && react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", {
+      className: "rhap_footer"
+    }, footer));
+  };
+
+  return H5AudioPlayer;
+}(react__WEBPACK_IMPORTED_MODULE_3__.Component);
+
+(0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__.default)(H5AudioPlayer, "defaultProps", {
+  autoPlay: false,
+  autoPlayAfterSrcChange: true,
+  listenInterval: 1000,
+  progressJumpStep: 5000,
+  progressJumpSteps: {},
+  volumeJumpStep: 0.1,
+  loop: false,
+  muted: false,
+  preload: 'auto',
+  progressUpdateInterval: 20,
+  defaultCurrentTime: '--:--',
+  defaultDuration: '--:--',
+  timeFormat: 'auto',
+  volume: 1,
+  className: '',
+  showJumpControls: true,
+  showSkipControls: false,
+  showDownloadProgress: true,
+  showFilledProgress: true,
+  showFilledVolume: false,
+  customIcons: {},
+  customProgressBarSection: [_constants__WEBPACK_IMPORTED_MODULE_19__.RHAP_UI.CURRENT_TIME, _constants__WEBPACK_IMPORTED_MODULE_19__.RHAP_UI.PROGRESS_BAR, _constants__WEBPACK_IMPORTED_MODULE_19__.RHAP_UI.DURATION],
+  customControlsSection: [_constants__WEBPACK_IMPORTED_MODULE_19__.RHAP_UI.ADDITIONAL_CONTROLS, _constants__WEBPACK_IMPORTED_MODULE_19__.RHAP_UI.MAIN_CONTROLS, _constants__WEBPACK_IMPORTED_MODULE_19__.RHAP_UI.VOLUME_CONTROLS],
+  customAdditionalControls: [_constants__WEBPACK_IMPORTED_MODULE_19__.RHAP_UI.LOOP],
+  customVolumeControls: [_constants__WEBPACK_IMPORTED_MODULE_19__.RHAP_UI.VOLUME],
+  layout: 'stacked',
+  hasDefaultKeyBindings: true
+});
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (H5AudioPlayer);
+
+
+/***/ }),
+
+/***/ "./node_modules/react-h5-audio-player/es/utils.js":
+/*!********************************************************!*\
+  !*** ./node_modules/react-h5-audio-player/es/utils.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "getMainLayoutClassName": () => (/* binding */ getMainLayoutClassName),
+/* harmony export */   "getPosX": () => (/* binding */ getPosX),
+/* harmony export */   "getDisplayTimeBySeconds": () => (/* binding */ getDisplayTimeBySeconds),
+/* harmony export */   "throttle": () => (/* binding */ throttle)
+/* harmony export */ });
+var getMainLayoutClassName = function getMainLayoutClassName(layout) {
+  switch (layout) {
+    case 'stacked':
+      return 'rhap_stacked';
+
+    case 'stacked-reverse':
+      return 'rhap_stacked-reverse';
+
+    case 'horizontal':
+      return 'rhap_horizontal';
+
+    case 'horizontal-reverse':
+      return 'rhap_horizontal-reverse';
+
+    default:
+      return 'rhap_stacked';
+  }
+};
+var getPosX = function getPosX(event) {
+  if (event instanceof MouseEvent) {
+    return event.clientX;
+  } else {
+    return event.touches[0].clientX;
+  }
+};
+
+var addHeadingZero = function addHeadingZero(num) {
+  return num > 9 ? num.toString() : "0" + num;
+};
+
+var getDisplayTimeBySeconds = function getDisplayTimeBySeconds(seconds, totalSeconds, timeFormat) {
+  if (!isFinite(seconds)) {
+    return null;
+  }
+
+  var min = Math.floor(seconds / 60);
+  var minStr = addHeadingZero(min);
+  var secStr = addHeadingZero(Math.floor(seconds % 60));
+  var minStrForHour = addHeadingZero(Math.floor(min % 60));
+  var hourStr = Math.floor(min / 60);
+  var mmSs = minStr + ":" + secStr;
+  var hhMmSs = hourStr + ":" + minStrForHour + ":" + secStr;
+
+  if (timeFormat === 'auto') {
+    if (totalSeconds >= 3600) {
+      return hhMmSs;
+    } else {
+      return mmSs;
+    }
+  } else if (timeFormat === 'mm:ss') {
+    return mmSs;
+  } else if (timeFormat === 'hh:mm:ss') {
+    return hhMmSs;
+  }
+};
+function throttle(func, limit) {
+  var inThrottle = false;
+  return function (arg) {
+    if (!inThrottle) {
+      func(arg);
+      inThrottle = true;
+      setTimeout(function () {
+        return inThrottle = false;
+      }, limit);
+    }
+  };
+}
 
 /***/ }),
 

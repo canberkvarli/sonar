@@ -5,6 +5,13 @@
     height: 50px;
 }
 
+.nav-header-label{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 50px;
+    position: absolute;
+}
+
 #header-link{
     display: flex;
     margin-top: 20px;
@@ -13,6 +20,7 @@
 
 #sign-in-button{
     display: flex;
+    color: #333;
     z-index: 1;
     position: absolute;
     margin-left: 930px;

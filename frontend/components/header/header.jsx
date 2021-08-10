@@ -150,7 +150,7 @@ class Header extends React.Component{
         // If Logged In
         const personalSpace = () => (
             <div>
-                <nav className="nav-header-personal">
+                <nav className="nav-header">
                     <div className="left-nav-header">
                         <Link 
                         to="/discover"
