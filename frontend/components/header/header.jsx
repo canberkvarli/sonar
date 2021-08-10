@@ -155,7 +155,7 @@ class Header extends React.Component{
                 <nav className="nav-header">
                     <div className="left-nav-header">
                         <Link 
-                        to="/discover"
+                        to="/"
                         className="nav-header-label"
                         onFocus={this.handleClickTab}
                         >Home
@@ -165,6 +165,7 @@ class Header extends React.Component{
                         <Link
                             to="/stream"
                             className="nav-header-label"
+                            id="nav-header-upload"
                             onFocus={this.handleClickTab}
                         >Stream
                             <span className="selected" id="selected"></span>
@@ -174,6 +175,7 @@ class Header extends React.Component{
                         <Link
                             to="/upload"
                             className="nav-header-label"
+                            id="nav-header-upload"
                             onFocus={this.handleClickTab}
                         >Upload
                             <span className="selected" id="selected"></span>

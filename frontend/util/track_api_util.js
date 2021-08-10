@@ -19,7 +19,7 @@ export const uploadTrack = (trackForm) => (
     $.ajax({
         method: "POST",
         url: 'api/tracks',
-        data: { trackFrom },
+        data: { trackForm },
         contentType: false,
         processData: false,
         error: (err) => console.log(err)
