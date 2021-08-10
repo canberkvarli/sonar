@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const WaveformContianer = styled.div`
+export const WaveformContainer = styled.div`
   display: flex;  
   flex-direction: row;  
   align-items: center;

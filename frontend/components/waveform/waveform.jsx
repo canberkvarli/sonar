@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { PlayButton } from './playbutton';
-import { WaveformContianer } from './waveform_container';
+import { WaveformContainer } from './waveform_container';
 import { Wave } from './wave';
 
 import WaveSurfer from 'wavesurfer.js';
@@ -9,7 +9,7 @@ import WaveSurfer from 'wavesurfer.js';
 
 class Waveform extends Component {
     state = {
-        playing: false,
+        playing: false
     };
 
     componentDidMount() {
@@ -23,7 +23,7 @@ class Waveform extends Component {
             height: 80,
             progressColor: '#2D5BFF',
             responsive: true,
-            waveColor: '#EFEFEF',
+            waveColor: 'orange',
             cursorColor: 'transparent',
         });
 
@@ -36,16 +36,16 @@ class Waveform extends Component {
     };
 
     render() {
-        const url = 'https://www.mfiles.co.uk/mp3-downloads/gs-cd-track2.mp3';
+        const url = 'https://www.mfiles.co.uk/mp3-downloads/moonlight-movement1.mp3';
 
         return (
-            <WaveformContianer>
+            <WaveformContainer className="waveform-div">
                 <PlayButton onClick={this.handlePlay} >
                     {!this.state.playing ? 'Play' : 'Pause'}
                 </PlayButton>
                 <Wave id="waveform" />
                 <audio id="track" src={url} />
-            </WaveformContianer>
+            </WaveformContainer>
         );
     }
 };

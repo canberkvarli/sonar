@@ -1,16 +1,16 @@
 import React from 'react';
-
-import AudioPlayer from 'react-h5-audio-player';
+import { Link } from 'react-router-dom';
 
 
 const TrackIndexItem = (props) => 
     {
-        console.log(props);
+
+       
+        
         return(
         <div className="track-index-item">
             <img className="track-photos" src={props.track.photoUrl} />
-            <span className="track-title">{props.track.title}</span>
-            <audio src={props.track.audioUrl}>EXAMPLE</audio>
+            <Link to={`/tracks/${props.track.id}`} className="track-title">{props.track.title}</Link>
             <br />
         </div> 
         ) 

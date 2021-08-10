@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
 export const Wave = styled.div`
-  width: 100%;
+  width: 70%;
   height: 90px;
 `;

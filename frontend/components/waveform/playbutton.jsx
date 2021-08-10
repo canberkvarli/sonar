@@ -6,7 +6,7 @@ export const PlayButton = styled.button`
   align-items: center;
   width: 60px;
   height: 60px;
-  background: #EFEFEF;
+  background: orange;
   border-radius: 50%;
   border: none;
   outline: none;

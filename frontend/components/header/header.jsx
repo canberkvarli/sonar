@@ -67,6 +67,7 @@ class Header extends React.Component{
     render(){
         const {signup, login, logout, currentUser} = this.props
         const search = <FontAwesomeIcon icon={faSearch}/>
+
         const settings = {
             dynamicHeigt: true,
             infiniteLoop: true,
@@ -80,6 +81,7 @@ class Header extends React.Component{
             centerMode: true,
             width: 1268
         }
+
         const sliderPhotos = [
             {
                 name: "Slider1",
@@ -168,6 +170,14 @@ class Header extends React.Component{
                             <span className="selected" id="selected"></span>
                         </Link>
                     </div>
+                        <br />
+                        <Link
+                            to="/upload"
+                            className="nav-header-label"
+                            onFocus={this.handleClickTab}
+                        >Upload
+                            <span className="selected" id="selected"></span>
+                        </Link>
                     <div className="middle-nav-hedaer">
                         <SearchContainer />
                     </div>

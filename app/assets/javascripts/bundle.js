@@ -12203,7 +12203,14 @@ var Header = /*#__PURE__*/function (_React$Component) {
         }, "Stream", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
           className: "selected",
           id: "selected"
-        }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
+          to: "/upload",
+          className: "nav-header-label",
+          onFocus: _this2.handleClickTab
+        }, "Upload", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+          className: "selected",
+          id: "selected"
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "middle-nav-hedaer"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_search_search_container__WEBPACK_IMPORTED_MODULE_6__.default, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "right-nav-header"
@@ -12833,22 +12840,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_h5_audio_player__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-h5-audio-player */ "./node_modules/react-h5-audio-player/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 
 
 
 var TrackIndexItem = function TrackIndexItem(props) {
-  console.log(props);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "track-index-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     className: "track-photos",
     src: props.track.photoUrl
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    to: "/tracks/".concat(props.track.id),
     className: "track-title"
-  }, props.track.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("audio", {
-    src: props.track.audioUrl
-  }, "EXAMPLE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null));
+  }, props.track.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TrackIndexItem);
@@ -12995,7 +13000,7 @@ var _templateObject;
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-var PlayButton = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 60px;\n  height: 60px;\n  background: #EFEFEF;\n  border-radius: 50%;\n  border: none;\n  outline: none;\n  cursor: pointer;\n  padding-bottom: 3px;\n  &:hover {\n    background: #DDD;\n  }\n"])));
+var PlayButton = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 60px;\n  height: 60px;\n  background: orange;\n  border-radius: 50%;\n  border: none;\n  outline: none;\n  cursor: pointer;\n  padding-bottom: 3px;\n  &:hover {\n    background: #DDD;\n  }\n"])));
 
 /***/ }),
 
@@ -13016,7 +13021,7 @@ var _templateObject;
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-var Wave = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 90px;\n"])));
+var Wave = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  width: 70%;\n  height: 90px;\n"])));
 
 /***/ }),
 
@@ -13110,7 +13115,7 @@ var Waveform = /*#__PURE__*/function (_Component) {
         height: 80,
         progressColor: '#2D5BFF',
         responsive: true,
-        waveColor: '#EFEFEF',
+        waveColor: 'orange',
         cursorColor: 'transparent'
       });
       this.waveform.load(track);
@@ -13118,8 +13123,10 @@ var Waveform = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var url = 'https://www.mfiles.co.uk/mp3-downloads/gs-cd-track2.mp3';
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_waveform_container__WEBPACK_IMPORTED_MODULE_2__.WaveformContianer, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_playbutton__WEBPACK_IMPORTED_MODULE_1__.PlayButton, {
+      var url = 'https://www.mfiles.co.uk/mp3-downloads/moonlight-movement1.mp3';
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_waveform_container__WEBPACK_IMPORTED_MODULE_2__.WaveformContainer, {
+        className: "waveform-div"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_playbutton__WEBPACK_IMPORTED_MODULE_1__.PlayButton, {
         onClick: this.handlePlay
       }, !this.state.playing ? 'Play' : 'Pause'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_wave__WEBPACK_IMPORTED_MODULE_3__.Wave, {
         id: "waveform"
@@ -13147,7 +13154,7 @@ var Waveform = /*#__PURE__*/function (_Component) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "WaveformContianer": () => (/* binding */ WaveformContianer)
+/* harmony export */   "WaveformContainer": () => (/* binding */ WaveformContainer)
 /* harmony export */ });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 var _templateObject;
@@ -13155,7 +13162,7 @@ var _templateObject;
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-var WaveformContianer = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;  \n  flex-direction: row;  \n  align-items: center;\n  justify-content: center;\n  height: 100px;  width: 100%;\n  background: transparent;\n"])));
+var WaveformContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;  \n  flex-direction: row;  \n  align-items: center;\n  justify-content: center;\n  height: 100px;  width: 100%;\n  background: transparent;\n"])));
 
 /***/ }),
 
