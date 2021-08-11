@@ -12243,7 +12243,9 @@ var Header = /*#__PURE__*/function (_React$Component) {
           className: "nav-button",
           id: "start-uploading-button",
           onClick: _this2.openModalSignUp
-        }, "Start uploading today"))));
+        }, "Start uploading today"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "search-div"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_search_search_container__WEBPACK_IMPORTED_MODULE_6__.default, null)));
       }; // If Logged In
 
 
@@ -12462,14 +12464,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _actions_track_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/track_actions */ "./frontend/actions/track_actions.js");
-/* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./search */ "./frontend/components/search/search.jsx");
+/* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search */ "./frontend/components/search/search.jsx");
+/* harmony import */ var _actions_track_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/track_actions */ "./frontend/actions/track_actions.js");
 
 
 
 
-var mSTP = function mSTP(state) {
+var mSTP = function mSTP(state, ownProps) {
   return {
+    location: ownProps.location,
     tracks: Object.values(state.entities.tracks)
   };
 };
@@ -12477,15 +12480,12 @@ var mSTP = function mSTP(state) {
 var mDTP = function mDTP(dispatch) {
   return {
     fetchTracks: function fetchTracks() {
-      return dispatch((0,_actions_track_actions__WEBPACK_IMPORTED_MODULE_1__.fetchTracks)());
-    },
-    fetchTrack: function fetchTrack(trackId) {
-      return dispatch((0,_actions_track_actions__WEBPACK_IMPORTED_MODULE_1__.fetchTrack)(trackId));
+      return dispatch((0,_actions_track_actions__WEBPACK_IMPORTED_MODULE_2__.fetchTracks)());
     }
   };
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_0__.connect)(mSTP, mDTP)(_search__WEBPACK_IMPORTED_MODULE_2__.default));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_0__.connect)(mSTP, mDTP)(_search__WEBPACK_IMPORTED_MODULE_1__.default));
 
 /***/ }),
 

@@ -163,6 +163,9 @@ class Header extends React.Component{
                             Start uploading today</button>
                     </div>
                 </div>
+                <div className="search-div">
+                    <SearchContainer />
+                </div>
             </div>
         )
 
