@@ -8,7 +8,7 @@ import { login } from "../../actions/session_actions";
 const mSTP = ({errors}) => ({
     errors: errors.session,
     navLink: <Link to="/signup">Create a new account</Link>,
-    formType: 'Log In'
+    formType: 'Log In',
 })
 
 const mDTP = dispatch => ({

@@ -3,15 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .root-session-form{
-    font-family: 'Georama', sans-serif;
-    border: 2px solid black;   
+    font-family: 'Ubuntu', sans-serif;    
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 35%;
     height: 468px;
     margin-left: 400px;
-    margin-top: 150px;
+    margin-top: 70%;
+    margin-left: 50%;
+    transform: translate(-50%,-50%);
+
 }
 
 .session-form-input{

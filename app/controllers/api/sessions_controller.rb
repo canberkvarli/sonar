@@ -9,10 +9,9 @@ class Api::SessionsController < ApplicationController
 
         if @user
             login(@user)
-            # render '/api/users/discover'
-            render plain: 'welcome home'
+            render json: @user
+            # render plain: 'welcome home'
         else
-          
             render json: ["Invalid username/password combination"], status: 401
         end
     end

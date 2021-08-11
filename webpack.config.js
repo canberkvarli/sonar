@@ -18,12 +18,35 @@ module.exports = {
                         presets: ['@babel/env', '@babel/react']
                     }
                 },
-            }
+            },
+            {
+                test: /\.(sass|css|scss)$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            plugins: () => [
+                                require("autoprefixer")()
+                            ],
+                        },
+                    },
+                    'sass-loader',
+                ]
+            },
+            // {
+            //     test: /\.scss$/,
+            //     include: [
+            //         path.resolve(__dirname, 'src', 'scss')
+            //     ],
+            //     use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
+            // }
         ]
     },
     devtool: 'source-map',
     resolve: {
-        extensions: [".js", ".jsx", "*"]
+        extensions: [".js", ".jsx", "*", "scss"]
     }
 };
 

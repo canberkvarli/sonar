@@ -1,0 +1,107 @@
+.nav-header{
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+}
+
+.nav-header-label{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 50px;
+    position: absolute;
+}
+
+#header-link{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+#sign-in-button{
+    display: flex;
+    color: #333;
+    z-index: 1;
+    position: absolute;
+    margin-left: 930px;
+    margin-top: 18px;
+    color: rgb(221, 221, 221);
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 3.4px;
+    padding: 5px;
+    min-width: 60px;
+    background-color:transparent;
+    transition: all 0.1s ease-in;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 4px;
+    width: 53px;
+    height: 18px;
+}
+
+#sign-up-button{
+    display: flex;
+    position: absolute;
+    margin-left: 1010px;
+    margin-top: 18px;
+    z-index: 1;
+    display: flex;
+    position: absolute;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 3.4px;
+    padding: 5px;
+    min-width: 60px;
+    background-color:darkorange;
+    transition: all 0.1s ease-in;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 4px;
+    width: 120px;
+    height: 18px;
+}
+
+#nav-label-creator{
+    display: flex;
+    position: absolute;
+    margin-left: 1155px;
+    margin-top: 23px;
+    z-index: 1;
+    color: rgb(221, 221, 221);
+
+}
+
+.carousel{
+    width: 1130px;
+    height: 450px;
+    position: relative;
+    margin-top: -24px;
+    //  margin-right: 50px;
+    margin-left: 5px;
+    margin-right: 15px;
+    padding-top: 15px;
+    background-color: darkorange;
+}
+
+// .carousel-photo{
+//     width: 1268px;
+//     height: 450px;
+//     position: relative;
+//     margin-top: -24px;
+//     margin-right: 50px;
+//     margin-left: 20px;
+//     padding-top: 10px;
+//     background-color: darkorange;
+// }
+
+#header-link{
+    position: absolute;
+    z-index: 1;
+    color: rgb(221, 221, 221);
+}
+
+#nav-header-upload{
+    position: absolute;
+    margin-left: 900px;
+}
