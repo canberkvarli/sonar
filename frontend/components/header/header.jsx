@@ -166,6 +166,14 @@ class Header extends React.Component{
                 <div className="search-div">
                     <SearchContainer />
                 </div>
+                    <span id="or">or</span>
+                    <button
+                        className="nav-button"
+                        id="upload-your-own-button"
+                        onClick={this.openModalSignUp}
+                    >
+                        Upload your own</button>
+
             </div>
         )
 

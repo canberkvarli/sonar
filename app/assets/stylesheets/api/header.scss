@@ -90,6 +90,29 @@
     color: rgb(221, 221, 221);;
     font-family: 'Mulish', sans-serif;
 }
+#upload-your-own-button{
+    left: 800px;
+    height: 28px;
+    margin-top: -186px;
+    margin-left: 80px;
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    position: absolute;
+    border-radius: 3.4px;
+    padding: 5px;
+    min-width: 240px;
+    background-color:orangered;
+    transition: all 0.1s ease-in;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 12px;
+    width: 120px;
+    color: rgb(221, 221, 221);;
+    font-family: 'Mulish', sans-serif;
+}
 
 #nav-label-creator{
     display: flex;
@@ -163,6 +186,15 @@ width:100%;
 .outer-div{
     background: whitesmoke;
 }
+#or{   
+    position: absolute;
+    margin-left: 850px;
+    /* margin-bottom: 200px; */
+    margin-top: -175px;
+    font-family: 'Mulish', sans-serif;
+
+}
+
 #outer-onimage-label {
     position: absolute;
     right: 200px;

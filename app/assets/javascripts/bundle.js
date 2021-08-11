@@ -12245,7 +12245,13 @@ var Header = /*#__PURE__*/function (_React$Component) {
           onClick: _this2.openModalSignUp
         }, "Start uploading today"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "search-div"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_search_search_container__WEBPACK_IMPORTED_MODULE_6__.default, null)));
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_search_search_container__WEBPACK_IMPORTED_MODULE_6__.default, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+          id: "or"
+        }, "or"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+          className: "nav-button",
+          id: "upload-your-own-button",
+          onClick: _this2.openModalSignUp
+        }, "Upload your own"));
       }; // If Logged In
 
 
@@ -12422,31 +12428,182 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
-var Search = function Search(props) {
-  var search = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__.FontAwesomeIcon, {
-    icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__.faSearch
-  });
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "search-bar-div"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
-    action: "/",
-    method: "get"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    id: "header-nav-searchbar",
-    type: "text",
-    placeholder: "Search",
-    name: "s"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-    type: "submit",
-    id: "icon-search"
-  }, search)));
-};
+var Search = /*#__PURE__*/function (_React$Component) {
+  _inherits(Search, _React$Component);
+
+  var _super = _createSuper(Search);
+
+  function Search(props) {
+    var _this;
+
+    _classCallCheck(this, Search);
+
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "handleEnterClick", function (e) {
+      var filtered = _this.state.filtered;
+
+      if (e.key === "Enter") {
+        if (filtered.length > 0) {
+          _this.setState({
+            enterClickRedirect: true
+          });
+        }
+      }
+    });
+
+    _this.state = {
+      filtered: props.tracks,
+      showMenu: false,
+      enterClickRedirect: false
+    };
+    _this.showMenu = _this.showMenu.bind(_assertThisInitialized(_this));
+    _this.closeMenu = _this.closeMenu.bind(_assertThisInitialized(_this));
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(Search, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      // this.props.fetchtracks();
+      this.setState({
+        filtered: this.props.tracks
+      });
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(e) {
+      var currentList = [];
+      var newList = [];
+
+      if (e.target.value !== "") {
+        currentList = this.props.tracks;
+        newList = currentList.filter(function (item) {
+          var lc;
+          _typeof(item) == "object" ? lc = item.title.toLowerCase() : lc = item.toLowerCase();
+          var filter = e.target.value.toLowerCase();
+          return lc.includes(filter);
+        });
+      } else {
+        // If the search bar is empty, set newList to original task list
+        newList = this.props.tracks;
+      } // Set the filtered state based on what our rules added to newList
+
+
+      this.setState({
+        filtered: newList
+      });
+    }
+  }, {
+    key: "showMenu",
+    value: function showMenu(event) {
+      var _this2 = this;
+
+      event.preventDefault();
+      this.setState({
+        showMenu: true
+      }, function () {
+        document.addEventListener("click", _this2.closeMenu);
+      });
+    }
+  }, {
+    key: "closeMenu",
+    value: function closeMenu(event) {
+      var _this3 = this;
+
+      if (!this.dropdownMenu) {
+        return null;
+      }
+
+      if (event.target == "search-res-link" || !this.dropdownMenu.contains(event.target)) {
+        this.setState({
+          showMenu: false
+        }, function () {
+          document.removeEventListener("click", _this3.closeMenu);
+        });
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this4 = this,
+          _React$createElement;
+
+      var _this$state = this.state,
+          filtered = _this$state.filtered,
+          enterClickRedirect = _this$state.enterClickRedirect;
+      var keyIdx = 0;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, function () {
+        if (enterClickRedirect) {
+          if (_typeof(filtered[0]) == "object") {
+            return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Redirect, {
+              to: {
+                pathname: "/tracks/".concat(filtered[0].id)
+              }
+            });
+          }
+        } else {
+          return null;
+        }
+      }(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", (_React$createElement = {
+        ref: function ref(element) {
+          _this4.dropdownMenu = element;
+        },
+        type: "text",
+        className: "headerSearch__input"
+      }, _defineProperty(_React$createElement, "className", this.props.location == 'header' ? 'headerSearch__input' : 'splash-search-bar'), _defineProperty(_React$createElement, "onChange", this.handleChange), _defineProperty(_React$createElement, "onFocus", this.showMenu), _defineProperty(_React$createElement, "placeholder", this.props.location == 'header' ? 'Search' : 'Search for tracks, podcasts, etc..'), _defineProperty(_React$createElement, "onKeyPress", this.handleEnterClick), _React$createElement)), this.state.showMenu ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+        id: "search-res",
+        className: "search-results-ul"
+      }, this.state.filtered.map(function (item) {
+        keyIdx += 1;
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+          key: keyIdx,
+          className: "search-results-li"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+          className: "search-res-link",
+          to: {
+            pathname: "/tracks/".concat(item.id)
+          }
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+          className: "search-img-thumb",
+          src: item.imageUrl
+        }), item.title));
+      })) : null);
+    }
+  }]);
+
+  return Search;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Search);
 

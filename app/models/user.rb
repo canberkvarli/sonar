@@ -29,6 +29,10 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
+    has_many :tracks,
+    foreign_key: :artist_id,
+    class_name: :Track
+    
     #  SPIER
 
     def self.find_by_credentials(username, password)
