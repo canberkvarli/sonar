@@ -173,8 +173,9 @@ class Header extends React.Component{
                         onClick={this.openModalSignUp}
                     >
                         Upload your own</button>
-
+                <span id="intro">Hear what’s trending for free in the Sonar community</span>
             </div>
+                
         )
 
         // If Logged In

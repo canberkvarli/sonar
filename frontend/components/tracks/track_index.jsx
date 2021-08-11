@@ -31,10 +31,10 @@ class TrackIndex extends React.Component{
         const {tracks} = this.props;    
         
         return(
-            <div className="track-index" >
-                <ul>
+            <div className="track-index-container" >
+                <ul className="track-index">
                     {tracks.map((track,idx) => (
-                      <li onClick={this.handleOnclick}>
+                      <li onClick={this.handleOnclick} >
                             <TrackIndexItem track={track} key={idx}  />
                       </li>  
                     ))}

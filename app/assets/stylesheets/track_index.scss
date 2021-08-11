@@ -2,17 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.track-index-container{
+    display: flex;
+    /* color: white; */
+    height: auto;
+    width: 1230px;
+    border: solid 1px black;
+    margin-left: 15px;
+    position: relative;
+    align-content: center;
+    justify-content: center;
+    flex-direction: row;
+    color: white;
+}
+.track-title{
+    font-family: 'Mulish', sans-serif;
+    font-size: small;
+    color: black;
+}
 .track-index{
     display: flex;
-    justify-content: space-evenly;
-    color: white;
-    height: 600px;
-    width: 1238px;
-    border: solid 1px black;
-    // position: absolute;
-    margin-left: 15px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* padding: 30px; */
+    margin: 20px;
 }
-
 .track-photos{
     width: 180px;
     height: 180px;
@@ -20,4 +35,6 @@
     align-items: center;
 }
 
-
+.track-index-item{
+    padding: 9px;
+}

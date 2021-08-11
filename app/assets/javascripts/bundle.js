@@ -12251,7 +12251,9 @@ var Header = /*#__PURE__*/function (_React$Component) {
           className: "nav-button",
           id: "upload-your-own-button",
           onClick: _this2.openModalSignUp
-        }, "Upload your own"));
+        }, "Upload your own"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+          id: "intro"
+        }, "Hear what\u2019s trending for free in the Sonar community"));
       }; // If Logged In
 
 
@@ -12989,8 +12991,10 @@ var TrackIndex = /*#__PURE__*/function (_React$Component) {
 
       var tracks = this.props.tracks;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "track-index-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
         className: "track-index"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, tracks.map(function (track, idx) {
+      }, tracks.map(function (track, idx) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
           onClick: _this2.handleOnclick
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_track_index_item__WEBPACK_IMPORTED_MODULE_1__.default, {
@@ -13070,16 +13074,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var TrackIndexItem = function TrackIndexItem(props) {
-  // debugger
+  console.log(props); // debugger
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "track-index-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     className: "track-photos",
     src: props.track.photoUrl
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
     to: "/tracks/".concat(props.track.artistId),
     className: "track-title"
-  }, props.track.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null));
+  }, props.track.title)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TrackIndexItem);
