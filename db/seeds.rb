@@ -51,14 +51,14 @@ aurora = User.create!({
 
 require 'open-uri'
 
-photoFile1 = open("https://s3-us-west-1.amazonaws.com/sonarbucket-dev/8QP5nnN3F19b2BMgQnuqj3Fo")
-photoFile2 = URI.open("https://sonarbucket-dev.s3.us-west-1.amazonaws.com/DgiTGw2TY8G1GX6tcwSfoR8X")
-photoFile3 = URI.open("https://sonarbucket-dev.s3.us-west-1.amazonaws.com/erAFWoEw8gbTbhfSdiJTU522")
-photoFile4 = URI.open("https://sonarbucket-dev.s3.us-west-1.amazonaws.com/vpoQ1vFGAbq3faSHusdQG9Mt")
+# photoFile1 = open("https://s3-us-west-1.amazonaws.com/sonarbucket-dev/8QP5nnN3F19b2BMgQnuqj3Fo")
+# photoFile2 = URI.open("https://sonarbucket-dev.s3.us-west-1.amazonaws.com/DgiTGw2TY8G1GX6tcwSfoR8X")
+# photoFile3 = URI.open("https://sonarbucket-dev.s3.us-west-1.amazonaws.com/erAFWoEw8gbTbhfSdiJTU522")
+# photoFile4 = URI.open("https://sonarbucket-dev.s3.us-west-1.amazonaws.com/vpoQ1vFGAbq3faSHusdQG9Mt")
 
-audioFile1 = URI.open("https://sonarbucket-dev.s3.us-west-1.amazonaws.com/audio/Moonlight-sonata-piano.mp3")
-audioFile2 = URI.open("https://sonarbucket-dev.s3.us-west-1.amazonaws.com/audio/What+remains+after+a+thunder+strike.mp3")
-audioFile3 = URI.open("https://sonarbucket-dev.s3.us-west-1.amazonaws.com/audio/Oath+of+God.aif")
+# audioFile1 = URI.open("https://sonarbucket-dev.s3.us-west-1.amazonaws.com/audio/Moonlight-sonata-piano.mp3")
+# audioFile2 = URI.open("https://sonarbucket-dev.s3.us-west-1.amazonaws.com/audio/What+remains+after+a+thunder+strike.mp3")
+# audioFile3 = URI.open("https://sonarbucket-dev.s3.us-west-1.amazonaws.com/audio/Oath+of+God.aif")
 
 
 track1 = Track.create!({
@@ -80,11 +80,11 @@ track3 = Track.create!({
 
 })
     
-    track1.photo.attach(io: photoFile1, filename: 'earth.jpg')
-    track2.photo.attach(io: photoFile2, filename: 'mysterious.jpg')
-    track3.photo.attach(io: photoFile3, filename: 'jupiter.jpg')
+    # track1.photo.attach(io: photoFile1, filename: 'earth.jpg')
+    # track2.photo.attach(io: photoFile2, filename: 'mysterious.jpg')
+    # track3.photo.attach(io: photoFile3, filename: 'jupiter.jpg')
     
-    track1.audio.attach(io: audioFile1, filename: 'wraats')
-    track2.audio.attach(io: audioFile2, filename: 'moonlight')
-    track3.audio.attach(io: audioFile3, filename: 'oathofgod')
+    # track1.audio.attach(io: audioFile1, filename: 'wraats')
+    # track2.audio.attach(io: audioFile2, filename: 'moonlight')
+    # track3.audio.attach(io: audioFile3, filename: 'oathofgod')
     

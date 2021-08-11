@@ -4,8 +4,13 @@
 
 .track-index{
     display: flex;
-    margin-top: 500px;
     justify-content: space-evenly;
+    color: white;
+    height: 600px;
+    width: 1238px;
+    border: solid 1px black;
+    // position: absolute;
+    margin-left: 15px;
 }
 
 .track-photos{
@@ -14,4 +19,5 @@
     display: flex;
     align-items: center;
 }
+
 

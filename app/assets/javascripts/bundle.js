@@ -12068,8 +12068,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _search_search_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../search/search_container */ "./frontend/components/search/search_container.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -12203,7 +12201,13 @@ var Header = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
           to: "/",
           id: "header-link"
-        }, "Sonar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+          id: "logo",
+          src: "https://logos-world.net/wp-content/uploads/2020/10/SoundCloud-Emblem.png",
+          alt: ""
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+          id: "sonar"
+        }, "S O N A R")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
           type: "button",
           className: "nav-button",
           id: "sign-in-button",
@@ -12223,16 +12227,23 @@ var Header = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_5__.default, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
           htmlFor: "For Creators",
           id: "nav-label-creator"
-        }, "For Creators"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_responsive_carousel__WEBPACK_IMPORTED_MODULE_2__.Carousel, _extends({}, settings, {
-          className: "carousel"
-        }), sliderPhotos.map(function (photo, idx) {
-          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-            key: idx,
-            className: "carousel-photo",
-            src: photo.url,
-            alt: photo.name
-          }));
-        }))));
+        }, "For Creators")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "outer-div"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "homepage-image"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+          id: "nightlife",
+          src: "https://images.unsplash.com/photo-1514517356012-03ba2c17a027?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+          alt: "nightlife"
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+          id: "outer-onimage-label"
+        }, "What's next in music is first on Sonar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+          id: "inner-onimage-label"
+        }, "Upload your first track and begin your journey. SoundCloud gives you space to create, find your fans, and connect with other artists."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+          className: "nav-button",
+          id: "start-uploading-button",
+          onClick: _this2.openModalSignUp
+        }, "Start uploading today"))));
       }; // If Logged In
 
 
@@ -12797,7 +12808,7 @@ var TrackIndex = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       displayPlayhead: false
     };
-    console.log(props);
+    _this.handleOnclick = _this.handleOnclick.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -12817,15 +12828,18 @@ var TrackIndex = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var tracks = this.props.tracks;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
-        className: "track-index",
-        onClick: this.handleOnClick
-      }, tracks.map(function (track, idx) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_track_index_item__WEBPACK_IMPORTED_MODULE_1__.default, {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "track-index"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, tracks.map(function (track, idx) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+          onClick: _this2.handleOnclick
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_track_index_item__WEBPACK_IMPORTED_MODULE_1__.default, {
           track: track,
           key: idx
-        });
+        }));
       }), this.state.displayPlayhead ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Playhead, null) : null));
     }
   }]);

@@ -102,7 +102,10 @@ class Header extends React.Component{
             <div>
                 
                 <nav className="nav-header">
-                    <Link to="/" id="header-link">Sonar</Link>
+                    <Link to="/" id="header-link">
+                        <img id="logo" src="https://logos-world.net/wp-content/uploads/2020/10/SoundCloud-Emblem.png" alt="" />
+                        <span id="sonar">S O N A R</span>
+                    </Link>
 
                     <button 
                         type="button"
@@ -136,7 +139,7 @@ class Header extends React.Component{
                     <br />
 
                     <label htmlFor="For Creators" id="nav-label-creator">For Creators</label>
-                    <Carousel {...settings} className="carousel">
+                    {/* <Carousel {...settings} className="carousel" style={{minWidth: '1%'}}>
                     {sliderPhotos.map((photo, idx) => {
                         return(
                             <div>
@@ -144,8 +147,22 @@ class Header extends React.Component{
                             </div>
                         )
                     })}
-                    </Carousel>
+                    </Carousel> */}
                 </nav> 
+                <div className="outer-div">
+                    <div className="homepage-image">
+                        <img id="nightlife" src="https://images.unsplash.com/photo-1514517356012-03ba2c17a027?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="nightlife" />
+                        <span id="outer-onimage-label">What's next in music is first on Sonar</span>
+                        <br />
+                        <span id="inner-onimage-label">Upload your first track and begin your journey. SoundCloud gives you space to create, find your fans, and connect with other artists.</span>
+                        <button
+                            className="nav-button"
+                            id="start-uploading-button"
+                            onClick={this.openModalSignUp}
+                        >
+                            Start uploading today</button>
+                    </div>
+                </div>
             </div>
         )
 
