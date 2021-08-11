@@ -5,6 +5,7 @@ import Waveform from '../waveform/waveform';
 class TrackShow extends React.Component{
     constructor(props){
         super(props)
+
     }
 
 
@@ -13,9 +14,8 @@ class TrackShow extends React.Component{
     }
 
     render(){
-
         const {track, currentUser} = this.props;
-
+        
         if ((track === undefined)){
             return null
         }else if(currentUser){

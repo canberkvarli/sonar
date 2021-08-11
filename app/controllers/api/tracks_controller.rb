@@ -13,7 +13,6 @@ class Api::TracksController < ApplicationController
         
         if @track.save
             render :show
-           
         else
             render json: @track.errors.full_messages, status: 402
         end

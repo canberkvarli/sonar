@@ -29,11 +29,12 @@ class TrackIndex extends React.Component{
 
     render(){
         const {tracks} = this.props;    
+        
         return(
             <div>
                 <ul className="track-index" onClick={this.handleOnClick}>
                     {tracks.map((track,idx) => (
-                            <TrackIndexItem track={track} key={idx}/>
+                            <TrackIndexItem track={track} key={idx}  />
                     ))}
                     {this.state.displayPlayhead ? 
                     <Playhead />

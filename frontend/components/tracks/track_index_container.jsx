@@ -4,7 +4,8 @@ import TrackIndex from './track_index';
 
 
 const mSTP = (state) => ({
-    tracks: Object.values(state.entititracks)
+    tracks: Object.values(state.entities.tracks) 
+    
     
 })
 

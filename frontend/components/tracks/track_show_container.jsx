@@ -3,7 +3,6 @@ import { fetchTrack } from "../../actions/track_actions";
 import TrackShow from "./track_show";
 
 const mSTP = (state, ownProps) => {
-   
     const trackLoaded = () => {
         if (state.entities.tracks[ownProps.match.params.trackId]) {
             return true;
@@ -18,7 +17,7 @@ const mSTP = (state, ownProps) => {
         trackId: ownProps.match.params.trackId,
         track: state.entities.tracks[ownProps.match.params.trackId],
         trackUrl: (trackLoaded() ? state.entities.tracks[ownProps.match.params.trackId].trackUrl : '')
-
+        
     }
 }
 

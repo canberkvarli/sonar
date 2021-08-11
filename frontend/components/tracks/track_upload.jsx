@@ -13,14 +13,12 @@ class TrackUpload extends React.Component {
             formNum: 0,
             fileName: '',
             submitted: false,
-            redirectToLibrary: false
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.updateAudio = this.updateAudio.bind(this)
         this.updateImage = this.updateImage.bind(this)
         this.handleDrop = this.handleDrop.bind(this)
         this.handleDragOver = this.handleDragOver.bind(this)
-        this.handleRedirect = this.handleRedirect.bind(this)
         this.handleBack = this.handleBack.bind(this)
     }
 
@@ -88,9 +86,7 @@ class TrackUpload extends React.Component {
         e.preventDefault();
         e.stopPropagation();
     }
-    handleRedirect() {
-        this.setState({ redirectToLibrary: true })
-    }
+ 
 
     handleSubmit(e) {
         e.preventDefault();
@@ -115,10 +111,7 @@ class TrackUpload extends React.Component {
         return (
 
             <div className="first-form-container">
-                <h1 className="upload-title">Upload</h1>
-                <span>
-                    <h1 className="upload-title your-tracks-redirect" onClick={this.handleRedirect}>Your tracks</h1>
-                </span>
+                
                 {/* </Link> */}
                 {/* <div className="above-drag-drop"></div> */}
                 <div className="drag-drop-track-form"
@@ -233,7 +226,6 @@ class TrackUpload extends React.Component {
         if (this.state.formNum === 0) {
             return (
                 <>
-                    {this.state.redirectToLibrary ? <Redirect to='/you/library' /> : null}
                     <div className="outer-track-form-container">
                         <div className="track-form-container">
                             {this.firstPage()}
