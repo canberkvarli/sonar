@@ -67,6 +67,9 @@
     font-family: 'Mulish', sans-serif;
     color: rgb(221, 221, 221);
 }
+#root > div{
+    background-color: whitesmoke;
+}
 #start-uploading-button{
     left: 500px;
     display: flex;
@@ -152,11 +155,11 @@
 .homepage-image{
     padding-top: 3.5px;
     display: flex;
-    width: 98%;
+    width: 97.3%;
     height: 450px;
     margin-top: -50px;
     margin-left: 15px;
-    background-color: rgb(255,85,0);
+    background-color: #ff5500;
 }
 
 #nightlife{
@@ -181,9 +184,14 @@ width:100%;
     margin-top: 5px;
     font-weight: bold;
 }
+.search-div{
+    background-color: white;
+    margin-left: 15px;
+    margin-right: 20px;
+}
 
 .outer-div{
-    background: whitesmoke;
+    background-color: whitesmoke;
 }
 #or{   
     position: absolute;

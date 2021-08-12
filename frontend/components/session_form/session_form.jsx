@@ -51,7 +51,7 @@ class SessionForm extends React.Component{
 
     render(){
         const SessionFormSignIn = () => (
-           <div classNam="outer-session-form">
+           <div className="outer-session-form">
             <div className="root-session-form">
                 <h4 className="session-form" id="session-form-title"> 
 

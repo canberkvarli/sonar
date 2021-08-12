@@ -12714,7 +12714,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
 
       var SessionFormSignIn = function SessionFormSignIn() {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-          classNam: "outer-session-form"
+          className: "outer-session-form"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "root-session-form"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
@@ -13071,9 +13071,13 @@ var TrackShow = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(TrackShow);
 
   function TrackShow(props) {
+    var _this;
+
     _classCallCheck(this, TrackShow);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    console.log(props);
+    return _this;
   }
 
   _createClass(TrackShow, [{
@@ -13134,8 +13138,10 @@ var mSTP = function mSTP(state, ownProps) {
     currentUser: state.entities.users[state.session.id],
     trackId: ownProps.match.params.trackId,
     track: state.entities.tracks[ownProps.match.params.trackId],
-    trackUrl: trackLoaded() ? state.entities.tracks[ownProps.match.params.trackId].trackUrl : ''
+    trackUrl: trackLoaded() ? state.entities.tracks[ownProps.match.params.trackId].trackUrl : '',
+    tracks: Object.values(state.entities.tracks)
   };
+  debugger;
 };
 
 var mDTP = function mDTP(dispatch) {
