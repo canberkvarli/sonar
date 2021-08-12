@@ -43,7 +43,10 @@ aurora = User.create!({
             artist_name: 'Aurora'
             });
 
-
+demoUser = User.create!({
+    username: 'demouser',
+    password: "password"
+})
 #  TRACKS
 
 # seeds.rb

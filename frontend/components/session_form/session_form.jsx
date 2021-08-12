@@ -9,8 +9,15 @@ class SessionForm extends React.Component{
             password: '',
         }
 
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.renderErrors = this.renderErrors.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
+        this.handleDemoUser = this.handleDemoUser.bind(this);
+    }
+
+    handleDemoUser(e) {
+        e.preventDefault()
+        const user = { username: 'demouser', password: 'password' }
+        this.props.processForm(user)
     }
 
     handleSubmit(e){
@@ -40,7 +47,7 @@ class SessionForm extends React.Component{
 
     render(){
         const SessionFormSignIn = () => (
-           
+           <div classNam="outer-session-form">
             <div className="root-session-form">
                 <h4 className="session-form" id="session-form-title"> 
 
@@ -69,14 +76,18 @@ class SessionForm extends React.Component{
                             onChange={this.update('password')} />
                     </label>
                     <br />
+                    <input type="submit" id="demo-user-button" value="Demo User" />
                     <input className="session-form-submit" type="submit" value={this.props.formType} />
                     <br />
                 </form>
                     {this.renderErrors()}
             </div>
+
+           </div>
             )
 
         const SessionFormSignUp = () => (
+        <div className="outer-session-form">
 
             <div className="root-session-form">
                 <h4 className="session-form" id="session-form-title">
@@ -112,6 +123,7 @@ class SessionForm extends React.Component{
                 </form>
                 {this.renderErrors()}
             </div>
+        </div>
         )
 
             if(this.props.formType === "Log In"){

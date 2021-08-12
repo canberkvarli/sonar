@@ -12711,10 +12711,21 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.renderErrors = _this.renderErrors.bind(_assertThisInitialized(_this));
+    _this.handleDemoUser = _this.handleDemoUser.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(SessionForm, [{
+    key: "handleDemoUser",
+    value: function handleDemoUser(e) {
+      e.preventDefault();
+      var user = {
+        username: 'demouser',
+        password: 'password'
+      };
+      this.props.processForm(user);
+    }
+  }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
@@ -12749,6 +12760,8 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
 
       var SessionFormSignIn = function SessionFormSignIn() {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          classNam: "outer-session-form"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "root-session-form"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
           className: "session-form",
@@ -12776,14 +12789,20 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
           value: _this3.state.password,
           onChange: _this3.update('password')
         })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+          type: "submit",
+          id: "demo-user-button",
+          value: "Demo User"
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
           className: "session-form-submit",
           type: "submit",
           value: _this3.props.formType
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null)), _this3.renderErrors());
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null)), _this3.renderErrors()));
       };
 
       var SessionFormSignUp = function SessionFormSignUp() {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "outer-session-form"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "root-session-form"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
           className: "session-form",
@@ -12814,7 +12833,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
           className: "session-form-submit",
           type: "submit",
           value: _this3.props.formType
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null)), _this3.renderErrors());
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null)), _this3.renderErrors()));
       };
 
       if (this.props.formType === "Log In") {
