@@ -36,15 +36,16 @@ class Waveform extends Component {
     };
 
     render() {
-        const url = 'https://www.mfiles.co.uk/mp3-downloads/moonlight-movement1.mp3';
+        
 
         return (
             <WaveformContainer className="waveform-div">
                 <PlayButton onClick={this.handlePlay} >
                     {!this.state.playing ? 'Play' : 'Pause'}
+                    {/* add icons to 'Play' and 'Pause' */}
                 </PlayButton>
                 <Wave id="waveform" />
-                <audio id="track" src={url} />
+                <audio id="track" src={this.props.track.audioUrl} />
             </WaveformContainer>
         );
     }

@@ -22,7 +22,6 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return {
         uploadTrack: (data) => dispatch(uploadTrack(data)),
-        deleteTrack: (trackId) => dispatch(deleteTrack(trackId))
     }
 }
 

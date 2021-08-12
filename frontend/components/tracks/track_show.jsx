@@ -22,7 +22,10 @@ class TrackShow extends React.Component{
         }else if(currentUser){
             return (
                 <> 
-                    <Waveform />    
+                    <div className="waveform-div">
+                        <img id="track-show-image" src={track.photoUrl} alt="" />
+                        <Waveform track={track}/>    
+                    </div>
                 </>
             )
         }

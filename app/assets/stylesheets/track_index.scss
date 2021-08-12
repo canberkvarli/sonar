@@ -4,6 +4,7 @@
 
 .track-index-container{
     display: flex;
+    margin-top: 50px;
     /* color: white; */
     height: auto;
     width: 1230px;
@@ -35,6 +36,36 @@
     align-items: center;
 }
 
+#track-show-image{
+    margin-top: 50px;
+    margin-left: 50px;
+    padding-right: 50px;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    /* background: orange; */
+}
+
 .track-index-item{
     padding: 9px;
 }
+
+.waveform-div{
+    position: absolute;
+    /* margin-top: -140px; */
+
+}
+#root > div > div.waveform-div > div{
+    margin-left: 210px;
+    margin-top: -150px;
+}
+#root > div > div.waveform-div > div > button{
+    margin-top: -130px;
+}
+// #waveform{
+//         /* border: 1px; */
+//     /* border: 1px solid black; */
+//     margin-top: 90px;
+//     margin-left: 5px;
+// }

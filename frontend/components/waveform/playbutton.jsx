@@ -4,9 +4,10 @@ export const PlayButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
-  height: 60px;
-  background: orange;
+  width: 40px;
+  height: 40px;
+  margin-top: -40px;
+  background: #ff5500;
   border-radius: 50%;
   border: none;
   outline: none;

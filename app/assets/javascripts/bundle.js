@@ -13095,7 +13095,15 @@ var TrackShow = /*#__PURE__*/function (_React$Component) {
       if (track === undefined) {
         return null;
       } else if (currentUser) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_waveform_waveform__WEBPACK_IMPORTED_MODULE_1__.default, null));
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "waveform-div"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+          id: "track-show-image",
+          src: track.photoUrl,
+          alt: ""
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_waveform_waveform__WEBPACK_IMPORTED_MODULE_1__.default, {
+          track: track
+        })));
       }
     }
   }]);
@@ -13519,9 +13527,6 @@ var mDTP = function mDTP(dispatch) {
   return {
     uploadTrack: function uploadTrack(data) {
       return dispatch((0,_actions_track_actions__WEBPACK_IMPORTED_MODULE_1__.uploadTrack)(data));
-    },
-    deleteTrack: function deleteTrack(trackId) {
-      return dispatch((0,_actions_track_actions__WEBPACK_IMPORTED_MODULE_1__.deleteTrack)(trackId));
     }
   };
 };
@@ -13780,7 +13785,7 @@ var _templateObject;
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-var PlayButton = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 60px;\n  height: 60px;\n  background: orange;\n  border-radius: 50%;\n  border: none;\n  outline: none;\n  cursor: pointer;\n  padding-bottom: 3px;\n  &:hover {\n    background: #DDD;\n  }\n"])));
+var PlayButton = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 40px;\n  height: 40px;\n  margin-top: -40px;\n  background: #ff5500;\n  border-radius: 50%;\n  border: none;\n  outline: none;\n  cursor: pointer;\n  padding-bottom: 3px;\n  &:hover {\n    background: #DDD;\n  }\n"])));
 
 /***/ }),
 
@@ -13903,7 +13908,6 @@ var Waveform = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var url = 'https://www.mfiles.co.uk/mp3-downloads/moonlight-movement1.mp3';
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_waveform_container__WEBPACK_IMPORTED_MODULE_2__.WaveformContainer, {
         className: "waveform-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_playbutton__WEBPACK_IMPORTED_MODULE_1__.PlayButton, {
@@ -13912,7 +13916,7 @@ var Waveform = /*#__PURE__*/function (_Component) {
         id: "waveform"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("audio", {
         id: "track",
-        src: url
+        src: this.props.track.audioUrl
       }));
     }
   }]);
