@@ -12163,7 +12163,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         }, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
           to: "/stream",
           className: "nav-header-label",
-          id: "nav-header-upload",
+          id: "nav-header-stream",
           onFocus: _this.handleClickTab
         }, "Stream", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
           className: "selected",

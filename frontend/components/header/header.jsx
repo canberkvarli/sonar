@@ -120,7 +120,7 @@ class Header extends React.Component{
                         <Link
                             to="/stream"
                             className="nav-header-label"
-                            id="nav-header-upload"
+                            id="nav-header-stream"
                             onFocus={this.handleClickTab}
                         >Stream
                             <span className="selected" id="selected"></span>
@@ -136,7 +136,7 @@ class Header extends React.Component{
                             <span className="selected" id="selected"></span>
                         </Link>
                         <br />
-                        
+
                     <div className="middle-nav-header">
                         <SearchContainer />
                     </div>
