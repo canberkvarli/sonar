@@ -1,6 +1,6 @@
 
 import { connect } from 'react-redux';
-import { deleteTrack, uploadTrack } from '../../actions/track_actions';
+import { uploadTrack } from '../../actions/track_actions';
 import TrackUpload from './track_upload'
 
 const mSTP = (state, ownProps) => {
@@ -15,7 +15,8 @@ const mSTP = (state, ownProps) => {
             imageUrl: null,
             audioFile: null,
             audioUrl: null
-        }
+        },
+        tracks: Object.values(state.entities.tracks)
     }
 }
 

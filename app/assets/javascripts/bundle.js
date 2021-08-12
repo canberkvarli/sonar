@@ -13472,7 +13472,7 @@ var TrackUpload = /*#__PURE__*/function (_React$Component) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "outer-track-form-container"
         }, this.state.submitted ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router__WEBPACK_IMPORTED_MODULE_1__.Redirect, {
-          to: "users/".concat(this.state.artistId)
+          to: "tracks/".concat(this.state.tracks.id)
         }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "track-form-container"
         }, this.secondPage()));
@@ -13519,7 +13519,8 @@ var mSTP = function mSTP(state, ownProps) {
       imageUrl: null,
       audioFile: null,
       audioUrl: null
-    }
+    },
+    tracks: Object.values(state.entities.tracks)
   };
 };
 
@@ -13806,7 +13807,7 @@ var _templateObject;
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-var Wave = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  width: 70%;\n  height: 90px;\n"])));
+var Wave = styled_components__WEBPACK_IMPORTED_MODULE_0__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    width: 70%;\n    height: 140%;\n"])));
 
 /***/ }),
 
@@ -13825,8 +13826,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _playbutton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./playbutton */ "./frontend/components/waveform/playbutton.jsx");
 /* harmony import */ var _waveform_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./waveform_container */ "./frontend/components/waveform/waveform_container.jsx");
 /* harmony import */ var _wave__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./wave */ "./frontend/components/waveform/wave.jsx");
-/* harmony import */ var wavesurfer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! wavesurfer.js */ "./node_modules/wavesurfer.js/dist/wavesurfer.js");
-/* harmony import */ var wavesurfer_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(wavesurfer_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
+/* harmony import */ var wavesurfer_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! wavesurfer.js */ "./node_modules/wavesurfer.js/dist/wavesurfer.js");
+/* harmony import */ var wavesurfer_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(wavesurfer_js__WEBPACK_IMPORTED_MODULE_5__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -13850,6 +13853,8 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -13892,7 +13897,7 @@ var Waveform = /*#__PURE__*/function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       var track = document.querySelector('#track');
-      this.waveform = wavesurfer_js__WEBPACK_IMPORTED_MODULE_4___default().create({
+      this.waveform = wavesurfer_js__WEBPACK_IMPORTED_MODULE_5___default().create({
         barWidth: 3,
         cursorWidth: 1,
         container: '#waveform',
@@ -13908,11 +13913,17 @@ var Waveform = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var play = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_4__.FontAwesomeIcon, {
+        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__.faPlay
+      });
+      var pause = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_4__.FontAwesomeIcon, {
+        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__.faPause
+      });
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_waveform_container__WEBPACK_IMPORTED_MODULE_2__.WaveformContainer, {
         className: "waveform-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_playbutton__WEBPACK_IMPORTED_MODULE_1__.PlayButton, {
         onClick: this.handlePlay
-      }, !this.state.playing ? 'Play' : 'Pause'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_wave__WEBPACK_IMPORTED_MODULE_3__.Wave, {
+      }, !this.state.playing ? play : pause), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_wave__WEBPACK_IMPORTED_MODULE_3__.Wave, {
         id: "waveform"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("audio", {
         id: "track",

@@ -4,6 +4,9 @@ import { PlayButton } from './playbutton';
 import { WaveformContainer } from './waveform_container';
 import { Wave } from './wave';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
+
 import WaveSurfer from 'wavesurfer.js';
 
 
@@ -37,17 +40,21 @@ class Waveform extends Component {
 
     render() {
         
+        const play = <FontAwesomeIcon icon={faPlay} />
+        const pause = <FontAwesomeIcon icon={faPause} />
 
         return (
             <WaveformContainer className="waveform-div">
                 <PlayButton onClick={this.handlePlay} >
-                    {!this.state.playing ? 'Play' : 'Pause'}
+                    {!this.state.playing ? play : pause }
                     {/* add icons to 'Play' and 'Pause' */}
                 </PlayButton>
                 <Wave id="waveform" />
                 <audio id="track" src={this.props.track.audioUrl} />
             </WaveformContainer>
+            
         );
+        
     }
 };
 
