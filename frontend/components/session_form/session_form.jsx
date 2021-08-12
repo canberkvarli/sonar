@@ -14,6 +14,10 @@ class SessionForm extends React.Component{
         this.handleDemoUser = this.handleDemoUser.bind(this);
     }
 
+    componentDidMount(){
+        this.props.errors;
+    }
+
     handleDemoUser(e) {
         e.preventDefault()
         const user = { username: 'demouser', password: 'password' }
@@ -80,6 +84,7 @@ class SessionForm extends React.Component{
                     <input className="session-form-submit" type="submit" value={this.props.formType} />
                     <br />
                 </form>
+                    
                     {this.renderErrors()}
             </div>
 

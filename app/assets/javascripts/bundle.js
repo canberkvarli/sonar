@@ -12716,6 +12716,11 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(SessionForm, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.errors;
+    }
+  }, {
     key: "handleDemoUser",
     value: function handleDemoUser(e) {
       e.preventDefault();
