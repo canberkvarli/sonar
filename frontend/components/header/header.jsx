@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import Modal from 'react-responsive-modal';
-import LogInFormContainer from '../session_form/login_form_container';
-import SignUpFormContainer from '../session_form/signup_form_container';
+import { faSearch} from '@fortawesome/free-solid-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+
 import SearchContainer from '../search/search_container';
 
 // import mars from '../../../app/assets/images/moon.jpg';
@@ -22,31 +21,6 @@ class Header extends React.Component{
     }
 
 
-    // openModalSignUp = () => {
-    //     this.setState({
-    //         signup: true
-    //     })
-    // };
-
-    // hideModalSignUp = () => {
-    //     this.setState({
-    //         signup: false
-    //     })
-    // };
-
-    // openModalSignIn= () => {
-    //     this.setState({
-    //         signin: true
-    //     })
-
-    // }
-
-    // hideModalSignIn = () => {
-    //     this.setState({
-    //         signin: false
-    //     })
-    // }
-
     handleClickTab(e){
         const currEle = e.currentTarget;
         currEle.classList.add('selected');
@@ -63,7 +37,8 @@ class Header extends React.Component{
     render(){
         const {signup, login, logout, currentUser, disabled} = this.props
         const search = <FontAwesomeIcon icon={faSearch}/>
-        
+        const github = <FontAwesomeIcon icon={["fab", "github"]} />
+
 
   
         // Not Logged In
@@ -76,8 +51,12 @@ class Header extends React.Component{
                         <img id="logo" src="https://logos-world.net/wp-content/uploads/2020/10/SoundCloud-Emblem.png" alt="" />
                         <span id="sonar">S O N A R</span>
                     </Link>
-                        
-                    <Link 
+                    
+                    <a href="https://github.com/canberkvarli">
+                        {github}
+                    </a>
+
+                    <Link
                         to="/login"
                         type="button"
                         className="nav-button"
@@ -85,13 +64,7 @@ class Header extends React.Component{
                         >Sign in
                         
                     </Link>
-                        {/* <Modal 
-                            open={this.state.signin} 
-                            onClose={this.onCloseModal}
-                            formType={this.state.formType}
-                            >
-                        </Modal> */}
-                        {/* <LogInFormContainer /> */}
+            
                     <br />
                     <Link 
                         className="nav-button" 
@@ -99,25 +72,11 @@ class Header extends React.Component{
                         to="/signup"
                         >
                     Create account</Link>
-                        {/* <Modal 
-                            open={this.state.signup}
-                            onClose={this.onCloseModal}
-                            formType={this.state.formType}
-                            >
-                            <SignUpFormContainer />
-                        </Modal> */}
+ 
                     <br />
 
                     <label htmlFor="For Creators" id="nav-label-creator">For Creators</label>
-                    {/* <Carousel {...settings} className="carousel" style={{minWidth: '1%'}}>
-                    {sliderPhotos.map((photo, idx) => {
-                        return(
-                            <div>
-                                <img key={idx} className="carousel-photo" src={photo.url} alt={photo.name} />
-                            </div>
-                        )
-                    })}
-                    </Carousel> */}
+
                 </nav> 
                 <div className="outer-div">
                     <div className="homepage-image">
@@ -151,14 +110,11 @@ class Header extends React.Component{
         // If Logged In
         const personalSpace = () => (
             <div className="personal-space">
-                <nav className="nav-header">
+                <nav className="personal-nav-header">
                     <div className="left-nav-header">
-                        <Link 
-                        to="/"
-                        className="nav-header-label"
-                        onFocus={this.handleClickTab}
-                        >Home
-                            <span className="selected" id="selected"></span>
+                        <Link to="/" id="header-link">
+                            <img id="personal-logo" src="https://logos-world.net/wp-content/uploads/2020/10/SoundCloud-Emblem.png" alt="" />
+                            <div className="selected" id="home">Home</div>
                         </Link>
                         <br />
                         <Link
@@ -179,7 +135,9 @@ class Header extends React.Component{
                         >Upload
                             <span className="selected" id="selected"></span>
                         </Link>
-                    <div className="middle-nav-hedaer">
+                        <br />
+                        
+                    <div className="middle-nav-header">
                         <SearchContainer />
                     </div>
                     <div className="right-nav-header">
@@ -189,6 +147,7 @@ class Header extends React.Component{
                     onClick={() => this.handleLogout()}>Log out</a>
                     </div>
                 </nav>
+            
             </div>
         )
 
