@@ -55,7 +55,7 @@
     border-radius: 3.4px;
     padding: 5px;
     min-width: 60px;
-    background-color:orangered;
+    background-color:rgb(255,85,0);
     transition: all 0.1s ease-in;
     align-content: center;
     justify-content: center;
@@ -78,7 +78,7 @@
     border-radius: 3.4px;
     padding: 5px;
     min-width: 240px;
-    background-color:orangered;
+    background-color:rgb(255,85,0);
     transition: all 0.1s ease-in;
     align-content: center;
     justify-content: center;
@@ -91,25 +91,25 @@
 }
 #upload-your-own-button{
     left: 800px;
-    height: 28px;
-    margin-top: -186px;
-    margin-left: 80px;
+    height: 20px;
+    margin-top: -175px;
+    margin-left: -24px;
     display: flex;
     position: absolute;
     z-index: 1;
     display: flex;
     position: absolute;
     border-radius: 3.4px;
-    padding: 5px;
+    padding: 8px;
     min-width: 240px;
-    background-color:orangered;
+    background-color: rgb(255,85,0);
     transition: all 0.1s ease-in;
     align-content: center;
     justify-content: center;
     text-align: center;
-    padding-top: 12px;
+    padding-top: 10px;
     width: 120px;
-    color: rgb(221, 221, 221);;
+    color: #dddddd;
     font-family: 'Mulish', sans-serif;
 }
 
@@ -156,7 +156,7 @@
     height: 450px;
     margin-top: -50px;
     margin-left: 15px;
-    background-color: orangered;
+    background-color: rgb(255,85,0);
 }
 
 #nightlife{
@@ -187,11 +187,10 @@ width:100%;
 }
 #or{   
     position: absolute;
-    margin-left: 850px;
+    margin-left: 750px;
     /* margin-bottom: 200px; */
-    margin-top: -175px;
+    margin-top: -167px;
     font-family: 'Mulish', sans-serif;
-
 }
 
 #outer-onimage-label {
@@ -255,6 +254,7 @@ width:100%;
     position: absolute;
     margin-top: -47px;
     margin-left: 200px;
+    height: 100px;
 }
 #personal-logo{
     position: absolute;
@@ -296,12 +296,13 @@ width:100%;
     padding-bottom: 15px;
     margin-top: -6px;
     padding-left: 20px;
-    margin-left: -1px;
-    position: relative;
+    margin-left: 231px;
+    position: absolute;
     display: flex;
     color: #dbdbdb;
     width: 40px;
     border: solid 1px black;
+    z-index: 2;
 }
 
 .right-nav-header{
@@ -316,4 +317,15 @@ width:100%;
     color: #dbdbdb;
     width: 60px;
     border: solid 1px black;
+}
+
+.selected:hover{
+    color: white;
+    box-shadow: yellow;
+    cursor: pointer;
+}
+#selected:hover{
+        color: white;
+    box-shadow: yellow;
+    cursor: pointer;
 }

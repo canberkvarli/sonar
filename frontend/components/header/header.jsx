@@ -118,12 +118,12 @@ class Header extends React.Component{
                         </Link>
                         <br />
                         <Link
-                            to="/stream"
+                            to="/library"
                             className="nav-header-label"
                             id="nav-header-stream"
                             onFocus={this.handleClickTab}
-                        >Stream
-                            <span className="selected" id="selected"></span>
+                        >
+                            <span className="selected" id="selected">Library</span>
                         </Link>
                     </div>
                         <br />
@@ -132,8 +132,8 @@ class Header extends React.Component{
                             className="nav-header-label"
                             id="nav-header-upload"
                             onFocus={this.handleClickTab}
-                        >Upload
-                            <span className="selected" id="selected"></span>
+                        >
+                        <span className="selected" id="selected">Upload</span>
                         </Link>
                         <br />
 
@@ -144,7 +144,9 @@ class Header extends React.Component{
 
                     <a htmlFor="Logout"
                     className="header-nav-setting"
-                    onClick={() => this.handleLogout()}>Log out</a>
+                            onClick={() => this.handleLogout()}>
+                            <span className="selected" id="selected">Log out</span>
+                            </a>
                     </div>
                 </nav>
             
