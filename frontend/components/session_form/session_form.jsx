@@ -18,10 +18,10 @@ class SessionForm extends React.Component{
         this.props.errors;
     }
 
-    handleDemoUser(e) {
+    handleDemoUser() {
         // e.preventDefault()
-        const user = { username: 'demouser', password: 'password' }
-        this.props.login(user);
+        const demouser = { username: 'demouser', password: 'password' }
+        this.props.login(demouser);
     }
 
     handleSubmit(e){
@@ -38,7 +38,7 @@ class SessionForm extends React.Component{
     }
 
     renderErrors() {
-        return (
+        const err = (
             <ul className="session-form" id="session-errors">
                 {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}>
@@ -47,6 +47,8 @@ class SessionForm extends React.Component{
                 ))}
             </ul>
         );
+        
+        return err;
     }
 
     render(){
@@ -84,7 +86,7 @@ class SessionForm extends React.Component{
                     <input className="session-form-submit" type="submit" value={this.props.formType} />
                     <br />
                 </form>
-                    
+                   
                     {this.renderErrors()}
             </div>
 

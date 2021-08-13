@@ -12121,7 +12121,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
           id: "outer-onimage-label"
         }, "What's next in music is first on Sonar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
           id: "inner-onimage-label"
-        }, "Upload your first track and begin your journey. SoundCloud gives you space to create, find your fans, and connect with other artists."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+        }, "Upload your first track and begin your journey. Sonar gives you space to create, find your fans, and connect with other artists."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
           className: "nav-button",
           id: "start-uploading-button",
           onClick: _this.openModalSignUp
@@ -12670,13 +12670,13 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "handleDemoUser",
-    value: function handleDemoUser(e) {
+    value: function handleDemoUser() {
       // e.preventDefault()
-      var user = {
+      var demouser = {
         username: 'demouser',
         password: 'password'
       };
-      this.props.login(user);
+      this.props.login(demouser);
     }
   }, {
     key: "handleSubmit",
@@ -12697,7 +12697,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "renderErrors",
     value: function renderErrors() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+      var err = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
         className: "session-form",
         id: "session-errors"
       }, this.props.errors.map(function (error, i) {
@@ -12705,6 +12705,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
           key: "error-".concat(i)
         }, error);
       }));
+      return err;
     }
   }, {
     key: "render",
@@ -12919,6 +12920,7 @@ var TrackIndex = /*#__PURE__*/function (_React$Component) {
       this.setState({
         displayPlayhead: true
       });
+      x;
     }
   }, {
     key: "render",
@@ -13472,7 +13474,7 @@ var TrackUpload = /*#__PURE__*/function (_React$Component) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "outer-track-form-container"
         }, this.state.submitted ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router__WEBPACK_IMPORTED_MODULE_1__.Link, {
-          to: "tracks/".concat(this.state.track.id)
+          to: "tracks/".concat(this.state.artistId)
         }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "track-form-container"
         }, this.secondPage()));
