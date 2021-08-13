@@ -10,15 +10,16 @@ const mSTP = (state, ownProps) => {
             return false
         }
     }
-
+    
     return {
 
         currentUser: state.entities.users[state.session.id],
         trackId: ownProps.match.params.trackId,
         track: state.entities.tracks[ownProps.match.params.trackId],
-        trackUrl: (trackLoaded() ? state.entities.tracks[ownProps.match.params.trackId].trackUrl : '')
-        
+        trackUrl: (trackLoaded() ? state.entities.tracks[ownProps.match.params.trackId].trackUrl : ''),
+        tracks: Object.values(state.entities.tracks),
     }
+    
 }
 
 

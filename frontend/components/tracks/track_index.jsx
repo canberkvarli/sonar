@@ -11,7 +11,7 @@ class TrackIndex extends React.Component{
             displayPlayhead: false
         }
 
-        console.log(props);
+        this.handleOnclick = this.handleOnclick.bind(this);
     }
 
     componentDidMount(){
@@ -23,7 +23,7 @@ class TrackIndex extends React.Component{
         this.setState({
             displayPlayhead: true
         })
-
+x
     }
 
 
@@ -31,10 +31,12 @@ class TrackIndex extends React.Component{
         const {tracks} = this.props;    
         
         return(
-            <div>
-                <ul className="track-index" onClick={this.handleOnClick}>
+            <div className="track-index-container" >
+                <ul className="track-index">
                     {tracks.map((track,idx) => (
+                      <li onClick={this.handleOnclick} >
                             <TrackIndexItem track={track} key={idx}  />
+                      </li>  
                     ))}
                     {this.state.displayPlayhead ? 
                     <Playhead />

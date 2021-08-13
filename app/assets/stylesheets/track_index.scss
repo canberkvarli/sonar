@@ -2,12 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.track-index-container{
+    display: flex;
+    margin-top: 50px;
+    /* color: white; */
+    height: auto;
+    width: 1230px;
+    margin-left: 15px;
+    position: relative;
+    align-content: center;
+    justify-content: center;
+    flex-direction: row;
+    color: white;
+    background-color: white;
+}
+.track-title{
+    font-family: 'Mulish', sans-serif;
+    font-size: small;
+    color: black;
+}
 .track-index{
     display: flex;
-    margin-top: 500px;
-    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* padding: 30px; */
+    margin: 20px;
 }
-
 .track-photos{
     width: 180px;
     height: 180px;
@@ -15,3 +36,78 @@
     align-items: center;
 }
 
+#track-show-image{
+    margin-top: 100px;
+    margin-left: 50px;
+    padding-right: 50px;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    /* background: orange; */
+}
+
+.track-index-item{
+    padding: 9px;
+}
+
+.waveform-div{
+    position: absolute;
+    margin-top: -190px;
+    margin-left: 70px;
+    width: 1200px;
+}
+#waveform{
+    margin-top: 110px;
+    width: 70%;
+    height: 140%;
+    margin-left: 5px;
+}
+#waveform > wave{
+    display: block;
+    position: relative;
+    user-select: none;
+    height: 250px;
+    overflow: auto hidden;
+    margin-top: -60px;
+}
+#track-show-title{
+    margin-left: 80px;
+    position: absolute;
+    width: auto;
+    height: auto;
+    font-family: 'Mulish', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    /* margin-right: 5px;
+}
+
+#track-show-desc{
+    margin-top: 30px;
+    position: absolute;
+    margin-left: 800px;
+    color: darkolivegreen;
+    /* display: flex; */
+    /* justify-content: flex-start; */
+    /* align-items: flex-start; */
+    width: 450px;
+}
+#root > div > div.waveform-div > div{
+    margin-left: 210px;
+    margin-top: -150px;
+}
+#root > div > div.waveform-div > div > button{
+    margin-top: -130px;
+}
+// #waveform{
+//         /* border: 1px; */
+//     /* border: 1px solid black; */
+//     margin-top: 90px;
+//     margin-left: 5px;
+// }
+
+#root > div > div.waveform-div > div > button > svg{
+    margin-top:5px;
+    margin-left: 0.5px;
+
+}

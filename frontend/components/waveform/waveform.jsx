@@ -4,6 +4,9 @@ import { PlayButton } from './playbutton';
 import { WaveformContainer } from './waveform_container';
 import { Wave } from './wave';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
+
 import WaveSurfer from 'wavesurfer.js';
 
 
@@ -20,10 +23,10 @@ class Waveform extends Component {
             cursorWidth: 1,
             container: '#waveform',
             backend: 'WebAudio',
-            height: 80,
-            progressColor: '#2D5BFF',
+            height: 220,
+            progressColor: '#ff5500',
             responsive: true,
-            waveColor: 'orange',
+            waveColor: "#5d5d5d",
             cursorColor: 'transparent',
         });
 
@@ -36,17 +39,24 @@ class Waveform extends Component {
     };
 
     render() {
-        const url = 'https://www.mfiles.co.uk/mp3-downloads/moonlight-movement1.mp3';
+        
+        const play = <FontAwesomeIcon icon={faPlay} />
+        const pause = <FontAwesomeIcon icon={faPause} />
 
         return (
-            <WaveformContainer className="waveform-div">
-                <PlayButton onClick={this.handlePlay} >
-                    {!this.state.playing ? 'Play' : 'Pause'}
-                </PlayButton>
-                <Wave id="waveform" />
-                <audio id="track" src={url} />
-            </WaveformContainer>
+            <div className="waveform-outer-div">
+                <WaveformContainer className="waveform-div">
+                    <PlayButton onClick={this.handlePlay} >
+                        {!this.state.playing ? play : pause }
+                        {/* add icons to 'Play' and 'Pause' */}
+                    </PlayButton>
+                    <Wave id="waveform" />
+                    <audio id="track" src={this.props.track.audioUrl} />
+                </WaveformContainer>
+            </div>
+            
         );
+        
     }
 };
 

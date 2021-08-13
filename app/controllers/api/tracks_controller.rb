@@ -19,6 +19,7 @@ class Api::TracksController < ApplicationController
     end
 
     def show
+        # debugger
         @track = Track.find(params[:id])
         render :show
     end
@@ -36,7 +37,8 @@ class Api::TracksController < ApplicationController
 
     private
     def track_params
-        params.permit(
+        params.require(:track).permit(
+            :id,
             :artist_id,
             :title,
             :description,

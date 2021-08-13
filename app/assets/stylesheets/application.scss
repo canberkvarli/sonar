@@ -24,6 +24,10 @@
 @import "react-responsive-carousel/lib/styles/carousel.min.css";
 @import 'react-h5-audio-player/lib/styles.css';
 @import "./api/track_form.scss";
+@import "./api/search.scss";
 
 
-
+body{
+    font-family: 'Mulish', sans-serif;
+    
+};

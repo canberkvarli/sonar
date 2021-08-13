@@ -1,4 +1,4 @@
-.song-form-album-art {
+.track-form-album-art {
   width: 260px;
   height: 260px;
 }
@@ -47,7 +47,7 @@
   -ms-user-select: none;
   padding-left: 5px;
 }
-.song-submit-btn {
+.track-submit-btn {
   background-color: #f50;
   height: 26px;
   margin: 0;
@@ -74,14 +74,14 @@
   width: 100px;
 }
 
-.outer-song-form-container {
+.outer-track-form-container {
   width: 100%;
   height: 750px;
   display: flex;
   background: #f2f2f2;
 }
 
-.song-form-container {
+.track-form-container {
   width: 100%;
 
   border: 1px solid #f2f2f2;
@@ -109,7 +109,7 @@
   padding-top: 200px
 }
 
-.drag-drop-song-form {
+.drag-drop-track-form {
   vertical-align: auto;
   background: white;
   margin: 0 auto;
@@ -162,7 +162,7 @@
     padding: 10px;
   }
 }
-.song-form-text-input-container {
+.track-form-text-input-container {
   height: 260px;
   width: 470px;
   width: 50%;
@@ -170,7 +170,7 @@
   justify-content: space-between;
   flex-direction: column;
 }
-.song-form-center-ele {
+.track-form-center-ele {
   position: absolute;
 
   top: 50%;
@@ -225,14 +225,14 @@
     }
   }
 }
-.song-progress-bar {
+.track-progress-bar {
   display: flex;
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.song-form-image-container {
+.track-form-image-container {
   vertical-align: auto;
   border: 3px solid #e5e5e5;
   margin: 0;
@@ -294,7 +294,7 @@
   display: none;
 }
 
-.edit-song-modal-background {
+.edit-track-modal-background {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -304,7 +304,7 @@
   z-index: 10;
 }
 
-.edit-song-modal-child {
+.edit-track-modal-child {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -319,7 +319,7 @@
   display: none;
 }
 
-.edit-song-form-text-input-container {
+.edit-track-form-text-input-container {
   width: 470px;
   height: 340px;
   display: flex;
@@ -387,33 +387,33 @@
   color: #f50;
 }
 
-.edit-songform-title {
+.edit-trackform-title {
   margin-top: 10px;
   padding: 5px;
 }
 
-.edit-songform-genre {
+.edit-trackform-genre {
   margin-top: 10px;
   padding: 5px;
 }
 
-.edit-song-form-description {
+.edit-track-form-description {
   margin-top: 10px;
   padding: 5px;
   width: 100%;
   height: 80px;
 }
 
-.edit-song-continue-btn {
+.edit-track-continue-btn {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
 }
-.edit-song-cancel-btn {
+.edit-track-cancel-btn {
   cursor: pointer;
 }
-.edit-song-submit-btn {
+.edit-track-submit-btn {
   background-color: #f50;
   margin: 0;
   border: 1px solid #e5e5e5;
@@ -436,7 +436,7 @@
   font-size: 16px;
 }
 
-.delete-song-modal-background {
+.delete-track-modal-background {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -450,7 +450,7 @@
   margin: 30px;
 }
 
-.delete-song-modal-child {
+.delete-track-modal-child {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -475,7 +475,7 @@
   padding-bottom: 10px;
   margin-bottom: 15px;
 }
-.delete-song-continue-btn {
+.delete-track-continue-btn {
   display: flex;
   flex-direction: row;
   align-items: center;

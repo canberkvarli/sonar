@@ -6,6 +6,7 @@ class TrackShow extends React.Component{
     constructor(props){
         super(props)
 
+        console.log(props);
     }
 
 
@@ -14,14 +15,16 @@ class TrackShow extends React.Component{
     }
 
     render(){
-        const {track, currentUser} = this.props;
+        const {track, currentUser, artistId} = this.props;
         
         if ((track === undefined)){
             return null
         }else if(currentUser){
             return (
                 <> 
-                    <Waveform />    
+                    <img id="track-show-image" src={track.photoUrl} alt="" />
+                    <Waveform track={track}/>
+                    <span id="track-show-title">{track.title}</span>
                 </>
             )
         }

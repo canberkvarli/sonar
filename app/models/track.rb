@@ -20,5 +20,7 @@ class Track < ApplicationRecord
     has_one_attached :photo
     has_one_attached :audio
 
-    
+    belongs_to :uploader,
+    foreign_key: :artist_id,
+    class_name: :User
 end

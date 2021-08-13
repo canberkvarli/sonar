@@ -237,7 +237,7 @@ class TrackUpload extends React.Component {
         else if (this.state.formNum === 1) {
             return (
                 <div className="outer-track-form-container">
-                    {this.state.submitted ? <Redirect to={`users/${this.state.artistId}`} /> : <></>}
+                    {this.state.submitted ? <Link to={`tracks/${this.state.artistId}`} /> : <></>}
                     <div className="track-form-container">
                         {this.secondPage()}
                     </div>
