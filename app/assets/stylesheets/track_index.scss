@@ -63,6 +63,21 @@
     height: 140%;
     margin-left: 5px;
 }
+#waveform > wave{
+    display: block;
+    position: relative;
+    user-select: none;
+    height: 250px;
+    overflow: auto hidden;
+    margin-top: -60px;
+}
+#track-show-title{
+    margin-left: 90px;
+    position: absolute;
+    width: auto;
+    height: auto;
+    font-family: 'Mulish', sans-serif;
+}
 #root > div > div.waveform-div > div{
     margin-left: 210px;
     margin-top: -150px;

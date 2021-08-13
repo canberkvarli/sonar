@@ -13097,7 +13097,9 @@ var TrackShow = /*#__PURE__*/function (_React$Component) {
           alt: ""
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_waveform_waveform__WEBPACK_IMPORTED_MODULE_1__.default, {
           track: track
-        }));
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+          id: "track-show-title"
+        }, track.title));
       }
     }
   }]);
@@ -13895,10 +13897,10 @@ var Waveform = /*#__PURE__*/function (_Component) {
         cursorWidth: 1,
         container: '#waveform',
         backend: 'WebAudio',
-        height: 80,
-        progressColor: '#2D5BFF',
+        height: 220,
+        progressColor: '#ff5500',
         responsive: true,
-        waveColor: 'orange',
+        waveColor: "#5d5d5d",
         cursorColor: 'transparent'
       });
       this.waveform.load(track);

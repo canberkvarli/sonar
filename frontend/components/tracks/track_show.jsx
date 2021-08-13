@@ -25,6 +25,7 @@ class TrackShow extends React.Component{
                 <> 
                     <img id="track-show-image" src={track.photoUrl} alt="" />
                     <Waveform track={track}/>
+                    <span id="track-show-title">{track.title}</span>
                 </>
             )
         }
