@@ -17,8 +17,7 @@ const mSTP = (state, ownProps) => {
         trackId: ownProps.match.params.trackId,
         track: state.entities.tracks[ownProps.match.params.trackId],
         trackUrl: (trackLoaded() ? state.entities.tracks[ownProps.match.params.trackId].trackUrl : ''),
-        tracks: Object.values(state.entities.tracks)
-
+        tracks: Object.values(state.entities.tracks),
     }
     
 }

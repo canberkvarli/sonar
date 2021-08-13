@@ -12593,6 +12593,9 @@ var mDTP = function mDTP(dispatch) {
   return {
     processForm: function processForm(user) {
       return dispatch((0,_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__.login)(user));
+    },
+    login: function login(user) {
+      return dispatch((0,_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__.login)(user));
     }
   };
 };
@@ -12668,12 +12671,12 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleDemoUser",
     value: function handleDemoUser(e) {
-      e.preventDefault();
+      // e.preventDefault()
       var user = {
         username: 'demouser',
         password: 'password'
       };
-      this.props.processForm(user);
+      this.props.login(user);
     }
   }, {
     key: "handleSubmit",
@@ -12741,7 +12744,8 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
         })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
           type: "submit",
           id: "demo-user-button",
-          value: "Demo User"
+          value: "Demo User",
+          onClick: _this3.handleDemoUser
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
           className: "session-form-submit",
           type: "submit",
@@ -13086,7 +13090,8 @@ var TrackShow = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this$props = this.props,
           track = _this$props.track,
-          currentUser = _this$props.currentUser;
+          currentUser = _this$props.currentUser,
+          artistId = _this$props.artistId;
 
       if (track === undefined) {
         return null;
@@ -14298,7 +14303,7 @@ var Auth = function Auth(_ref) {
     exact: exact,
     render: function render(props) {
       return !loggedIn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Component, props) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Redirect, {
-        to: "/discover"
+        to: "/"
       });
     }
   });

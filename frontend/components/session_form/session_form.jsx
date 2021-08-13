@@ -19,9 +19,9 @@ class SessionForm extends React.Component{
     }
 
     handleDemoUser(e) {
-        e.preventDefault()
+        // e.preventDefault()
         const user = { username: 'demouser', password: 'password' }
-        this.props.processForm(user)
+        this.props.login(user);
     }
 
     handleSubmit(e){
@@ -80,7 +80,7 @@ class SessionForm extends React.Component{
                             onChange={this.update('password')} />
                     </label>
                     <br />
-                    <input type="submit" id="demo-user-button" value="Demo User" />
+                    <input type="submit" id="demo-user-button" value="Demo User" onClick={this.handleDemoUser} />
                     <input className="session-form-submit" type="submit" value={this.props.formType} />
                     <br />
                 </form>
