@@ -43,8 +43,9 @@ handlePlay = () => {
     }
 ```
 ### Search
-
 <!-- search.jsx -->
+
+* Search functionality works as the user clicks on the bar and the `currList` is set to all of the tracks. To filter the tracks `newList` is filtered and used to update the state on line 72.
 
 ```javascript
 
