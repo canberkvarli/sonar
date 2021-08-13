@@ -18,7 +18,7 @@ class TrackShow extends React.Component{
         
         if ((track === undefined)){
             return null
-        }else if(currentUser){
+        }else {
             return (
                 <> 
                     <img id="track-show-image" src={track.photoUrl} alt={track.title} />

@@ -25,19 +25,21 @@ class Search extends React.Component {
 
 
     handleChange(e) {
-        let currentList = [];
+        let currList = [];
         let newList = [];
 
         if (e.target.value !== "") {
-            currentList = this.props.tracks;
-            newList = currentList.filter((track) => {
-                let lc;
+            currList = this.props.tracks;
+            newList = currList.filter((track) => {
+                let lowerCaseTrack;
+                // ensure of an object
                 typeof track == "object"
-                    ? (lc = track.title.toLowerCase())
-                    : (lc = track.toLowerCase());
+                // lower case mandatory
+                    ? (lowerCaseTrack = track.title.toLowerCase())
+                    : (lowerCaseTrack = track.toLowerCase());
                 let filter = e.target.value.toLowerCase();
 
-                return lc.includes(filter);
+                return lowerCaseTrack.includes(filter);
             });
         } else {
             newList = this.props.tracks;

@@ -12121,18 +12121,18 @@ var Header = /*#__PURE__*/function (_React$Component) {
           id: "outer-onimage-label"
         }, "What's next in music is first on Sonar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
           id: "inner-onimage-label"
-        }, "Upload your first track and begin your journey. Sonar gives you space to create, find your fans, and connect with other artists."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+        }, "Upload your first track and begin your journey. Sonar gives you space to create, find your fans, and connect with other artists."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+          to: "/signup",
           className: "nav-button",
-          id: "start-uploading-button",
-          onClick: _this.openModalSignUp
+          id: "start-uploading-button"
         }, "Start uploading today"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "search-div"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_search_search_container__WEBPACK_IMPORTED_MODULE_2__.default, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
           id: "or"
-        }, "or"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+        }, "or"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+          to: "/signup",
           className: "nav-button",
-          id: "upload-your-own-button",
-          onClick: _this.openModalSignUp
+          id: "upload-your-own-button"
         }, "Upload your own"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
           id: "intro"
         }, "Hear what\u2019s trending for free in the Sonar community"));
@@ -12414,16 +12414,18 @@ var Search = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleChange",
     value: function handleChange(e) {
-      var currentList = [];
+      var currList = [];
       var newList = [];
 
       if (e.target.value !== "") {
-        currentList = this.props.tracks;
-        newList = currentList.filter(function (track) {
-          var lc;
-          _typeof(track) == "object" ? lc = track.title.toLowerCase() : lc = track.toLowerCase();
+        currList = this.props.tracks;
+        newList = currList.filter(function (track) {
+          var lowerCaseTrack; // ensure of an object
+
+          _typeof(track) == "object" // lower case mandatory
+          ? lowerCaseTrack = track.title.toLowerCase() : lowerCaseTrack = track.toLowerCase();
           var filter = e.target.value.toLowerCase();
-          return lc.includes(filter);
+          return lowerCaseTrack.includes(filter);
         });
       } else {
         newList = this.props.tracks;
@@ -13086,7 +13088,7 @@ var TrackShow = /*#__PURE__*/function (_React$Component) {
 
       if (track === undefined) {
         return null;
-      } else if (currentUser) {
+      } else {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           id: "track-show-image",
           src: track.photoUrl,
