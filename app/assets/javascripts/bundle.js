@@ -12419,17 +12419,15 @@ var Search = /*#__PURE__*/function (_React$Component) {
 
       if (e.target.value !== "") {
         currentList = this.props.tracks;
-        newList = currentList.filter(function (item) {
+        newList = currentList.filter(function (track) {
           var lc;
-          _typeof(item) == "object" ? lc = item.title.toLowerCase() : lc = item.toLowerCase();
+          _typeof(track) == "object" ? lc = track.title.toLowerCase() : lc = track.toLowerCase();
           var filter = e.target.value.toLowerCase();
           return lc.includes(filter);
         });
       } else {
-        // If the search bar is empty, set newList to original task list
         newList = this.props.tracks;
-      } // Set the filtered state based on what our rules added to newList
-
+      }
 
       this.setState({
         filtered: newList

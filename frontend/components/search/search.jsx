@@ -30,20 +30,18 @@ class Search extends React.Component {
 
         if (e.target.value !== "") {
             currentList = this.props.tracks;
-            newList = currentList.filter((item) => {
+            newList = currentList.filter((track) => {
                 let lc;
-                typeof item == "object"
-                    ? (lc = item.title.toLowerCase())
-                    : (lc = item.toLowerCase());
+                typeof track == "object"
+                    ? (lc = track.title.toLowerCase())
+                    : (lc = track.toLowerCase());
                 let filter = e.target.value.toLowerCase();
 
                 return lc.includes(filter);
             });
         } else {
-            // If the search bar is empty, set newList to original task list
             newList = this.props.tracks;
         }
-        // Set the filtered state based on what our rules added to newList
         this.setState({
             filtered: newList,
         });
