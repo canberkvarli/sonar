@@ -22,12 +22,10 @@ const App = () => (
     <div>
             <HeaderContainer />
         <Switch>
-            
-            <Route exact path="/discover" component={TrackIndexContainer} />
-            <Route exact path="/" component={TrackIndexContainer} />
             <Route exact path ="/tracks/:trackId" component={TrackShowContainer} />
             <Route exact path ="/upload" component={TrackUploadContainer}/>
             <Route exact path="/users/:userId" component={UsersContainer}/>
+            <Route exact path="/" component={TrackIndexContainer} />
         </Switch>
             <Playhead />
     </div>

@@ -11,7 +11,7 @@ const TrackIndexItem = (props) =>
         <div className="track-index-item">
             <img className="track-photos" src={props.track.photoUrl} />
             <span>
-                <Link to={`/tracks/${props.track.artistId }`} className="track-title">{props.track.title}</Link>
+                <Link to={`/tracks/${props.track.id }`} className="track-title">{props.track.title}</Link>
             </span>
             <br />
         </div> 

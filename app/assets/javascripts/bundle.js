@@ -11972,14 +11972,6 @@ __webpack_require__.r(__webpack_exports__);
 var App = function App() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_header_header_container__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Switch, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
     exact: true,
-    path: "/discover",
-    component: _tracks_track_index_container__WEBPACK_IMPORTED_MODULE_4__.default
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
-    exact: true,
-    path: "/",
-    component: _tracks_track_index_container__WEBPACK_IMPORTED_MODULE_4__.default
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
-    exact: true,
     path: "/tracks/:trackId",
     component: _tracks_track_show_container__WEBPACK_IMPORTED_MODULE_5__.default
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
@@ -11990,6 +11982,10 @@ var App = function App() {
     exact: true,
     path: "/users/:userId",
     component: _users_users_container__WEBPACK_IMPORTED_MODULE_7__.default
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+    exact: true,
+    path: "/",
+    component: _tracks_track_index_container__WEBPACK_IMPORTED_MODULE_4__.default
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_playhead_playhead__WEBPACK_IMPORTED_MODULE_8__.default, null));
 };
 
@@ -13018,7 +13014,7 @@ var TrackIndexItem = function TrackIndexItem(props) {
     className: "track-photos",
     src: props.track.photoUrl
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    to: "/tracks/".concat(props.track.artistId),
+    to: "/tracks/".concat(props.track.id),
     className: "track-title"
   }, props.track.title)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null));
 };
@@ -13095,15 +13091,13 @@ var TrackShow = /*#__PURE__*/function (_React$Component) {
       if (track === undefined) {
         return null;
       } else if (currentUser) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-          className: "waveform-div"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           id: "track-show-image",
           src: track.photoUrl,
           alt: ""
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_waveform_waveform__WEBPACK_IMPORTED_MODULE_1__.default, {
           track: track
-        })));
+        }));
       }
     }
   }]);
@@ -13149,7 +13143,6 @@ var mSTP = function mSTP(state, ownProps) {
     trackUrl: trackLoaded() ? state.entities.tracks[ownProps.match.params.trackId].trackUrl : '',
     tracks: Object.values(state.entities.tracks)
   };
-  debugger;
 };
 
 var mDTP = function mDTP(dispatch) {
@@ -13919,7 +13912,9 @@ var Waveform = /*#__PURE__*/function (_Component) {
       var pause = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_4__.FontAwesomeIcon, {
         icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__.faPause
       });
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_waveform_container__WEBPACK_IMPORTED_MODULE_2__.WaveformContainer, {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "waveform-outer-div"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_waveform_container__WEBPACK_IMPORTED_MODULE_2__.WaveformContainer, {
         className: "waveform-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_playbutton__WEBPACK_IMPORTED_MODULE_1__.PlayButton, {
         onClick: this.handlePlay
@@ -13928,7 +13923,7 @@ var Waveform = /*#__PURE__*/function (_Component) {
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("audio", {
         id: "track",
         src: this.props.track.audioUrl
-      }));
+      })));
     }
   }]);
 

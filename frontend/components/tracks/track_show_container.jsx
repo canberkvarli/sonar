@@ -20,7 +20,7 @@ const mSTP = (state, ownProps) => {
         tracks: Object.values(state.entities.tracks)
 
     }
-    debugger
+    
 }
 
 
