@@ -13068,13 +13068,9 @@ var TrackShow = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(TrackShow);
 
   function TrackShow(props) {
-    var _this;
-
     _classCallCheck(this, TrackShow);
 
-    _this = _super.call(this, props);
-    console.log(props);
-    return _this;
+    return _super.call(this, props);
   }
 
   _createClass(TrackShow, [{
@@ -13096,7 +13092,7 @@ var TrackShow = /*#__PURE__*/function (_React$Component) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           id: "track-show-image",
           src: track.photoUrl,
-          alt: ""
+          alt: track.title
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_waveform_waveform__WEBPACK_IMPORTED_MODULE_1__.default, {
           track: track
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {

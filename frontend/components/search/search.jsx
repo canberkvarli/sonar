@@ -123,7 +123,7 @@ class Search extends React.Component {
                                     <Link
                                         className="search-res-link"
                                         to={{
-                                            pathname: `/tracks/${track.id}`,
+                                        pathname: `/tracks/${track.id}`,
                                         }}
                                     >
                                         {track.title}
