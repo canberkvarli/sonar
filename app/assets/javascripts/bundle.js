@@ -13466,8 +13466,8 @@ var TrackUpload = /*#__PURE__*/function (_React$Component) {
       } else if (this.state.formNum === 1) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "outer-track-form-container"
-        }, this.state.submitted ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router__WEBPACK_IMPORTED_MODULE_1__.Redirect, {
-          to: "tracks/".concat(this.state.tracks.id)
+        }, this.state.submitted ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router__WEBPACK_IMPORTED_MODULE_1__.Link, {
+          to: "tracks/".concat(this.state.track.id)
         }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "track-form-container"
         }, this.secondPage()));
