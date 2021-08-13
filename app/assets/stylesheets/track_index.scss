@@ -55,7 +55,7 @@
     position: absolute;
     margin-top: -190px;
     margin-left: 70px;
-
+    width: 1200px;
 }
 #waveform{
     margin-top: 110px;
@@ -72,11 +72,25 @@
     margin-top: -60px;
 }
 #track-show-title{
-    margin-left: 90px;
+    margin-left: 80px;
     position: absolute;
     width: auto;
     height: auto;
     font-family: 'Mulish', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    /* margin-right: 5px;
+}
+
+#track-show-desc{
+    margin-top: 30px;
+    position: absolute;
+    margin-left: 800px;
+    color: darkolivegreen;
+    /* display: flex; */
+    /* justify-content: flex-start; */
+    /* align-items: flex-start; */
+    width: 450px;
 }
 #root > div > div.waveform-div > div{
     margin-left: 210px;
