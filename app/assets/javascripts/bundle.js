@@ -12399,6 +12399,7 @@ var Search = /*#__PURE__*/function (_React$Component) {
     _this.showMenu = _this.showMenu.bind(_assertThisInitialized(_this));
     _this.closeMenu = _this.closeMenu.bind(_assertThisInitialized(_this));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    console.log(props);
     return _this;
   }
 
@@ -12436,10 +12437,10 @@ var Search = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "showMenu",
-    value: function showMenu(event) {
+    value: function showMenu(e) {
       var _this2 = this;
 
-      event.preventDefault();
+      e.preventDefault();
       this.setState({
         showMenu: true
       }, function () {
@@ -12472,7 +12473,6 @@ var Search = /*#__PURE__*/function (_React$Component) {
       var _this$state = this.state,
           filtered = _this$state.filtered,
           enterClickRedirect = _this$state.enterClickRedirect;
-      var keyIdx = 0;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, function () {
         if (enterClickRedirect) {
           if (_typeof(filtered[0]) == "object") {
@@ -12491,23 +12491,18 @@ var Search = /*#__PURE__*/function (_React$Component) {
         },
         type: "text",
         className: "headerSearch__input"
-      }, _defineProperty(_React$createElement, "className", this.props.location == 'header' ? 'headerSearch__input' : 'splash-search-bar'), _defineProperty(_React$createElement, "onChange", this.handleChange), _defineProperty(_React$createElement, "onFocus", this.showMenu), _defineProperty(_React$createElement, "placeholder", this.props.location == 'header' ? 'Search' : 'Search for tracks, podcasts, etc..'), _defineProperty(_React$createElement, "onKeyPress", this.handleEnterClick), _React$createElement)), this.state.showMenu ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+      }, _defineProperty(_React$createElement, "className", this.props.location == 'header' ? 'headerSearch__input' : 'splash-search-bar'), _defineProperty(_React$createElement, "onChange", this.handleChange), _defineProperty(_React$createElement, "onFocus", this.showMenu), _defineProperty(_React$createElement, "placeholder", this.props.location == 'header' ? 'Search' : 'Search for tracks'), _defineProperty(_React$createElement, "onKeyPress", this.handleEnterClick), _React$createElement)), this.state.showMenu ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
         id: "search-res",
         className: "search-results-ul"
-      }, this.state.filtered.map(function (item) {
-        keyIdx += 1;
+      }, this.state.filtered.map(function (track) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-          key: keyIdx,
           className: "search-results-li"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
           className: "search-res-link",
           to: {
-            pathname: "/tracks/".concat(item.id)
+            pathname: "/tracks/".concat(track.id)
           }
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-          className: "search-img-thumb",
-          src: item.imageUrl
-        }), item.title));
+        }, track.title));
       })) : null);
     }
   }]);
