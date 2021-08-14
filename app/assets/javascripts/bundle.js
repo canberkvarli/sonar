@@ -12121,18 +12121,18 @@ var Header = /*#__PURE__*/function (_React$Component) {
           id: "outer-onimage-label"
         }, "What's next in music is first on Sonar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
           id: "inner-onimage-label"
-        }, "Upload your first track and begin your journey. Sonar gives you space to create, find your fans, and connect with other artists."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+        }, "Upload your first track and begin your journey. Sonar gives you space to create, find your fans, and connect with other artists."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+          to: "/signup",
           className: "nav-button",
-          id: "start-uploading-button",
-          onClick: _this.openModalSignUp
+          id: "start-uploading-button"
         }, "Start uploading today"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "search-div"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_search_search_container__WEBPACK_IMPORTED_MODULE_2__.default, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
           id: "or"
-        }, "or"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+        }, "or"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+          to: "/signup",
           className: "nav-button",
-          id: "upload-your-own-button",
-          onClick: _this.openModalSignUp
+          id: "upload-your-own-button"
         }, "Upload your own"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
           id: "intro"
         }, "Hear what\u2019s trending for free in the Sonar community"));
@@ -12399,6 +12399,7 @@ var Search = /*#__PURE__*/function (_React$Component) {
     _this.showMenu = _this.showMenu.bind(_assertThisInitialized(_this));
     _this.closeMenu = _this.closeMenu.bind(_assertThisInitialized(_this));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    console.log(props);
     return _this;
   }
 
@@ -12413,22 +12414,22 @@ var Search = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleChange",
     value: function handleChange(e) {
-      var currentList = [];
+      var currList = [];
       var newList = [];
 
       if (e.target.value !== "") {
-        currentList = this.props.tracks;
-        newList = currentList.filter(function (item) {
-          var lc;
-          _typeof(item) == "object" ? lc = item.title.toLowerCase() : lc = item.toLowerCase();
+        currList = this.props.tracks;
+        newList = currList.filter(function (track) {
+          var lowerCaseTrack; // ensure of an object
+
+          _typeof(track) == "object" // lower case mandatory
+          ? lowerCaseTrack = track.title.toLowerCase() : lowerCaseTrack = track.toLowerCase();
           var filter = e.target.value.toLowerCase();
-          return lc.includes(filter);
+          return lowerCaseTrack.includes(filter);
         });
       } else {
-        // If the search bar is empty, set newList to original task list
         newList = this.props.tracks;
-      } // Set the filtered state based on what our rules added to newList
-
+      }
 
       this.setState({
         filtered: newList
@@ -12436,10 +12437,10 @@ var Search = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "showMenu",
-    value: function showMenu(event) {
+    value: function showMenu(e) {
       var _this2 = this;
 
-      event.preventDefault();
+      e.preventDefault();
       this.setState({
         showMenu: true
       }, function () {
@@ -12472,7 +12473,6 @@ var Search = /*#__PURE__*/function (_React$Component) {
       var _this$state = this.state,
           filtered = _this$state.filtered,
           enterClickRedirect = _this$state.enterClickRedirect;
-      var keyIdx = 0;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, function () {
         if (enterClickRedirect) {
           if (_typeof(filtered[0]) == "object") {
@@ -12491,23 +12491,18 @@ var Search = /*#__PURE__*/function (_React$Component) {
         },
         type: "text",
         className: "headerSearch__input"
-      }, _defineProperty(_React$createElement, "className", this.props.location == 'header' ? 'headerSearch__input' : 'splash-search-bar'), _defineProperty(_React$createElement, "onChange", this.handleChange), _defineProperty(_React$createElement, "onFocus", this.showMenu), _defineProperty(_React$createElement, "placeholder", this.props.location == 'header' ? 'Search' : 'Search for tracks, podcasts, etc..'), _defineProperty(_React$createElement, "onKeyPress", this.handleEnterClick), _React$createElement)), this.state.showMenu ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+      }, _defineProperty(_React$createElement, "className", this.props.location == 'header' ? 'headerSearch__input' : 'splash-search-bar'), _defineProperty(_React$createElement, "onChange", this.handleChange), _defineProperty(_React$createElement, "onFocus", this.showMenu), _defineProperty(_React$createElement, "placeholder", this.props.location == 'header' ? 'Search' : 'Search for tracks'), _defineProperty(_React$createElement, "onKeyPress", this.handleEnterClick), _React$createElement)), this.state.showMenu ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
         id: "search-res",
         className: "search-results-ul"
-      }, this.state.filtered.map(function (item) {
-        keyIdx += 1;
+      }, this.state.filtered.map(function (track) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-          key: keyIdx,
           className: "search-results-li"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
           className: "search-res-link",
           to: {
-            pathname: "/tracks/".concat(item.id)
+            pathname: "/tracks/".concat(track.id)
           }
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-          className: "search-img-thumb",
-          src: item.imageUrl
-        }), item.title));
+        }, track.title));
       })) : null);
     }
   }]);
@@ -13073,13 +13068,9 @@ var TrackShow = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(TrackShow);
 
   function TrackShow(props) {
-    var _this;
-
     _classCallCheck(this, TrackShow);
 
-    _this = _super.call(this, props);
-    console.log(props);
-    return _this;
+    return _super.call(this, props);
   }
 
   _createClass(TrackShow, [{
@@ -13097,11 +13088,11 @@ var TrackShow = /*#__PURE__*/function (_React$Component) {
 
       if (track === undefined) {
         return null;
-      } else if (currentUser) {
+      } else {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           id: "track-show-image",
           src: track.photoUrl,
-          alt: ""
+          alt: track.title
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_waveform_waveform__WEBPACK_IMPORTED_MODULE_1__.default, {
           track: track
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {

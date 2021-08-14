@@ -12,6 +12,8 @@ class Search extends React.Component {
         this.showMenu = this.showMenu.bind(this);
         this.closeMenu = this.closeMenu.bind(this);
         this.handleChange = this.handleChange.bind(this);
+
+        console.log(props);
     }
 
     componentDidMount() {
@@ -23,32 +25,32 @@ class Search extends React.Component {
 
 
     handleChange(e) {
-        let currentList = [];
+        let currList = [];
         let newList = [];
 
         if (e.target.value !== "") {
-            currentList = this.props.tracks;
-            newList = currentList.filter((item) => {
-                let lc;
-                typeof item == "object"
-                    ? (lc = item.title.toLowerCase())
-                    : (lc = item.toLowerCase());
+            currList = this.props.tracks;
+            newList = currList.filter((track) => {
+                let lowerCaseTrack;
+                // ensure of an object
+                typeof track == "object"
+                // lower case mandatory
+                    ? (lowerCaseTrack = track.title.toLowerCase())
+                    : (lowerCaseTrack = track.toLowerCase());
                 let filter = e.target.value.toLowerCase();
 
-                return lc.includes(filter);
+                return lowerCaseTrack.includes(filter);
             });
         } else {
-            // If the search bar is empty, set newList to original task list
             newList = this.props.tracks;
         }
-        // Set the filtered state based on what our rules added to newList
         this.setState({
             filtered: newList,
         });
     }
 
-    showMenu(event) {
-        event.preventDefault();
+    showMenu(e) {
+        e.preventDefault();
 
         this.setState({ showMenu: true }, () => {
             document.addEventListener("click", this.closeMenu);
@@ -80,7 +82,6 @@ class Search extends React.Component {
 
     render() {
         const { filtered, enterClickRedirect } = this.state;
-        let keyIdx = 0;
         return (
 
             <
@@ -111,27 +112,22 @@ class Search extends React.Component {
                     className={this.props.location == 'header' ? 'headerSearch__input' : 'splash-search-bar'}
                     onChange={this.handleChange}
                     onFocus={this.showMenu}
-                    placeholder={this.props.location == 'header' ? 'Search' : 'Search for tracks, podcasts, etc..'}
+                    placeholder={this.props.location == 'header' ? 'Search' : 'Search for tracks'}
                     onKeyPress={this.handleEnterClick}
                 />
                 {this.state.showMenu ? (
                     <ul id="search-res" className="search-results-ul">
-                        {this.state.filtered.map((item) => {
-                            keyIdx += 1;
+                        {this.state.filtered.map((track) => {
                             return (
-                                <li key={keyIdx} className="search-results-li">
+                                <li className="search-results-li">
                                     <Link
                                         className="search-res-link"
                                         to={{
-                                            pathname: `/tracks/${item.id}`,
+                                        pathname: `/tracks/${track.id}`,
                                         }}
                                     >
-                                        <img className="search-img-thumb"
-                                            src={item.imageUrl}
-                                        />
-                                        {item.title}
+                                        {track.title}
                                     </Link>
-
                                 </li>
                             )
                         })}

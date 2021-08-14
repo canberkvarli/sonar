@@ -6,7 +6,6 @@ class TrackShow extends React.Component{
     constructor(props){
         super(props)
 
-        console.log(props);
     }
 
 
@@ -19,17 +18,15 @@ class TrackShow extends React.Component{
         
         if ((track === undefined)){
             return null
-        }else if(currentUser){
+        }else {
             return (
                 <> 
-                    <img id="track-show-image" src={track.photoUrl} alt="" />
-                    <Waveform track={track}/>
+                    <img id="track-show-image" src={track.photoUrl} alt={track.title} />
+                        <Waveform track={track}/>
                     <span id="track-show-title">{track.title}</span>
                 </>
             )
         }
-
-        
     }
 }
 

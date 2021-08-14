@@ -83,24 +83,24 @@ class Header extends React.Component{
                         <span id="outer-onimage-label">What's next in music is first on Sonar</span>
                         <br />
                         <span id="inner-onimage-label">Upload your first track and begin your journey. Sonar gives you space to create, find your fans, and connect with other artists.</span>
-                        <button
+                        <Link
+                            to="/signup"
                             className="nav-button"
                             id="start-uploading-button"
-                            onClick={this.openModalSignUp}
                         >
-                            Start uploading today</button>
+                            Start uploading today</Link>
                     </div>
                 </div>
                 <div className="search-div">
                     <SearchContainer />
                 </div>
                     <span id="or">or</span>
-                    <button
+                    <Link
+                        to="/signup"
                         className="nav-button"
                         id="upload-your-own-button"
-                        onClick={this.openModalSignUp}
                     >
-                        Upload your own</button>
+                        Upload your own</Link>
                 <span id="intro">Hear what’s trending for free in the Sonar community</span>
             </div>
                 
