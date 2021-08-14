@@ -74,3 +74,9 @@ handleChange(e) {
         });
     }
 ```
+## Future Implementations
+
+* Track Upload
+* Slider on the home page
+* Login and SignUp Modal
+* Artist Library
