@@ -1,9 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang=”en” prefix=”og: http://ogp.me/ns#">
   <head>
     <title>Sonar</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta 
+  property=”og:title”
+  content="Sonar" 
+/>
+<meta 
+  name=”image” 
+  property=”og:image” 
+  content=”app/assets/images/homepage.png” 
+/>
+<meta 
+  name=”author” 
+  content="Canberk" 
+/>
+
+<meta 
+  property=”og:url” 
+  content="http://appsonar.herokuapp.com/#/" 
+/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400&display=swap" rel="stylesheet">
