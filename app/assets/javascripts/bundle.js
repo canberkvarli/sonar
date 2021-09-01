@@ -12915,7 +12915,6 @@ var TrackIndex = /*#__PURE__*/function (_React$Component) {
       this.setState({
         displayPlayhead: true
       });
-      x;
     }
   }, {
     key: "render",

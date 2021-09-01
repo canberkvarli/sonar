@@ -23,7 +23,6 @@ class TrackIndex extends React.Component{
         this.setState({
             displayPlayhead: true
         })
-x
     }
 
 
