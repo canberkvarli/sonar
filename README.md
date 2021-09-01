@@ -82,5 +82,4 @@ handleChange(e) {
 
 * Track Upload
 * Slider on the home page
-* Login and SignUp Modal
 * Artist Library
