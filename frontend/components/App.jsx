@@ -23,7 +23,7 @@ const App = () => (
             <HeaderContainer />
         <Switch>
             <Route exact path ="/tracks/:trackId" component={TrackShowContainer} />
-            <Route exact path ="/upload" component={TrackUploadContainer}/>
+            <ProtectedRoute exact path ="/upload" component={TrackUploadContainer}/>
             <Route exact path="/users/:userId" component={UsersContainer}/>
             <Route exact path="/" component={TrackIndexContainer} />
         </Switch>

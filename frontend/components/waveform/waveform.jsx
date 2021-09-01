@@ -40,14 +40,14 @@ class Waveform extends Component {
 
     render() {
         
-        const play = <FontAwesomeIcon icon={faPlay} />
-        const pause = <FontAwesomeIcon icon={faPause} />
+        const playIcon = <FontAwesomeIcon icon={faPlay} />
+        const pauseIcon = <FontAwesomeIcon icon={faPause} />
 
         return (
             <div className="waveform-outer-div">
                 <WaveformContainer className="waveform-div">
                     <PlayButton onClick={this.handlePlay} >
-                        {!this.state.playing ? play : pause }
+                        {!this.state.playing ? playIcon : pauseIcon }
                         {/* add icons to 'Play' and 'Pause' */}
                     </PlayButton>
                     <Wave id="waveform" />

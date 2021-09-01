@@ -11974,7 +11974,7 @@ var App = function App() {
     exact: true,
     path: "/tracks/:trackId",
     component: _tracks_track_show_container__WEBPACK_IMPORTED_MODULE_5__.default
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_2__.ProtectedRoute, {
     exact: true,
     path: "/upload",
     component: _tracks_track_upload_container__WEBPACK_IMPORTED_MODULE_6__.default
@@ -12399,7 +12399,6 @@ var Search = /*#__PURE__*/function (_React$Component) {
     _this.showMenu = _this.showMenu.bind(_assertThisInitialized(_this));
     _this.closeMenu = _this.closeMenu.bind(_assertThisInitialized(_this));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
-    console.log(props);
     return _this;
   }
 
@@ -13905,10 +13904,10 @@ var Waveform = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var play = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_4__.FontAwesomeIcon, {
+      var playIcon = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_4__.FontAwesomeIcon, {
         icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__.faPlay
       });
-      var pause = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_4__.FontAwesomeIcon, {
+      var pauseIcon = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_4__.FontAwesomeIcon, {
         icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__.faPause
       });
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -13917,7 +13916,7 @@ var Waveform = /*#__PURE__*/function (_Component) {
         className: "waveform-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_playbutton__WEBPACK_IMPORTED_MODULE_1__.PlayButton, {
         onClick: this.handlePlay
-      }, !this.state.playing ? play : pause), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_wave__WEBPACK_IMPORTED_MODULE_3__.Wave, {
+      }, !this.state.playing ? playIcon : pauseIcon), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_wave__WEBPACK_IMPORTED_MODULE_3__.Wave, {
         id: "waveform"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("audio", {
         id: "track",
