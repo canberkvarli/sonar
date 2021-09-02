@@ -14,8 +14,8 @@ import TrackIndexContainer from "./tracks/track_index_container";
 import TrackShowContainer from "./tracks/track_show_container";
 import TrackUploadContainer from "./tracks/track_upload_container";
 import UsersContainer from "./users/users_container";
+import PlayheadContainer from "./playhead/playhead_container"
 
-import Playhead from "./playhead/playhead"
 
 
 const App = () => (
@@ -27,7 +27,7 @@ const App = () => (
             <Route exact path="/users/:userId" component={UsersContainer}/>
             <Route exact path="/" component={TrackIndexContainer} />
         </Switch>
-            <Playhead />
+            <PlayheadContainer />
     </div>
 );
 
