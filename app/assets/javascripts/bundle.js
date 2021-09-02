@@ -12296,9 +12296,15 @@ var Playhead = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(Playhead);
 
   function Playhead(props) {
+    var _this;
+
     _classCallCheck(this, Playhead);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    _this.state = {
+      isPlaying: false
+    };
+    return _this;
   }
 
   _createClass(Playhead, [{
@@ -12306,9 +12312,19 @@ var Playhead = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var tracks = this.props.tracks;
       console.log(tracks);
+      var temp;
+
+      if (this.state.isPlaying) {
+        temp = 'container-playhead-passive';
+      } else {
+        temp = 'container-playhead-active';
+      }
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("footer", {
-        className: "playhead-footer"
-      }));
+        className: temp
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_h5_audio_player__WEBPACK_IMPORTED_MODULE_1__.default, {
+        src: "https://www.mfiles.co.uk/mp3-downloads/franz-schubert-standchen-serenade.mp3"
+      })));
     }
   }]);
 
