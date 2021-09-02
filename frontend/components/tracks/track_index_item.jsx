@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 const TrackIndexItem = (props) => 
     {
 
-       console.log(props)
         // debugger
         return(
         <div className="track-index-item">

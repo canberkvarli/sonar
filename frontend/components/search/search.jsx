@@ -13,7 +13,6 @@ class Search extends React.Component {
         this.closeMenu = this.closeMenu.bind(this);
         this.handleChange = this.handleChange.bind(this);
 
-        console.log(props);
     }
 
     componentDidMount() {

@@ -5,6 +5,12 @@ import Playhead from './playhead';
 
 const mSTP = state => ({
     tracks: Object.values(state.entities.tracks)
+
+})
+
+
+const mDTP = dispatch => ({
+
 })
 
 
