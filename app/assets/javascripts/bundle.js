@@ -14558,7 +14558,7 @@ var uploadTrack = function uploadTrack(trackForm) {
   var formData = _camel_to_snake_js__WEBPACK_IMPORTED_MODULE_0__.formDataConvert(trackForm);
   var req = $.ajax({
     method: 'POST',
-    url: "api/songs/",
+    url: "api/tracks/",
     data: formData,
     contentType: false,
     processData: false

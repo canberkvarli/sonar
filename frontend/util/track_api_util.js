@@ -21,7 +21,7 @@ export const uploadTrack = (trackForm) => {
 
   const req = $.ajax({
     method: 'POST',
-    url: `api/songs/`,
+    url: `api/tracks/`,
     data: formData,
     contentType: false,
     processData: false,
