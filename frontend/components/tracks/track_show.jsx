@@ -14,6 +14,7 @@ class TrackShow extends React.Component{
     }
 
     render(){
+        console.log(this.props)
         const {track, currentUser, artistId} = this.props;
         
         if ((track === undefined)){

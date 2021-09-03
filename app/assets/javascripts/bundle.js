@@ -11890,7 +11890,7 @@ var deleteTrack = function deleteTrack(trackId) {
 var uploadTrack = function uploadTrack(track) {
   return function (dispatch) {
     return _util_track_api_util__WEBPACK_IMPORTED_MODULE_0__.uploadTrack(track).then(function (track) {
-      return dispatch(receiveTrack(track.id));
+      return dispatch(receiveTrack(track));
     });
   };
 };
@@ -12302,29 +12302,34 @@ var Playhead = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      isPlaying: false
+      isPlaying: true
     };
     return _this;
   }
 
   _createClass(Playhead, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchTrack(this.props.trackId);
+    }
+  }, {
     key: "render",
     value: function render() {
-      var tracks = this.props.tracks;
-      console.log(tracks);
+      console.log(this.props);
+      console.log(this.props.tracks);
       var temp;
+      this.state.isPlaying ? temp = 'container-playhead-passive' : 'container-playhead-active';
 
-      if (this.state.isPlaying) {
-        temp = 'container-playhead-passive';
+      if (this.props.tracks === undefined) {
+        return null;
       } else {
-        temp = 'container-playhead-active';
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, this.props.tracks.map(function (track) {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("footer", {
+            className: temp
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_h5_audio_player__WEBPACK_IMPORTED_MODULE_1__.default // src={track.audioUrl}
+          , null));
+        }));
       }
-
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("footer", {
-        className: temp
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_h5_audio_player__WEBPACK_IMPORTED_MODULE_1__.default, {
-        src: "https://www.mfiles.co.uk/mp3-downloads/franz-schubert-standchen-serenade.mp3"
-      })));
     }
   }]);
 
@@ -12347,21 +12352,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _playhead__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./playhead */ "./frontend/components/playhead/playhead.jsx");
+/* harmony import */ var _actions_track_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/track_actions */ "./frontend/actions/track_actions.js");
+/* harmony import */ var _playhead__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./playhead */ "./frontend/components/playhead/playhead.jsx");
 
 
 
-var mSTP = function mSTP(state) {
+
+var mSTP = function mSTP(state, ownProps) {
+  var trackLoaded = function trackLoaded() {
+    if (state.entities.tracks[ownProps.match.params.trackId]) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   return {
+    currentUser: state.entities.users[state.session.id],
+    // trackId: ownProps.match.params.trackId,
+    // track: state.entities.tracks[ownProps.match.params.trackId],
+    // trackUrl: (trackLoaded() ? state.entities.tracks[ownProps.match.params.trackId].trackUrl : ''),
     tracks: Object.values(state.entities.tracks)
   };
 };
 
 var mDTP = function mDTP(dispatch) {
-  return {};
+  return {
+    fetchTrack: function fetchTrack(trackId) {
+      return dispatch((0,_actions_track_actions__WEBPACK_IMPORTED_MODULE_1__.fetchTrack)(trackId));
+    }
+  };
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_0__.connect)(mSTP)(_playhead__WEBPACK_IMPORTED_MODULE_1__.default));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_0__.connect)(mSTP, mDTP)(_playhead__WEBPACK_IMPORTED_MODULE_2__.default));
 
 /***/ }),
 
@@ -13166,6 +13189,7 @@ var TrackShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      console.log(this.props);
       var _this$props = this.props,
           track = _this$props.track,
           currentUser = _this$props.currentUser,
@@ -13251,7 +13275,7 @@ var mDTP = function mDTP(dispatch) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (/* binding */ TrackUpload)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
@@ -13307,8 +13331,6 @@ var TrackUpload = /*#__PURE__*/function (_React$Component) {
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.updateAudio = _this.updateAudio.bind(_assertThisInitialized(_this));
     _this.updateImage = _this.updateImage.bind(_assertThisInitialized(_this));
-    _this.handleDrop = _this.handleDrop.bind(_assertThisInitialized(_this));
-    _this.handleDragOver = _this.handleDragOver.bind(_assertThisInitialized(_this));
     _this.handleBack = _this.handleBack.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -13385,24 +13407,6 @@ var TrackUpload = /*#__PURE__*/function (_React$Component) {
       }
     }
   }, {
-    key: "handleDrop",
-    value: function handleDrop(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      var file = e.dataTransfer.files[0]; // 
-
-      if (file.type.includes('audio')) {
-        this.updateAudio(e, file);
-      } else {// error handling for incorrect file type
-      }
-    }
-  }, {
-    key: "handleDragOver",
-    value: function handleDragOver(e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-  }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
@@ -13432,10 +13436,6 @@ var TrackUpload = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "first-form-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "drag-drop-track-form",
-        onDropCapture: this.handleDrop,
-        onDragOver: this.handleDragOver
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "track-form-center-ele"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
         className: "drag-drop-text"
@@ -13448,7 +13448,7 @@ var TrackUpload = /*#__PURE__*/function (_React$Component) {
         onChange: function onChange(e) {
           return _this5.updateAudio(e);
         }
-      }), " or choose files to upload"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null))));
+      }), " or choose files to upload"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null)));
     }
   }, {
     key: "handleBack",
@@ -13495,7 +13495,7 @@ var TrackUpload = /*#__PURE__*/function (_React$Component) {
         className: "filename"
       }, " ", this.state.fileName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         className: "ready-post"
-      }, " Ready. Click Save to post this track.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      }, " Save and post this track.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "second-form-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "track-form-image-container"
@@ -13555,15 +13555,13 @@ var TrackUpload = /*#__PURE__*/function (_React$Component) {
           className: "track-form-container"
         }, this.secondPage()));
       }
-
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null);
     }
   }]);
 
   return TrackUpload;
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TrackUpload);
+
 
 /***/ }),
 
@@ -13591,6 +13589,7 @@ var mSTP = function mSTP(state, ownProps) {
     currentUser: state.entities.users[state.session.id],
     track: {
       artistId: state.session.id,
+      trackId: ownProps.match.params.trackId,
       title: '',
       description: '',
       imageFile: null,
@@ -14352,6 +14351,74 @@ var configureStore = function configureStore() {
 
 /***/ }),
 
+/***/ "./frontend/util/camel_to_snake.js":
+/*!*****************************************!*\
+  !*** ./frontend/util/camel_to_snake.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "convertToSnakeCase": () => (/* binding */ convertToSnakeCase),
+/* harmony export */   "formDataConvert": () => (/* binding */ formDataConvert)
+/* harmony export */ });
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var convertToSnakeCase = function convertToSnakeCase(obj) {
+  // via Andrew
+  var camelToSnakeCase = function camelToSnakeCase(str) {
+    return str.replace(/[A-Z]/g, function (letter) {
+      return "_".concat(letter.toLowerCase());
+    });
+  };
+
+  var newObj = {};
+  var keys = Object.keys(obj);
+  var values = Object.values(obj);
+  var convertedKeys = keys.map(function (key) {
+    return camelToSnakeCase(key);
+  });
+
+  for (var i = 0; i < keys.length; i++) {
+    newObj[convertedKeys[i]] = values[i];
+  }
+
+  return newObj;
+};
+var formDataConvert = function formDataConvert(formData) {
+  var retFormData = new FormData();
+
+  var camelToSnakeCase = function camelToSnakeCase(str) {
+    return str.replace(/[A-Z]/g, function (letter) {
+      return "_".concat(letter.toLowerCase());
+    });
+  };
+
+  var _iterator = _createForOfIteratorHelper(formData.entries()),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var pair = _step.value;
+      var newKey = camelToSnakeCase(pair[0]);
+      retFormData.append(newKey, pair[1]);
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+
+  return retFormData;
+};
+
+/***/ }),
+
 /***/ "./frontend/util/route_util.js":
 /*!*************************************!*\
   !*** ./frontend/util/route_util.js ***!
@@ -14468,6 +14535,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "uploadTrack": () => (/* binding */ uploadTrack),
 /* harmony export */   "deleteTrack": () => (/* binding */ deleteTrack)
 /* harmony export */ });
+/* harmony import */ var _camel_to_snake_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./camel_to_snake.js */ "./frontend/util/camel_to_snake.js");
+
 var fetchTracks = function fetchTracks(data) {
   return $.ajax({
     url: '/api/tracks',
@@ -14486,18 +14555,15 @@ var fetchTrack = function fetchTrack(trackId) {
   });
 };
 var uploadTrack = function uploadTrack(trackForm) {
-  return $.ajax({
-    method: "POST",
-    url: 'api/tracks',
-    data: {
-      trackForm: trackForm
-    },
+  var formData = _camel_to_snake_js__WEBPACK_IMPORTED_MODULE_0__.formDataConvert(trackForm);
+  var req = $.ajax({
+    method: 'POST',
+    url: "api/songs/",
+    data: formData,
     contentType: false,
-    processData: false,
-    error: function error(err) {
-      return console.log(err);
-    }
+    processData: false
   });
+  return req;
 };
 var deleteTrack = function deleteTrack(trackId) {
   return $.ajax({

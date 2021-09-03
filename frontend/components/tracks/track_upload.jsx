@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { Redirect, Link } from 'react-router'
+import { Link } from 'react-router'
 // TODO
 // add back button on page 2
 // 
 
-class TrackUpload extends React.Component {
+export default class TrackUpload extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -17,8 +17,6 @@ class TrackUpload extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.updateAudio = this.updateAudio.bind(this)
         this.updateImage = this.updateImage.bind(this)
-        this.handleDrop = this.handleDrop.bind(this)
-        this.handleDragOver = this.handleDragOver.bind(this)
         this.handleBack = this.handleBack.bind(this)
     }
 
@@ -70,24 +68,6 @@ class TrackUpload extends React.Component {
         }
     }
 
-    handleDrop(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        const file = e.dataTransfer.files[0]
-        // 
-        if (file.type.includes('audio')) {
-            this.updateAudio(e, file)
-        } else {
-            // error handling for incorrect file type
-        }
-    }
-
-    handleDragOver(e) {
-        e.preventDefault();
-        e.stopPropagation();
-    }
- 
-
     handleSubmit(e) {
         e.preventDefault();
         const data = new FormData();
@@ -111,13 +91,6 @@ class TrackUpload extends React.Component {
         return (
 
             <div className="first-form-container">
-                
-                {/* </Link> */}
-                {/* <div className="above-drag-drop"></div> */}
-                <div className="drag-drop-track-form"
-                    onDropCapture={this.handleDrop}
-                    onDragOver={this.handleDragOver}
-                >
 
                     <div className='track-form-center-ele'>
                         <h1 className='drag-drop-text'> {`Drag and drop your tracks & albums here`}</h1>
@@ -132,7 +105,6 @@ class TrackUpload extends React.Component {
                         </label>
                         <br />
                     </div>
-                </div>
             </div>
         )
     }
@@ -141,7 +113,7 @@ class TrackUpload extends React.Component {
     }
     secondPage() {
         // 
-        let dispImg
+        let dispImg;
         if (this.state.imageFile) {
             dispImg = <img className="track-form-album-art" src={this.state.imageUrl} />
         }
@@ -163,7 +135,7 @@ class TrackUpload extends React.Component {
                     </div>
                     <div className="track-progress-bar">
                         <p className="filename"> {this.state.fileName}</p>
-                        <p className="ready-post"> Ready. Click Save to post this track.</p>
+                        <p className="ready-post"> Save and post this track.</p>
                     </div>
                     <div className="second-form-container">
                         <div className="track-form-image-container">
@@ -244,8 +216,5 @@ class TrackUpload extends React.Component {
                 </div>
             )
         }
-        return (<></>)
     }
 }
-
-export default TrackUpload

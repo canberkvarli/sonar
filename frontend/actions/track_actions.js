@@ -47,6 +47,6 @@ export const deleteTrack = trackId => dispatch => (
 
 export const uploadTrack = track => dispatch => (
     APITrackUtil.uploadTrack(track)
-    .then((track) => dispatch(receiveTrack(track.id)))
+    .then((track) => dispatch(receiveTrack(track)))
 );
 

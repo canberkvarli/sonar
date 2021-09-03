@@ -21,7 +21,11 @@ class Api::TracksController < ApplicationController
     def show
         # debugger
         @track = Track.find(params[:id])
+       if @track.save
         render :show
+       else
+        render json: @track.errors.full_messages, status: 402
+       end
     end
 
     def destroy

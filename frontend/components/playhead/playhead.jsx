@@ -6,33 +6,41 @@ class Playhead extends React.Component {
         super(props)
 
         this.state = {
-            isPlaying: false
+            isPlaying: true
         }
 
+    }
+
+    componentDidMount(){
+        this.props.fetchTrack(this.props.trackId)
     }
 
 
     render() {
 
-        const { tracks } = this.props;
-        console.log(tracks)
+        console.log(this.props)
+        console.log(this.props.tracks)
 
         let temp;
-        if(this.state.isPlaying){
-            temp = 'container-playhead-passive'
-        }else{
-            temp = 'container-playhead-active'
-        }
-        return (
+        this.state.isPlaying ? temp = 'container-playhead-passive' : 'container-playhead-active'
 
-            <div>
-                <footer className={temp}>
-                    <AudioPlayer 
-                    src="https://www.mfiles.co.uk/mp3-downloads/franz-schubert-standchen-serenade.mp3"
-                    />
-                </footer>
-            </div>
-        )
+        if(this.props.tracks === undefined){
+            return null
+        }else{
+            
+            return (
+                
+                <div>
+                    {this.props.tracks.map(track => (
+                        <footer className={temp}>
+                            <AudioPlayer 
+                            // src={track.audioUrl}
+                            />
+                        </footer>
+                    ))}
+                </div>
+            )
+        }
     }
 }
 

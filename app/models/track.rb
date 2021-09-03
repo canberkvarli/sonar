@@ -23,4 +23,6 @@ class Track < ApplicationRecord
     belongs_to :uploader,
     foreign_key: :artist_id,
     class_name: :User
+
+    
 end
