@@ -1,4 +1,4 @@
-import React from 'react';
+ximport React from 'react';
 import { Link } from 'react-router-dom';
 import TrackIndexItem from './track_index_item';
 
