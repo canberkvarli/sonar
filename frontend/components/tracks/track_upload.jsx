@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 
 export default class TrackUpload extends React.Component {
     constructor(props) {
@@ -109,7 +109,7 @@ export default class TrackUpload extends React.Component {
         this.setState({ formNum: 0 })
     }
     secondPage() {
-         
+        
         let dispImg;
         if (this.state.imageFile) {
             dispImg = <img className="track-form-album-art" src={this.state.imageUrl} />
@@ -203,6 +203,7 @@ export default class TrackUpload extends React.Component {
             )
         }
         else if (this.state.formNum === 1) {
+            // debugger
             return (
                 <div className="outer-track-form-container">
                     {this.state.submitted ? <Link to={`tracks/${this.state.artistId}`} /> : <></>}

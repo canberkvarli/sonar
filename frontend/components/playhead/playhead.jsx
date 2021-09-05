@@ -18,8 +18,8 @@ class Playhead extends React.Component {
 
     render() {
 
-        console.log(this.props)
-        console.log(this.props.tracks)
+        // console.log(this.props)
+        // console.log(this.props.tracks)
 
         let temp;
         this.state.isPlaying ? temp = 'container-playhead-passive' : 'container-playhead-active'

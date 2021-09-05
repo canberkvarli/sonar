@@ -24,7 +24,7 @@ export const uploadTrack = (trackForm) => {
     url: `api/tracks/`,
     data: formData,
     contentType: false,
-    processData: false,
+    processData: false
   })
   return req
 }
