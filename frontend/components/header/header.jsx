@@ -39,7 +39,7 @@ class Header extends React.Component{
         const {signup, login, logout, currentUser, disabled} = this.props
         const search = <FontAwesomeIcon icon={faSearch}/>
         const github = <FontAwesomeIcon icon={["fab", "github"]} />
-
+        console.log(this.props)
 
   
         // Not Logged In
@@ -145,7 +145,7 @@ class Header extends React.Component{
                         <SearchContainer />
                     </div>
                     <div className="right-nav-header">
-
+                    <Link className="link-profile">{this.props.currentUser.username}</Link>
                     <a htmlFor="Logout"
                     className="header-nav-setting"
                             onClick={() => this.handleLogout()}>

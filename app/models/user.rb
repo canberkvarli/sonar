@@ -32,6 +32,14 @@ class User < ApplicationRecord
     has_many :tracks,
     foreign_key: :artist_id,
     class_name: :Track
+
+    has_many :likes,
+    foreign_key: :liker_id,
+    class_name: :Like
+
+    has_many :liked_tracks,
+    through: :likes,
+    source: :track
     
     #  SPIER
 
