@@ -24,7 +24,7 @@ handlePlay = () => {
 ```
 ![Sonar Track Page](app/assets/images/track.png "Sonar Track")
 
-* With this code below, A specific track will be rendered as `tracks/:trackId` with a the audio file, an image and a wave that is created above.
+* With this code below, A specific track will be rendered as `tracks/:trackId` with an audio file, an image and a wave that is created above.
 <!-- track_show.jsx  -->
 
 ```javascript
