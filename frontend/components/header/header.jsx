@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch} from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
+import { FaGithubSquare } from 'react-icons/fa'
+import { FaGithub } from "react-icons/fa"
 
 import SearchContainer from '../search/search_container';
 
@@ -52,7 +54,7 @@ class Header extends React.Component{
                     </Link>
                     
                     <a href="https://github.com/canberkvarli">
-                        {github}
+                        <span className="icon-github"> <FaGithubSquare/></span>
                     </a>
 
                     <Link
@@ -135,6 +137,9 @@ class Header extends React.Component{
                         <span className="selected" id="selected">Upload</span>
                         </Link>
                         <br />
+                    <a href="https://github.com/canberkvarli">
+                        <span id="icon-github-personal"> <FaGithub/></span>
+                    </a>
 
                     <div className="middle-nav-header">
                         <SearchContainer />

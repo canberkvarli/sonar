@@ -338,3 +338,24 @@ width:100%;
     box-shadow: yellow;
     cursor: pointer;
 }
+
+.icon-github{
+    display: flex;
+    /* width: 100px; */
+    /* height: 50px; */
+    position: absolute;
+    margin-left: 860px;
+    font-size: 38px;
+    /* background-color: magenta; */
+    margin-top: 20px;
+    color: whitesmoke;
+}
+
+#icon-github-personal{
+    color: whitesmoke;
+    display: flex;
+    font-size: 35px;
+    margin-left: 110px;
+    position: absolute;
+    margin-top: 8px;
+}
