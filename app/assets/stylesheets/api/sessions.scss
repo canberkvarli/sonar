@@ -88,4 +88,19 @@
     color: black;
     font-family: 'Mulish', sans-serif;
 }
+.gobacklink{
+    font-family: 'Mulish', sans-serif;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 2px;
+    padding-left: 6px;
+    display: flex;
+    width: 70px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
 
+.gobacklink:hover{
+    background: #1a202c;
+    color: #ffffff;
+}
