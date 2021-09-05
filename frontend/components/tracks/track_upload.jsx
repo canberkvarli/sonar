@@ -1,9 +1,6 @@
 import React from 'react'
 
 import { Link } from 'react-router'
-// TODO
-// add back button on page 2
-// 
 
 export default class TrackUpload extends React.Component {
     constructor(props) {
@@ -50,7 +47,7 @@ export default class TrackUpload extends React.Component {
 
     updateImage(e, file) {
         const reader = new FileReader();
-        // 
+        
         if (file === undefined) {
             file = e.currentTarget.files[0];
         }
@@ -112,7 +109,7 @@ export default class TrackUpload extends React.Component {
         this.setState({ formNum: 0 })
     }
     secondPage() {
-        // 
+         
         let dispImg;
         if (this.state.imageFile) {
             dispImg = <img className="track-form-album-art" src={this.state.imageUrl} />
@@ -127,7 +124,7 @@ export default class TrackUpload extends React.Component {
                 <div className="sf-replace-container">
                     <div className="smaller">
                         <div className='learn-more-audio'>
-                            <p>Provide FLAC, WAV, ALAC, or AIFF for highest audio quality. Learn more about lossless HD.</p>
+                            <p>Provide FLAC, WAV, ALAC, or AIFF for highest audio quality.</p>
                             <button className="replace-file-btn"
                                 onClick={this.handleBack}
                             >Replace file</button>
@@ -194,7 +191,6 @@ export default class TrackUpload extends React.Component {
 
 
     render() {
-        // 
         if (this.state.formNum === 0) {
             return (
                 <>

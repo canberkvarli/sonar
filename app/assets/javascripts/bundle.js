@@ -13308,9 +13308,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
- // TODO
-// add back button on page 2
-// 
+
 
 var TrackUpload = /*#__PURE__*/function (_React$Component) {
   _inherits(TrackUpload, _React$Component);
@@ -13384,7 +13382,7 @@ var TrackUpload = /*#__PURE__*/function (_React$Component) {
     value: function updateImage(e, file) {
       var _this4 = this;
 
-      var reader = new FileReader(); // 
+      var reader = new FileReader();
 
       if (file === undefined) {
         file = e.currentTarget.files[0];
@@ -13462,7 +13460,6 @@ var TrackUpload = /*#__PURE__*/function (_React$Component) {
     value: function secondPage() {
       var _this6 = this;
 
-      // 
       var dispImg;
 
       if (this.state.imageFile) {
@@ -13486,7 +13483,7 @@ var TrackUpload = /*#__PURE__*/function (_React$Component) {
         className: "smaller"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "learn-more-audio"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Provide FLAC, WAV, ALAC, or AIFF for highest audio quality. Learn more about lossless HD."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Provide FLAC, WAV, ALAC, or AIFF for highest audio quality."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
         className: "replace-file-btn",
         onClick: this.handleBack
       }, "Replace file"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -13539,7 +13536,6 @@ var TrackUpload = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // 
       if (this.state.formNum === 0) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "outer-track-form-container"
