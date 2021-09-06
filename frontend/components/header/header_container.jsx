@@ -6,6 +6,7 @@ import Header from './header'
 const mSTP = ({session, entities: { users }, errors, ui}) => (
     {
         currentUser: users[session.id],
+        currentUserId: session.id,
         errors: errors.session,
         modal: ui.modal.props.open
     }

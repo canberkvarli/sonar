@@ -1,5 +1,8 @@
 import { connect } from "react-redux";
 import { fetchTrack } from "../../actions/track_actions";
+import { createLike, deleteLike } from "../../actions/like_actions";
+import { fetchUser } from "../../actions/user_actions";
+
 import TrackShow from "./track_show";
 
 const mSTP = (state, ownProps) => {
@@ -10,6 +13,23 @@ const mSTP = (state, ownProps) => {
             return false
         }
     }
+    let currentUser;
+    let userLikesTrack = false;
+
+
+    if (state.session.id) {  // if there is a current session
+
+    currentUser = state.entities.users[state.session.id];
+    if (currentUser.likes) {
+
+      if (currentUser.likes[ownProps.trackId]) {
+        userLikesTrack = true;
+        currentLikeId = currentUser.likes[ownProps.trackId].id
+      } else {
+        userLikesTrack = false;
+      }
+    }
+  }
     
     return {
 
@@ -18,6 +38,7 @@ const mSTP = (state, ownProps) => {
         track: state.entities.tracks[ownProps.match.params.trackId],
         trackUrl: (trackLoaded() ? state.entities.tracks[ownProps.match.params.trackId].trackUrl : ''),
         tracks: Object.values(state.entities.tracks),
+        userLikesTrack
     }
     
 }
@@ -25,7 +46,13 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        fetchTrack: (trackId) => dispatch(fetchTrack(trackId))
+    fetchTracks: () => dispatch(fetchTracks()),
+    fetchUser: () => dispatch(fetchUser(userId)),
+    fetchTrack: (trackId) => dispatch(fetchTrack(trackId)),
+    deleteTrack: (trackId) => dispatch(deleteTrack(trackId)),
+    uploadTrack: (track) => dispatch(uploadTrack(track)),
+    createLike: (like, trackId) => dispatch(createLike(like, trackId)),
+    deleteLike: (likeId, track) => dispatch(deleteLike(likeId, track))
     }
 
 }

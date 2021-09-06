@@ -1,3 +1,4 @@
+import * as convert from "./camel_to_snake.js";
 
 export const fetchTracks = (data) => (
     $.ajax({
@@ -15,17 +16,18 @@ export const fetchTrack = (trackId) => (
     })
 )
 
-export const uploadTrack = (trackForm) => (
-    $.ajax({
-        method: "POST",
-        url: 'api/tracks',
-        data: { trackForm },
-        contentType: false,
-        processData: false,
-        error: (err) => console.log(err)
+export const uploadTrack = (trackForm) => {
+  let formData = convert.formDataConvert(trackForm);
 
-    })
-)
+  const req = $.ajax({
+    method: 'POST',
+    url: `api/tracks/`,
+    data: formData,
+    contentType: false,
+    processData: false
+  })
+  return req
+}
 
 export const deleteTrack = (trackId) => (
     $.ajax({

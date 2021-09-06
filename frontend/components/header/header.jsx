@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch} from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
+import { FaGithubSquare } from 'react-icons/fa'
+import { FaGithub } from "react-icons/fa"
 
 import SearchContainer from '../search/search_container';
 
@@ -37,7 +39,7 @@ class Header extends React.Component{
         const {signup, login, logout, currentUser, disabled} = this.props
         const search = <FontAwesomeIcon icon={faSearch}/>
         const github = <FontAwesomeIcon icon={["fab", "github"]} />
-
+        console.log(this.props)
 
   
         // Not Logged In
@@ -52,7 +54,7 @@ class Header extends React.Component{
                     </Link>
                     
                     <a href="https://github.com/canberkvarli">
-                        {github}
+                        <span className="icon-github"> <FaGithubSquare/></span>
                     </a>
 
                     <Link
@@ -135,17 +137,20 @@ class Header extends React.Component{
                         <span className="selected" id="selected">Upload</span>
                         </Link>
                         <br />
+                    <a href="https://github.com/canberkvarli" target="_blank">
+                        <span id="icon-github-personal"> <FaGithub/></span>
+                    </a>
 
                     <div className="middle-nav-header">
                         <SearchContainer />
                     </div>
                     <div className="right-nav-header">
-
+                    <Link className="link-profile" to={`users/${this.props.currentUserId}`}>{this.props.currentUser.username}</Link>
                     <a htmlFor="Logout"
                     className="header-nav-setting"
-                            onClick={() => this.handleLogout()}>
-                            <span className="selected" id="selected">Log out</span>
-                            </a>
+                    onClick={() => this.handleLogout()}>
+                    <span className="selected" id="selected">Log out</span>
+                    </a>
                     </div>
                 </nav>
             

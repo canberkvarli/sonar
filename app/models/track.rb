@@ -4,6 +4,7 @@
 #
 #  id          :bigint           not null, primary key
 #  description :string
+#  image       :string
 #  title       :string           not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
@@ -23,4 +24,13 @@ class Track < ApplicationRecord
     belongs_to :uploader,
     foreign_key: :artist_id,
     class_name: :User
+
+    has_many :likes,
+    class_name: :Like,
+    foreign_key: :track_id
+
+    has_many :likers,
+    through: :likes,
+    source: :liker
+    
 end

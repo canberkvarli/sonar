@@ -34,17 +34,19 @@
     height: 180px;
     display: flex;
     align-items: center;
+    background-image: linear-gradient(135deg, #846170, #70929c);
 }
 
 #track-show-image{
     margin-top: 100px;
     margin-left: 50px;
-    padding-right: 50px;
+    // padding-right: 50px;
     width: 180px;
     height: 180px;
     display: flex;
     align-items: center;
-    /* background: orange; */
+  background-image: linear-gradient(135deg, #846170, #70929c);
+  
 }
 
 .track-index-item{
@@ -67,7 +69,7 @@
     display: block;
     position: relative;
     user-select: none;
-    height: 250px;
+    height: 200px;
     overflow: auto hidden;
     margin-top: -60px;
 }
@@ -110,4 +112,19 @@
     margin-top:5px;
     margin-left: 0.5px;
 
+}
+
+.track-interaction{
+    border: solid 1px black;
+    width: 20px;
+    height: 20px;
+}
+
+.track-interact-buttons {
+  display: flex;
+  margin-top: 5px;
+  flex-direction: row;
+  .liked:hover {
+    border: 1px solid #f50;
+  }
 }

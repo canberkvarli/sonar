@@ -7,6 +7,8 @@ ruby '2.5.1'
 gem "aws-sdk-s3"
 gem "rack-cors"
 gem 'jquery-rails'
+gem "meta-tags"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.6'
 # Use postgresql as the database for Active Record

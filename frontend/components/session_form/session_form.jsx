@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component{
     constructor(props){
@@ -85,11 +86,10 @@ class SessionForm extends React.Component{
                     <input type="submit" id="demo-user-button" value="Demo User" onClick={this.handleDemoUser} />
                     <input className="session-form-submit" type="submit" value={this.props.formType} />
                     <br />
+                    <Link to="/" className="gobacklink">Go back</Link>
                 </form>
-                   
                     {this.renderErrors()}
             </div>
-
            </div>
             )
 
@@ -126,7 +126,8 @@ class SessionForm extends React.Component{
                     <br />
                     <input className="session-form-submit" type="submit" value={this.props.formType} />
                     <br />
-                    
+                    <Link to="/" className="gobacklink">Go back</Link>
+
                 </form>
                 {this.renderErrors()}
             </div>

@@ -9,6 +9,7 @@ const mSTP = (state, ownProps) => {
         currentUser: state.entities.users[state.session.id],
         track: {
             artistId: state.session.id,
+            trackId: ownProps.match.params.trackId,
             title: '',
             description: '',
             imageFile: null,

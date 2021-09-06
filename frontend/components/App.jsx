@@ -7,7 +7,7 @@ import {
     Switch,
     HashRouter
 } from 'react-router-dom';
-import { AuthRoute, ProtectedRoute } from '../util/route_util'
+import { ProtectedRoute } from '../util/route_util'
 
 import HeaderContainer from "./header/header_container";
 import TrackIndexContainer from "./tracks/track_index_container";
@@ -27,7 +27,7 @@ const App = () => (
             <Route exact path="/users/:userId" component={UsersContainer}/>
             <Route exact path="/" component={TrackIndexContainer} />
         </Switch>
-            <PlayheadContainer />
+            {/* <PlayheadContainer /> */}
     </div>
 );
 
