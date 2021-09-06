@@ -3,8 +3,10 @@ class LikesController < ApplicationController
     # 
     @like = Like.new(like_params)
 
+    debugger
     if @like.save!
       @track = Track.find(@like.track_id)
+      ###
       render "api/tracks/show"
     else
       render json: @like.errors.full_message, status: 422

@@ -14,7 +14,6 @@ class TrackShow extends React.Component{
             loggedIn: !!this.props.currentUser
 
         }
-        
             console.log(this.props)
 
 
@@ -30,6 +29,7 @@ class TrackShow extends React.Component{
     }
 
     createLike(e) {
+        
             e.preventDefault()
             const trackId = this.props.trackId
             const currentUserId = this.props.currentUser.id
