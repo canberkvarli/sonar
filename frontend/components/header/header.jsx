@@ -145,12 +145,12 @@ class Header extends React.Component{
                         <SearchContainer />
                     </div>
                     <div className="right-nav-header">
-                    <Link className="link-profile">{this.props.currentUser.username}</Link>
+                    <Link className="link-profile" to={`users/${this.props.currentUserId}`}>{this.props.currentUser.username}</Link>
                     <a htmlFor="Logout"
                     className="header-nav-setting"
-                            onClick={() => this.handleLogout()}>
-                            <span className="selected" id="selected">Log out</span>
-                            </a>
+                    onClick={() => this.handleLogout()}>
+                    <span className="selected" id="selected">Log out</span>
+                    </a>
                     </div>
                 </nav>
             
