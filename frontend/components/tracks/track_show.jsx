@@ -57,27 +57,28 @@ class TrackShow extends React.Component{
             
             if (!this.state.loggedIn) {
             return (
-                <Link to="/login"> <FaCoffee /> <p>{this.dispNumLikes()}</p></Link>
-            )
+                
+               <input> <FaCoffee /> <p>{this.dispNumLikes()}</p></input>
+               
+                )
             }
             else {
 
             if (this.props.userLikesTrack) {
                 return (
-                <button 
-                className='liked' 
-                onClick={this.deleteLike}><FaCoffee /><p>{this.dispNumLikes()}</p></button>
+                <input 
+                className='liked'><FaCoffee /><p>{this.dispNumLikes()}</p></input>
                 )
             }
             else {
                 return (
-                <button onClick={this.createLike}><FaCoffee /><p>{this.dispNumLikes()}</p></button>
+                <input onClick={this.createLike}><FaCoffee /><p>{this.dispNumLikes()}</p></input>
                 )
             }
             }
         }
         dispNumLikes(){
-            const { track } = this.props
+            const { track } = this.props;
             if (!track) return
             if (!track.likes) return 'Like'
             else return (Object.keys(track.likes).length)
@@ -85,18 +86,18 @@ class TrackShow extends React.Component{
 
     render(){
         console.log(this.props)
-        const {track, currentUser, artistId} = this.props;
+        const {track, currentUser, userLikesTrack} = this.props;
         
         if ((track === undefined)){
-            return null
+            return (<h1>No track can be found here :D</h1>)
         }else {
             return (
                 <> 
                     <img id="track-show-image" src={track.photoUrl} alt={track.title} />
                         <Waveform track={track}/>
                     <span id="track-show-title">{track.title}</span>
-                    <div className="track-interaction">
-                        {this.toggleLike}
+                    <div className="track-interact-buttons">
+                        {this.toggleLike()}
                     </div>
                 </>
             )

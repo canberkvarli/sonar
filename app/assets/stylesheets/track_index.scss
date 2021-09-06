@@ -119,3 +119,12 @@
     width: 20px;
     height: 20px;
 }
+
+.track-interact-buttons {
+  display: flex;
+  margin-top: 5px;
+  flex-direction: row;
+  .liked:hover {
+    border: 1px solid #f50;
+  }
+}
