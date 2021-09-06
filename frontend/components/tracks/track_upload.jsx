@@ -90,7 +90,7 @@ export default class TrackUpload extends React.Component {
             <div className="first-form-container">
 
                     <div className='track-form-center-ele'>
-                        <h1 className='drag-drop-text'> {`Drag and drop your tracks & albums here`}</h1>
+                        <h1 className='drag-drop-text'> {`Upload your tracks & albums here`}</h1>
                         <label className='audio-file-custom-input'>
 
                             <input
@@ -98,7 +98,7 @@ export default class TrackUpload extends React.Component {
                                 type="file"
                                 accept='audio/*'
                                 onChange={(e) => this.updateAudio(e)}
-                            /> or choose files to upload
+                            /> Upload
                         </label>
                         <br />
                     </div>
