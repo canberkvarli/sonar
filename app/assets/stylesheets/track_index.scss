@@ -70,7 +70,7 @@
     position: relative;
     user-select: none;
     height: 200px;
-    overflow: auto hidden;
+    overflow: hidden;
     margin-top: -60px;
 }
 #track-show-title{
@@ -139,4 +139,10 @@
 
 .likes-count{
     margin-top: 3px;
+}
+#root > div > div.waveform-outer-div > div{
+    width: 94%;
+}
+#root > div > div.waveform-outer-div > div > button{
+    margin-left: 15px;
 }

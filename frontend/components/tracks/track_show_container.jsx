@@ -38,8 +38,9 @@ const mSTP = (state, ownProps) => {
         track: state.entities.tracks[ownProps.match.params.trackId],
         trackUrl: (trackLoaded() ? state.entities.tracks[ownProps.match.params.trackId].trackUrl : ''),
         tracks: Object.values(state.entities.tracks),
-        userLikesTrack
-    }
+        userLikesTrack: userLikesTrack
+        // newTrack: state.tracks.map(track => track)
+      }
     
 }
 
@@ -47,7 +48,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return {
     fetchTracks: () => dispatch(fetchTracks()),
-    fetchUser: () => dispatch(fetchUser(userId)),
+    fetchUser: (userId) => dispatch(fetchUser(userId)),
     fetchTrack: (trackId) => dispatch(fetchTrack(trackId)),
     deleteTrack: (trackId) => dispatch(deleteTrack(trackId)),
     uploadTrack: (track) => dispatch(uploadTrack(track)),

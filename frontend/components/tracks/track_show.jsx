@@ -14,7 +14,6 @@ class TrackShow extends React.Component{
             loggedIn: !!this.props.currentUser
 
         }
-            console.log(this.props)
 
 
             this.deleteLike = this.deleteLike.bind(this)
@@ -29,19 +28,20 @@ class TrackShow extends React.Component{
     }
 
     createLike(e) {
-        
-            e.preventDefault()
-            const trackId = this.props.trackId
-            const currentUserId = this.props.currentUser.id
-            this.props.createLike({ liker_id: currentUserId, track_id: trackId }).then(() => {
-            // update appropriate tables
+        e.preventDefault()
+        const trackId = this.props.trackId
+        const currentUserId = this.props.currentUser.id
+        this.props.createLike({ liker_id: currentUserId, track_id: trackId }).then(() => {
             this.props.fetchUser(currentUserId)
             this.props.fetchTrack(trackId)
-            })
-            this.setState({ userLikesTrack: true })
+            // debugger
+        })
+        this.setState({ userLikesTrack: true }, () => {console.log(this.state)});
+           
         }
         
         deleteLike(e) {
+            
             e.preventDefault()
             const track = this.state.track
             const currentLikeId = this.props.currentUser.likes[track.id].id
