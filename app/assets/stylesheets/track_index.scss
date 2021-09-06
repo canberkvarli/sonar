@@ -121,10 +121,22 @@
 }
 
 .track-interact-buttons {
-  display: flex;
-  margin-top: 5px;
-  flex-direction: row;
+    display: flex;
+    margin-top: 5px;
+    width: 60px;
+    height: auto;
+    margin-left: 250px;
+    margin-top: -10px;
+    height: 30px;
   .liked:hover {
     border: 1px solid #f50;
   }
+}
+
+#root > div > div.track-interact-buttons > button{
+    display: flex;
+}
+
+.likes-count{
+    margin-top: 3px;
 }

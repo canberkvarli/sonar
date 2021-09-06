@@ -47,7 +47,7 @@ class TrackShow extends React.Component{
             const currentLikeId = this.props.currentUser.likes[track.id].id
             this.props.deleteLike(currentLikeId, track).then(() => {
 
-            this.props.fetchUser(this.props.currentUser.id)
+            this.props.fetchUser(this.props.currentUser)
             this.props.fetchTrack(track.id)
         })
             this.setState({ userLikesTrack: false })
@@ -58,7 +58,7 @@ class TrackShow extends React.Component{
             if (!this.state.loggedIn) {
             return (
                 
-               <button> ❤️ <p>{this.dispNumLikes()}</p></button>
+               <Link to="/login"> ❤️ <p className="likes-count">{this.dispNumLikes()}</p></Link>
                
                 )
             }
@@ -68,12 +68,12 @@ class TrackShow extends React.Component{
                 return (
                 <button 
                 onClick={this.deleteLike}
-                className='liked'>❤️<p>{this.dispNumLikes()}</p></button>
+                className='liked'>❤️<p className="likes-count">{this.dispNumLikes()}</p></button>
                 )
             }
             else {
                 return (
-                <button onClick={this.createLike}>❤️<p>{this.dispNumLikes()}</p></button>
+                <button onClick={this.createLike}>❤️<p className="likes-count">{this.dispNumLikes()}</p></button>
                 )
             }
             }
