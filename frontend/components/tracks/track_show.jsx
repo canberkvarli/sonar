@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { FaCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import Waveform from '../waveform/waveform';
 
 class TrackShow extends React.Component{
@@ -58,7 +58,7 @@ class TrackShow extends React.Component{
             if (!this.state.loggedIn) {
             return (
                 
-               <input> <FaCoffee /> <p>{this.dispNumLikes()}</p></input>
+               <button> ❤️ <p>{this.dispNumLikes()}</p></button>
                
                 )
             }
@@ -66,13 +66,14 @@ class TrackShow extends React.Component{
 
             if (this.props.userLikesTrack) {
                 return (
-                <input 
-                className='liked'><FaCoffee /><p>{this.dispNumLikes()}</p></input>
+                <button 
+                onClick={this.deleteLike}
+                className='liked'>❤️<p>{this.dispNumLikes()}</p></button>
                 )
             }
             else {
                 return (
-                <input onClick={this.createLike}><FaCoffee /><p>{this.dispNumLikes()}</p></input>
+                <button onClick={this.createLike}>❤️<p>{this.dispNumLikes()}</p></button>
                 )
             }
             }

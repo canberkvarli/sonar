@@ -1,5 +1,8 @@
 import { connect } from "react-redux";
 import { fetchTrack } from "../../actions/track_actions";
+import { createLike, deleteLike } from "../../actions/like_actions";
+import { fetchUser } from "../../actions/user_actions";
+
 import TrackShow from "./track_show";
 
 const mSTP = (state, ownProps) => {
@@ -48,7 +51,7 @@ const mDTP = dispatch => {
     fetchTrack: (trackId) => dispatch(fetchTrack(trackId)),
     deleteTrack: (trackId) => dispatch(deleteTrack(trackId)),
     uploadTrack: (track) => dispatch(uploadTrack(track)),
-    createLike: (like, trackId) => dispatch(createLike(like)),
+    createLike: (like, trackId) => dispatch(createLike(like, trackId)),
     deleteLike: (likeId, track) => dispatch(deleteLike(likeId, track))
     }
 
