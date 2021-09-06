@@ -137,7 +137,7 @@ class Header extends React.Component{
                         <span className="selected" id="selected">Upload</span>
                         </Link>
                         <br />
-                    <a href="https://github.com/canberkvarli">
+                    <a href="https://github.com/canberkvarli" target="_blank">
                         <span id="icon-github-personal"> <FaGithub/></span>
                     </a>
 
