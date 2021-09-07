@@ -70,7 +70,7 @@
     position: relative;
     user-select: none;
     height: 200px;
-    overflow: hidden;
+    overflow: hidden !important;
     margin-top: -60px;
 }
 #track-show-title{
