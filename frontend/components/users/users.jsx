@@ -19,7 +19,7 @@ class Users extends React.Component {
     }
     componentDidMount() {
         this.props.fetchUser(this.props.userId)
-        // this.props.fetchtracks()
+        // this.props.fetchTracks()
     }
     componentDidUpdate(prevProps) {
         const tempObj = { ...this.props.pageOwner }
@@ -88,7 +88,7 @@ class Users extends React.Component {
                             {pageOwner.bio ? (
                                 <h1 className="user-show-bio">Bio</h1>
 
-                            ) : <h1 className="user-show-bio">Fill'em with words</h1>}
+                            ) : <h1 className="user-show-bio">Tell the story</h1>}
                             <br />
                             <p>{pageOwner.bio}</p>
                         </div>
