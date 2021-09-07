@@ -20,6 +20,7 @@ import PlayheadContainer from "./playhead/playhead_container"
 
 const App = () => (
     <div>
+        <HashRouter>
             <HeaderContainer />
         <Switch>
             <Route exact path ="/tracks/:trackId" component={TrackShowContainer} />
@@ -28,6 +29,7 @@ const App = () => (
             <Route exact path="/" component={TrackIndexContainer} />
         </Switch>
             {/* <PlayheadContainer /> */}
+        </HashRouter>
     </div>
 );
 

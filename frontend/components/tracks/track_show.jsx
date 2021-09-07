@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { FaHeart } from 'react-icons/fa'
 import Waveform from '../waveform/waveform';
 
 class TrackShow extends React.Component{
@@ -36,21 +36,23 @@ class TrackShow extends React.Component{
             this.props.fetchTrack(trackId)
             // debugger
         })
-        this.setState({ userLikesTrack: true }, () => {console.log(this.state)});
+        this.setState({ userLikesTrack: true }, 
+            () => {console.log(this.state)});
            
         }
         
         deleteLike(e) {
-            
+            debugger
             e.preventDefault()
-            const track = this.state.track
+            const track  = this.state.track
             const currentLikeId = this.props.currentUser.likes[track.id].id
             this.props.deleteLike(currentLikeId, track).then(() => {
 
             this.props.fetchUser(this.props.currentUser)
             this.props.fetchTrack(track.id)
         })
-            this.setState({ userLikesTrack: false })
+            this.setState({ userLikesTrack: false },
+                () => console.log(this.state))
         }
         // debugger
         toggleLike() {
@@ -58,24 +60,24 @@ class TrackShow extends React.Component{
             if (!this.state.loggedIn) {
             return (
                 
-               <Link to="/login"> ❤️ <p className="likes-count">{this.dispNumLikes()}</p></Link>
+               <Link to="/login"> <span className="icon-heart"><FaHeart /></span><p className="likes-count">{this.dispNumLikes()}</p></Link>
                
                 )
             }
             else {
 
-            if (this.props.userLikesTrack) {
-                return (
-                <button 
-                onClick={this.deleteLike}
-                className='liked'>❤️<p className="likes-count">{this.dispNumLikes()}</p></button>
-                )
-            }
-            else {
-                return (
-                <button onClick={this.createLike}>❤️<p className="likes-count">{this.dispNumLikes()}</p></button>
-                )
-            }
+                if (this.props.userLikesTrack) {
+                    return (
+                    <button 
+                    onClick={this.deleteLike}
+                    className='liked'><span className="icon-heart"><FaHeart /></span><p className="likes-count">{this.dispNumLikes()}</p></button>
+                    )
+                }
+                else {
+                    return (
+                    <button onClick={this.createLike}><span className="icon-heart"><FaHeart /></span><p className="likes-count">{this.dispNumLikes()}</p></button>
+                    )
+                }
             }
         }
         dispNumLikes(){
