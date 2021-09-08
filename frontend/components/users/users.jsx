@@ -57,6 +57,7 @@ class Users extends React.Component {
             return (
 
                 <div className="user-show-page">
+                    <h1>Under Construction</h1>
                     <div className="user-show-top">
                         <div className="header-photo-container">
                             <img className='user-page-header' src={pageOwner.headerUrl} />

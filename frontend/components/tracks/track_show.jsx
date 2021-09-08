@@ -24,6 +24,7 @@ class TrackShow extends React.Component{
     
 
     componentDidMount(){
+        this.props.fetchTracks()
         this.props.fetchTrack(this.props.trackId)
     }
 
@@ -89,7 +90,7 @@ class TrackShow extends React.Component{
 
     render(){
         console.log(this.props)
-        const {track, currentUser, userLikesTrack} = this.props;
+        const {track, currentUser, userLikesTrack, tracks} = this.props;
         
         if ((track === undefined)){
             return (<h1>No track can be found here :D</h1>)
