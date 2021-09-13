@@ -6,7 +6,7 @@ class Playhead extends React.Component {
         super(props)
 
         this.state = {
-            isPlaying: true
+            isPlaying: false
         }
 
     }
