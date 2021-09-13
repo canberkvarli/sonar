@@ -118,7 +118,7 @@ class Search extends React.Component {
                     <ul id="search-res" className="search-results-ul">
                         {this.state.filtered.map((track, i) => {
                             return (
-                                <li className="search-results-li">
+                                <li key={i} className="search-results-li">
                                     <Link
                                         key={i}
                                         className="search-res-link"
