@@ -13,8 +13,7 @@ import AudioPlayer from 'react-h5-audio-player';
 
 class Waveform extends Component {
     state = {
-        playing: false,
-        isPlaying: false
+        playing: false
     };
 
     componentDidMount() {
