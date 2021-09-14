@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FaHeart } from 'react-icons/fa'
 import Waveform from '../waveform/waveform';
+import AudioPlayer from 'react-h5-audio-player';
 
 class TrackShow extends React.Component{
     constructor(props){
@@ -11,7 +12,8 @@ class TrackShow extends React.Component{
         this.state = {
             track: this.props.track,
             userLikesTrack: this.props.userLikesTrack,
-            loggedIn: !!this.props.currentUser
+            loggedIn: !!this.props.currentUser,
+            isPlaying: false
 
         }
 
@@ -91,7 +93,9 @@ class TrackShow extends React.Component{
     render(){
         console.log(this.props)
         const {track, currentUser, userLikesTrack, tracks} = this.props;
-        
+        let temp;
+        this.state.isPlaying ? temp = 'container-playhead-passive' : 'container-playhead-active'
+
         if ((track === undefined)){
             return (<h1>No track can be found here :D</h1>)
         }else {
@@ -103,6 +107,11 @@ class TrackShow extends React.Component{
                     <div className="track-interact-buttons">
                         {this.toggleLike()}
                     </div>
+                    {/* <footer id="playhead-footer"className={temp}>
+                            <AudioPlayer 
+                            src={this.props.track.audioUrl}
+                            />
+                    </footer> */}
                 </>
             )
         }

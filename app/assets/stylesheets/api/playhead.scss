@@ -1,12 +1,18 @@
 .container-playhead-active{
-    position: fixed;
+    position: absolute;
     bottom: 0;
     width: 100%;
 }
 
 .container-playhead-passive{
-    position: fixed;
+    position: absolute;
     bottom: 0;
     width: 100%;
     display: none;
+}
+
+#playhead-footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }

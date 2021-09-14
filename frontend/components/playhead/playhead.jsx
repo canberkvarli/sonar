@@ -6,9 +6,10 @@ class Playhead extends React.Component {
         super(props)
 
         this.state = {
-            isPlaying: false
+            isPlaying: false,
+            track: this.props.track
         }
-
+        
     }
 
     componentDidMount(){
@@ -18,26 +19,23 @@ class Playhead extends React.Component {
 
     render() {
 
-        // console.log(this.props)
         // console.log(this.props.tracks)
 
         let temp;
         this.state.isPlaying ? temp = 'container-playhead-passive' : 'container-playhead-active'
+        console.log(this.props)
 
         if(this.props.tracks === undefined){
             return null
         }else{
             
             return (
-                
-                <div>
-                    {this.props.tracks.map(track => (
-                        <footer className={temp}>
+                <div>         
+                        {/* <footer className={temp}>
                             <AudioPlayer 
-                            // src={track.audioUrl}
+                            // src={this.props.track.audioUrl}
                             />
-                        </footer>
-                    ))}
+                        </footer> */}
                 </div>
             )
         }

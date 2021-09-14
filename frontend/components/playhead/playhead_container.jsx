@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchTrack } from '../../actions/track_actions';
+import { withRouter } from 'react-router';
 import Playhead from './playhead';
 
 
@@ -16,9 +17,9 @@ const mSTP = (state, ownProps) => {
         return {
 
             currentUser: state.entities.users[state.session.id],
-            // trackId: ownProps.match.params.trackId,
-            // track: state.entities.tracks[ownProps.match.params.trackId],
-            // trackUrl: (trackLoaded() ? state.entities.tracks[ownProps.match.params.trackId].trackUrl : ''),
+            trackId: ownProps.match.params.trackId,
+            trackUrl: (trackLoaded() ? state.entities.tracks[ownProps.match.params.trackId].trackUrl : ''),
+            track: state.entities.tracks[ownProps.match.params.trackId],
             tracks: Object.values(state.entities.tracks),
         }
     
@@ -29,6 +30,6 @@ const mDTP = dispatch => ({
 })
 
 
-export default connect(mSTP, mDTP)(Playhead);
+export default withRouter(connect(mSTP, mDTP)(Playhead));
 
 

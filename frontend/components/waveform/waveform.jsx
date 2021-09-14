@@ -8,11 +8,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
 
 import WaveSurfer from 'wavesurfer.js';
+import AudioPlayer from 'react-h5-audio-player';
 
 
 class Waveform extends Component {
     state = {
-        playing: false
+        playing: false,
+        isPlaying: false
     };
 
     componentDidMount() {
@@ -42,7 +44,6 @@ class Waveform extends Component {
         
         const playIcon = <FontAwesomeIcon icon={faPlay} />
         const pauseIcon = <FontAwesomeIcon icon={faPause} />
-
         return (
             <div className="waveform-outer-div">
                 <WaveformContainer className="waveform-div">
@@ -53,6 +54,11 @@ class Waveform extends Component {
                     <Wave id="waveform" />
                     <audio id="track" src={this.props.track.audioUrl} />
                 </WaveformContainer>
+                 <footer id="playhead-footer">
+                    <AudioPlayer 
+                    src={this.props.track.audioUrl}
+                />
+                </footer>
             </div>
             
         );

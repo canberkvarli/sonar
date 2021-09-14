@@ -31,7 +31,7 @@ const App = () => (
             <Route exact path="/library" component={LibraryContainer}/>
             <Route exact path="/" component={TrackIndexContainer} />
         </Switch>
-            {/* <PlayheadContainer /> */}
+            <PlayheadContainer />
         </HashRouter>
     </div>
 );
