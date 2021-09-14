@@ -8,11 +8,13 @@ export class Library extends Component {
         super(props)
     }
 
-    
+    componentDidMount() {
+      this.props.fetchTracks()
+    }
 
     render() {
         console.log(this.props)
-           const { tracks , currentUser} = this.props
+    const { tracks , currentUser} = this.props
     if (!currentUser.likes){ return <>You have no likes! Start liking some tracks to populate this page.</> }
     if (Object.keys(tracks).length===0){ return null } 
     else {
@@ -26,6 +28,7 @@ export class Library extends Component {
                     {Object.keys(currentUser.likes).map((key, i) => {
                         const trackId = parseInt(key)
                             if (tracks[i].id === trackId) {
+                              
                                 return (
                                 <>
                                     <img id="track-show-image" src={tracks[i].photoUrl} alt={tracks[i].title} />

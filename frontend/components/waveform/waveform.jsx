@@ -12,10 +12,11 @@ import AudioPlayer from 'react-h5-audio-player';
 
 
 class Waveform extends Component {
+   
     state = {
         playing: false
     };
-
+    
     componentDidMount() {
         const track = document.querySelector('#track');
 
@@ -56,6 +57,8 @@ class Waveform extends Component {
                  <footer id="playhead-footer">
                     <AudioPlayer 
                     src={this.props.track.audioUrl}
+                    ref={this.player}
+                    muted
                 />
                 </footer>
             </div>

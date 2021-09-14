@@ -45,11 +45,11 @@ class TrackIndex extends React.Component{
                             <TrackIndexItem track={track} />
                       </li>  
                     ))}
-                    {this.state.displayPlayhead ? 
+                    {/* {this.state.displayPlayhead ? 
                     <Playhead />
                     :
                     null    
-                }
+                } */}
                 </ul>
             </div>
         )
