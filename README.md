@@ -24,30 +24,11 @@ handlePlay = () => {
 ```
 ![Sonar Track Page](app/assets/images/track.png "Sonar Track")
 
-* With this code below, A specific track will be rendered as `tracks/:trackId` with an audio file, an image and a wave that is created above.
-<!-- track_show.jsx  -->
 
-```javascript
- render(){
-        const {track, currentUser, artistId} = this.props;
-        
-        if ((track === undefined)){
-            return null
-        }else if(currentUser){
-            return (
-                <> 
-                    <img id="track-show-image" src={track.photoUrl} alt={track.title} />
-                        <Waveform track={track}/>
-                    <span id="track-show-title">{track.title}</span>
-                </>
-            )
-        }
-    }
-```
 ### Search
 <!-- search.jsx -->
 
-* Search functionality works as the user clicks on the bar and the `currList` is set to all of the tracks. To filter the tracks `newList` is filtered and used to update the state on line 72.
+* Search functionality works as the user clicks on the bar and the `currList` is set to all of the tracks. To filter the tracks `newList` is filtered and used to update.
 
 ```javascript
 
