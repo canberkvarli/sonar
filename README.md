@@ -80,6 +80,5 @@ handleChange(e) {
 
 ## Future Implementations
 
-* Track Upload
+* Track Upload (COMPLETED)
 * Slider on the home page
-* Artist Library
