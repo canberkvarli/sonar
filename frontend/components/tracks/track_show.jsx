@@ -102,7 +102,7 @@ class TrackShow extends React.Component{
             return (
                 <> 
                     <img id="track-show-image" src={track.photoUrl} alt={track.title} />
-                        <Waveform track={track}/>
+                        <Waveform track={track} />
                     <span id="track-show-title">{track.title}</span>
                     <div className="track-interact-buttons">
                         {this.toggleLike()}

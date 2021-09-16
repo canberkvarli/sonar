@@ -14,7 +14,8 @@ import AudioPlayer from 'react-h5-audio-player';
 class Waveform extends Component {
    
     state = {
-        playing: false
+        playing: false,
+        track: this.props.track
     };
     
     componentDidMount() {
@@ -36,17 +37,32 @@ class Waveform extends Component {
         this.waveform.load(track);
     };
 
+    audioFunction = () => {
+    //return url if play button is clicked
+    //else return null
+    if (this.state.playing) {
+        return this.props.track.audioUrl
+    }else{
+        return this.props.track.audioUrl
+    }
+  };
+
     handlePlay = () => {
         this.setState({ playing: !this.state.playing });
         this.waveform.playPause();
+   
     };
+
 
     render() {
         
         const playIcon = <FontAwesomeIcon icon={faPlay} />
         const pauseIcon = <FontAwesomeIcon icon={faPause} />
+
         return (
+
             <div className="waveform-outer-div">
+                
                 <WaveformContainer className="waveform-div">
                     <PlayButton onClick={this.handlePlay} >
                         {!this.state.playing ? playIcon : pauseIcon }
@@ -55,13 +71,14 @@ class Waveform extends Component {
                     <Wave id="waveform" />
                     <audio id="track" src={this.props.track.audioUrl} />
                 </WaveformContainer>
-                 {/* <footer id="playhead-footer">
+                 <footer id="playhead-footer">
                     <AudioPlayer 
+                    onPlay={this.handlePlay}
+                    onPause={this.handlePlay}
                     src={this.props.track.audioUrl}
                     ref={this.player}
-                    muted
                 />
-                </footer> */}
+                </footer>
             </div>
             
         );

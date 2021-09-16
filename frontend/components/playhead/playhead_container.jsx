@@ -17,10 +17,10 @@ const mSTP = (state, ownProps) => {
         return {
 
             currentUser: state.entities.users[state.session.id],
+            track: state.entities.tracks[ownProps.match.params.trackId],
             trackId: ownProps.match.params.trackId,
             trackUrl: (trackLoaded() ? state.entities.tracks[ownProps.match.params.trackId].trackUrl : ''),
-            track: state.entities.tracks[ownProps.match.params.trackId],
-            tracks: Object.values(state.entities.tracks),
+            tracks: state.entities.tracks
         }
     
 }

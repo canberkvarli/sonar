@@ -30,7 +30,7 @@ const App = () => (
             <Route exact path="/users/:userId" component={UsersContainer}/>
             <Route exact path="/library" component={LibraryContainer}/>
             <Route exact path="/" component={TrackIndexContainer} />
-            {/* <Route exact path="/" component={PlayheadContainer} /> */}
+            {/* <Route exact path="/tracks/:trackId" component={PlayheadContainer} /> */}
         </Switch>
             {/* <PlayheadContainer /> */}
         </HashRouter>

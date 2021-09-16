@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import AudioPlayer from 'react-h5-audio-player';
 
 class Playhead extends React.Component {
@@ -6,8 +6,9 @@ class Playhead extends React.Component {
         super(props)
 
         this.state = {
-            isPlaying: false,
-            track: this.props.track
+            isPlaying: true,
+            track: this.props.track,
+            tracks: this.props.tracks
         }
         
     }
@@ -24,7 +25,7 @@ class Playhead extends React.Component {
 
         let temp;
         this.state.isPlaying ? temp = 'container-playhead-passive' : 'container-playhead-active'
-        console.log(this.props)
+        console.log(this.state)
 
         if(this.props.tracks === undefined){
             return null
@@ -32,11 +33,11 @@ class Playhead extends React.Component {
             
             return (
                 <div>         
-                        {/* <footer className={temp}>
+                        <footer className={temp}>
                             <AudioPlayer 
-                            // src={this.props.track.audioUrl}
+                            src={this.state.track.audioUrl}
                             />
-                        </footer> */}
+                        </footer>
                 </div>
             )
         }
