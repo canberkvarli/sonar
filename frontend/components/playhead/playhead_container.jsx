@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchTrack } from '../../actions/track_actions';
+import { fetchTrack, fetchTracks } from '../../actions/track_actions';
 import { withRouter } from 'react-router';
 import Playhead from './playhead';
 
@@ -26,7 +26,8 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = dispatch => ({
-    fetchTrack: (trackId) => dispatch(fetchTrack(trackId))
+    fetchTrack: (trackId) => dispatch(fetchTrack(trackId)),
+    fetchTracks: () => dispatch(fetchTracks())
 })
 
 

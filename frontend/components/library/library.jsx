@@ -10,8 +10,11 @@ export class Library extends Component {
     }
 
     componentDidMount() {
-      this.props.fetchTracks()
-      this.props.fetchUser(this.props.currentUser.id)
+
+      this.props.fetchTracks().then(
+        this.props.fetchUser(this.props.currentUser.id)
+      )
+      
     }
 
     render() {
@@ -19,25 +22,27 @@ export class Library extends Component {
     const { tracks , currentUser} = this.props
     if (!currentUser.likes){ return <>You have no likes! Start liking some tracks to populate this page.</> }
     if (Object.keys(tracks).length===0){ return null } 
-    else {
+    else{
       return(
-        <>
-          <div className="grid-header">
-            <h1>
+        <div className="outside-wrapper">
+            {/* <h1>
               <span id="library-username">{currentUser.username} </span>here is all your likes and in one place!
-            </h1>
+            </h1> */}
+          <div className="grid-header">
+            <br />
           </div>
+          
                   {tracks.map((track, i) => (
                     Object.keys(currentUser.likes).map((key, j) => {
                         const trackId = parseInt(key)
                         if((j < i) && (track.id === trackId)){
-                            console.log(track)
-                            console.log(trackId)
+                            // console.log(track)
+                            // console.log(trackId)
                                 return (
                                 <>
                                   <div className="liked-track">
                                     <div className="wrapper">
-                                        <img key={i} id="track-show-image" src={track.photoUrl} alt={track.title} />
+                                       <img key={i} id="track-show-image" src={track.photoUrl} alt={track.title} />
                                             {/* <Waveform track={track}/> */}
                                         <span id="track-show-title">{track.title}</span>
                                     </div>
@@ -48,7 +53,7 @@ export class Library extends Component {
                         }
                     })
                   ))}
-           </>
+           </div>
       )
     }
     }   

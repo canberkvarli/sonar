@@ -79,13 +79,13 @@
     width: auto;
     display: flex;
     margin-top: 20px;
-    height: auto;
+    height: auto; 
     font-family: 'Mulish', sans-serif;
     font-weight: bold;
     font-size: 20px;
     justify-content: space-between;
     /* align-items: flex-start; */
-    width: 450px;
+    width: 250px;
     flex-direction: row;
 }
 
@@ -164,6 +164,11 @@
 .wrapper{
     text-align:center;
     font-size:0;
+    width: 300px;
+}
+
+.outside-wrapper{
+    display: flex;
 }
 
 .library-username{

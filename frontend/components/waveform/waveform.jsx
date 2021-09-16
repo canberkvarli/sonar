@@ -30,6 +30,7 @@ class Waveform extends Component {
             responsive: true,
             waveColor: "#5d5d5d",
             cursorColor: 'transparent',
+            partialRender: true
         });
 
         this.waveform.load(track);
@@ -54,13 +55,13 @@ class Waveform extends Component {
                     <Wave id="waveform" />
                     <audio id="track" src={this.props.track.audioUrl} />
                 </WaveformContainer>
-                 <footer id="playhead-footer">
+                 {/* <footer id="playhead-footer">
                     <AudioPlayer 
                     src={this.props.track.audioUrl}
                     ref={this.player}
                     muted
                 />
-                </footer>
+                </footer> */}
             </div>
             
         );
