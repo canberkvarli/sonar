@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Waveform from '../waveform/waveform';
 import TrackShowContainer from '../tracks/track_show_container';
 import TrackShow from '../tracks/track_show';
+import { Redirect, Link } from 'react-router';
 
 export class Library extends Component {
     constructor(props){
@@ -10,6 +11,7 @@ export class Library extends Component {
 
     componentDidMount() {
       this.props.fetchTracks()
+      this.props.fetchUser(this.props.currentUser.id)
     }
 
     render() {
@@ -22,11 +24,10 @@ export class Library extends Component {
         <>
           <div className="grid-header">
             <h1>
-              All your likes in one place.
+              <span id="library-username">{currentUser.username} </span>here is all your likes and in one place!
             </h1>
           </div>
                   {tracks.map((track, i) => (
-
                     Object.keys(currentUser.likes).map((key, j) => {
                         const trackId = parseInt(key)
                         if((j < i) && (track.id === trackId)){
@@ -34,12 +35,13 @@ export class Library extends Component {
                             console.log(trackId)
                                 return (
                                 <>
-                                    <img key={i} id="track-show-image" src={track.photoUrl} alt={track.title} />
-                                        <Waveform track={track}/>
-                                    <span id="track-show-title">{track.title}</span>
-                                    <div className="track-interact-buttons">
-                                        {/* {this.toggleLike()} */}
+                                  <div className="liked-track">
+                                    <div className="wrapper">
+                                        <img key={i} id="track-show-image" src={track.photoUrl} alt={track.title} />
+                                            {/* <Waveform track={track}/> */}
+                                        <span id="track-show-title">{track.title}</span>
                                     </div>
+                                  </div>
                                 </>
 
                                 )

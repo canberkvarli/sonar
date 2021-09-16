@@ -75,14 +75,20 @@
 }
 #track-show-title{
     margin-left: 80px;
-    position: absolute;
+    position: relative;
     width: auto;
+    display: flex;
+    margin-top: 20px;
     height: auto;
     font-family: 'Mulish', sans-serif;
     font-weight: bold;
     font-size: 20px;
-    /* margin-right: 5px;
+    justify-content: space-between;
+    /* align-items: flex-start; */
+    width: 450px;
+    flex-direction: row;
 }
+
 
 #track-show-desc{
     margin-top: 30px;
@@ -146,8 +152,27 @@
 #root > div > div.waveform-outer-div > div > button{
     margin-left: 15px;
 }
+.waveform-outer-div{
+    display: flex;
+}
 
 .icon-heart{
     margin-right: 5px;
     margin-top: 5px;
+}
+
+.wrapper{
+    text-align:center;
+    font-size:0;
+}
+
+.library-username{
+    font-family: monospace;
+}
+
+.wrapper>div{
+    display:inline-block;
+    text-align:left;
+    vertical-align:top;
+        font-size:16px;
 }

@@ -486,3 +486,12 @@
   border: 1px solid black;
   border-radius: 4px;
 }
+
+.liked-track{
+    display: flex;
+    position: relative;
+    padding: 5px;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
+}

@@ -7,6 +7,7 @@ export const PlayButton = styled.button`
   width: 40px;
   height: 40px;
   margin-top: -40px;
+  margin-left: 10px;
   background: #ff5500;
   border-radius: 50%;
   border: none;
