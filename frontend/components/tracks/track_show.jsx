@@ -107,6 +107,9 @@ class TrackShow extends React.Component{
                     <div className="track-interact-buttons">
                         {this.toggleLike()}
                     </div>
+                    <h1 className="description">
+                        {track.description}
+                    </h1>
                     {/* <footer id="playhead-footer"className={temp}>
                             <AudioPlayer 
                             src={this.props.track.audioUrl}

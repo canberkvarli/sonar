@@ -85,10 +85,14 @@
     font-size: 20px;
     justify-content: space-between;
     /* align-items: flex-start; */
-    width: 250px;
+    width: 225px;
     flex-direction: row;
 }
 
+.description{
+    font-family: 'Mulish', sans-serif;
+    margin: 20px;
+}
 
 #track-show-desc{
     margin-top: 30px;
@@ -106,6 +110,10 @@
 }
 #root > div > div.waveform-div > div > button{
     margin-top: -130px;
+}
+
+#root > div{
+    height: 800px;
 }
 // #waveform{
 //         /* border: 1px; */
@@ -169,10 +177,14 @@
 
 .outside-wrapper{
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
-.library-username{
-    font-family: monospace;
+#library-username{
+    font-family: 'Mulish', sans-serif;
+    position: absolute;
+    margin-top: 20px;
 }
 
 .wrapper>div{

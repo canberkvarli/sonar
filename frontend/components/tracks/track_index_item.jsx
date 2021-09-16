@@ -15,17 +15,21 @@ class TrackIndexItem extends React.Component
                 loggedIn: !!this.props.currentUser
             }
 
-    
+            this.forceUpdateHandler = this.forceUpdateHandler.bind(this)
         }
-
-       
+        forceUpdateHandler(){
+            this.forceUpdate();
+        };
+        
         render(){
             
             return(
             <div className="track-index-item">
-                <Link to={`/tracks/${this.props.track.id }`}><img className="track-photos" src={this.props.track.photoUrl} /></Link>
+                <Link onClick={this.forceUpdateHandler}
+                to={`/tracks/${this.props.track.id }`}><img className="track-photos" src={this.props.track.photoUrl} /></Link>
                 <span>
-                    <Link to={`/tracks/${this.props.track.id }`} className="track-title">{this.props.track.title}</Link>
+                    <Link  onClick={this.forceUpdateHandler} 
+                    to={`/tracks/${this.props.track.id }`} className="track-title">{this.props.track.title}</Link>
                 </span>
                 <br />
 
