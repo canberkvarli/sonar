@@ -29,20 +29,27 @@ class TrackIndex extends React.Component{
 
     render(){
         const {tracks} = this.props;    
-        
+        // const mySet = new Set();
+        // tracks.map(track => {
+        //     mySet.add(track)
+        //     newSet = Array.from(mySet);
+        //     return newSet;
+        // })
+
         return(
             <div className="track-index-container" >
                 <ul className="track-index">
                     {tracks.map((track,idx) => (
+                        
                       <li key={idx} onClick={this.handleOnclick} >
                             <TrackIndexItem track={track} />
                       </li>  
                     ))}
-                    {this.state.displayPlayhead ? 
+                    {/* {this.state.displayPlayhead ? 
                     <Playhead />
                     :
                     null    
-                }
+                } */}
                 </ul>
             </div>
         )

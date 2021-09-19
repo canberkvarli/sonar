@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 export default class TrackUpload extends React.Component {
     constructor(props) {
@@ -68,7 +68,8 @@ export default class TrackUpload extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const data = new FormData();
-         
+
+        
         data.append('track[title]', this.state.title);
         data.append('track[description]', this.state.description);
         data.append('track[artistId]', this.state.artistId);
@@ -81,7 +82,9 @@ export default class TrackUpload extends React.Component {
 
         this.props.uploadTrack(data)
 
-        this.setState({ submitted: true })
+        this.setState({ submitted: true }, () => alert( `You have successfully uploaded.`))
+
+
     }
 
     firstPage() {
@@ -212,6 +215,9 @@ export default class TrackUpload extends React.Component {
                     </div>
                 </div>
             )
+        }
+        else if (this.state.submitted){
+             return <Redirect to='/' />
         }
     }
 }

@@ -9,6 +9,7 @@
     height: auto;
     width: auto;
     margin-left: 15px;
+    margin-right: 15px;
     position: relative;
     align-content: center;
     justify-content: center;
@@ -70,18 +71,28 @@
     position: relative;
     user-select: none;
     height: 200px;
-    overflow: auto hidden;
+    overflow: hidden !important;
     margin-top: -60px;
 }
 #track-show-title{
     margin-left: 80px;
-    position: absolute;
+    position: relative;
     width: auto;
-    height: auto;
+    display: flex;
+    margin-top: 20px;
+    height: auto; 
     font-family: 'Mulish', sans-serif;
     font-weight: bold;
     font-size: 20px;
-    /* margin-right: 5px;
+    justify-content: space-between;
+    /* align-items: flex-start; */
+    width: 225px;
+    flex-direction: row;
+}
+
+.description{
+    font-family: 'Mulish', sans-serif;
+    margin: 20px;
 }
 
 #track-show-desc{
@@ -100,6 +111,10 @@
 }
 #root > div > div.waveform-div > div > button{
     margin-top: -130px;
+}
+
+#root > div{
+    height: 800px;
 }
 // #waveform{
 //         /* border: 1px; */
@@ -121,10 +136,61 @@
 }
 
 .track-interact-buttons {
-  display: flex;
-  margin-top: 5px;
-  flex-direction: row;
+    display: flex;
+    margin-top: 5px;
+    width: 60px;
+    height: auto;
+    margin-left: 250px;
+    margin-top: -10px;
+    height: 30px;
   .liked:hover {
     border: 1px solid #f50;
   }
+}
+
+#root > div > div.track-interact-buttons > button{
+    display: flex;
+}
+
+.likes-count{
+    margin-top: 3px;
+}
+#root > div > div.waveform-outer-div > div{
+    width: 94%;
+}
+#root > div > div.waveform-outer-div > div > button{
+    margin-left: 15px;
+}
+.waveform-outer-div{
+    display: flex;
+}
+
+.icon-heart{
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.wrapper{
+    text-align:center;
+    font-size:0;
+    width: 300px;
+}
+
+.outside-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#library-username{
+    font-family: 'Mulish', sans-serif;
+    position: absolute;
+    margin-top: 20px;
+}
+
+.wrapper>div{
+    display:inline-block;
+    text-align:left;
+    vertical-align:top;
+        font-size:16px;
 }

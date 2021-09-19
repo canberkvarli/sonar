@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { FaHeart } from 'react-icons/fa'
 import Waveform from '../waveform/waveform';
+import AudioPlayer from 'react-h5-audio-player';
 
 class TrackShow extends React.Component{
     constructor(props){
@@ -11,10 +12,10 @@ class TrackShow extends React.Component{
         this.state = {
             track: this.props.track,
             userLikesTrack: this.props.userLikesTrack,
-            loggedIn: !!this.props.currentUser
+            loggedIn: !!this.props.currentUser,
+            isPlaying: false
 
         }
-            console.log(this.props)
 
 
             this.deleteLike = this.deleteLike.bind(this)
@@ -25,32 +26,36 @@ class TrackShow extends React.Component{
     
 
     componentDidMount(){
+        // this.props.fetchTracks()
         this.props.fetchTrack(this.props.trackId)
     }
 
     createLike(e) {
-        
-            e.preventDefault()
-            const trackId = this.props.trackId
-            const currentUserId = this.props.currentUser.id
-            this.props.createLike({ liker_id: currentUserId, track_id: trackId }).then(() => {
-            // update appropriate tables
+        e.preventDefault()
+        const trackId = this.props.trackId
+        const currentUserId = this.props.currentUser.id
+        this.props.createLike({ liker_id: currentUserId, track_id: trackId }).then(() => {
             this.props.fetchUser(currentUserId)
             this.props.fetchTrack(trackId)
-            })
-            this.setState({ userLikesTrack: true })
+            // debugger
+        })
+        this.setState({ userLikesTrack: true }, 
+            () => {console.log(this.state)});
+           
         }
         
         deleteLike(e) {
+            debugger
             e.preventDefault()
-            const track = this.state.track
+            const track  = this.state.track
             const currentLikeId = this.props.currentUser.likes[track.id].id
             this.props.deleteLike(currentLikeId, track).then(() => {
 
-            this.props.fetchUser(this.props.currentUser.id)
+            this.props.fetchUser(this.props.currentUser)
             this.props.fetchTrack(track.id)
         })
-            this.setState({ userLikesTrack: false })
+            this.setState({ userLikesTrack: false },
+                () => console.log(this.state))
         }
         // debugger
         toggleLike() {
@@ -58,24 +63,24 @@ class TrackShow extends React.Component{
             if (!this.state.loggedIn) {
             return (
                 
-               <button> ❤️ <p>{this.dispNumLikes()}</p></button>
+               <Link to="/login"> <span className="icon-heart"><FaHeart /></span><p className="likes-count">{this.dispNumLikes()}</p></Link>
                
                 )
             }
             else {
 
-            if (this.props.userLikesTrack) {
-                return (
-                <button 
-                onClick={this.deleteLike}
-                className='liked'>❤️<p>{this.dispNumLikes()}</p></button>
-                )
-            }
-            else {
-                return (
-                <button onClick={this.createLike}>❤️<p>{this.dispNumLikes()}</p></button>
-                )
-            }
+                if (this.props.userLikesTrack) {
+                    return (
+                    <button 
+                    onClick={this.deleteLike}
+                    className='liked'><span className="icon-heart"><FaHeart /></span><p className="likes-count">{this.dispNumLikes()}</p></button>
+                    )
+                }
+                else {
+                    return (
+                    <button onClick={this.createLike}><span className="icon-heart"><FaHeart /></span><p className="likes-count">{this.dispNumLikes()}</p></button>
+                    )
+                }
             }
         }
         dispNumLikes(){
@@ -87,19 +92,29 @@ class TrackShow extends React.Component{
 
     render(){
         console.log(this.props)
-        const {track, currentUser, userLikesTrack} = this.props;
-        
+        const {track, currentUser, userLikesTrack, tracks} = this.props;
+        let temp;
+        this.state.isPlaying ? temp = 'container-playhead-passive' : 'container-playhead-active'
+
         if ((track === undefined)){
             return (<h1>No track can be found here :D</h1>)
         }else {
             return (
                 <> 
                     <img id="track-show-image" src={track.photoUrl} alt={track.title} />
-                        <Waveform track={track}/>
+                        <Waveform track={track} />
                     <span id="track-show-title">{track.title}</span>
                     <div className="track-interact-buttons">
                         {this.toggleLike()}
                     </div>
+                    <h1 className="description">
+                        {track.description}
+                    </h1>
+                    {/* <footer id="playhead-footer"className={temp}>
+                            <AudioPlayer 
+                            src={this.props.track.audioUrl}
+                            />
+                    </footer> */}
                 </>
             )
         }
