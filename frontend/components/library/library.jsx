@@ -20,7 +20,7 @@ export class Library extends Component {
     render() {
     // console.log(this.props)
     const { tracks , currentUser} = this.props
-    if (!currentUser.likes){ return <>You have no likes! Start liking some tracks to populate this page.</> }
+    // if (!currentUser.likes){ return <>You have no likes! Start liking some tracks to populate this page.</> }
     if (Object.keys(tracks).length===0){ return null } 
     else{
       return(
