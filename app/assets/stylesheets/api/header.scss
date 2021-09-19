@@ -69,6 +69,7 @@
 }
 #root > div{
     background-color: whitesmoke;
+    width: fit-content;
 }
 #start-uploading-button{
     left: 500px;
@@ -253,10 +254,16 @@ width:100%;
     display: flex;
     flex-direction: row;
     height: 50px;
+    width: auto;
     border: 1px solid black;
     position: relative;
     background-color: rgb(51,51,51);
 }
+
+// .personal-space{
+//     width: fit-content !important;
+// }
+
 
 .middle-nav-header{
     position: absolute;

@@ -145,7 +145,9 @@ class Header extends React.Component{
                         <SearchContainer />
                     </div>
                     <div className="right-nav-header">
-                    <Link className="link-profile" to={`users/${this.props.currentUserId}`}>{this.props.currentUser.username}</Link>
+                    {/* <Link className="link-profile" to={`users/${this.props.currentUserId}`}>{this.props.currentUser.username}</Link> */}
+                    <span className="link-profile">{this.props.currentUser.username}</span>
+
                     <a htmlFor="Logout"
                     className="header-nav-setting"
                     onClick={() => this.handleLogout()}>
