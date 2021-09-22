@@ -194,3 +194,41 @@
     vertical-align:top;
         font-size:16px;
 }
+
+#active-arrow-display{
+    display: inline;
+    pointer-events: auto;  
+}
+
+.arrow{
+    visibility: hidden;
+}
+body:not(.mobile) .track-index-item:hover + .arrow {
+    visibility: visible;
+    pointer-events: none;
+}
+
+.arrow {
+    display: flex;
+    position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    z-index: 12;
+    pointer-events: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+/* Change width and height to scale images */
+    width: 100px;
+    height: 100px;
+}
+
+// #active-arrow-display:hover{
+//     background-color: red;
+// }
+
+#passive-arrow-display{
+    // display: none;
+}
