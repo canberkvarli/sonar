@@ -89,7 +89,7 @@ class Waveform extends Component {
                 </WaveformContainer>
                 <footer id="playhead-footer">
                     <AudioPlayer 
-                    autoPlay={false}
+                    autoPlay="false"
                     onPlay={this.handlePlayerPlay}
                     onPause={this.handlePlayerPause}
                     src={this.props.track.audioUrl}
