@@ -9,14 +9,17 @@ import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
 
 import WaveSurfer from 'wavesurfer.js';
 import AudioPlayer from 'react-h5-audio-player';
+import ReactAudioPlayer from 'react-audio-player';
 
 
 class Waveform extends Component {
-   
+
     state = {
-        playing: false,
+        playing: true,
         track: this.props.track
     };
+
+    
     
     componentDidMount() {
         const track = document.querySelector('#track');
@@ -59,7 +62,7 @@ class Waveform extends Component {
         // mute waveform but keep the wave progressing
         this.waveform.play();
         this.waveform.toggleMute();
-        
+
     }
 
     handlePlayerPause = () => {
@@ -75,7 +78,6 @@ class Waveform extends Component {
         
         const playIcon = <FontAwesomeIcon icon={faPlay} />
         const pauseIcon = <FontAwesomeIcon icon={faPause} />
-
         return (
 
             <div className="waveform-outer-div">
@@ -89,7 +91,7 @@ class Waveform extends Component {
                 </WaveformContainer>
                 <footer id="playhead-footer">
                     <AudioPlayer 
-                    autoPlay="false"
+                    autoPlay={false}
                     onPlay={this.handlePlayerPlay}
                     onPause={this.handlePlayerPause}
                     src={this.props.track.audioUrl}
