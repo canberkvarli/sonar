@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FaHeart } from 'react-icons/fa'
 import Waveform from '../waveform/waveform';
 import AudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
+
 
 class TrackShow extends React.Component{
     constructor(props){
@@ -26,7 +28,7 @@ class TrackShow extends React.Component{
     
 
     componentDidMount(){
-        // this.props.fetchTracks()
+        this.props.fetchTracks()
         this.props.fetchTrack(this.props.trackId)
     }
 

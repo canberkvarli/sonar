@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import { fetchTracks } from '../../actions/track_actions'
 import { fetchUser } from '../../actions/user_actions'
+import { withRouter } from 'react-router'
 import Library from './library'
 
 
@@ -19,4 +20,4 @@ const mapDispatchToProps =  dispatch => (
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Library);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Library));
