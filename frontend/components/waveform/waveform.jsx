@@ -9,7 +9,7 @@ import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
 
 import WaveSurfer from 'wavesurfer.js';
 import AudioPlayer from 'react-h5-audio-player';
-import ReactAudioPlayer from 'react-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
 
 
 class Waveform extends Component {

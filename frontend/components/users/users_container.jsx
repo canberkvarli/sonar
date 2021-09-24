@@ -4,6 +4,7 @@ import { fetchUser } from '../../actions/user_actions'
 import { fetchTracks } from '../../actions/track_actions'
 import { openModal } from '../../actions/modal_actions'
 import Users from './users'
+import 'react-h5-audio-player/lib/styles.css';
 
 const mSTP = (state, ownProps) => {
     const tracks = Object.values(state.entities.tracks)

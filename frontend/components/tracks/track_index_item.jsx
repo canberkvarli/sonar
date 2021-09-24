@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import 'react-h5-audio-player/lib/styles.css';
 
 
 class TrackIndexItem extends React.Component 
