@@ -8,6 +8,8 @@ import { Redirect, Link } from 'react-router-dom';
 export class Library extends Component {
     constructor(props){
         super(props)
+
+
     }
 
     componentDidMount() {
@@ -17,12 +19,18 @@ export class Library extends Component {
     
     }
 
+    componentDidUpdate(){
+
+    }
+
     render() {
     // console.log(this.props)
     const { tracks , currentUser} = this.props
     // if (!currentUser.likes){ return <>You have no likes! Start liking some tracks to populate this page.</> }
-    if (Object.keys(tracks).length===0){ return null } 
-    else{
+    if (Object.keys(tracks).length===0){ return null }
+    if (tracks === undefined) {
+      <Redirect to="/"/>
+    }else{
       return(
         <div className="outside-wrapper">
             {/* <h1>
@@ -35,22 +43,25 @@ export class Library extends Component {
                   {tracks.map((track, i) => (
                     Object.keys(currentUser.likes).map((key, j) => {
                         const trackId = parseInt(key)
-                        if((j < i) && (track.id === trackId)){
+                        if((j < i) && (track.id === trackId) && (tracks !== undefined)){
                             // console.log(track)
                             // console.log(trackId)
                                 return (
                                 <>
                                 {/* {console.log(track.id)} */}
-                                  <div className="liked-track">
+                                  <div key={i} className="liked-track">
                                     <div key={j} className="wrapper">
-                                      <Link to={`/tracks/${track.id}`}> <img key={i} id="track-show-image" src={track.photoUrl} alt={track.title} /> </Link>
+                                      <Link to={`/tracks/${track.id}`} onClick={()=>this.props.history.push(`tracks/${track.id}`)}> <img id="track-show-image" src={track.photoUrl} alt={track.title} /> </Link>
                                             {/* <Waveform track={track}/> */}
-                                      <Link to={`/tracks/${track.id}`}><span id="track-show-title">{track.title}</span> </Link>
+                                      <Link to={`/tracks/${track.id}`} onClick={()=>this.props.history.push(`/tracks/${track.id}`)}><span id="track-show-title">{track.title}</span> </Link>
                                     </div>
                                   </div>
                                 </>
-
                                 )
+                        }else if((tracks === undefined) || (track === undefined)){
+                          return(
+                            <Redirect to="/"/>
+                          )
                         }
                     })
                   ))}
