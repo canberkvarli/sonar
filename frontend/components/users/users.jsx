@@ -1,7 +1,5 @@
 import React from 'react'
 import TrackIndex from '../tracks/track_index';
-import 'react-h5-audio-player/lib/styles.css';
-
 import TrackIndexContainer from '../tracks/track_index_container';
 
 const _ = require('lodash');
