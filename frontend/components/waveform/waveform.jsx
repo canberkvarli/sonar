@@ -96,7 +96,6 @@ class Waveform extends Component {
                     onPause={this.handlePlayerPause}
                     src={this.props.track.audioUrl}
                     // ref={this.player}
-                    
                 />
                 </footer>
             </div>
