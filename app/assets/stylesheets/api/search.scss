@@ -1,8 +1,8 @@
-.search-results-ul{
+.search-results-ul {
   background-color: rgb(93,93,93);
   margin-top: -129px;
   margin-left: 200px;
-  position: relative;
+  position: absolute;
   z-index: 20;
 }
 .search-results-li {
@@ -13,7 +13,7 @@
   width: 100%;
   height: 30px;
   z-index: 1001;
-  width: 100%;
+  width: 530px;
   position:relative
 }
 .search-res-link:hover{
