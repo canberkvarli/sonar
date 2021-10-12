@@ -59,9 +59,7 @@ export class Library extends Component {
                                 </>
                                 )
                         }else if((tracks === undefined) || (track === undefined)){
-                          return(
-                            <Redirect to="/"/>
-                          )
+                            window.location.reload()
                         }
                     })
                   ))}

@@ -92,11 +92,10 @@ class TrackShow extends React.Component{
         }
 
     render(){
-        console.log(this.props)
         const {track, currentUser, userLikesTrack, tracks} = this.props;
         let temp;
         this.state.isPlaying ? temp = 'container-playhead-passive' : 'container-playhead-active'
-
+        console.log(this.props)
         if ((track === undefined)){
             return (<h1>No track can be found here :D</h1>)
         }else {
