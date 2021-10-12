@@ -40,7 +40,6 @@ class TrackIndex extends React.Component{
             <div className="track-index-container" >
                 <ul className="track-index">
                     {tracks.map((track,idx) => (
-                        
                       <li key={idx} onClick={this.handleOnclick} >
                             <TrackIndexItem track={track} />
                       </li>  

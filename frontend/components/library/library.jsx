@@ -9,7 +9,6 @@ export class Library extends Component {
     constructor(props){
         super(props)
 
-
     }
 
     componentDidMount() {
@@ -27,9 +26,10 @@ export class Library extends Component {
     // console.log(this.props)
     const { tracks , currentUser} = this.props
     // if (!currentUser.likes){ return <>You have no likes! Start liking some tracks to populate this page.</> }
+    console.log(this.props)
     if (Object.keys(tracks).length===0){ return null }
-    if (tracks === undefined) {
-      <Redirect to="/"/>
+    if (currentUser.likes === undefined) {
+      window.location.reload()
     }else{
       return(
         <div className="outside-wrapper">
@@ -59,16 +59,14 @@ export class Library extends Component {
                                 </>
                                 )
                         }else if((tracks === undefined) || (track === undefined)){
-                          return(
-                            <Redirect to="/"/>
-                          )
+                            window.location.reload()
                         }
                     })
                   ))}
            </div>
       )
-    }
-    }   
+    }  
+  } 
 }
 
 export default Library
