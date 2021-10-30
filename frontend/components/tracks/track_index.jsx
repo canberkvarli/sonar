@@ -35,7 +35,6 @@ class TrackIndex extends React.Component{
         //     newSet = Array.from(mySet);
         //     return newSet;
         // })
-
         return(
             <div className="track-index-container" >
                 <ul className="track-index">

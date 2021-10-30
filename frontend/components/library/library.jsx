@@ -18,10 +18,6 @@ export class Library extends Component {
     
     }
 
-    componentDidUpdate(){
-
-    }
-
     render() {
     // console.log(this.props)
     const { tracks , currentUser} = this.props
