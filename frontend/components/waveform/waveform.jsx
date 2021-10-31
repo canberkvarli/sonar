@@ -8,8 +8,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
 
 import WaveSurfer from 'wavesurfer.js';
-// import AudioPlayer from 'react-h5-audio-player';
-import ReactPlayer from 'react-player'
+
+// import AudioPlayer from 'react-h5-audio-player'; //autoplay is always true
+// import ReactPlayer from 'react-player' //deferred error
+
+import ReactAudioPlayer from 'react-audio-player'; //This works fine
+
 
 
 class Waveform extends Component {
@@ -90,14 +94,14 @@ class Waveform extends Component {
                     <audio id="track" src={this.props.track.audioUrl} />
                 </WaveformContainer>
                 <footer id="playhead-footer">
-                    <ReactPlayer 
+                    <ReactAudioPlayer 
                     // autoPlay={false}
                     onPlay={this.handlePlayerPlay}
                     onPause={this.handlePlayerPause}
-                    url={this.props.track.audioUrl}
+                    src={this.props.track.audioUrl}
                     controls={true}
-                    playing={false}
-                />
+                    className={"audioplayer"}
+                    />
                 </footer>
             </div>
             
