@@ -100,6 +100,7 @@ class Waveform extends Component {
                     onPause={this.handlePlayerPause}
                     src={this.props.track.audioUrl}
                     controls={true}
+                    autoPlay={false}
                     className={"audioplayer"}
                     />
                 </footer>
