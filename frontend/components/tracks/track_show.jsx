@@ -29,6 +29,7 @@ class TrackShow extends React.Component{
     componentDidMount(){
         this.props.fetchTracks()
         this.props.fetchTrack(this.props.trackId)
+
     }
 
     createLike(e) {
@@ -95,14 +96,14 @@ class TrackShow extends React.Component{
         const {track, currentUser, userLikesTrack, tracks} = this.props;
         let temp;
         this.state.isPlaying ? temp = 'container-playhead-passive' : 'container-playhead-active'
-        console.log(this.props)
         if ((track === undefined)){
-            return (<h1>No track can be found here :D</h1>)
+            return null
         }else {
             return (
                 <> 
                     <img id="track-show-image" src={track.photoUrl} alt={track.title} />
                         <Waveform track={track} />
+                    {/* {console.log(this.props.tracks)} */}
                     <span id="track-show-title">{track.title}</span>
                     <div className="track-interact-buttons">
                         {this.toggleLike()}
