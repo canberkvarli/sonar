@@ -18,10 +18,18 @@ import ReactAudioPlayer from 'react-audio-player'; //This works fine
 
 class Waveform extends Component {
 
-    state = {
-        playing: true,
-        track: this.props.track
-    };
+    constructor(props){
+        super(props)
+
+        this.state = {
+            playing: true,
+            track: this.props.track
+        };
+    
+        this.audioEl = React.createRef();
+
+    
+    }
 
     
     
@@ -78,16 +86,18 @@ class Waveform extends Component {
     }
 
 
+
     render() {
         
         const playIcon = <FontAwesomeIcon icon={faPlay} />
         const pauseIcon = <FontAwesomeIcon icon={faPause} />
-        return (
+        console.log(this.track.audioEl)
+        return(
 
             <div className="waveform-outer-div">
                 <WaveformContainer className="waveform-div">
                     <PlayButton onClick={this.handlePlay} >
-                        {!this.state.playing ? playIcon : pauseIcon }
+                        { !this.state.playing ? pauseIcon : playIcon }
                         {/* add icons to 'Play' and 'Pause' */}
                     </PlayButton>
                     <Wave id="waveform" />
@@ -95,6 +105,7 @@ class Waveform extends Component {
                 </WaveformContainer>
                 <footer id="playhead-footer">
                     <ReactAudioPlayer 
+                    ref={(element) => {this.track = element}}
                     // autoPlay={false}
                     onPlay={this.handlePlayerPlay}
                     onPause={this.handlePlayerPause}
@@ -104,10 +115,8 @@ class Waveform extends Component {
                     className={"audioplayer"}
                     />
                 </footer>
-            </div>
-            
+            </div>  
         );
-        
     }
 };
 
