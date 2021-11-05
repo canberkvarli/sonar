@@ -18,23 +18,15 @@ import ReactAudioPlayer from 'react-audio-player'; //This works fine
 
 class Waveform extends Component {
 
-    constructor(props){
-        super(props)
-
-        this.state = {
+        state = {
             playing: true,
             track: this.props.track
         };
-    
-        this.audioEl = React.createRef();
-
-    
-    }
 
     
     
     componentDidMount() {
-        const track = document.querySelector('#track');
+        // let trackcument.querySelector('#track');
 
         this.waveform = WaveSurfer.create({
             barWidth: 3,
@@ -52,15 +44,6 @@ class Waveform extends Component {
         this.waveform.load(track);
     };
 
-//     audioFunction = () => {
-//     //return url if play button is clicked
-//     //else return null
-//     if (this.state.playing) {
-//         return this.props.track.audioUrl
-//     }else{
-//         return this.props.track.audioUrl
-//     }
-//   };
 
     handlePlay = () => {
         this.setState({ playing: !this.state.playing });
@@ -91,22 +74,18 @@ class Waveform extends Component {
         
         const playIcon = <FontAwesomeIcon icon={faPlay} />
         const pauseIcon = <FontAwesomeIcon icon={faPause} />
-        console.log(this.track.audioEl)
         return(
 
             <div className="waveform-outer-div">
                 <WaveformContainer className="waveform-div">
                     <PlayButton onClick={this.handlePlay} >
                         { !this.state.playing ? pauseIcon : playIcon }
-                        {/* add icons to 'Play' and 'Pause' */}
                     </PlayButton>
                     <Wave id="waveform" />
                     <audio id="track" src={this.props.track.audioUrl} />
                 </WaveformContainer>
                 <footer id="playhead-footer">
                     <ReactAudioPlayer 
-                    ref={(element) => {this.track = element}}
-                    // autoPlay={false}
                     onPlay={this.handlePlayerPlay}
                     onPause={this.handlePlayerPause}
                     src={this.props.track.audioUrl}
