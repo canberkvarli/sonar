@@ -18,15 +18,15 @@ import ReactAudioPlayer from 'react-audio-player'; //This works fine
 
 class Waveform extends Component {
 
-    state = {
-        playing: true,
-        track: this.props.track
-    };
+        state = {
+            playing: true,
+            track: this.props.track
+        };
 
     
     
     componentDidMount() {
-        const track = document.querySelector('#track');
+        // let trackcument.querySelector('#track');
 
         this.waveform = WaveSurfer.create({
             barWidth: 3,
@@ -44,15 +44,6 @@ class Waveform extends Component {
         this.waveform.load(track);
     };
 
-//     audioFunction = () => {
-//     //return url if play button is clicked
-//     //else return null
-//     if (this.state.playing) {
-//         return this.props.track.audioUrl
-//     }else{
-//         return this.props.track.audioUrl
-//     }
-//   };
 
     handlePlay = () => {
         this.setState({ playing: !this.state.playing });
@@ -78,24 +69,23 @@ class Waveform extends Component {
     }
 
 
+
     render() {
         
         const playIcon = <FontAwesomeIcon icon={faPlay} />
         const pauseIcon = <FontAwesomeIcon icon={faPause} />
-        return (
+        return(
 
             <div className="waveform-outer-div">
                 <WaveformContainer className="waveform-div">
                     <PlayButton onClick={this.handlePlay} >
-                        {!this.state.playing ? playIcon : pauseIcon }
-                        {/* add icons to 'Play' and 'Pause' */}
+                        { !this.state.playing ? pauseIcon : playIcon }
                     </PlayButton>
                     <Wave id="waveform" />
                     <audio id="track" src={this.props.track.audioUrl} />
                 </WaveformContainer>
                 <footer id="playhead-footer">
                     <ReactAudioPlayer 
-                    // autoPlay={false}
                     onPlay={this.handlePlayerPlay}
                     onPause={this.handlePlayerPause}
                     src={this.props.track.audioUrl}
@@ -104,10 +94,8 @@ class Waveform extends Component {
                     className={"audioplayer"}
                     />
                 </footer>
-            </div>
-            
+            </div>  
         );
-        
     }
 };
 
