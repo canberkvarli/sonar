@@ -88,7 +88,7 @@ class SessionForm extends React.Component{
                     <br />
                     <Link to="/" className="gobacklink">Go back</Link>
                 </form>
-                    {this.renderErrors()}
+                    {this.renderErrors}
             </div>
            </div>
             )
