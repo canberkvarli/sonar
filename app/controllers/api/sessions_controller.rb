@@ -1,6 +1,6 @@
 class Api::SessionsController < ApplicationController
 
-        skip_before_action :verify_authenticity_token
+        # skip_before_action :verify_authenticity_token
         # protect_from_forgery with: :exception
 
 
@@ -10,8 +10,8 @@ class Api::SessionsController < ApplicationController
         if @user
             login(@user)
             render json: @user
-            # render plain: 'welcome home'
         else
+            # render json: @user.errors.full_messages, status: 402
             render json: ["Invalid username/password combination"], status: 401
         end
     end

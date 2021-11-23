@@ -43,7 +43,6 @@ class Api::UsersController < ApplicationController
         end
     end
     
-    # refactor this
     def search
         @users = User.where("username LIKE '%#{params[:query]}%'")
         render json: @users
