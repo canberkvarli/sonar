@@ -25,7 +25,12 @@ export class Library extends Component {
     console.log(this.props)
     if (Object.keys(tracks).length===0){ return null }
     if (currentUser.likes === undefined) {
-      window.location.reload()
+      // window.location.reload()
+      return (
+        <div className="outside-wrapper">
+          <h1 id="library-username">Hey {currentUser.username}! You don't have any favorite tracks. Start by liking some!</h1>
+        </div>
+      )
     }else{
       return(
         <div className="outside-wrapper">
