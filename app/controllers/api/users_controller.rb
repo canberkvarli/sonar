@@ -7,11 +7,8 @@ class Api::UsersController < ApplicationController
     # signup
     def create
         @user = User.new(user_params)
-        debugger
         if @user.save
             login(@user)
-
-            # render "/api/users/discover"
             render json: @user
         else
             render json: @user.errors.full_messages, status: 402
