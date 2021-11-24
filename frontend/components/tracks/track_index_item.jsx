@@ -61,7 +61,6 @@ class TrackIndexItem extends React.Component
                 <Link onClick={this.forceUpdateHandler}
                 to={`/tracks/${this.props.track.id }`}
                 >
-                {console.log(this.props.track)}
                     <img 
                     className="track-photos" src={this.props.track.photoUrl} /></Link>
                 </div>
