@@ -5,10 +5,11 @@ export function ErrorFallback({error, resetErrorBoundary}) {
 
 
   return (
-    <div role="alert">
-      <p>Something went wrong:</p>
+    <div role="alert" className="error-div">
+      <p className="err-msg">Something went wrong:</p>
       <pre>{error.message}</pre>
-      <button onClick={resetErrorBoundary}>Try again</button>
+      
+      <button onClick={resetErrorBoundary} className="err-btn">Try again</button>
     </div>
   )
 }
