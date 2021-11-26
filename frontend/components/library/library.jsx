@@ -23,14 +23,14 @@ export class Library extends Component {
     const { tracks , currentUser} = this.props
     console.log(this.props)
     if (currentUser.likes === undefined) {
-      window.location.reload()
+      // window.location.reload()
       return (
         <div className="outside-wrapper">
           <h1 id="library-username">Hey {currentUser.username}! You don't have any favorite tracks. Start by liking some!</h1>
         </div>
       )
     }else if (tracks === undefined) {
-      window.location.reload();
+      // window.location.reload();
     }else if (Object.keys(tracks).length===0){
       return null
     } else {
@@ -63,7 +63,7 @@ export class Library extends Component {
                                 </>
                                 )
                         }else if((tracks === undefined) || (track === undefined) ){
-                            window.location.reload()
+                            // window.location.reload()
                         }
                     })
                   ))}

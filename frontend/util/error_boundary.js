@@ -1,4 +1,7 @@
+import React from 'react';
+
 export function ErrorFallback({error, resetErrorBoundary}) {
+
 
 
   return (
