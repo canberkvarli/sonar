@@ -20,10 +20,14 @@ import LibraryContainer from "./library/library_container";
 import PlayheadContainer from "./playhead/playhead_container"
 // import { WaveformContainer } from './waveform/waveform_container';
 import Waveform from './waveform/waveform';
+import { ErrorBoundary }  from 'react-error-boundary';
+import { ErrorFallback } from '../util/error_boundary';
 import { WaveformContainer } from './waveform/waveform_container';
 
 
+
 const App = () => (
+
     <div>
         <HashRouter>
             <HeaderContainer />
@@ -31,8 +35,15 @@ const App = () => (
             <Route exact path ="/tracks/:trackId" component={TrackShowContainer} />
             <ProtectedRoute exact path ="/upload" component={TrackUploadContainer}/>
             <Route exact path="/users/:userId" component={UsersContainer}/>
-            <Route exact path="/library" component={LibraryContainer}/>
             <Route exact path="/" component={TrackIndexContainer} />
+            <ErrorBoundary
+                FallbackComponent={ErrorFallback}
+                onReset={() => {
+                    // reset the state of your app so the error doesn't happen again
+                }}
+            >
+                <Route exact path="/library" component={LibraryContainer}/>
+            </ErrorBoundary>
             {/* <Route exact path="/tracks/:trackId" component={PlayheadContainer} /> */}
         </Switch>
             {/* <PlayheadContainer /> */}
