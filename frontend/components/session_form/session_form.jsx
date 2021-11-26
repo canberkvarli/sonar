@@ -13,7 +13,6 @@ class SessionForm extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
         this.handleDemoUser = this.handleDemoUser.bind(this);
-        this.clearError = this.clearError.bind(this);
     }
 
     componentDidMount(){
@@ -56,9 +55,6 @@ class SessionForm extends React.Component{
         return err;
     }
 
-    clearError(){
-        
-    }
 
     render(){
         const SessionFormSignIn = () => (
@@ -66,7 +62,7 @@ class SessionForm extends React.Component{
             <div className="root-session-form">
                 <h4 className="session-form" id="session-form-title"> 
 
-                Please {this.props.formType} or <span id="navLink" onClick={this.clearError}> {this.props.navLink} </span>
+                Please {this.props.formType} or <span id="navLink" > {this.props.navLink} </span>
 
                 </h4>
 
