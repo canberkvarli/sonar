@@ -13,25 +13,27 @@ export class Library extends Component {
 
     componentDidMount() {
 
-      this.props.fetchTracks()
-      this.props.fetchUser(this.props.currentUser.id)
+      this.setState({});
+      this.props.fetchTracks();
+      this.props.fetchUser(this.props.currentUser.id);
     
     }
 
     render() {
-    // console.log(this.props)
     const { tracks , currentUser} = this.props
-    // if (!currentUser.likes){ return <>You have no likes! Start liking some tracks to populate this page.</> }
     console.log(this.props)
-    if (Object.keys(tracks).length===0){ return null }
     if (currentUser.likes === undefined) {
-      // window.location.reload()
+      window.location.reload()
       return (
         <div className="outside-wrapper">
           <h1 id="library-username">Hey {currentUser.username}! You don't have any favorite tracks. Start by liking some!</h1>
         </div>
       )
-    }else{
+    }else if (tracks === undefined) {
+      window.location.reload();
+    }else if (Object.keys(tracks).length===0){
+      return null
+    } else {
       return(
         <div className="outside-wrapper">
             {/* <h1>
@@ -45,7 +47,8 @@ export class Library extends Component {
                     Object.keys(currentUser.likes).map((key, j) => {
                         const trackId = parseInt(key)
                         if((j < i) && (track.id === trackId) && (tracks !== undefined)){
-                            // console.log(track)
+                          console.log(track)
+                            console.log(tracks)
                             // console.log(trackId)
                                 return (
                                 <>
@@ -59,7 +62,7 @@ export class Library extends Component {
                                   </div>
                                 </>
                                 )
-                        }else if((tracks === undefined) || (track === undefined)){
+                        }else if((tracks === undefined) || (track === undefined) ){
                             window.location.reload()
                         }
                     })

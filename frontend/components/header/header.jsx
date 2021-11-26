@@ -17,7 +17,6 @@ class Header extends React.Component{
         super(props)
 
 
-        // this.handleClickTab = this.handleClickTab.bind(this);
         // this.openModalSignUp = this.openModalSignUp.bind(this);
         // this.openModalSignIn = this.openModalSignIn.bind(this);
     }
@@ -26,10 +25,13 @@ class Header extends React.Component{
     handleClickTab(e){
         const currEle = e.currentTarget;
         currEle.classList.add('selected');
+
     }
 
+
+
     handleLogout(){
-            //         let origin = window.location.origin
+            // let origin = window.location.origin
             // this.props.logout().then(() => {
             
             // window.location.href = origin
@@ -127,7 +129,7 @@ class Header extends React.Component{
                             to="/library"
                             className="nav-header-label"
                             id="nav-header-stream"
-                            onFocus={this.handleClickTab}
+                            onFocus={this.handleClickLibrary}
                         >
                             <span className="selected" id="selected">Library</span>
                         </Link>
