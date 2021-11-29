@@ -135,7 +135,9 @@ class SessionForm extends React.Component{
                     <Link to="/" className="gobacklink">Go back</Link>
 
                 </form>
-                {this.renderErrors()}
+                <div>
+                    {this.renderErrors()}
+                </div>
             </div>
         </div>
         )
@@ -147,6 +149,5 @@ class SessionForm extends React.Component{
             }
         }
     }
-
-
+    
 export default SessionForm
