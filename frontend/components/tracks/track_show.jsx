@@ -39,7 +39,6 @@ class TrackShow extends React.Component{
         this.props.createLike({ liker_id: currentUserId, track_id: trackId }).then(() => {
             this.props.fetchUser(currentUserId)
             this.props.fetchTrack(trackId)
-            // debugger
         })
         this.setState({ userLikesTrack: true }, 
             () => {console.log(this.state)});
