@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FaHeart } from 'react-icons/fa'
 import Waveform from '../waveform/waveform';
 import AudioPlayer from 'react-h5-audio-player';
@@ -46,31 +45,27 @@ class TrackShow extends React.Component{
         }
         
         deleteLike(e) {
-            debugger
+            
             e.preventDefault()
             const track  = this.state.track
             const currentLikeId = this.props.currentUser.likes[track.id].id
             this.props.deleteLike(currentLikeId, track).then(() => {
-
-            this.props.fetchUser(this.props.currentUser)
-            this.props.fetchTrack(track.id)
+                this.props.fetchUser(this.props.currentUser)
+                this.props.fetchTrack(track.id)
         })
             this.setState({ userLikesTrack: false },
                 () => console.log(this.state))
         }
-        // debugger
         toggleLike() {
             
             if (!this.state.loggedIn) {
             return (
-                
                <Link to="/login"> <span className="icon-heart"><FaHeart /></span><p className="likes-count">{this.dispNumLikes()}</p></Link>
-               
                 )
             }
             else {
 
-                if (this.props.userLikesTrack) {
+                if (this.state.userLikesTrack) {
                     return (
                     <button 
                     onClick={this.deleteLike}

@@ -14,6 +14,7 @@ const mSTP = (state, ownProps) => {
             return false
         }
     }
+    
     let currentUser;
     let currentLikeId;
     let userLikesTrack = false;
