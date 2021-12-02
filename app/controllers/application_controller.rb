@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     # CRRULLL
-    protect_from_forgery
+    protect_from_forgery with: :exception
     before_action :underscore_params!
 
     skip_before_action :verify_authenticity_token
