@@ -16,10 +16,12 @@
 class Like < ApplicationRecord
 
     belongs_to :track,
+    primary_key: :id,
     class_name: :Track,
     foreign_key: :track_id
 
     belongs_to :liker,
+    primary_key: :id,
     class_name: :User,
     foreign_key: :liker_id
 
