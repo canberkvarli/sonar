@@ -45,12 +45,12 @@ class TrackShow extends React.Component{
         }
         
         deleteLike(e) {
-            
+            console.log(this.props)
             e.preventDefault()
             const track  = this.state.track
             // const currentLikeId = this.props.currentUser.likes[track.id].id
-            const currentLikeId = this.props.currentLikeId
-            this.props.deleteLike(currentLikeId, track).then(() => {
+            
+            this.props.deleteLike(this.props.currentLikeId, track).then(() => {
                 this.props.fetchUser(this.props.currentUser.id)
                 this.props.fetchTrack(track.id)
         })

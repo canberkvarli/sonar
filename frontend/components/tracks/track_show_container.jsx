@@ -42,7 +42,10 @@ const mSTP = (state, ownProps) => {
         trackUrl: (trackLoaded() ? state.entities.tracks[ownProps.match.params.trackId].trackUrl : ''),
         tracks: Object.values(state.entities.tracks),
         userLikesTrack: userLikesTrack,
-        currentLikeId: currentLikeId
+        // currentLikeId: currentLikeId,
+
+        // currentLikeId: currentUser.likes[track.id].id
+        currentLikeId: currentUser.likes[ownProps.match.params.trackId].id
 
         // newTrack: state.tracks.map(track => track)
       }
