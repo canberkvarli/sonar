@@ -17,7 +17,7 @@ const mSTP = (state, ownProps) => {
     
     let currentUser;
     let currentLikeId;
-    let userLikesTrack = false;
+    let userLikesTrack;
 
 
     if (state.session.id) {  // if there is a current session
