@@ -28,8 +28,9 @@ class SessionForm extends React.Component{
     }
 
     handleSubmit(e){
-        e.preventDefault()
+        // e.preventDefault()
         const user = Object.assign({}, this.state);
+        console.log(user);
         this.props.processForm(user);
     }
 
@@ -65,8 +66,7 @@ class SessionForm extends React.Component{
                 Please {this.props.formType} or <span id="navLink" > {this.props.navLink} </span>
 
                 </h4>
-
-                <form className="session-form" onSubmit={this.handleSubmit}>
+                <form className="session-form" onSubmit={() => this.handleSubmit()}>
                     <label className="session-form-label" htmlFor="username">Username
 
                         <input
@@ -135,7 +135,9 @@ class SessionForm extends React.Component{
                     <Link to="/" className="gobacklink">Go back</Link>
 
                 </form>
-                {this.renderErrors()}
+                <div>
+                    {this.renderErrors()}
+                </div>
             </div>
         </div>
         )
@@ -147,6 +149,5 @@ class SessionForm extends React.Component{
             }
         }
     }
-
-
+    
 export default SessionForm

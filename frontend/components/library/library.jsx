@@ -13,7 +13,6 @@ export class Library extends Component {
 
     componentDidMount() {
 
-      this.setState({});
       this.props.fetchTracks();
       this.props.fetchUser(this.props.currentUser.id);
     
@@ -21,7 +20,6 @@ export class Library extends Component {
 
     render() {
     const { tracks , currentUser} = this.props
-    console.log(this.props)
     if (currentUser.likes === undefined) {
       // window.location.reload()
       return (
@@ -34,6 +32,7 @@ export class Library extends Component {
     }else if (Object.keys(tracks).length===0){
       return null
     } else {
+      console.log(currentUser)
       return(
         <div className="outside-wrapper">
             {/* <h1>
@@ -43,13 +42,14 @@ export class Library extends Component {
             <br />
           </div>
           <h1 id="library-username">Hey {currentUser.username}! All your likes in one place.</h1>
-                  {tracks.map((track, i) => (
+                  {Object.values(tracks).map((track, i) => (
                     Object.keys(currentUser.likes).map((key, j) => {
                         const trackId = parseInt(key)
                         if((j < i) && (track.id === trackId) && (tracks !== undefined)){
-                          console.log(track)
-                            console.log(tracks)
+                          // console.log(track)
+                          //   console.log(tracks)
                             // console.log(trackId)
+                            
                                 return (
                                 <>
                                 {/* {console.log(track.id)} */}

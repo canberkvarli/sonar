@@ -1,8 +1,8 @@
 class Api::SessionsController < ApplicationController
 
-        skip_before_action :verify_authenticity_token 
-        # 
-        protect_from_forgery except: :destroy
+        # skip_before_action :verify_authenticity_token 
+        
+        # protect_from_forgery except: :destroy
 
 
     def create

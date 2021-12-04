@@ -14,9 +14,10 @@ const mSTP = (state, ownProps) => {
             return false
         }
     }
+    
     let currentUser;
     let currentLikeId;
-    let userLikesTrack = false;
+    let userLikesTrack;
 
 
     if (state.session.id) {  // if there is a current session
@@ -41,7 +42,10 @@ const mSTP = (state, ownProps) => {
         trackUrl: (trackLoaded() ? state.entities.tracks[ownProps.match.params.trackId].trackUrl : ''),
         tracks: Object.values(state.entities.tracks),
         userLikesTrack: userLikesTrack,
-        currentLikeId: currentLikeId
+        // currentLikeId: currentLikeId,
+
+        // currentLikeId: currentUser.likes[track.id].id
+        currentLikeId: currentUser.likes[ownProps.match.params.trackId].id
 
         // newTrack: state.tracks.map(track => track)
       }
@@ -57,7 +61,7 @@ const mDTP = dispatch => {
     deleteTrack: (trackId) => dispatch(deleteTrack(trackId)),
     uploadTrack: (track) => dispatch(uploadTrack(track)),
     createLike: (like, trackId) => dispatch(createLike(like, trackId)),
-    deleteLike: (likeId, track) => dispatch(deleteLike(likeId, track))
+    deleteLike: (likeId, trackId) => dispatch(deleteLike(likeId, trackId))
     }
 
 }

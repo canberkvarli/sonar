@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FaHeart } from 'react-icons/fa'
 import Waveform from '../waveform/waveform';
 import AudioPlayer from 'react-h5-audio-player';
@@ -39,7 +38,6 @@ class TrackShow extends React.Component{
         this.props.createLike({ liker_id: currentUserId, track_id: trackId }).then(() => {
             this.props.fetchUser(currentUserId)
             this.props.fetchTrack(trackId)
-            // debugger
         })
         this.setState({ userLikesTrack: true }, 
             () => {console.log(this.state)});
@@ -47,31 +45,27 @@ class TrackShow extends React.Component{
         }
         
         deleteLike(e) {
-            debugger
+            console.log(this.props)
             e.preventDefault()
-            const track  = this.state.track
-            const currentLikeId = this.props.currentUser.likes[track.id].id
-            this.props.deleteLike(currentLikeId, track).then(() => {
-
-            this.props.fetchUser(this.props.currentUser)
-            this.props.fetchTrack(track.id)
+            // const currentLikeId = this.props.currentUser.likes[track.id].id
+            
+            this.props.deleteLike(this.props.currentLikeId, this.props.track.id).then(() => {
+                this.props.fetchUser(this.props.currentUser.id)
+                this.props.fetchTrack(this.props.track.id)
         })
             this.setState({ userLikesTrack: false },
                 () => console.log(this.state))
         }
-        // debugger
         toggleLike() {
             
             if (!this.state.loggedIn) {
             return (
-                
                <Link to="/login"> <span className="icon-heart"><FaHeart /></span><p className="likes-count">{this.dispNumLikes()}</p></Link>
-               
                 )
             }
             else {
 
-                if (this.props.userLikesTrack) {
+                if (this.state.userLikesTrack) {
                     return (
                     <button 
                     onClick={this.deleteLike}
@@ -80,7 +74,7 @@ class TrackShow extends React.Component{
                 }
                 else {
                     return (
-                    <button onClick={this.createLike}><span className="icon-heart"><FaHeart /></span><p className="likes-count">{this.dispNumLikes()}</p></button>
+                    <button className="not-liked" onClick={this.createLike}><span className="icon-heart"><FaHeart /></span><p className="likes-count">{this.dispNumLikes()}</p></button>
                     )
                 }
             }
