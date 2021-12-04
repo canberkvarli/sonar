@@ -13,38 +13,18 @@ class TrackIndexItem extends React.Component
                 track: this.props.track,
                 userLikesTrack: this.props.userLikesTrack,
                 loggedIn: !!this.props.currentUser
-                // arrowDisplay: true
             }
 
             this.forceUpdateHandler = this.forceUpdateHandler.bind(this)
-            // this.handleMouseEnter = this.handleMouseEnter.bind(this)
-            // this.handleMouseLeave = this.handleMouseLeave.bind(this)
+
         }
         forceUpdateHandler(){
             this.forceUpdate();
         };
         
 
-        // handleMouseEnter(){
-        //     this.setState({
-        //         arrowDisplay: true
-        //     })
-        // }
-
-        // handleMouseLeave(){
-        //     this.setState({
-        //         arrowDisplay: false
-        //     })
-        // }
-
         render(){
-            // let temp;
-            // if (this.state.arrowDisplay === true){
-            //     temp = "active-arrow-display"
-            // } else {
-            //     temp = "passive-arrow-display"
-            // }
-            // const playIcon = <FontAwesomeIcon icon={faPlay} />
+
             return(
             
             <div 
@@ -69,7 +49,6 @@ class TrackIndexItem extends React.Component
                     to={`/tracks/${this.props.track.id }`} className="track-title">{this.props.track.title}</Link>
                 </span>
                 <br />
-
             </div> 
             ) 
         }
