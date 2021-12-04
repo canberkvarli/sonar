@@ -144,10 +144,15 @@
     margin-top: -10px;
     height: 30px;
   .liked:hover {
-    border: 1px solid #f50;
+    color: orangered;
   }
 }
+.liked{
+    color: orangered;
+}
 
+.not-liked{ 
+}
 #root > div > div.track-interact-buttons > button{
     display: flex;
 }

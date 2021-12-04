@@ -61,7 +61,7 @@ const mDTP = dispatch => {
     deleteTrack: (trackId) => dispatch(deleteTrack(trackId)),
     uploadTrack: (track) => dispatch(uploadTrack(track)),
     createLike: (like, trackId) => dispatch(createLike(like, trackId)),
-    deleteLike: (likeId, track) => dispatch(deleteLike(likeId, track))
+    deleteLike: (likeId, trackId) => dispatch(deleteLike(likeId, trackId))
     }
 
 }
