@@ -1,4 +1,10 @@
 class Api::LikesController < ApplicationController
+
+  def index 
+    @likes = Like.all
+  end
+
+
     def create
     # 
     @like = Like.new(like_params)
@@ -14,6 +20,7 @@ class Api::LikesController < ApplicationController
   end
 
   def destroy
+    
     @like = Like.find(params[:id])
     if @like.destroy
       render json: @like

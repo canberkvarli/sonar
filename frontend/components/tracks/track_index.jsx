@@ -20,7 +20,7 @@ class TrackIndex extends React.Component{
     }
 
     handleOnclick(e){
-        e.preventDefault();
+        e.preventDefault(); 
         this.setState({
             displayPlayhead: true
         })

@@ -10,7 +10,7 @@ class TrackShow extends React.Component{
         super(props)
 
         this.state = {
-            track: this.props.track,
+            // track: this.props.track,
             userLikesTrack: this.props.userLikesTrack,
             loggedIn: !!this.props.currentUser,
             isPlaying: false
@@ -33,7 +33,7 @@ class TrackShow extends React.Component{
 
     createLike(e) {
         e.preventDefault()
-        const trackId = this.props.trackId
+        const {trackId} = this.props.trackId
         const currentUserId = this.props.currentUser.id
         this.props.createLike({ liker_id: currentUserId, track_id: trackId }).then(() => {
             this.props.fetchUser(currentUserId)
@@ -82,19 +82,36 @@ class TrackShow extends React.Component{
             }
         }
         dispNumLikes(){
-            const { track } = this.props;
-            if (!track) return
-            if (!track.likes) return 'Like'
-            else return (Object.keys(track.likes).length)
+            if (!this.props.track) return
+            if (!this.props.track.likes) return 'Like'
+            else return (Object.keys(this.props.track.likes).length)
         }
 
     render(){
+        console.log(this.props)
         const {track, currentUser, userLikesTrack, tracks} = this.props;
         let temp;
         this.state.isPlaying ? temp = 'container-playhead-passive' : 'container-playhead-active'
         if ((track === undefined)){
             return null
-        }else {
+        }else if (!currentUser){
+            return (
+                <> 
+                    <img id="track-show-image" src={track.photoUrl} alt={track.title} />
+                        <Waveform track={track} />
+                    {/* {console.log(this.props.tracks)} */}
+                    <span id="track-show-title">{track.title}</span>
+                    <h1 className="description">
+                        {track.description}
+                    </h1>
+                    {/* <footer id="playhead-footer"className={temp}>
+                            <AudioPlayer 
+                            src={this.props.track.audioUrl}
+                            />
+                    </footer> */}
+                </>
+            )
+        } else {
             return (
                 <> 
                     <img id="track-show-image" src={track.photoUrl} alt={track.title} />
