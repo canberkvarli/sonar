@@ -33,7 +33,7 @@ class TrackShow extends React.Component{
 
     createLike(e) {
         e.preventDefault()
-        const {trackId} = this.props.trackId
+        const trackId = this.props.trackId
         const currentUserId = this.props.currentUser.id
         this.props.createLike({ liker_id: currentUserId, track_id: trackId }).then(() => {
             this.props.fetchUser(currentUserId)
@@ -99,7 +99,6 @@ class TrackShow extends React.Component{
                 <> 
                     <img id="track-show-image" src={track.photoUrl} alt={track.title} />
                         <Waveform track={track} />
-                    {/* {console.log(this.props.tracks)} */}
                     <span id="track-show-title">{track.title}</span>
                     <h1 className="description">
                         {track.description}
