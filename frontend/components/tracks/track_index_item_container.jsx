@@ -31,16 +31,16 @@ const mSTP = (state) => {
     }
 }
 
-const mDTP = dispatch => ({
-    fetchTracks: () => dispatch(fetchTracks()),
-    fetchUser: () => dispatch(fetchUser(userId)),
-    fetchTrack: (trackId) => dispatch(fetchTrack(trackId)),
-    deleteTrack: (trackId) => dispatch(deleteTrack(trackId)),
-    uploadTrack: (track) => dispatch(uploadTrack(track)),
-    createLike: (like, trackId) => dispatch(createLike(like)),
-    deleteLike: (likeId, track) => dispatch(deleteLike(likeId, track))
-})
+// const mDTP = dispatch => ({
+//     // fetchTracks: () => dispatch(fetchTracks()),
+//     // fetchUser: () => dispatch(fetchUser(userId)),
+//     // fetchTrack: (trackId) => dispatch(fetchTrack(trackId)),
+//     // deleteTrack: (trackId) => dispatch(deleteTrack(trackId)),
+//     // uploadTrack: (track) => dispatch(uploadTrack(track)),
+//     // createLike: (like, trackId) => dispatch(createLike(like)),
+//     // deleteLike: (likeId, track) => dispatch(deleteLike(likeId, track))
+// })
 
 
 
-export default connect(mSTP, mDTP)(TrackIndexItem)
+export default connect(mSTP)(TrackIndexItem)

@@ -103,11 +103,6 @@ class TrackShow extends React.Component{
                     <h1 className="description">
                         {track.description}
                     </h1>
-                    {/* <footer id="playhead-footer"className={temp}>
-                            <AudioPlayer 
-                            src={this.props.track.audioUrl}
-                            />
-                    </footer> */}
                 </>
             )
         } else {
