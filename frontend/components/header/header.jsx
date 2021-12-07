@@ -46,7 +46,6 @@ class Header extends React.Component{
         const {signup, login, logout, currentUser, disabled} = this.props
         const search = <FontAwesomeIcon icon={faSearch}/>
         const github = <FontAwesomeIcon icon={["fab", "github"]} />
-        // console.log(this.props)
 
   
         // Not Logged In

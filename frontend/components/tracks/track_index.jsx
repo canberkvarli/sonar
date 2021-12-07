@@ -30,7 +30,6 @@ class TrackIndex extends React.Component{
 
     render(){
         const {tracks} = this.props;    
-        console.log(this.props.tracks)
 
         return(
             <div className="track-index-container" >
