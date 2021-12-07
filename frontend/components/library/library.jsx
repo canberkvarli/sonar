@@ -34,9 +34,6 @@ export class Library extends Component {
     } else {
       return(
         <div className="outside-wrapper">
-            {/* <h1>
-              <span id="library-username">{currentUser.username} </span>here is all your likes and in one place!
-            </h1> */}
           <div className="grid-header">
             <br />
           </div>
@@ -46,6 +43,7 @@ export class Library extends Component {
                     Object.keys(currentUser.likes).map((key, j) => {
                         const trackId = parseInt(key)
                         if((track.id === trackId) && (tracks !== undefined)){
+                          // console.log(track)
                           //   console.log(tracks)
                             // console.log(trackId)
                             

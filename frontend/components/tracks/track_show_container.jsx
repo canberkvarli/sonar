@@ -24,7 +24,7 @@ const mSTP = (state, ownProps) => {
     currentUser = state.entities.users[state.session.id];
     if (currentUser.likes) {
 
-      if (currentUser.likes[ownProps.trackId]) {
+      if (currentUser.likes[ownProps.match.params.trackId]) {
         userLikesTrack = true;
 
       } else {
