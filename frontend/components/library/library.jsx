@@ -13,8 +13,8 @@ export class Library extends Component {
 
     componentDidMount() {
 
-      this.props.fetchTracks();
       this.props.fetchUser(this.props.currentUser.id);
+      this.props.fetchTracks();
     
     }
 
@@ -45,7 +45,7 @@ export class Library extends Component {
                   {Object.values(tracks).map((track, i) => (
                     Object.keys(currentUser.likes).map((key, j) => {
                         const trackId = parseInt(key)
-                        if((j < i) && (track.id === trackId) && (tracks !== undefined)){
+                        if((track.id === trackId) && (tracks !== undefined)){
                           // console.log(track)
                           //   console.log(tracks)
                             // console.log(trackId)
