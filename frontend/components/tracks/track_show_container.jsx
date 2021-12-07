@@ -14,7 +14,7 @@ const mSTP = (state, ownProps) => {
             return false
         }
     }
-    
+    // let showedTrack;
     let currentUser;
     let userLikesTrack;
 
@@ -36,12 +36,22 @@ const mSTP = (state, ownProps) => {
     return {}
     
   }
+
+
+  Object.values(state.entities.tracks).map(track => {
+    if(track.id === ownProps.match.params.trackId){
+      showedTrack = track
+    }
+  })
+
+   
     
     return {
 
         currentUser: state.entities.users[state.session.id],
         trackId: ownProps.match.params.trackId,
-        track: state.entities.tracks[ownProps.match.params.trackId],
+        track: state.entities.tracks[ownProps.match.params.trackId], //It is showing the track by it's index not the id!
+        // track: showedTrack,
         trackUrl: (trackLoaded() ? state.entities.tracks[ownProps.match.params.trackId].trackUrl : ''),
         tracks: Object.values(state.entities.tracks),
         userLikesTrack: userLikesTrack,

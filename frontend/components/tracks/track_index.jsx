@@ -9,6 +9,7 @@ class TrackIndex extends React.Component{
         super(props)
 
         this.state = {
+            tracks: this.props.tracks,
             displayPlayhead: false
         }
 
@@ -29,7 +30,8 @@ class TrackIndex extends React.Component{
 
     render(){
         const {tracks} = this.props;    
- 
+        console.log(this.props.tracks)
+
         return(
             <div className="track-index-container" >
                 <ul className="track-index">

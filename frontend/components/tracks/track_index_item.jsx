@@ -10,6 +10,7 @@ class TrackIndexItem extends React.Component
             super(props)
 
             this.state = {
+                //track comes from the tracks index parent
                 track: this.props.track,
                 userLikesTrack: this.props.userLikesTrack,
                 loggedIn: !!this.props.currentUser
@@ -24,7 +25,6 @@ class TrackIndexItem extends React.Component
         
 
         render(){
-
             return(
             
             <div 

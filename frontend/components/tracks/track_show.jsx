@@ -10,7 +10,7 @@ class TrackShow extends React.Component{
         super(props)
 
         this.state = {
-            // track: this.props.track,
+            track: this.props.track,
             userLikesTrack: this.props.userLikesTrack,
             loggedIn: !!this.props.currentUser,
             isPlaying: false
@@ -26,8 +26,10 @@ class TrackShow extends React.Component{
     
 
     componentDidMount(){
-        this.props.fetchTracks()
-        this.props.fetchTrack(this.props.trackId)
+        // this.props.fetchTracks()
+        this.props.fetchTrack(this.props.trackId).then(
+            console.log(this.props)
+        )
 
     }
 
@@ -89,6 +91,7 @@ class TrackShow extends React.Component{
 
     render(){
         console.log(this.props)
+        console.log(this.state)
         const {track, currentUser, userLikesTrack, tracks} = this.props;
         let temp;
         this.state.isPlaying ? temp = 'container-playhead-passive' : 'container-playhead-active'
