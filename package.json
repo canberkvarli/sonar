@@ -39,6 +39,7 @@
     "react-favicon": "^0.0.23",
     "react-h5-audio-player": "^3.7.2",
     "react-icons": "^4.2.0",
+    "react-loading": "^2.0.3",
     "react-modal": "^3.14.3",
     "react-player": "^2.9.0",
     "react-redux": "^7.2.4",
