@@ -5,8 +5,9 @@ import {
     Link,
     Redirect,
     Switch,
-    HashRouter
+    HashRouter,
 } from 'react-router-dom';
+
 import { ProtectedRoute } from '../util/route_util'
 
 import HeaderContainer from "./header/header_container";
@@ -36,6 +37,7 @@ const App = () => (
                 FallbackComponent={ErrorFallback}
                 onReset={() => {
                     // reset the state of your app so the error doesn't happen again
+                    
                     window.location.reload()
                 }}
 
