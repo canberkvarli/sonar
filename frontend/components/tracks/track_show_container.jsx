@@ -8,7 +8,7 @@ import TrackShow from "./track_show";
 
 const mSTP = (state, ownProps) => {
 
-  const tracks = Object.values(state.entities.tracks)
+  // const tracks = Object.values(state.entities.tracks)
   
     const trackLoaded = () => {
         if (state.entities.tracks[ownProps.match.params.trackId]) {
@@ -48,21 +48,24 @@ const mSTP = (state, ownProps) => {
 
   
    
-    
+    let tracks = Object.values(state.entities.tracks)
+
+    console.log(tracks)
+
     return {
 
         currentUser: state.entities.users[state.session.id],
         trackId: ownProps.match.params.trackId,
-        track: state.entities.tracks[ownProps.match.params.trackId], //It is showing the track by it's index not the id!
-        // track,
-        trackUrl: (trackLoaded() ? state.entities.tracks[ownProps.match.params.trackId].trackUrl : ''),
-        tracks: Object.values(state.entities.tracks),
+        track: tracks[ownProps.match.params.trackId], 
+        trackUrl: (trackLoaded() ? tracks[ownProps.match.params.trackId].trackUrl : ''),
+        tracks: Object.values(tracks),
         userLikesTrack: userLikesTrack,
         currentLikeId: currentUser.likes[ownProps.match.params.trackId].id
 
+
       }
     
-}
+} 
 
 
 const mDTP = dispatch => {
