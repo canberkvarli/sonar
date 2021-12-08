@@ -7,6 +7,9 @@ import { withRouter } from "react-router";
 import TrackShow from "./track_show";
 
 const mSTP = (state, ownProps) => {
+
+  const tracks = Object.values(state.entities.tracks)
+  
     const trackLoaded = () => {
         if (state.entities.tracks[ownProps.match.params.trackId]) {
             return true;
@@ -14,7 +17,6 @@ const mSTP = (state, ownProps) => {
             return false
         }
     }
-    // let showedTrack;
     let currentUser;
     let userLikesTrack;
 
@@ -38,12 +40,13 @@ const mSTP = (state, ownProps) => {
   }
 
 
-  Object.values(state.entities.tracks).map(track => {
-    if(track.id === ownProps.match.params.trackId){
-      showedTrack = track
-    }
-  })
+  // let track = tracks.filter(track => {
+  //   if(track.id === ownProps.match.params.trackId){
+  //     return track
+  //   }
+  // })
 
+  
    
     
     return {
@@ -51,7 +54,7 @@ const mSTP = (state, ownProps) => {
         currentUser: state.entities.users[state.session.id],
         trackId: ownProps.match.params.trackId,
         track: state.entities.tracks[ownProps.match.params.trackId], //It is showing the track by it's index not the id!
-        // track: showedTrack,
+        // track,
         trackUrl: (trackLoaded() ? state.entities.tracks[ownProps.match.params.trackId].trackUrl : ''),
         tracks: Object.values(state.entities.tracks),
         userLikesTrack: userLikesTrack,
