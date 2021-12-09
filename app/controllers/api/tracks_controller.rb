@@ -19,7 +19,7 @@ class Api::TracksController < ApplicationController
     end
 
     def show
-        debugger
+        # debugger
         @track = Track.find(params[:id])
         
        if @track.save!

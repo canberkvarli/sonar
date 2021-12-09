@@ -16,7 +16,7 @@ const mSTP = (state, ownProps) => {
             return false
         }
     }
-    
+
     let currentUser;
     let userLikesTrack;
 
@@ -44,14 +44,11 @@ const mSTP = (state, ownProps) => {
    
     let tracks = Object.values(state.entities.tracks)
 
-    console.log(tracks)
-
     return {
 
         currentUser: state.entities.users[state.session.id],
         trackId: ownProps.match.params.trackId,
-        tracks: Object.values(tracks),
-        track: tracks[ownProps.match.params.trackId], 
+        track: state.entities.tracks[ownProps.match.params.trackId], 
         trackUrl: (trackLoaded() ? tracks[ownProps.match.params.trackId].trackUrl : ''),
         userLikesTrack: userLikesTrack,
         currentLikeId: currentUser.likes[ownProps.match.params.trackId].id
