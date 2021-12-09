@@ -113,7 +113,8 @@ class TrackShow extends React.Component{
                     </h1>
                 </>
             )
-        } else {
+        } 
+        else {
             return (
                 <> 
                     <img id="track-show-image" src={track.photoUrl} alt={track.title} />

@@ -34,18 +34,14 @@ const mSTP = (state, ownProps) => {
         currentLikeId = currentUser.likes[ownProps.match.params.trackId].id
         userLikesTrack = true;
 
-      } else {
-        currentLikeId = null
-      }
+      } 
     }else {
       userLikesTrack = false;
       
     }
   } else {
 
-    return {
-
-    }
+    currentLikeId = null
     
   }
 
