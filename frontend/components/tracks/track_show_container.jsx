@@ -17,6 +17,9 @@ const mSTP = (state, ownProps) => {
         }
     }
 
+
+    let tracks = Object.values(state.entities.tracks)
+    let currentLikeId;
     let currentUser;
     let userLikesTrack;
 
@@ -27,31 +30,38 @@ const mSTP = (state, ownProps) => {
     if (currentUser.likes) {
 
       if (currentUser.likes[ownProps.match.params.trackId]) {
+
+        currentLikeId = currentUser.likes[ownProps.match.params.trackId].id
         userLikesTrack = true;
 
       } else {
-        userLikesTrack = false;
+        currentLikeId = null
       }
+    }else {
+      userLikesTrack = false;
+      
     }
   } else {
 
-    return {}
+    return {
+
+    }
     
   }
 
 
   
    
-    let tracks = Object.values(state.entities.tracks)
 
+    console.log(state)
     return {
 
         currentUser: state.entities.users[state.session.id],
         trackId: ownProps.match.params.trackId,
         track: state.entities.tracks[ownProps.match.params.trackId], 
-        trackUrl: (trackLoaded() ? tracks[ownProps.match.params.trackId].trackUrl : ''),
+        // trackUrl: (trackLoaded() ? tracks[ownProps.match.params.trackId].trackUrl : ''),
         userLikesTrack: userLikesTrack,
-        currentLikeId: currentUser.likes[ownProps.match.params.trackId].id
+        currentLikeId
 
 
       }
