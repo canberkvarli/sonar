@@ -13,8 +13,8 @@ export class Library extends Component {
 
     componentDidMount() {
 
-      this.props.fetchUser(this.props.currentUser.id);
       this.props.fetchTracks();
+      this.props.fetchUser(this.props.currentUser.id);
     
     }
 
@@ -51,7 +51,7 @@ export class Library extends Component {
                                 <>
                                 {/* {console.log(track.id)} */}
                                   <div key={i} className="liked-track">
-                                    <div key={j} className="wrapper">
+                                    <div className="wrapper">
                                       <Link to={`/tracks/${track.id}`} onClick={()=>this.props.history.push(`tracks/${track.id}`)}> <img id="track-show-image" src={track.photoUrl} alt={track.title} /> </Link>
                                             {/* <Waveform track={track}/> */}
                                       <Link to={`/tracks/${track.id}`} onClick={()=>this.props.history.push(`/tracks/${track.id}`)}><span id="track-show-title">{track.title}</span> </Link>

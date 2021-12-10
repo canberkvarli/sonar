@@ -38,7 +38,6 @@ class TrackShow extends React.Component{
     }
 
     createLike(e) {
-        e.preventDefault()
         const trackId = this.props.trackId
         const currentUserId = this.props.currentUser.id
         this.props.createLike({ liker_id: currentUserId, track_id: trackId }).then(() => {
@@ -51,8 +50,8 @@ class TrackShow extends React.Component{
         }
         
         deleteLike(e) {
+            
             console.log(this.props)
-            e.preventDefault()
             const { track, currentUser, currentLikeId } = this.props;
 
             // const currentLikeId = this.props.currentUser.likes[track.id].id

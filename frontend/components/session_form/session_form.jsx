@@ -16,12 +16,11 @@ class SessionForm extends React.Component{
     }
 
     componentDidMount(){
-        
         this.props.errors;
     }
 
     handleDemoUser(e) {
-        e.preventDefault();
+        // e.preventDefault();
         const demouser = {username: 'demouser', password: 'password'}
 
         this.props.login(demouser);
