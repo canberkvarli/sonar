@@ -8,7 +8,7 @@
 
 Track.destroy_all
 User.destroy_all
-
+Like.destroy_all
 
 
 # USERS
