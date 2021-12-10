@@ -22,6 +22,20 @@ class Api::LikesController < ApplicationController
   def destroy
     
     @like = Like.find(params[:id])
+
+    #t.likes.each do |like|
+    # count = 0
+    # if like.liker_id == @like.liker_id
+    # count += 1
+    # end
+    # if count > 2 
+    # 
+    # end
+    #end 
+
+
+    
+    
     if @like.destroy
       render json: @like
     else

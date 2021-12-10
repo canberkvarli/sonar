@@ -33,4 +33,16 @@ class Track < ApplicationRecord
     through: :likes,
     source: :liker
     
+    def self.track_num_likes
+        tracks_with_likes = Track
+            .select("tracks.*, COUNT(*) AS num_likes")
+            .joins(:likes)
+            .group(:id)
+            
+        tracks_with_likes.each do |track|
+            puts track.num_likes
+        end
+    end
+
+
 end
