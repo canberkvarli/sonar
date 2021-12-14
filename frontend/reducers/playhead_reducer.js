@@ -7,7 +7,7 @@ const _nullTrack = {
   currentTime: 0
 }; 
 
-export default (state = _nullTrack, action) => {
+const PlayheadReducer = (state = _nullTrack, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
 
@@ -36,3 +36,6 @@ export default (state = _nullTrack, action) => {
       return state;
   }
 };
+
+
+export default PlayheadReducer;
