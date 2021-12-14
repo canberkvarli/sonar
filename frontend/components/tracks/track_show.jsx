@@ -29,13 +29,11 @@ class TrackShow extends React.Component{
     componentDidMount(){
 
         // this.props.fetchTracks()
-
         this.props.fetchTrack(this.props.trackId).then(
             console.log(this.props)
         )
-
-
     }
+
 
     createLike(e) {
         const trackId = this.props.trackId
