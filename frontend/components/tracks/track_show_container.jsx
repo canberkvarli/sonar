@@ -45,12 +45,7 @@ const mSTP = (state, ownProps) => {
     
   }
 
-
-  
-   
-
-    console.log(state)
-    return {
+      return {
 
         currentUser: state.entities.users[state.session.id],
         trackId: ownProps.match.params.trackId,

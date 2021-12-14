@@ -18,23 +18,41 @@ const mSTP = (state, ownProps) => {
         }
 
     let currentUserLikes = false;
-        if (state.session.id) {
+    let currentLikeId;
+    let currentUser;
+    let userLikesTrack;
 
-            if (state.entities.users[state.session.id].likes && state.playhead.currentSong) {
-            if (state.entities.users[state.session.id].likes[state.playhead.currentSong.id]) {
-                currentUserLikes = true;
-            }
-            }
-        }
 
-        console.log(state)
+    if (state.session.id) {  // if there is a current session
+
+    currentUser = state.entities.users[state.session.id];
+    if (currentUser.likes) {
+
+      if (currentUser.likes[ownProps.match.params.trackId]) {
+
+        currentLikeId = currentUser.likes[ownProps.match.params.trackId].id
+        userLikesTrack = true;
+
+      } 
+    }else {
+      userLikesTrack = false;
+      
+    }
+  } else {
+
+    currentLikeId = null
+    
+  }
+       
         return {
 
             currentUser: (state.session.id)? state.entities.users[state.session.id] : null, 
-            currentTrack: state.playhead.currentTrack,
             trackId: ownProps.match.params.trackId,
-            tracks: state.entities.tracks,
-            track: state.entities.tracks[ownProps.match.params.trackId], 
+            track: state.entities.tracks[ownProps.match.params.trackId],
+            userLikesTrack: userLikesTrack,
+            currentLikeId,
+            currentTrack: state.playhead.currentTrack,
+            // tracks: state.entities.tracks,
             paused: state.playhead.paused,
             currentUserLikes: currentUserLikes,
 

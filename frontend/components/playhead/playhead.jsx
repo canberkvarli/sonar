@@ -54,7 +54,7 @@ class Playhead extends React.Component {
                         <ReactAudioPlayer 
                             onPlay={this.handlePlayerPlay}
                             onPause={this.handlePlayerPause}
-                            src={this.props.track.audioUrl}
+                            src={this.props.currentTrack.audioUrl}
                             controls={true}
                             autoPlay={false}
                             className={"audioplayer"}
