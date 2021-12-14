@@ -41,7 +41,8 @@ class Playhead extends React.Component {
         console.log(this.props)
 
         let temp;
-        this.state.isPlaying ? temp = 'container-playhead-passive' : 'container-playhead-active'
+        this.state.playing ? temp = 'container-playhead-passive' : 'container-playhead-active'
+
         console.log(this.state)
 
         if(this.props.tracks === undefined){
@@ -57,6 +58,7 @@ class Playhead extends React.Component {
                             src={this.props.currentTrack.audioUrl}
                             controls={true}
                             autoPlay={false}
+                            //use 'temp' for the className.
                             className={"audioplayer"}
                         />
                     </footer>

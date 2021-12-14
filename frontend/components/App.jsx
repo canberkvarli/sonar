@@ -19,7 +19,6 @@ import LibraryContainer from "./library/library_container";
 
 // import TrackIndexItemContainer from "./tracks/track_index_item_container";
 import PlayheadContainer from "./playhead/playhead_container"
-// import { WaveformContainer } from './waveform/waveform_container';
 import Waveform from './waveform/waveform';
 import { ErrorBoundary }  from 'react-error-boundary';
 import { ErrorFallback } from '../util/error_boundary';
@@ -52,7 +51,7 @@ const App = () => (
                 </Switch>
             </div>
                 <WaveformContainer />
-                <PlayheadContainer />
+            <PlayheadContainer />
         </HashRouter>
     </div>
 );
