@@ -49,7 +49,7 @@ const mSTP = (state, ownProps) => {
   
    
 
-    // console.log(state)
+    console.log(state)
     return {
 
         currentUser: state.entities.users[state.session.id],

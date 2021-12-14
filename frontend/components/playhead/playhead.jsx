@@ -1,27 +1,44 @@
 import React from 'react'
-import AudioPlayer from 'react-h5-audio-player';
+import Waveform from '../waveform/waveform';
+import ReactAudioPlayer from 'react-audio-player'; 
 
 class Playhead extends React.Component {
     constructor(props){
         super(props)
 
         this.state = {
-            isPlaying: true,
+            playing: true,
             track: this.props.track,
             tracks: this.props.tracks
         }
-        
+     
+        this.handlePlayerPlay = this.handlePlayerPlay.bind(this)
+        this.handlePlayerPause = this.handlePlayerPause.bind(this)
     }
 
     componentDidMount(){
-        this.props.fetchTrack(this.props.trackId)
         this.props.fetchTracks()
+        this.props.fetchTrack(this.props.trackId)
     }
 
+    handlePlayerPlay = () => {
+        this.setState({ playing: !this.state.playing });
+
+        // mute waveform but keep the wave progressing
+        this.waveform.play();
+        this.waveform.toggleMute();
+        }
+
+    handlePlayerPause = () => {
+                this.setState({ playing: !this.state.playing });
+                // this.waveform.play()
+                this.waveform.pause()
+                this.waveform.toggleMute();
+        }
 
     render() {
 
-        // console.log(this.props.tracks)
+        console.log(this.props)
 
         let temp;
         this.state.isPlaying ? temp = 'container-playhead-passive' : 'container-playhead-active'
@@ -33,11 +50,16 @@ class Playhead extends React.Component {
             
             return (
                 <div>         
-                        <footer className={temp}>
-                            <AudioPlayer 
-                            src={this.state.track.audioUrl}
-                            />
-                        </footer>
+                    <footer id="playhead-footer">
+                        <ReactAudioPlayer 
+                            onPlay={this.handlePlayerPlay}
+                            onPause={this.handlePlayerPause}
+                            src={this.props.track.audioUrl}
+                            controls={true}
+                            autoPlay={false}
+                            className={"audioplayer"}
+                        />
+                    </footer>
                 </div>
             )
         }

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { FaHeart, FaAngleDoubleLeft } from 'react-icons/fa'
 import Waveform from '../waveform/waveform';
-import AudioPlayer from 'react-h5-audio-player';
+import Playhead from '../playhead/playhead';
 
 
 class TrackShow extends React.Component{
