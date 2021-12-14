@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { FaHeart } from 'react-icons/fa'
+import { FaHeart, FaAngleDoubleLeft } from 'react-icons/fa'
 import Waveform from '../waveform/waveform';
 import AudioPlayer from 'react-h5-audio-player';
 
@@ -110,6 +110,11 @@ class TrackShow extends React.Component{
                     <h1 className="description">
                         {track.description}
                     </h1>
+                    <span className="description" id="more-tracks">
+                    <Link to="/">
+                        <FaAngleDoubleLeft/> More tracks
+                    </Link>
+                    </span>
                 </>
             )
         } 
@@ -118,7 +123,6 @@ class TrackShow extends React.Component{
                 <> 
                     <img id="track-show-image" src={track.photoUrl} alt={track.title} />
                         <Waveform track={track} />
-                    {/* {console.log(this.props.tracks)} */}
                     <span id="track-show-title">{track.title}</span>
                     <div className="track-interact-buttons">
                         {this.toggleLike()}

@@ -43,9 +43,7 @@ export class Library extends Component {
                     Object.keys(currentUser.likes).map((key, j) => {
                         const trackId = parseInt(key)
                         if((track.id === trackId) && (tracks !== undefined)){
-                          // console.log(track)
-                          //   console.log(tracks)
-                            // console.log(trackId)
+
                             
                                 return (
                                 <>
