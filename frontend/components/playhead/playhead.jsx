@@ -1,5 +1,4 @@
 import React from 'react'
-import Waveform from '../waveform/waveform';
 import ReactAudioPlayer from 'react-audio-player'; 
 
 class Playhead extends React.Component {

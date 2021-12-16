@@ -68,7 +68,7 @@ const mDTP = dispatch => {
 
     return{
         fetchUser: (userId) => dispatch(fetchUser(userId)),
-        setCurrentTrack: (trackId) => dispatch(setCurrentTrack(trackId)),
+        setCurrentTrack: (track) => dispatch(setCurrentTrack(track)),
         playTrack: () => dispatch(playTrack()),
         pauseTrack: () => dispatch(pauseTrack()),
         fetchTracks: () => dispatch(fetchTracks()),

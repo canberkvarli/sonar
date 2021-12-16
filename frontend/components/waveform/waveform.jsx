@@ -48,7 +48,9 @@ class Waveform extends Component {
 
     handlePlay = () => {
         this.setState({ playing: !this.state.playing });
-        this.props.setCurrentTrack(this.props.track)
+
+        // this.props.setCurrentTrack(this.props.track)
+
         this.waveform.playPause();
 
     };

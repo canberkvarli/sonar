@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { FaHeart, FaAngleDoubleLeft } from 'react-icons/fa'
 import Waveform from '../waveform/waveform';
-import Playhead from '../playhead/playhead';
 
 
 class TrackShow extends React.Component{
@@ -90,11 +89,9 @@ class TrackShow extends React.Component{
             else return (Object.keys(this.props.track.likes).length)
         }
 
-
     render(){
         console.log(this.props)
         console.log(this.state)
-        
 
         const {track, currentUser, userLikesTrack} = this.props;
         let temp;
@@ -122,7 +119,7 @@ class TrackShow extends React.Component{
             return (
                 <> 
                     <img id="track-show-image" src={track.photoUrl} alt={track.title} />
-                        <Waveform track={track} setCurrentTrack={ }/>
+                        <Waveform track={track} />
                     <span id="track-show-title">{track.title}</span>
                     <div className="track-interact-buttons">
                         {this.toggleLike()}
