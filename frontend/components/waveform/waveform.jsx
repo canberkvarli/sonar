@@ -48,6 +48,7 @@ class Waveform extends Component {
 
     handlePlay = () => {
         this.setState({ playing: !this.state.playing });
+        this.props.setCurrentTrack(this.props.track)
         this.waveform.playPause();
 
     };
@@ -75,6 +76,7 @@ class Waveform extends Component {
         
         const playIcon = <FontAwesomeIcon icon={faPlay} />
         const pauseIcon = <FontAwesomeIcon icon={faPause} />
+        console.log(this.props)
         return(
 
             <div className="waveform-outer-div">

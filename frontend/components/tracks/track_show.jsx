@@ -90,9 +90,11 @@ class TrackShow extends React.Component{
             else return (Object.keys(this.props.track.likes).length)
         }
 
+
     render(){
         console.log(this.props)
         console.log(this.state)
+        
 
         const {track, currentUser, userLikesTrack} = this.props;
         let temp;
@@ -120,7 +122,7 @@ class TrackShow extends React.Component{
             return (
                 <> 
                     <img id="track-show-image" src={track.photoUrl} alt={track.title} />
-                        <Waveform track={track} />
+                        <Waveform track={track} setCurrentTrack={ }/>
                     <span id="track-show-title">{track.title}</span>
                     <div className="track-interact-buttons">
                         {this.toggleLike()}
@@ -128,11 +130,6 @@ class TrackShow extends React.Component{
                     <h1 className="description">
                         {track.description}
                     </h1>
-                    {/* <footer id="playhead-footer"className={temp}>
-                            <AudioPlayer 
-                            src={this.props.track.audioUrl}
-                            />
-                    </footer> */}
                 </>
             )
         }
