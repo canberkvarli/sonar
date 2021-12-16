@@ -9,7 +9,8 @@ class Playhead extends React.Component {
         this.state = {
             playing: true,
             currentTrack: this.props.track,
-            tracks: this.props.tracks
+            tracks: this.props.tracks,
+            track: this.props.track
         }
      
         this.handlePlayerPlay = this.handlePlayerPlay.bind(this)
@@ -18,6 +19,7 @@ class Playhead extends React.Component {
 
     componentDidMount(){
         this.props.fetchTracks()
+        // this.props.setCurrentTrack(this.props.track)
         this.props.fetchTrack(this.props.trackId)
     }
 
@@ -30,10 +32,10 @@ class Playhead extends React.Component {
         }
 
     handlePlayerPause = () => {
-                this.setState({ playing: !this.state.playing });
-                // this.waveform.play()
-                this.waveform.pause()
-                this.waveform.toggleMute();
+        this.setState({ playing: !this.state.playing });
+        // this.waveform.play()
+        this.waveform.pause()
+        this.waveform.toggleMute();
         }
 
     render() {
@@ -51,6 +53,7 @@ class Playhead extends React.Component {
             
             return (
                 <div>         
+                    <h1>hello</h1>
                     <footer id="playhead-footer">
                         <ReactAudioPlayer 
                             onPlay={this.handlePlayerPlay}

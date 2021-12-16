@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchUser } from '../../actions/user_actions';
 import { fetchTrack, fetchTracks } from '../../actions/track_actions';
-import { pauseTrack, playTrack } from '../../actions/playhead_actions';
+import { pauseTrack, playTrack, setCurrentTrack, setCurrentProgress } from '../../actions/playhead_actions';
 import { withRouter } from 'react-router';
 
 import Playhead from './playhead';
@@ -68,6 +68,7 @@ const mDTP = dispatch => {
 
     return{
         fetchUser: (userId) => dispatch(fetchUser(userId)),
+        setCurrentTrack: (trackId) => dispatch(setCurrentTrack(trackId)),
         playTrack: () => dispatch(playTrack()),
         pauseTrack: () => dispatch(pauseTrack()),
         fetchTracks: () => dispatch(fetchTracks()),
