@@ -18,7 +18,7 @@ class Playhead extends React.Component {
 
     componentDidMount(){
         // this.props.fetchTracks()
-        // this.props.setCurrentTrack(this.props.track)
+        this.props.setCurrentTrack(this.props.track)
         this.props.fetchTrack(this.props.trackId)
     }
 
