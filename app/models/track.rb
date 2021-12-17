@@ -17,7 +17,6 @@
 class Track < ApplicationRecord
     validates :title, presence: true
     
-
     has_one_attached :photo
     has_one_attached :audio
 
@@ -43,6 +42,4 @@ class Track < ApplicationRecord
             puts track.num_likes
         end
     end
-
-
 end

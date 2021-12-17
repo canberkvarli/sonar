@@ -1,9 +1,6 @@
 class Api::UsersController < ApplicationController
-
-        # skip_before_action :verify_authenticity_token
-        # protect_from_forgery with: :exception
-
-
+    # skip_before_action :verify_authenticity_token
+    # protect_from_forgery with: :exception
     # signup
     def create
         @user = User.new(user_params)

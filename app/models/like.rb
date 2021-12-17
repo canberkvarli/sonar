@@ -14,7 +14,6 @@
 #  index_likes_on_track_id  (track_id)
 #
 class Like < ApplicationRecord
-
     belongs_to :track,
     primary_key: :id,
     class_name: :Track,
@@ -24,6 +23,4 @@ class Like < ApplicationRecord
     primary_key: :id,
     class_name: :User,
     foreign_key: :liker_id
-
-    
 end

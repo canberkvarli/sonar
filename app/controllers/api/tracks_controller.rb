@@ -7,7 +7,6 @@ class Api::TracksController < ApplicationController
         
     end
 
-
     def create
         @track = Track.new(track_params)
         
@@ -37,8 +36,6 @@ class Api::TracksController < ApplicationController
             render json: @track.errors.full_messages
         end
     end
-
-
 
     private
     def track_params
