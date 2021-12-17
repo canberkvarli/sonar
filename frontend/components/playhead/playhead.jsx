@@ -7,9 +7,9 @@ class Playhead extends React.Component {
 
         this.state = {
             playing: true,
-            currentTrack: this.props.track,
-            tracks: this.props.tracks,
-            track: this.props.track
+            // currentTrack: this.props.track,
+            // track: this.props.track,
+            // tracks: this.props.tracks
         }
      
         this.handlePlayerPlay = this.handlePlayerPlay.bind(this)
@@ -17,7 +17,7 @@ class Playhead extends React.Component {
     }
 
     componentDidMount(){
-        // this.props.fetchTracks()
+        this.props.fetchTracks()
         this.props.setCurrentTrack(this.props.track)
         this.props.fetchTrack(this.props.trackId)
     }
@@ -40,15 +40,15 @@ class Playhead extends React.Component {
         }
 
     render() {
-
+        console.log(this.props.tracks)
         console.log(this.props)
         console.log(this.state)
 
         let temp;
         this.state.playing ? temp = 'container-playhead-passive' : 'container-playhead-active'
 
-        if(this.props.currentTrack === undefined || this.props.track === undefined || this.props.track === undefined ){
-            return null
+        if(this.props.currentTrack === undefined || this.props.track === undefined || this.props.tracks === undefined ){
+            return <h1>hello from playhead</h1>
         } else{
             return (
                 <div>         

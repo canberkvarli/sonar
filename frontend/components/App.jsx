@@ -32,7 +32,7 @@ const App = () => (
         <HashRouter>
             <HeaderContainer />
             <div>
-                <Switch>
+                <>
                     <ErrorBoundary
                         FallbackComponent={ErrorFallback}
                         onReset={() => {
@@ -46,9 +46,9 @@ const App = () => (
                     <Route exact path="/users/:userId" component={UsersContainer}/>
                     <Route exact path="/" component={TrackIndexContainer} />
                     <Route exact path="/library" component={LibraryContainer}/>
-                    <Route exact path="/tracks/:trackId" component={PlayheadContainer} />
+                    <Route path="/tracks/:trackId" component={PlayheadContainer} />
                     </ErrorBoundary>
-                </Switch>
+                </>
             </div>
                 <WaveformContainer />
                 {/* <PlayheadContainer /> */}
