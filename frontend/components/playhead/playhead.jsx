@@ -7,8 +7,8 @@ class Playhead extends React.Component {
 
         this.state = {
             playing: true,
-            // currentTrack: this.props.track,
-            // track: this.props.track,
+            currentTrack: this.props.track,
+            track: this.props.track,
             // tracks: this.props.tracks
         }
      
@@ -18,8 +18,8 @@ class Playhead extends React.Component {
 
     componentDidMount(){
         this.props.fetchTracks()
-        this.props.setCurrentTrack(this.props.track)
         this.props.fetchTrack(this.props.trackId)
+        this.props.setCurrentTrack(this.props.track)
     }
 
     handlePlayerPlay = () => {
@@ -47,7 +47,7 @@ class Playhead extends React.Component {
         let temp;
         this.state.playing ? temp = 'container-playhead-passive' : 'container-playhead-active'
 
-        if(this.props.currentTrack === undefined || this.props.track === undefined || this.props.tracks === undefined ){
+        if(this.props.currentTrack === undefined || this.props.currentTrack === null || this.props.track === undefined || this.props.tracks === undefined ){
             return <h1>hello from playhead</h1>
         } else{
             return (
@@ -56,7 +56,7 @@ class Playhead extends React.Component {
                         <ReactAudioPlayer 
                             onPlay={this.handlePlayerPlay}
                             onPause={this.handlePlayerPause}
-                            src={this.props.track.audioUrl}
+                            src={this.props.currentTrack.audioUrl}
                             controls={true}
                             autoPlay={false}
                             //use 'temp' for the className.

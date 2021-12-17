@@ -49,7 +49,7 @@ const mSTP = (state, ownProps) => {
 
         currentUser: state.entities.users[state.session.id],
         trackId: ownProps.match.params.trackId,
-        track: Object.values(state.entities.tracks)[ownProps.match.params.trackId], 
+        track: state.entities.tracks[ownProps.match.params.trackId], 
         // trackUrl: (trackLoaded() ? tracks[ownProps.match.params.trackId].trackUrl : ''),
         userLikesTrack: userLikesTrack,
         currentLikeId
