@@ -1,5 +1,4 @@
 import React from 'react';
-import { Provider } from 'react-redux';
 import {
     Route,
     Link,
@@ -38,6 +37,7 @@ const App = () => (
                         onReset={() => {
                             // reset the state of your app so the error doesn't happen again
                             window.location.reload()
+                            localStorage.clear()
                         }}
 
                     >

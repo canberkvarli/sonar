@@ -49,6 +49,7 @@
     "react-slick": "^0.28.1",
     "redux": "^4.1.0",
     "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.3.0",
     "wavesurfer-react": "^2.0.8",
