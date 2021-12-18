@@ -27,7 +27,6 @@ class Playhead extends React.Component {
     componentDidMount(){
         this.props.fetchTracks()
         this.props.fetchTrack(this.props.trackId)
-
             if (typeof JSON.parse(localStorage.getItem("track")) !== undefined) {
 
             const localTrack = JSON.parse(localStorage.getItem("track")) || defaultTrack;
