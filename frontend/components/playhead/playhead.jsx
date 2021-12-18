@@ -11,7 +11,8 @@ class Playhead extends React.Component {
             currentTrack: this.props.track
             // tracks: this.props.tracks
         }
-     
+        localStorage.setItem("track", JSON.stringify(this.props.track)) === 'true';
+
         this.handlePlayerPlay = this.handlePlayerPlay.bind(this)
         this.handlePlayerPause = this.handlePlayerPause.bind(this)
     }
@@ -19,6 +20,11 @@ class Playhead extends React.Component {
     componentDidMount(){
         this.props.fetchTracks()
         this.props.fetchTrack(this.props.trackId)
+        const localTrack = JSON.parse(localStorage.getItem("track"));
+
+        this.setState({
+            currentTrack: localTrack
+        });
         this.props.setCurrentTrack(this.props.track)
     }
 
