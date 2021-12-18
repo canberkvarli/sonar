@@ -7,8 +7,8 @@ class Playhead extends React.Component {
 
         this.state = {
             playing: true,
-            currentTrack: this.props.track,
             track: this.props.track,
+            currentTrack: this.props.track
             // tracks: this.props.tracks
         }
      
@@ -40,7 +40,7 @@ class Playhead extends React.Component {
         }
 
     render() {
-        console.log(this.props.tracks)
+        // console.log(this.props.tracks)
         console.log(this.props)
         console.log(this.state)
 
