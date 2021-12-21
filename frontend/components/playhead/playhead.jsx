@@ -1,5 +1,7 @@
 import React from 'react'
-import ReactAudioPlayer from 'react-audio-player'; 
+import ReactAudioPlayer from 'react-audio-player'; // Works almost perfectly fine but lacks custom element selections from the player.
+import ReactJkMusicPlayer from 'react-jinke-music-player';
+
 
 class Playhead extends React.Component {
     constructor(props){
@@ -30,6 +32,8 @@ class Playhead extends React.Component {
             })
             console.log(this.state)
         }
+
+        const options = {}
     }
     
     componentDidMount(){
@@ -41,7 +45,7 @@ class Playhead extends React.Component {
     render() {
         console.log(this.props)
         console.log(this.state)
-        const {currentTrack, tracks, currentUser} = this.props;
+        const { currentTrack, tracks, currentUser } = this.props;
         let temp;
         this.state.playing ? temp = 'container-playhead-passive' : 'container-playhead-active'
 
@@ -50,7 +54,7 @@ class Playhead extends React.Component {
         } else{
             return (
                 <div>         
-                    <footer id="playhead-footer">
+                    {/* <footer id="playhead-footer">
                         <ReactAudioPlayer 
                             onPlay={this.handlePlayerPlay}
                             onPause={this.handlePlayerPause}
@@ -60,6 +64,9 @@ class Playhead extends React.Component {
                             //use 'temp' for the className.
                             className={"audioplayer"}
                         />
+                    </footer> */}
+                    <footer id="playhead-footer">
+                        <ReactJkMusicPlayer />
                     </footer>
                 </div>
             )

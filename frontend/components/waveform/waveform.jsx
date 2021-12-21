@@ -13,7 +13,7 @@ import WaveSurfer from 'wavesurfer.js';
 // import AudioPlayer from 'react-h5-audio-player'; //autoplay is always true
 // import ReactPlayer from 'react-player' //deferred error
 
-import ReactAudioPlayer from 'react-audio-player'; //This works fine
+import ReactAudioPlayer from 'react-audio-player'; //This works fine but lacks element change (main audio player)
 
 
 

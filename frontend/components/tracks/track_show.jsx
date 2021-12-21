@@ -30,9 +30,6 @@ class TrackShow extends React.Component{
         this.props.fetchTrack(this.props.trackId).then(
             console.log(this.props)
             )
-            
-            
-            
             // localStorage.setItem("localTrack", JSON.stringify(this.props.track)) === 'true';
     }
 
