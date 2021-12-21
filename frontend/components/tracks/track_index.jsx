@@ -41,6 +41,7 @@ class TrackIndex extends React.Component{
                       </li>  
                     ))}
                 </ul>
+                <Playhead /> 
             </div>
         )
 
