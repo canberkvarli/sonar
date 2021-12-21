@@ -17,13 +17,9 @@ class TrackShow extends React.Component{
             currentTrack: null
 
         }
-
-
             this.deleteLike = this.deleteLike.bind(this)
             this.createLike = this.createLike.bind(this)
             this.dispNumLikes = this.dispNumLikes.bind(this)
-
-
     }
 
     

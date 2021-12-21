@@ -13,14 +13,12 @@ class Playhead extends React.Component {
         }
 
 
-        this.handlePlayerPlay = this.handlePlayerPlay.bind(this)
-        this.handlePlayerPause = this.handlePlayerPause.bind(this)
 
-            const defaultTrack = {
-            title: "XX",
-            description: "The XX",
-            audioUrl: "xxxxxxxx.mp3"
-        }
+        //     const defaultTrack = {
+        //     title: "XX",
+        //     description: "The XX",
+        //     audioUrl: "xxxxxxxx.mp3"
+        // }
 
         if (typeof JSON.parse(localStorage.getItem("localTrack")) !== undefined) {
 
@@ -40,34 +38,15 @@ class Playhead extends React.Component {
     }
         
 
-
-    handlePlayerPlay = () => {
-        this.setState({
-             playing: !this.state.playing,            
-        });
-
-        // mute waveform but keep the wave progressing
-        this.waveform.play();
-        this.waveform.toggleMute();
-        }
-
-    handlePlayerPause = () => {
-        this.setState({ playing: !this.state.playing });
-        // this.waveform.play()
-        this.waveform.pause()
-        this.waveform.toggleMute();
-        }
-
     render() {
-        // console.log(this.props.tracks)
         console.log(this.props)
         console.log(this.state)
-
+        const {currentTrack, tracks, currentUser} = this.props;
         let temp;
         this.state.playing ? temp = 'container-playhead-passive' : 'container-playhead-active'
 
-        if(this.props.currentTrack === undefined || this.props.currentTrack === null || this.props.tracks === undefined ){
-            return <h1>hello from playhead</h1>
+        if(currentTrack === undefined || currentTrack === null || tracks === undefined || !currentUser){
+            return null
         } else{
             return (
                 <div>         
@@ -75,7 +54,7 @@ class Playhead extends React.Component {
                         <ReactAudioPlayer 
                             onPlay={this.handlePlayerPlay}
                             onPause={this.handlePlayerPause}
-                            src={this.props.currentTrack.audioUrl}
+                            src={currentTrack.audioUrl}
                             controls={true}
                             autoPlay={false}
                             //use 'temp' for the className.
