@@ -51,6 +51,7 @@ class Waveform extends Component {
         // this.props.setCurrentTrack(this.props.track)
 
         this.waveform.playPause();
+        
         localStorage.setItem("localTrack", JSON.stringify(this.state.track)) === 'true';
 
 
