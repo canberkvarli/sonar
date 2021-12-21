@@ -13,11 +13,10 @@ class TrackShow extends React.Component{
             track: this.props.track,
             userLikesTrack: this.props.userLikesTrack,
             loggedIn: !!this.props.currentUser,
-            isPlaying: false
+            isPlaying: false,
+            currentTrack: null
 
         }
-
-
             this.deleteLike = this.deleteLike.bind(this)
             this.createLike = this.createLike.bind(this)
             this.dispNumLikes = this.dispNumLikes.bind(this)
@@ -26,11 +25,15 @@ class TrackShow extends React.Component{
     
 
     componentDidMount(){
-
+        
         // this.props.fetchTracks()
         this.props.fetchTrack(this.props.trackId).then(
             console.log(this.props)
-        )
+            )
+            
+            
+            
+            // localStorage.setItem("localTrack", JSON.stringify(this.props.track)) === 'true';
     }
 
 
@@ -93,7 +96,9 @@ class TrackShow extends React.Component{
         console.log(this.props)
         console.log(this.state)
 
+        
         const {track, currentUser, userLikesTrack} = this.props;
+        // localStorage.setItem("localTrack", JSON.stringify(track)) === 'true';
         let temp;
         this.state.isPlaying ? temp = 'container-playhead-passive' : 'container-playhead-active'
         if ((track === undefined)){

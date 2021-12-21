@@ -3,6 +3,7 @@ import Waveform from '../waveform/waveform';
 import TrackShowContainer from '../tracks/track_show_container';
 import TrackShow from '../tracks/track_show';
 import LibraryContainer from "./library_container";
+import PlayheadContainer from "../playhead/playhead_container"
 import { Redirect, Link } from 'react-router-dom';
 
 export class Library extends Component {
@@ -57,11 +58,11 @@ export class Library extends Component {
                                   </div>
                                 </>
                                 )
-                        }else if((tracks === undefined) || (track === undefined) ){
-                            // window.location.reload()
-                        }
-                    })
-                  ))}
+                              }else if((tracks === undefined) || (track === undefined) ){
+                                // window.location.reload()
+                              }
+                            })
+                            ))}
            </div>
       )
     }  

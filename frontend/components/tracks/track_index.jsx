@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
-import Playhead from '../playhead/playhead';
+import PlayheadContainer from '../playhead/playhead_container';
 import TrackIndexItem from './track_index_item';
 
 
@@ -14,18 +14,10 @@ class TrackIndex extends React.Component{
             displayPlayhead: false
         }
 
-        this.handleOnclick = this.handleOnclick.bind(this);
     }
 
     componentDidMount(){
         this.props.fetchTracks();
-    }
-
-    handleOnclick(e){
-        e.preventDefault(); 
-        this.setState({
-            displayPlayhead: true
-        })
     }
 
 
@@ -36,11 +28,12 @@ class TrackIndex extends React.Component{
             <div className="track-index-container" >
                 <ul className="track-index">
                     {tracks.map((track,idx) => (
-                      <li key={idx} onClick={this.handleOnclick} >
+                      <li key={idx}>
                             <TrackIndexItem track={track} />
                       </li>  
                     ))}
                 </ul>
+                {/* <PlayheadContainer/>  */}
             </div>
         )
 

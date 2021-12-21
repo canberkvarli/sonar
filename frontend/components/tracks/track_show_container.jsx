@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { fetchTrack, fetchTracks } from "../../actions/track_actions";
 import { createLike, deleteLike } from "../../actions/like_actions";
+import { setCurrentTrack } from "../../actions/playhead_actions";
 import { fetchUser } from "../../actions/user_actions";
 import { withRouter } from "react-router";
 
@@ -68,7 +69,10 @@ const mDTP = dispatch => {
     deleteTrack: (trackId) => dispatch(deleteTrack(trackId)),
     uploadTrack: (track) => dispatch(uploadTrack(track)),
     createLike: (like, trackId) => dispatch(createLike(like, trackId)),
-    deleteLike: (likeId, trackId) => dispatch(deleteLike(likeId, trackId))
+    deleteLike: (likeId, trackId) => dispatch(deleteLike(likeId, trackId)),
+    setCurrentTrack: (track) => dispatch(setCurrentTrack(track)),
+
+
     }
 
 }
