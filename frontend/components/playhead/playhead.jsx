@@ -11,31 +11,34 @@ class Playhead extends React.Component {
             currentTrack: this.props.track
             // tracks: this.props.tracks
         }
-            // localStorage.setItem("track", JSON.stringify(this.state.track)) === 'true';
 
 
         this.handlePlayerPlay = this.handlePlayerPlay.bind(this)
         this.handlePlayerPause = this.handlePlayerPause.bind(this)
 
+            const defaultTrack = {
+            title: "XX",
+            description: "The XX",
+            audioUrl: "xxxxxxxx.mp3"
+        }
+
+        if (typeof JSON.parse(localStorage.getItem("localTrack")) !== undefined) {
+
+            const localTrack = JSON.parse(localStorage.getItem("localTrack"));
+            this.props.setCurrentTrack(localTrack)
+            this.setState({
+                track: this.props.track,
+                currentTrack: localTrack
+            })
+            console.log(this.state)
+        }
     }
     
     componentDidMount(){
         this.props.fetchTracks()
         this.props.fetchTrack(this.props.trackId)
-        
-
-            if (typeof JSON.parse(localStorage.getItem("localTrack")) !== "undefined") {
-
-            const localTrack = JSON.parse(localStorage.getItem("localTrack"));
-            this.props.setCurrentTrack(localTrack)
-            this.setState({
-                currentTrack: localTrack
-            })
-            console.log(this.state)
-            }
     }
-
-    
+        
 
 
     handlePlayerPlay = () => {
@@ -63,7 +66,7 @@ class Playhead extends React.Component {
         let temp;
         this.state.playing ? temp = 'container-playhead-passive' : 'container-playhead-active'
 
-        if(this.props.currentTrack === undefined || this.props.currentTrack === null || this.props.track === undefined || this.props.tracks === undefined ){
+        if(this.props.currentTrack === undefined || this.props.currentTrack === null || this.props.tracks === undefined ){
             return <h1>hello from playhead</h1>
         } else{
             return (
