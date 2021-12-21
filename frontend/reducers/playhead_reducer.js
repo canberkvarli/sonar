@@ -26,7 +26,7 @@ const PlayheadReducer = (state = _nullTrack, action) => {
         currentTime: state.currentTime,
       });
     case RECEIVE_CURRENT_TRACK:
-      return Object.assign(newState, {
+      return Object.assign(newState, state, {
         currentTrack: action.track,
         currentTime: 0,
       });
