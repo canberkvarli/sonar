@@ -10,7 +10,7 @@ class Playhead extends React.Component {
          if (typeof JSON.parse(localStorage.getItem("localTrack")) !== undefined) {
 
             const localTrack = JSON.parse(localStorage.getItem("localTrack"));
-            this.props.setCurrentTrack(localTrack)
+            this.props.setCurrentTrack(localTrack);
         
         this.state = {
             playing: true,
@@ -18,8 +18,8 @@ class Playhead extends React.Component {
             currentTrack: localTrack
             // tracks: this.props.tracks
         }
-
     }
+
 
         //     const defaultTrack = {
         //     title: "XX",
@@ -33,36 +33,39 @@ class Playhead extends React.Component {
         this.props.fetchTracks()
         this.props.fetchTrack(this.props.trackId)
 
+        console.log(this.props)
+        console.log(this.state)
+
+        console.log(this.props.currentTrack)
 
     }
         
 
     render() {
-        console.log(this.props)
-        console.log(this.state)
+
 
         const { currentTrack, tracks, currentUser } = this.props;
         let temp;
         this.state.playing ? temp = 'container-playhead-passive' : 'container-playhead-active'
 
-        console.log(currentTrack)
         
-        const audioList = [{
-            name: this.state.currentTrack.title,
-            cover: this.state.currentTrack.photoUrl,
-            musicSrc: this.state.currentTrack.audioUrl
-        }]
+        const audioList = [
+            {
+                name: this.state.currentTrack.title,
+                cover: this.state.currentTrack.photoUrl,
+                musicSrc: this.state.currentTrack.audioUrl
+            }
+        ];
 
          const options = {
-            audioList: audioList,
+            audioLists: audioList,
             showMiniModeCover: false,
             showDownload: false,
             showReload: false,
             showLyric: false,
             showDestroy: false,
             toggleMode: true,
-            showPlayMode: false,
-            drag: true
+            showPlayMode: false
         }
 
         
@@ -83,9 +86,9 @@ class Playhead extends React.Component {
                             className={"audioplayer"}
                         />
                     </footer> */}
-                    <footer id="playhead-footer">
-                        <ReactJkMusicPlayer {...options} />
-                    </footer>
+                    <div id="playhead-footer">
+                        <ReactJkMusicPlayer {...options} audioLists={audioList}/>
+                    </div>
                 </div>
             )
         }

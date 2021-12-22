@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
-import PlayheadContainer from '../playhead/playhead_container';
 import TrackIndexItem from './track_index_item';
 
 
@@ -33,7 +32,6 @@ class TrackIndex extends React.Component{
                       </li>  
                     ))}
                 </ul>
-                {/* <PlayheadContainer/>  */}
             </div>
         )
 

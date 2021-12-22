@@ -13,9 +13,7 @@ class TrackShow extends React.Component{
             track: this.props.track,
             userLikesTrack: this.props.userLikesTrack,
             loggedIn: !!this.props.currentUser,
-            isPlaying: false,
-            currentTrack: null
-
+            isPlaying: false
         }
             this.deleteLike = this.deleteLike.bind(this)
             this.createLike = this.createLike.bind(this)
