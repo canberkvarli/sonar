@@ -7,58 +7,65 @@ class Playhead extends React.Component {
     constructor(props){
         super(props)
 
+         if (typeof JSON.parse(localStorage.getItem("localTrack")) !== undefined) {
+
+            const localTrack = JSON.parse(localStorage.getItem("localTrack"));
+            this.props.setCurrentTrack(localTrack)
+        
         this.state = {
             playing: true,
             track: this.props.track,
-            currentTrack: this.props.track
+            currentTrack: localTrack
             // tracks: this.props.tracks
         }
 
-
+    }
 
         //     const defaultTrack = {
         //     title: "XX",
         //     description: "The XX",
         //     audioUrl: "xxxxxxxx.mp3"
         // }
-
-        if (typeof JSON.parse(localStorage.getItem("localTrack")) !== undefined) {
-
-            const localTrack = JSON.parse(localStorage.getItem("localTrack"));
-            this.props.setCurrentTrack(localTrack)
-            this.setState({
-                track: this.props.track,
-                currentTrack: localTrack
-            })
-            console.log(this.state)
-        }
-
        
     }
     
     componentDidMount(){
         this.props.fetchTracks()
         this.props.fetchTrack(this.props.trackId)
+
+
     }
         
 
     render() {
         console.log(this.props)
         console.log(this.state)
+
         const { currentTrack, tracks, currentUser } = this.props;
         let temp;
         this.state.playing ? temp = 'container-playhead-passive' : 'container-playhead-active'
 
+        console.log(currentTrack)
+        
+        const audioList = [{
+            name: this.state.currentTrack.title,
+            cover: this.state.currentTrack.photoUrl,
+            musicSrc: this.state.currentTrack.audioUrl
+        }]
+
          const options = {
+            audioList: audioList,
             showMiniModeCover: false,
             showDownload: false,
             showReload: false,
             showLyric: false,
             showDestroy: false,
-            toggleMode: false,
+            toggleMode: true,
             showPlayMode: false,
             drag: true
         }
+
+        
 
         if(currentTrack === undefined || currentTrack === null || tracks === undefined || !currentUser){
             return null
@@ -77,7 +84,7 @@ class Playhead extends React.Component {
                         />
                     </footer> */}
                     <footer id="playhead-footer">
-                        <ReactJkMusicPlayer {...options}/>
+                        <ReactJkMusicPlayer {...options} />
                     </footer>
                 </div>
             )
