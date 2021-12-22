@@ -33,7 +33,7 @@ class Playhead extends React.Component {
             console.log(this.state)
         }
 
-        const options = {}
+       
     }
     
     componentDidMount(){
@@ -48,6 +48,17 @@ class Playhead extends React.Component {
         const { currentTrack, tracks, currentUser } = this.props;
         let temp;
         this.state.playing ? temp = 'container-playhead-passive' : 'container-playhead-active'
+
+         const options = {
+            showMiniModeCover: false,
+            showDownload: false,
+            showReload: false,
+            showLyric: false,
+            showDestroy: false,
+            toggleMode: false,
+            showPlayMode: false,
+            drag: true
+        }
 
         if(currentTrack === undefined || currentTrack === null || tracks === undefined || !currentUser){
             return null
@@ -66,7 +77,7 @@ class Playhead extends React.Component {
                         />
                     </footer> */}
                     <footer id="playhead-footer">
-                        <ReactJkMusicPlayer />
+                        <ReactJkMusicPlayer {...options}/>
                     </footer>
                 </div>
             )
