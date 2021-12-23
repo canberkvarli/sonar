@@ -25,9 +25,7 @@ class TrackShow extends React.Component{
     componentDidMount(){
         
         // this.props.fetchTracks()
-        this.props.fetchTrack(this.props.trackId).then(
-            console.log(this.props)
-            )
+        this.props.fetchTrack(this.props.trackId)
             // localStorage.setItem("localTrack", JSON.stringify(this.props.track)) === 'true';
     }
 
@@ -39,14 +37,11 @@ class TrackShow extends React.Component{
             this.props.fetchUser(currentUserId)
             this.props.fetchTrack(trackId)
         })
-        this.setState({ userLikesTrack: true }, 
-            () => {console.log(this.state)});
-           
-        }
+        this.setState({ userLikesTrack: true });
+    }
         
         deleteLike(e) {
             
-            console.log(this.props)
             const { track, currentUser, currentLikeId } = this.props;
 
             // const currentLikeId = this.props.currentUser.likes[track.id].id
@@ -55,8 +50,7 @@ class TrackShow extends React.Component{
                 this.props.fetchUser(currentUser.id)
                 this.props.fetchTrack(track.id)
         })
-            this.setState({ userLikesTrack: false },
-                () => console.log(this.state))
+            this.setState({ userLikesTrack: false })
         }
         toggleLike() {
             
@@ -88,8 +82,7 @@ class TrackShow extends React.Component{
         }
 
     render(){
-        console.log(this.props)
-        console.log(this.state)
+
 
         
         const {track, currentUser, userLikesTrack} = this.props;

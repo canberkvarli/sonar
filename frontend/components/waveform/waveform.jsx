@@ -20,7 +20,7 @@ import ReactAudioPlayer from 'react-audio-player'; //This works fine but lacks e
 class Waveform extends Component {
 
         state = {
-            playing: true,
+            isWaveformPlaying: true,
             track: this.props.track
         };
 
@@ -50,29 +50,29 @@ class Waveform extends Component {
         // this.props.setCurrentTrack(this.props.track)
 
         this.waveform.playPause();
-        this.waveform.toggleMute();
 
         localStorage.setItem("localTrack", JSON.stringify(this.state.track)) === 'true';
+        // localStorage.setItem("dummyTrack", JSON.stringify(this.state.track)) === 'true';
         localStorage.setItem("isPlaying", true)
 
     };
 
-    handlePlayerPlay = () => {
-        this.setState({ playing: !this.state.playing });
+    // handlePlayerPlay = () => {
+    //     this.setState({ playing: !this.state.playing });
 
-        // mute waveform but keep the wave progressing
-        this.waveform.play();
-        this.waveform.toggleMute();
+    //     // mute waveform but keep the wave progressing
+    //     this.waveform.play();
+    //     this.waveform.toggleMute();
 
-    }
+    // }
 
-    handlePlayerPause = () => {
-        this.setState({ playing: !this.state.playing });
-        // this.waveform.play()
-        this.waveform.pause()
-        this.waveform.toggleMute();
+    // handlePlayerPause = () => {
+    //     this.setState({ playing: !this.state.playing });
+    //     // this.waveform.play()
+    //     this.waveform.pause()
+    //     this.waveform.toggleMute();
 
-    }
+    // }
 
 
 

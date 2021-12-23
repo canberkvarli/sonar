@@ -16,7 +16,7 @@ class Playhead extends React.Component {
         this.state = {
             playing: true,
             track: this.props.track,
-            currentTrack: localTrack
+            currentTrack: localTrack,
             // tracks: this.props.tracks
         }
     }
@@ -37,8 +37,16 @@ class Playhead extends React.Component {
         console.log(this.props)
         console.log(this.state)
 
-        console.log(this.props.currentTrack)
 
+        localStorage.setItem("playheadTrack", JSON.stringify(this.state.currentTrack)) === 'true';
+        const playheadLocalTrack = JSON.parse(localStorage.getItem("playheadTrack"));
+        if(playheadLocalTrack !== JSON.parse(localStorage.getItem("localTrack"))){
+            this.setState({})
+            this.forceUpdate()
+        }
+        
+        console.log(playheadLocalTrack)
+        console.log(JSON.parse(localStorage.getItem("localTrack")))
     }
         
 
@@ -49,7 +57,8 @@ class Playhead extends React.Component {
         let temp;
         this.state.playing ? temp = 'container-playhead-passive' : 'container-playhead-active'
 
-        
+        console.log(this.props)
+
             const audioList = [
                 {
                     name:  currentTrack? this.state.currentTrack.title : '',
