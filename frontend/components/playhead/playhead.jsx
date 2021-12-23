@@ -17,16 +17,10 @@ class Playhead extends React.Component {
             playing: true,
             track: this.props.track,
             currentTrack: localTrack,
-            // tracks: this.props.tracks
+            playheadLocalTrack: JSON.parse(localStorage.getItem("localTrack"))
         }
     }
 
-
-        //     const defaultTrack = {
-        //     title: "XX",
-        //     description: "The XX",
-        //     audioUrl: "xxxxxxxx.mp3"
-        // }
        
     }
     
@@ -41,14 +35,15 @@ class Playhead extends React.Component {
         localStorage.setItem("playheadTrack", JSON.stringify(this.state.currentTrack)) === 'true';
         const playheadLocalTrack = JSON.parse(localStorage.getItem("playheadTrack"));
         if(playheadLocalTrack !== JSON.parse(localStorage.getItem("localTrack"))){
-            this.setState({})
-            this.forceUpdate()
+            console.log('we are different. So let me update the playhead')
         }
-        
-        console.log(playheadLocalTrack)
-        console.log(JSON.parse(localStorage.getItem("localTrack")))
     }
-        
+
+    //   shouldComponentUpdate(nextProps, nextState){
+    //     return this.state.playheadLocalTrack != JSON.parse(localStorage.getItem("playheadTrack"));
+  
+    // }
+
 
     render() {
 

@@ -39,7 +39,6 @@ const App = () => (
                             window.location.reload()
                             localStorage.clear()
                         }}
-
                     >
                     <Route exact path ="/tracks/:trackId" component={TrackShowContainer} />
                     <ProtectedRoute exact path ="/upload" component={TrackUploadContainer}/>

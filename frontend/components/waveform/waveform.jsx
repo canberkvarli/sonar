@@ -21,7 +21,8 @@ class Waveform extends Component {
 
         state = {
             isWaveformPlaying: true,
-            track: this.props.track
+            track: this.props.track,
+            playheadLocalTrack: JSON.parse(localStorage.getItem("playheadTrack"))
         };
 
     
@@ -43,6 +44,12 @@ class Waveform extends Component {
         this.waveform.load(track);
     };
 
+    componentDidUpdate(){
+        console.log("Waveform is updated")
+        // const playheadLocalTrack = JSON.parse(localStorage.getItem("playheadTrack"));
+        
+
+    }
 
     handlePlay = () => {
         this.setState({ playing: !this.state.playing });
@@ -54,6 +61,7 @@ class Waveform extends Component {
         localStorage.setItem("localTrack", JSON.stringify(this.state.track)) === 'true';
         // localStorage.setItem("dummyTrack", JSON.stringify(this.state.track)) === 'true';
         localStorage.setItem("isPlaying", true)
+        
 
     };
 
