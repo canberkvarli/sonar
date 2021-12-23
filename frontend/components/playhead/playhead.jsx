@@ -10,6 +10,7 @@ class Playhead extends React.Component {
          if (typeof JSON.parse(localStorage.getItem("localTrack")) !== undefined) {
 
             const localTrack = JSON.parse(localStorage.getItem("localTrack"));
+            const isPlaying = localStorage.getItem("isPlaying");
             this.props.setCurrentTrack(localTrack);
         
         this.state = {
@@ -51,26 +52,36 @@ class Playhead extends React.Component {
         
         const audioList = [
             {
-                name: this.state.currentTrack.title,
+                name:  this.state.currentTrack.title,
                 cover: this.state.currentTrack.photoUrl,
                 musicSrc: this.state.currentTrack.audioUrl
             }
         ];
 
+        // if isPlaying === true, press play on playhead
          const options = {
+
             audioLists: audioList,
-            showMiniModeCover: false,
+            showMiniModeCover: true,
             showDownload: false,
             showReload: false,
             showLyric: false,
             showDestroy: false,
             toggleMode: true,
-            showPlayMode: false
+            showPlayMode: false,
+            autoPlay: false
+            
         }
 
         
 
-        if(currentTrack === undefined || currentTrack === null || tracks === undefined || !currentUser){
+        if(currentTrack === undefined
+
+             || currentTrack === null 
+             || tracks === undefined 
+             || !currentUser
+     
+        ){
             return null
         } else{
             return (
