@@ -50,17 +50,17 @@ class Playhead extends React.Component {
         this.state.playing ? temp = 'container-playhead-passive' : 'container-playhead-active'
 
         
-        const audioList = [
-            {
-                name:  this.state.currentTrack.title,
-                cover: this.state.currentTrack.photoUrl,
-                musicSrc: this.state.currentTrack.audioUrl
-            }
-        ];
+            const audioList = [
+                {
+                    name:  currentTrack? this.state.currentTrack.title : '',
+                    cover: currentTrack? this.state.currentTrack.photoUrl: '',
+                    musicSrc: currentTrack? this.state.currentTrack.audioUrl: ''
+                }
+            ];
+        
 
         // if isPlaying === true, press play on playhead
          const options = {
-
             audioLists: audioList,
             showMiniModeCover: true,
             showDownload: false,
@@ -70,9 +70,9 @@ class Playhead extends React.Component {
             toggleMode: true,
             showPlayMode: false,
             autoPlay: false
-            
-        }
 
+        }
+    
         
 
         if(currentTrack === undefined
@@ -83,7 +83,7 @@ class Playhead extends React.Component {
      
         ){
             return null
-        } else{
+        } else {
             return (
                 <div>         
                     {/* <footer id="playhead-footer">
@@ -103,7 +103,7 @@ class Playhead extends React.Component {
                 </div>
             )
         }
-
+    
         }
     }
 
