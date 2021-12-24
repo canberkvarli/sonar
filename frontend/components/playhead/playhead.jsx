@@ -17,6 +17,7 @@ class Playhead extends React.Component {
         this.state = {
             playing: true,
             track: this.props.track,
+            dummy: this.props.currentTrack,
             currentTrack: localTrack,
             playheadLocalTrack: JSON.parse(localStorage.getItem("localTrack"))
         }
@@ -38,12 +39,16 @@ class Playhead extends React.Component {
         if(playheadLocalTrack !== JSON.parse(localStorage.getItem("localTrack"))){
             console.log('we are different. So let me update the playhead')
         }
+      
     }
-
-    //   shouldComponentUpdate(nextProps, nextState){
-    //     return this.state.playheadLocalTrack != JSON.parse(localStorage.getItem("playheadTrack"));
-  
-    // }
+    
+      shouldComponentUpdate(nextProps, nextState){
+        if(this.props.paused != nextProps.paused){
+          return true
+        }else{
+          return false
+        }
+    }
 
 
     render() {

@@ -75,6 +75,8 @@ class Waveform extends React.Component {
         localStorage.setItem("isPlaying", true)
         if(!this.state.playing){
             this.props.playTrack()
+            this.props.setCurrentTrack(this.state.track)
+
         }else if(this.state.playing){
             this.props.pauseTrack()
         }
