@@ -54,13 +54,13 @@ class Waveform extends React.Component {
         });
 
         this.waveform.load(track);
-        this.props.setCurrentTrack(this.state.track)
+        this.props.setCurrentTrack(this.props.track)
 
     };
 
     componentDidUpdate(){
-        // this.props.setCurrentTrack(this.state.track)
         console.log("Waveform is updated")
+        this.props.setCurrentTrack(this.props.track)
 
         // const playheadLocalTrack = JSON.parse(localStorage.getItem("playheadTrack"));
         
@@ -69,8 +69,7 @@ class Waveform extends React.Component {
 
     handlePlay = () => {
         this.setState({ playing: !this.state.playing });
-
-        // this.props.setCurrentTrack(this.props.track)
+        this.props.setCurrentTrack(this.props.track)
 
         this.waveform.playPause();
 
@@ -78,6 +77,7 @@ class Waveform extends React.Component {
         // localStorage.setItem("dummyTrack", JSON.stringify(this.state.track)) === 'true';
         localStorage.setItem("isPlaying", true)
         if(!this.state.playing){
+            this.props.setCurrentTrack(this.props.track)
             this.props.playTrack()
 
         }else if(this.state.playing){
@@ -124,3 +124,26 @@ class Waveform extends React.Component {
 };
 
 export default Waveform;
+
+
+const mSTP = (state)  => {
+    return{
+
+        trackId: ownProps.match.params.trackId,
+        track: state.entities.tracks[ownProps.match.params.trackId],
+        currentTrack: state.playhead.currentTrack,
+        paused: state.playhead.paused,
+
+
+    }
+}
+
+const mDTP = dispatch => {
+    return{
+        setCurrentTrack: (track) => dispatch(setCurrentTrack(track)),
+        playTrack: () => dispatch(playTrack()),
+        pauseTrack: () => dispatch(pauseTrack()),
+    }
+}
+
+connect(mSTP, mDTP)(Waveform)

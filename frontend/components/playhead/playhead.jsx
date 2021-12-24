@@ -30,32 +30,29 @@ class Playhead extends React.Component {
         this.props.fetchTracks()
         this.props.fetchTrack(this.props.trackId)
 
- 
+        console.log(this.props)
+        console.log(this.state)
 
 
         localStorage.setItem("playheadTrack", JSON.stringify(this.state.currentTrack)) === 'true';
         const playheadLocalTrack = JSON.parse(localStorage.getItem("playheadTrack"));
         if(playheadLocalTrack !== JSON.parse(localStorage.getItem("localTrack"))){
-            this.props.setCurrentTrack(this.state.track)
             console.log('we are different. So let me update the playhead')
         }
       
     }
     
-      shouldComponentUpdate(nextProps, nextState){
-        if(this.props.paused != nextProps.paused){
-          this.props.setCurrentTrack(this.state.track)
-          return true
-        }else{
-          return false
-        }
-    }
+    //   shouldComponentUpdate(nextProps, nextState){
+    //     if(this.props.paused != nextState.paused){
+    //       return true
+    //     }else{
+    //       return false
+    //     }
+    // }
 
 
     render() {
 
-        console.log(this.props)
-        console.log(this.state)
 
         const { currentTrack, tracks, currentUser } = this.props;
         let temp;
