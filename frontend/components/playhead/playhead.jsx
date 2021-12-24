@@ -8,11 +8,10 @@ class Playhead extends React.Component {
     constructor(props){
         super(props)
 
-         if (typeof JSON.parse(localStorage.getItem("localTrack")) !== undefined) {
+         if (!!JSON.parse(localStorage.getItem("localTrack"))) {
 
             const localTrack = JSON.parse(localStorage.getItem("localTrack"));
             const isPlaying = localStorage.getItem("isPlaying");
-            this.props.setCurrentTrack(localTrack);
         
         this.state = {
             playing: true,
@@ -20,6 +19,11 @@ class Playhead extends React.Component {
             dummy: this.props.currentTrack,
             currentTrack: localTrack,
             playheadLocalTrack: JSON.parse(localStorage.getItem("localTrack"))
+        }
+    }else{
+            this.state = {
+            playing: true,
+            track: this.props.track,
         }
     }
 
@@ -29,18 +33,12 @@ class Playhead extends React.Component {
     componentDidMount(){
         this.props.fetchTracks()
         this.props.fetchTrack(this.props.trackId)
+        // this.props.setCurrentTrack(this.state.currentTrack);
 
         console.log(this.props)
         console.log(this.state)
-
-
-        localStorage.setItem("playheadTrack", JSON.stringify(this.state.currentTrack)) === 'true';
-        const playheadLocalTrack = JSON.parse(localStorage.getItem("playheadTrack"));
-        if(playheadLocalTrack !== JSON.parse(localStorage.getItem("localTrack"))){
-            console.log('we are different. So let me update the playhead')
-        }
+      }
       
-    }
     
     //   shouldComponentUpdate(nextProps, nextState){
     //     if(this.props.paused != nextState.paused){
@@ -50,14 +48,12 @@ class Playhead extends React.Component {
     //     }
     // }
 
-
     render() {
 
 
         const { currentTrack, tracks, currentUser } = this.props;
         let temp;
         this.state.playing ? temp = 'container-playhead-passive' : 'container-playhead-active'
-
             const audioList = [
                 {
                     name:  currentTrack? this.state.currentTrack.title : '',

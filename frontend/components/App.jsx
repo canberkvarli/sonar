@@ -46,8 +46,8 @@ const App = () => (
             {/* <Route path="/tracks/:trackId" component={WaveformContainer} /> */}
             </ErrorBoundary>
         </Switch>
-            <PlayheadContainer />
             <WaveformContainer />
+            {/* <PlayheadContainer /> */}
         </HashRouter>
     </div>
 );

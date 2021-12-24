@@ -15,6 +15,7 @@ class TrackShow extends React.Component{
             userLikesTrack: this.props.userLikesTrack,
             loggedIn: !!this.props.currentUser,
             isPlaying: false
+
         }
             this.deleteLike = this.deleteLike.bind(this)
             this.createLike = this.createLike.bind(this)
@@ -27,10 +28,10 @@ class TrackShow extends React.Component{
 
     componentDidMount(){
         
-        // this.props.fetchTracks()
+        this.props.fetchTracks()
         this.props.fetchTrack(this.props.trackId)
-        // this.props.setCurrentTrack(this.props.track)
-            // localStorage.setItem("localTrack", JSON.stringify(this.props.track)) === 'true';
+        localStorage.setItem("localTrack", JSON.stringify(this.props.track)) === 'true';
+        this.props.setCurrentTrack(this.props.track)
     }
 
 

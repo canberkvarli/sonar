@@ -30,8 +30,7 @@ class Waveform extends React.Component {
         this.state = {
             playing: false,
             isWaveformPlaying: true,
-            track: this.props.track,
-            playheadLocalTrack: JSON.parse(localStorage.getItem("playheadTrack"))
+            track: this.props.track
         };
 
     console.log(this.props)
