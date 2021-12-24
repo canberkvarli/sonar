@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { fetchTrack, fetchTracks } from "../../actions/track_actions";
 import { createLike, deleteLike } from "../../actions/like_actions";
-import { setCurrentTrack } from "../../actions/playhead_actions";
+import { pauseTrack, playTrack, setCurrentTrack, setCurrentProgress } from '../../actions/playhead_actions';
 import { fetchUser } from "../../actions/user_actions";
 import { withRouter } from "react-router";
 
@@ -63,6 +63,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
+      
     fetchTracks: () => dispatch(fetchTracks()),
     fetchUser: (userId) => dispatch(fetchUser(userId)),
     fetchTrack: (trackId) => dispatch(fetchTrack(trackId)),
@@ -71,6 +72,8 @@ const mDTP = dispatch => {
     createLike: (like, trackId) => dispatch(createLike(like, trackId)),
     deleteLike: (likeId, trackId) => dispatch(deleteLike(likeId, trackId)),
     setCurrentTrack: (track) => dispatch(setCurrentTrack(track)),
+    playTrack: () => dispatch(playTrack()),
+    pauseTrack: () => dispatch(pauseTrack())
 
 
     }

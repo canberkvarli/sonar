@@ -72,7 +72,8 @@ class Playhead extends React.Component {
             showDestroy: false,
             toggleMode: true,
             showPlayMode: false,
-            autoPlay: false
+            autoPlay: false,
+            mode: "full"
 
         }
     
