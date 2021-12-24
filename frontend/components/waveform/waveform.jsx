@@ -28,6 +28,7 @@ class Waveform extends React.Component {
         super(props)
 
         this.state = {
+            playing: false,
             isWaveformPlaying: true,
             track: this.props.track,
             playheadLocalTrack: JSON.parse(localStorage.getItem("playheadTrack"))
@@ -72,7 +73,11 @@ class Waveform extends React.Component {
         localStorage.setItem("localTrack", JSON.stringify(this.state.track)) === 'true';
         // localStorage.setItem("dummyTrack", JSON.stringify(this.state.track)) === 'true';
         localStorage.setItem("isPlaying", true)
-    
+        if(!this.state.playing){
+            this.props.playTrack()
+        }else if(this.state.playing){
+            this.props.pauseTrack()
+        }
     };
 
     // handlePlayerPlay = () => {
