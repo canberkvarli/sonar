@@ -6,6 +6,12 @@ import { Wave } from './wave';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
 
+
+import {connect } from "react-redux";
+import { pauseTrack, playTrack, setCurrentTrack, setCurrentProgress } from '../../actions/playhead_actions';
+import { withRouter } from 'react-router';
+
+
 // import ReactLoading from 'react-loading';
 import Playhead from "../playhead/playhead"
 
@@ -15,7 +21,6 @@ import WaveSurfer from 'wavesurfer.js';
 // import ReactPlayer from 'react-player' //deferred error
 
 import ReactAudioPlayer from 'react-audio-player'; //This works fine but lacks element change (main audio player)
-
 
 
 class Waveform extends React.Component {
@@ -109,3 +114,26 @@ class Waveform extends React.Component {
 };
 
 export default Waveform;
+
+
+const mSTP = (state)  => {
+    return{
+
+        trackId: ownProps.match.params.trackId,
+        track: state.entities.tracks[ownProps.match.params.trackId],
+        currentTrack: state.playhead.currentTrack,
+        paused: state.playhead.paused,
+
+
+    }
+}
+
+const mDTP = dispatch => {
+    return{
+        setCurrentTrack: (track) => dispatch(setCurrentTrack(track)),
+        playTrack: () => dispatch(playTrack()),
+        pauseTrack: () => dispatch(pauseTrack()),
+    }
+}
+
+connect(mSTP, mDTP)(Waveform)
