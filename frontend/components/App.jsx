@@ -1,12 +1,12 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import {
     Route,
     Link,
     Redirect,
     Switch,
-    HashRouter,
+    HashRouter
 } from 'react-router-dom';
-
 import { ProtectedRoute } from '../util/route_util'
 
 import HeaderContainer from "./header/header_container";
@@ -18,6 +18,7 @@ import LibraryContainer from "./library/library_container";
 
 // import TrackIndexItemContainer from "./tracks/track_index_item_container";
 import PlayheadContainer from "./playhead/playhead_container"
+// import { WaveformContainer } from './waveform/waveform_container';
 import Waveform from './waveform/waveform';
 import { ErrorBoundary }  from 'react-error-boundary';
 import { ErrorFallback } from '../util/error_boundary';
@@ -30,26 +31,22 @@ const App = () => (
     <div>
         <HashRouter>
             <HeaderContainer />
-            <div>
-                <>
-                    <ErrorBoundary
-                        FallbackComponent={ErrorFallback}
-                        onReset={() => {
-                            // reset the state of your app so the error doesn't happen again
-                            window.location.reload()
-                            localStorage.clear()
-                        }}
-                    >
-                    <Route exact path ="/tracks/:trackId" component={TrackShowContainer} />
-                    <ProtectedRoute exact path ="/upload" component={TrackUploadContainer}/>
-                    <Route exact path="/users/:userId" component={UsersContainer}/>
-                    <Route exact path="/" component={TrackIndexContainer} />
-                    <Route exact path="/library" component={LibraryContainer}/>
-                    {/* <Route path="/tracks/:trackId" component={PlayheadContainer} /> */}
-                    </ErrorBoundary>
-                <PlayheadContainer />
-                </>
-            </div>
+        <Switch>
+            <Route exact path ="/tracks/:trackId" component={TrackShowContainer} />
+            <ProtectedRoute exact path ="/upload" component={TrackUploadContainer}/>
+            <Route exact path="/users/:userId" component={UsersContainer}/>
+            <Route exact path="/" component={TrackIndexContainer} />
+            <ErrorBoundary
+                FallbackComponent={ErrorFallback}
+                onReset={() => {
+                    // reset the state of your app so the error doesn't happen again
+                }}
+            >
+                <Route exact path="/library" component={LibraryContainer}/>
+            </ErrorBoundary>
+            {/* <Route exact path="/tracks/:trackId" component={PlayheadContainer} /> */}
+        </Switch>
+            <PlayheadContainer />
                 <WaveformContainer />
         </HashRouter>
     </div>

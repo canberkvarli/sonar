@@ -52,8 +52,6 @@ class Playhead extends React.Component {
         let temp;
         this.state.playing ? temp = 'container-playhead-passive' : 'container-playhead-active'
 
-        console.log(this.props)
-
             const audioList = [
                 {
                     name:  currentTrack? this.state.currentTrack.title : '',
