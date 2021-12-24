@@ -19,9 +19,6 @@ class SessionForm extends React.Component{
         this.props.errors;
     }
 
-    componentWillUnmount(){
-        localStorage.clear()
-    }
 
     handleDemoUser(e) {
         // e.preventDefault();
