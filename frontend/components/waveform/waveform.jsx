@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import { PlayButton } from './playbutton';
 import { WaveformContainer } from './waveform_container';
 import { Wave } from './wave';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
-import { playTrack, pauseTrack } from "../../actions/playhead_actions"
+
 // import ReactLoading from 'react-loading';
+import Playhead from "../playhead/playhead"
 
 import WaveSurfer from 'wavesurfer.js';
 
@@ -18,14 +19,14 @@ import ReactAudioPlayer from 'react-audio-player'; //This works fine but lacks e
 
 
 class Waveform extends React.Component {
-constructor(props){
-    super(props)
+    constructor(props){
+        super(props)
 
-    this.state = {
-        isWaveformPlaying: true,
-        track: this.props.track,
-        playheadLocalTrack: JSON.parse(localStorage.getItem("playheadTrack"))
-    };
+        this.state = {
+            isWaveformPlaying: true,
+            track: this.props.track,
+            playheadLocalTrack: JSON.parse(localStorage.getItem("playheadTrack"))
+        };
 
     console.log(this.props)
 }
@@ -66,7 +67,6 @@ constructor(props){
         localStorage.setItem("localTrack", JSON.stringify(this.state.track)) === 'true';
         // localStorage.setItem("dummyTrack", JSON.stringify(this.state.track)) === 'true';
         localStorage.setItem("isPlaying", true)
-        
     
     };
 

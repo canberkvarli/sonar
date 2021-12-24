@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactAudioPlayer from 'react-audio-player'; // Works almost perfectly fine but lacks custom element selections from the player.
 import ReactJkMusicPlayer from 'react-jinke-music-player';
+import Waveform from '../waveform/waveform';
 
 
 class Playhead extends React.Component {
