@@ -27,11 +27,12 @@ class TrackShow extends React.Component{
     
 
     componentDidMount(){
-        
         this.props.fetchTracks()
-        this.props.fetchTrack(this.props.trackId)
+        this.props.fetchTrack(this.props.trackId).then(
+            this.props.setCurrentTrack(this.props.track)
+        )
         localStorage.setItem("localTrack", JSON.stringify(this.props.track)) === 'true';
-        this.props.setCurrentTrack(this.props.track)
+        
     }
 
 

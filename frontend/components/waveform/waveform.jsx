@@ -53,7 +53,7 @@ class Waveform extends React.Component {
         });
 
         this.waveform.load(track);
-        this.props.setCurrentTrack(this.props.track)
+        // this.props.setCurrentTrack(this.props.track)
 
     };
 
