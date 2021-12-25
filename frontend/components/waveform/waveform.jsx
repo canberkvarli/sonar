@@ -26,15 +26,27 @@ import ReactAudioPlayer from 'react-audio-player'; //This works fine but lacks e
 class Waveform extends React.Component {
     constructor(props){
         super(props)
+      if (!!JSON.parse(localStorage.getItem("localTrack"))) {
+
+        const localTrack = JSON.parse(localStorage.getItem("localTrack"));
 
         this.state = {
             playing: false,
             isWaveformPlaying: true,
             track: this.props.track,
-            playheadLocalTrack: JSON.parse(localStorage.getItem("playheadTrack"))
+            localTrack
         };
 
     console.log(this.props)
+    console.log(this.state)
+
+    } else {
+        this.state = {
+            playing: false,
+            isWaveformPlaying: true,
+            track: this.props.track,
+        }
+    }
 }
 
     
@@ -54,28 +66,30 @@ class Waveform extends React.Component {
         });
 
         this.waveform.load(track);
+        this.props.setCurrentTrack(track)
+
     };
 
     componentDidUpdate(){
         console.log("Waveform is updated")
-        // const playheadLocalTrack = JSON.parse(localStorage.getItem("playheadTrack"));
-        
+        this.props.setCurrentTrack(track)
 
+        // const playheadLocalTrack = JSON.parse(localStorage.getItem("playheadTrack"));
     }
+
 
     handlePlay = () => {
         this.setState({ playing: !this.state.playing });
 
-        // this.props.setCurrentTrack(this.props.track)
-
+        this.props.setCurrentTrack(this.props.track)
         this.waveform.playPause();
+        localStorage.setItem("localTrack", JSON.stringify(this.props.track)) === 'true';
 
-        localStorage.setItem("localTrack", JSON.stringify(this.state.track)) === 'true';
         // localStorage.setItem("dummyTrack", JSON.stringify(this.state.track)) === 'true';
         localStorage.setItem("isPlaying", true)
         if(!this.state.playing){
+            this.props.setCurrentTrack(this.props.track)
             this.props.playTrack()
-            this.props.setCurrentTrack(this.state.track)
 
         }else if(this.state.playing){
             this.props.pauseTrack()

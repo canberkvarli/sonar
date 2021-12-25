@@ -8,18 +8,22 @@ class Playhead extends React.Component {
     constructor(props){
         super(props)
 
-         if (typeof JSON.parse(localStorage.getItem("localTrack")) !== undefined) {
+         if (!!JSON.parse(localStorage.getItem("localTrack")) && typeof JSON.parse(localStorage.getItem("localTrack")) !== undefined) {
 
             const localTrack = JSON.parse(localStorage.getItem("localTrack"));
             const isPlaying = localStorage.getItem("isPlaying");
-            this.props.setCurrentTrack(localTrack);
         
         this.state = {
             playing: true,
             track: this.props.track,
             dummy: this.props.currentTrack,
-            currentTrack: localTrack,
+            localTrack: localTrack,
             playheadLocalTrack: JSON.parse(localStorage.getItem("localTrack"))
+        }
+    }else{
+            this.state = {
+            playing: true,
+            track: this.props.currentTrack,
         }
     }
 
@@ -27,42 +31,34 @@ class Playhead extends React.Component {
     }
     
     componentDidMount(){
-        this.props.fetchTracks()
+        // this.props.fetchTracks()
         this.props.fetchTrack(this.props.trackId)
-
-        console.log(this.props)
-        console.log(this.state)
+        // this.props.setCurrentTrack(this.state.currentTrack);
 
 
-        localStorage.setItem("playheadTrack", JSON.stringify(this.state.currentTrack)) === 'true';
-        const playheadLocalTrack = JSON.parse(localStorage.getItem("playheadTrack"));
-        if(playheadLocalTrack !== JSON.parse(localStorage.getItem("localTrack"))){
-            console.log('we are different. So let me update the playhead')
-        }
+      }
       
-    }
     
       shouldComponentUpdate(nextProps, nextState){
-        if(this.props.paused != nextProps.paused){
+        if((this.state.track != nextState.track) || (this.state.localTrack != nextState.localTrack) || this.props.currentTrack != nextProps.currentTrack){
           return true
         }else{
           return false
         }
     }
 
-
     render() {
 
+        console.log(this.props)
+        console.log(this.state)
 
         const { currentTrack, tracks, currentUser } = this.props;
-        let temp;
-        this.state.playing ? temp = 'container-playhead-passive' : 'container-playhead-active'
 
             const audioList = [
                 {
-                    name:  currentTrack? this.state.currentTrack.title : '',
-                    cover: currentTrack? this.state.currentTrack.photoUrl: '',
-                    musicSrc: currentTrack? this.state.currentTrack.audioUrl: ''
+                  name:  this.state.localTrack? this.state.localTrack.title : "Hello",
+                  cover: this.state.localTrack? this.state.localTrack.photoUrl: "a.jpg",
+                  musicSrc: this.state.localTrack? this.state.localTrack.audioUrl: "a.mp3"
                 }
             ];
         
@@ -84,14 +80,14 @@ class Playhead extends React.Component {
     
         
 
-        if(currentTrack === undefined
+        if(this.state.localTrack === undefined
 
-             || currentTrack === null 
+             || this.state.localTrack === null 
              || tracks === undefined 
              || !currentUser
      
         ){
-            return null
+            return <h1>There is no track probably</h1>
         } else {
             return (
                 <div>         

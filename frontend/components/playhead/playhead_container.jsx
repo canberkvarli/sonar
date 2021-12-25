@@ -43,7 +43,7 @@ const mSTP = (state, ownProps) => {
     currentLikeId = null
     
   }
-    // console.log(ownProps.match)
+    console.log(ownProps.match)
         return {
 
             currentUser: (state.session.id)? state.entities.users[state.session.id] : null, 
