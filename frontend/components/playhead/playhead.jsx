@@ -35,30 +35,31 @@ class Playhead extends React.Component {
         this.props.fetchTrack(this.props.trackId)
         // this.props.setCurrentTrack(this.state.currentTrack);
 
-        console.log(this.props)
-        console.log(this.state)
+
       }
       
     
-    //   shouldComponentUpdate(nextProps, nextState){
-    //     if(this.props.paused != nextState.paused){
-    //       return true
-    //     }else{
-    //       return false
-    //     }
-    // }
+      shouldComponentUpdate(nextProps, nextState){
+        if((this.state.track != nextState.track)){
+          return true
+        }else{
+          return false
+        }
+    }
 
     render() {
 
+        console.log(this.props)
+        console.log(this.state)
 
         const { currentTrack, tracks, currentUser } = this.props;
         let temp;
-        this.state.playing ? temp = 'container-playhead-passive' : 'container-playhead-active'
+
             const audioList = [
                 {
-                    name:  currentTrack? this.state.currentTrack.title : '',
-                    cover: currentTrack? this.state.currentTrack.photoUrl: '',
-                    musicSrc: currentTrack? this.state.currentTrack.audioUrl: ''
+                  name:  currentTrack? this.state.currentTrack.title : "Hello",
+                  cover: currentTrack? this.state.currentTrack.photoUrl: "a.jpg",
+                  musicSrc: currentTrack? this.state.currentTrack.audioUrl: "a.mp3"
                 }
             ];
         
@@ -87,7 +88,7 @@ class Playhead extends React.Component {
              || !currentUser
      
         ){
-            return null
+            return <h1>There is no track probably</h1>
         } else {
             return (
                 <div>         

@@ -47,7 +47,7 @@ const App = () => (
             </ErrorBoundary>
         </Switch>
             <WaveformContainer />
-            {/* <PlayheadContainer /> */}
+            <PlayheadContainer />
         </HashRouter>
     </div>
 );

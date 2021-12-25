@@ -72,7 +72,7 @@ class Waveform extends React.Component {
 
         this.waveform.playPause();
 
-        localStorage.setItem("localTrack", JSON.stringify(this.state.track)) === 'true';
+        // localStorage.setItem("localTrack", JSON.stringify(this.state.track)) === 'true';
         // localStorage.setItem("dummyTrack", JSON.stringify(this.state.track)) === 'true';
         localStorage.setItem("isPlaying", true)
         if(!this.state.playing){
