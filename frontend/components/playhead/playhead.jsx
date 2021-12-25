@@ -8,7 +8,7 @@ class Playhead extends React.Component {
     constructor(props){
         super(props)
 
-         if (!!JSON.parse(localStorage.getItem("localTrack"))) {
+         if (!!JSON.parse(localStorage.getItem("localTrack")) || typeof JSON.parse(localStorage.getItem("localTrack")) !== undefined) {
 
             const localTrack = JSON.parse(localStorage.getItem("localTrack"));
             const isPlaying = localStorage.getItem("isPlaying");
@@ -56,9 +56,9 @@ class Playhead extends React.Component {
 
             const audioList = [
                 {
-                  name:  currentTrack? currentTrack.title : "Hello",
-                  cover: currentTrack? currentTrack.photoUrl: "a.jpg",
-                  musicSrc: currentTrack? currentTrack.audioUrl: "a.mp3"
+                  name:  this.state.localTrack? this.state.localTrack.title : "Hello",
+                  cover: this.state.localTrack? this.state.localTrack.photoUrl: "a.jpg",
+                  musicSrc: this.state.localTrack? this.state.localTrack.audioUrl: "a.mp3"
                 }
             ];
         

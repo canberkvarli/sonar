@@ -66,24 +66,24 @@ class Waveform extends React.Component {
         });
 
         this.waveform.load(track);
-        // this.props.setCurrentTrack(this.props.track)
+        this.props.setCurrentTrack(track)
 
     };
 
     componentDidUpdate(){
         console.log("Waveform is updated")
-        this.props.setCurrentTrack(this.state.localTrack)
+        this.props.setCurrentTrack(track)
 
         // const playheadLocalTrack = JSON.parse(localStorage.getItem("playheadTrack"));
-        
-
     }
+
 
     handlePlay = () => {
         this.setState({ playing: !this.state.playing });
 
         this.props.setCurrentTrack(this.props.track)
         this.waveform.playPause();
+        localStorage.setItem("localTrack", JSON.stringify(this.props.track)) === 'true';
 
         // localStorage.setItem("dummyTrack", JSON.stringify(this.state.track)) === 'true';
         localStorage.setItem("isPlaying", true)
