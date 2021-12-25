@@ -31,7 +31,6 @@ const App = () => (
     <div>
         <HashRouter>
             <HeaderContainer />
-        <Switch>
             <Route exact path ="/tracks/:trackId" component={TrackShowContainer} />
             <ProtectedRoute exact path ="/upload" component={TrackUploadContainer}/>
             <Route exact path="/users/:userId" component={UsersContainer}/>
@@ -43,11 +42,10 @@ const App = () => (
                 }}
             >
                 <Route exact path="/library" component={LibraryContainer}/>
-            {/* <Route path="/tracks/:trackId" component={WaveformContainer} /> */}
+            {/* <Route path="/tracks/:trackId" component={PlayheadContainer} /> */}
             </ErrorBoundary>
-        </Switch>
-            <WaveformContainer />
             <PlayheadContainer />
+            <WaveformContainer />
         </HashRouter>
     </div>
 );

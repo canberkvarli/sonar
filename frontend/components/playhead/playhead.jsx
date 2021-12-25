@@ -17,13 +17,13 @@ class Playhead extends React.Component {
             playing: true,
             track: this.props.track,
             dummy: this.props.currentTrack,
-            currentTrack: localTrack,
+            localTrack: localTrack,
             playheadLocalTrack: JSON.parse(localStorage.getItem("localTrack"))
         }
     }else{
             this.state = {
             playing: true,
-            track: this.props.track,
+            track: this.props.currentTrack,
         }
     }
 
@@ -31,7 +31,7 @@ class Playhead extends React.Component {
     }
     
     componentDidMount(){
-        this.props.fetchTracks()
+        // this.props.fetchTracks()
         this.props.fetchTrack(this.props.trackId)
         // this.props.setCurrentTrack(this.state.currentTrack);
 
@@ -40,7 +40,7 @@ class Playhead extends React.Component {
       
     
       shouldComponentUpdate(nextProps, nextState){
-        if((this.state.track != nextState.track)){
+        if((this.state.track != nextState.track) || (this.state.localTrack != nextState.localTrack) || this.props.currentTrack != nextProps.currentTrack){
           return true
         }else{
           return false
@@ -53,13 +53,12 @@ class Playhead extends React.Component {
         console.log(this.state)
 
         const { currentTrack, tracks, currentUser } = this.props;
-        let temp;
 
             const audioList = [
                 {
-                  name:  currentTrack? this.state.currentTrack.title : "Hello",
-                  cover: currentTrack? this.state.currentTrack.photoUrl: "a.jpg",
-                  musicSrc: currentTrack? this.state.currentTrack.audioUrl: "a.mp3"
+                  name:  currentTrack? currentTrack.title : "Hello",
+                  cover: currentTrack? currentTrack.photoUrl: "a.jpg",
+                  musicSrc: currentTrack? currentTrack.audioUrl: "a.mp3"
                 }
             ];
         
@@ -81,9 +80,9 @@ class Playhead extends React.Component {
     
         
 
-        if(currentTrack === undefined
+        if(this.state.localTrack === undefined
 
-             || currentTrack === null 
+             || this.state.localTrack === null 
              || tracks === undefined 
              || !currentUser
      
