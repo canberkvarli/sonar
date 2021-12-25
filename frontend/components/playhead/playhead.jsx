@@ -8,7 +8,7 @@ class Playhead extends React.Component {
     constructor(props){
         super(props)
 
-         if (!!JSON.parse(localStorage.getItem("localTrack")) || typeof JSON.parse(localStorage.getItem("localTrack")) !== undefined) {
+         if (!!JSON.parse(localStorage.getItem("localTrack")) && typeof JSON.parse(localStorage.getItem("localTrack")) !== undefined) {
 
             const localTrack = JSON.parse(localStorage.getItem("localTrack"));
             const isPlaying = localStorage.getItem("isPlaying");
