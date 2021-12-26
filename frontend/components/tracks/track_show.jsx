@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { FaHeart, FaAngleDoubleLeft } from 'react-icons/fa'
 import Waveform from '../waveform/waveform';
-import { setCurrentTrack } from '../../actions/playhead_actions';
-
+import { setCurrentTrack, setCurrentProgress } from '../../actions/playhead_actions';
 
 class TrackShow extends React.Component{
     constructor(props){
@@ -130,6 +129,7 @@ class TrackShow extends React.Component{
                         pauseTrack={() => pauseTrack()}
                         playTrack={() => playTrack()}
                         setCurrentTrack={(track) => setCurrentTrack(track)}
+                        setCurrentProgress={(progress) => setCurrentProgress(progress)}
                         paused={paused}
                         />
                     <span id="track-show-title">{track.title}</span>
