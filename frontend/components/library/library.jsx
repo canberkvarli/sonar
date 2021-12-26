@@ -26,6 +26,7 @@ export class Library extends Component {
       return (
         <div className="outside-wrapper">
           <h1 id="library-username">Hey {currentUser.username}! You don't have any favorite tracks. Start by liking some!</h1>
+          <PlayheadContainer /> 
         </div>
       )
     }else if (tracks === undefined) {
