@@ -35,11 +35,10 @@ class Waveform extends React.Component {
             track: this.props.track,
             localTrack,
             paused: this.props.paused,
-            playheadDisplay: true
+            playheadDisplay: true,
+            progress: 0
         };
 
-    console.log(this.props)
-    console.log(this.state)
 
     } else {
         this.state = {
@@ -67,15 +66,25 @@ class Waveform extends React.Component {
         });
 
         this.waveform.load(track);
-        this.props.setCurrentTrack(track)
+        this.props.setCurrentTrack(this.props.track)
 
+    console.log(this.props)
+    console.log(this.state)
     };
 
     componentDidUpdate(){
         console.log("Waveform is updated")
-        this.props.setCurrentTrack(track)
+        this.props.setCurrentTrack(this.props.track)
 
         // const playheadLocalTrack = JSON.parse(localStorage.getItem("playheadTrack"));
+    }
+    componentWillUnmount(){
+
+        const progress = this.waveform.getCurrentTime();
+        this.setState({
+            progress: progress
+        })
+        this.props.setCurrentProgress(progress)
     }
 
 
@@ -86,11 +95,15 @@ class Waveform extends React.Component {
         });
 
         this.props.setCurrentTrack(this.props.track)
+
         this.waveform.playPause();
+        this.waveform.toggleMute();
+
         localStorage.setItem("localTrack", JSON.stringify(this.props.track)) === 'true';
 
         // localStorage.setItem("dummyTrack", JSON.stringify(this.state.track)) === 'true';
         localStorage.setItem("isPlaying", true)
+
         if(!this.state.isWaveformPlaying){
             this.props.setCurrentTrack(this.props.track)
             this.props.playTrack()

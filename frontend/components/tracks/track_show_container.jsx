@@ -71,6 +71,7 @@ const mDTP = dispatch => {
     createLike: (like, trackId) => dispatch(createLike(like, trackId)),
     deleteLike: (likeId, trackId) => dispatch(deleteLike(likeId, trackId)),
     setCurrentTrack: (track) => dispatch(setCurrentTrack(track)),
+    setCurrentProgress: (progress) => dispatch(setCurrentProgress(progress)),
     playTrack: () => dispatch(playTrack()),
     pauseTrack: () => dispatch(pauseTrack()),
     setMainTrack: (track) => dispatch(setMainTrack(track))

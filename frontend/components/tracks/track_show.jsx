@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { FaHeart, FaAngleDoubleLeft } from 'react-icons/fa'
 import Waveform from '../waveform/waveform';
-import { setCurrentTrack, setCurrentProgress } from '../../actions/playhead_actions';
 
 class TrackShow extends React.Component{
     constructor(props){
@@ -26,14 +25,12 @@ class TrackShow extends React.Component{
     
 
     componentDidMount(){
-        this.props.fetchTracks().then(
-            this.props.setCurrentTrack(this.props.track)
-        )
+        // this.props.fetchTracks().then(
+        //     this.props.setCurrentTrack(this.props.track)
+        // )
         this.props.fetchTrack(this.props.trackId).then(
             this.props.setCurrentTrack(this.props.track)
         )
-        
-
     }
 
 
@@ -92,7 +89,7 @@ class TrackShow extends React.Component{
 
 
         
-        const {track, currentUser, userLikesTrack, pauseTrack, playTrack, paused} = this.props;
+        const {track, currentUser, userLikesTrack, pauseTrack, playTrack, paused, setCurrentProgress, setCurrentTrack} = this.props;
         // localStorage.setItem("localTrack", JSON.stringify(track)) === 'true';
         let temp;
         this.state.isPlaying ? temp = 'container-playhead-passive' : 'container-playhead-active'
@@ -107,6 +104,7 @@ class TrackShow extends React.Component{
                         pauseTrack={() => pauseTrack()}
                         playTrack={() => playTrack()}
                         setCurrentTrack={(track) => setCurrentTrack(track)}
+                        setCurrentProgress={(progress) => setCurrentProgress(progress)}
                         paused={paused}/>
                     <span id="track-show-title">{track.title}</span>
                     <h1 className="description">
