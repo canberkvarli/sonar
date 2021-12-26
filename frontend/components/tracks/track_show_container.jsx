@@ -53,9 +53,8 @@ const mSTP = (state, ownProps) => {
         track: state.entities.tracks[ownProps.match.params.trackId], 
         // trackUrl: (trackLoaded() ? tracks[ownProps.match.params.trackId].trackUrl : ''),
         userLikesTrack: userLikesTrack,
-        currentLikeId
-
-
+        currentLikeId,
+        paused: state.playhead.paused
       }
     
 } 

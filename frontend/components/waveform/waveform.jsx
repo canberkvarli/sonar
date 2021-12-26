@@ -32,10 +32,9 @@ class Waveform extends React.Component {
 
         this.state = {
             playing: false,
-            isWaveformPlaying: true,
             track: this.props.track,
             localTrack,
-            playhead: false
+            paused: this.props.paused
         };
 
     console.log(this.props)
@@ -44,8 +43,8 @@ class Waveform extends React.Component {
     } else {
         this.state = {
             playing: false,
-            isWaveformPlaying: true,
             track: this.props.track,
+            paused: this.props.paused
         }
     }
 }
@@ -82,7 +81,7 @@ class Waveform extends React.Component {
     handlePlay = () => {
         this.setState({
              playing: !this.state.playing,
-             playhead: true
+            //  playhead: true
         });
 
         this.props.setCurrentTrack(this.props.track)
@@ -94,6 +93,9 @@ class Waveform extends React.Component {
         if(!this.state.playing){
             this.props.setCurrentTrack(this.props.track)
             this.props.playTrack()
+            this.setState({
+                paused: !this.state.paused
+            })
 
         }else if(this.state.playing){
             this.props.pauseTrack()
@@ -133,7 +135,7 @@ class Waveform extends React.Component {
                     <Wave id="waveform" />
                     <audio id="track" src={this.props.track.audioUrl} />
                 </WaveformContainer>
-            {this.state.playhead? <PlayheadContainer /> : null}
+            {!this.state.paused? <PlayheadContainer /> : null}
             </div>  
         );
     }
