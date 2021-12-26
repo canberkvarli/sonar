@@ -13,7 +13,7 @@ import { withRouter } from 'react-router';
 
 
 // import ReactLoading from 'react-loading';
-import Playhead from "../playhead/playhead"
+import PlayheadContainer from "../playhead/playhead_container"
 
 import WaveSurfer from 'wavesurfer.js';
 
@@ -34,7 +34,8 @@ class Waveform extends React.Component {
             playing: false,
             isWaveformPlaying: true,
             track: this.props.track,
-            localTrack
+            localTrack,
+            playhead: false
         };
 
     console.log(this.props)
@@ -79,7 +80,10 @@ class Waveform extends React.Component {
 
 
     handlePlay = () => {
-        this.setState({ playing: !this.state.playing });
+        this.setState({
+             playing: !this.state.playing,
+             playhead: true
+        });
 
         this.props.setCurrentTrack(this.props.track)
         this.waveform.playPause();
@@ -129,6 +133,7 @@ class Waveform extends React.Component {
                     <Wave id="waveform" />
                     <audio id="track" src={this.props.track.audioUrl} />
                 </WaveformContainer>
+            {this.state.playhead? <PlayheadContainer /> : null}
             </div>  
         );
     }

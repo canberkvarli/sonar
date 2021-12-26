@@ -27,7 +27,9 @@ class TrackShow extends React.Component{
     
 
     componentDidMount(){
-        this.props.fetchTracks()
+        this.props.fetchTracks().then(
+            this.props.setCurrentTrack(this.props.track)
+        )
         this.props.fetchTrack(this.props.trackId).then(
             this.props.setCurrentTrack(this.props.track)
         )

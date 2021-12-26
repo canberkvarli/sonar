@@ -41,6 +41,9 @@ class Playhead extends React.Component {
     
       shouldComponentUpdate(nextProps, nextState){
         if((this.state.track != nextState.track) || (this.state.localTrack != nextState.localTrack) || this.props.currentTrack != nextProps.currentTrack){
+          if(!!JSON.parse(localStorage.getItem("isPlaying"))){
+            this.setState({})
+          }
           return true
         }else{
           return false
@@ -87,7 +90,7 @@ class Playhead extends React.Component {
              || !currentUser
      
         ){
-            return <h1>There is no track probably</h1>
+            return <h1>Track is null or undefined probably</h1>
         } else {
             return (
                 <div>         
