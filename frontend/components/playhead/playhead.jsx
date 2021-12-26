@@ -27,6 +27,7 @@ class Playhead extends React.Component {
         }
     }
 
+    this.handleAudioPlay = this.handleAudioPlay.bind(this)
        
     }
     
@@ -34,14 +35,12 @@ class Playhead extends React.Component {
         // this.props.fetchTracks()
         this.props.fetchTrack(this.props.trackId)
         // this.props.setCurrentTrack(this.state.currentTrack);
-
-
       }
       
     
       shouldComponentUpdate(nextProps, nextState){
         if((this.state.track != nextState.track) || (this.state.localTrack != nextState.localTrack) || this.props.currentTrack != nextProps.currentTrack){
-
+          console.log("playhead is updated")
           return true
         }else{
           return false
@@ -103,8 +102,17 @@ class Playhead extends React.Component {
                             className={"audioplayer"}
                         />
                     </footer> */}
+                    <button onClick={() => this.audioInstance.play()}>Play</button>
                     <div id="playhead-footer">
-                        <ReactJkMusicPlayer {...options} audioLists={audioList}/>
+                        <ReactJkMusicPlayer 
+                        {...options} 
+                        audioLists={audioList}
+                        getAudioInstance={(instance) => {
+                        this.audioInstance = instance
+                        }}
+                        onAudioPlay={() => this.audioInstance.play()}
+                        onAudioPause={() => this.audioInstance.play()}
+                        />
                     </div>
                 </div>
             )

@@ -79,7 +79,6 @@ class Waveform extends React.Component {
         // const playheadLocalTrack = JSON.parse(localStorage.getItem("playheadTrack"));
     }
     componentWillUnmount(){
-
         const progress = this.waveform.getCurrentTime();
         this.setState({
             progress: progress
