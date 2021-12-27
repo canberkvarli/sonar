@@ -33,7 +33,7 @@ class TrackIndex extends React.Component{
                       </li>  
                     ))}
                 </ul>
-                    <PlayheadContainer />
+                    {/* <PlayheadContainer /> */}
             </div>
         )
 

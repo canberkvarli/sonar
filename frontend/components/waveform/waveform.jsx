@@ -151,7 +151,7 @@ class Waveform extends React.Component {
                     <Wave id="waveform" />
                     <audio id="track" src={this.props.track.audioUrl} />
                 </WaveformContainer>
-            {((!this.state.paused) || (this.state.playheadDisplay))? <PlayheadContainer /> : null}
+            {/* {((!this.state.paused) || (this.state.playheadDisplay))? <PlayheadContainer /> : null} */}
             </div>  
         );
     }

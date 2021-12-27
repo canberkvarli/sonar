@@ -42,7 +42,11 @@ class Playhead extends React.Component {
       
     
       shouldComponentUpdate(nextProps, nextState){
-        if((this.state.track != nextState.track) || (this.state.localTrack != nextState.localTrack) || this.props.currentTrack != nextProps.currentTrack){
+        if((this.state.track != nextState.track) || 
+        (this.state.localTrack != nextState.localTrack) || 
+        (this.props.currentTrack != nextProps.currentTrack) || 
+        (this.props.paused != nextProps.paused))
+        {
           console.log("playhead is updated")
           return true
         }else{
@@ -62,9 +66,6 @@ class Playhead extends React.Component {
         console.log(this.props)
         console.log(this.state)
 
-        const playIcon = <FontAwesomeIcon icon={faPlay} />
-        const pauseIcon = <FontAwesomeIcon icon={faPause} />
-
         const { currentTrack, tracks, currentUser } = this.props;
 
         // const location = this.props.match.path
@@ -76,7 +77,19 @@ class Playhead extends React.Component {
                   musicSrc: this.state.localTrack? this.state.localTrack.audioUrl: "a.mp3"
                 }
             ];
-        // audioList.push(this.state.localTrack)
+            
+            const newTrack = {
+              name: currentTrack? currentTrack.title : audioList[0].name,
+              cover: currentTrack? currentTrack.photoUrl : audioList[0].cover,
+              musicSrc: currentTrack? currentTrack.audioUrl : audioList[0].musicSrc
+            }
+        // split into pieces of the currentTrack
+            // then push to the audioList
+            audioList.push(newTrack)
+            if(!audioList.includes(newTrack)) {
+              const index = audioList.indexOf({ name: null})
+            }
+            console.log(audioList)
 
 
         // if isPlaying === true, press play on playhead
@@ -90,8 +103,6 @@ class Playhead extends React.Component {
             toggleMode: true,
             showPlayMode: false,
             autoPlay: false,
-            mode: "full"
-
         }
     
         
