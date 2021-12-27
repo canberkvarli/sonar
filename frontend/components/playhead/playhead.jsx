@@ -31,7 +31,6 @@ class Playhead extends React.Component {
     }
 
     this.handleAudioPlay = this.handleAudioPlay.bind(this)
-       
     }
     
     componentDidMount(){
@@ -61,7 +60,7 @@ class Playhead extends React.Component {
 
         console.log(this.props)
         console.log(this.state)
-
+        console.log(this.audioInstance)
         const playIcon = <FontAwesomeIcon icon={faPlay} />
         const pauseIcon = <FontAwesomeIcon icon={faPause} />
 
@@ -69,16 +68,18 @@ class Playhead extends React.Component {
 
         // const location = this.props.match.path
 
+        //calculate the the song duration and minus the currentTime
             const audioList = [
                 {
                   name:  this.state.localTrack? this.state.localTrack.title : "Hello",
                   cover: this.state.localTrack? this.state.localTrack.photoUrl: "a.jpg",
-                  musicSrc: this.state.localTrack? this.state.localTrack.audioUrl: "a.mp3"
+                  musicSrc: this.state.localTrack? this.state.localTrack.audioUrl: "a.mp3",
+                  
                 }
             ];
         // audioList.push(this.state.localTrack)
 
-
+        console.log(audioList)
         // if isPlaying === true, press play on playhead
          const options = {
             audioLists: audioList,
@@ -90,8 +91,9 @@ class Playhead extends React.Component {
             toggleMode: true,
             showPlayMode: false,
             autoPlay: false,
-            mode: "full"
-
+            preload:true,
+            showProgressLoadBar: true,
+            mode: "full",
         }
     
         
@@ -118,6 +120,7 @@ class Playhead extends React.Component {
                             className={"audioplayer"}
                         />
                     </footer> */}
+                      {/* <button onClick={this.audioInstance.currentTime = 0}>traverse</button> */}
                     <div id="playhead-footer">
                         <ReactJkMusicPlayer 
                         {...options} 
