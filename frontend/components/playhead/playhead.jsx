@@ -86,9 +86,8 @@ class Playhead extends React.Component {
         // split into pieces of the currentTrack
             // then push to the audioList
             audioList.push(newTrack)
-            if(!audioList.includes(newTrack)) {
-              const index = audioList.indexOf({ name: null})
-            }
+
+            const uniq = new Set(audioList)
             console.log(audioList)
 
 
@@ -108,7 +107,6 @@ class Playhead extends React.Component {
         
 
         if(this.state.localTrack === undefined
-
              || this.state.localTrack === null 
              || tracks === undefined 
              || !currentUser

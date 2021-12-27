@@ -66,6 +66,7 @@ class Waveform extends React.Component {
         });
 
         this.waveform.load(track);
+        this.waveform.on("loading", console.log("loading"))
         this.props.setCurrentTrack(this.props.track)
 
     console.log(this.props)
@@ -95,7 +96,6 @@ class Waveform extends React.Component {
         // this.props.setCurrentTrack(this.props.track)
 
         this.waveform.playPause();
-        this.waveform.toggleMute();
 
         localStorage.setItem("localTrack", JSON.stringify(this.props.track)) === 'true';
 
@@ -146,7 +146,7 @@ class Waveform extends React.Component {
             <div className="waveform-outer-div">
                 <WaveformContainer className="waveform-div">
                     <PlayButton onClick={this.handlePlay} >
-                        { !this.state.isWaveformPlaying ? pauseIcon : playIcon }
+                        { !this.state.isWaveformPlaying ? playIcon : pauseIcon }
                     </PlayButton>
                     <Wave id="waveform" />
                     <audio id="track" src={this.props.track.audioUrl} />
