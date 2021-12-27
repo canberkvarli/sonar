@@ -65,8 +65,9 @@ class Waveform extends React.Component {
             partialRender: true
         });
 
-        this.waveform.load(track);
-        this.waveform.on("loading", console.log("loading"))
+        this.waveform.load(track)
+        // this.waveform.on("loading", console.log("loading"))
+        
         this.props.setCurrentTrack(this.props.track)
 
     console.log(this.props)

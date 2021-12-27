@@ -74,14 +74,16 @@ class Playhead extends React.Component {
                 {
                   name:  this.state.localTrack? this.state.localTrack.title : "Hello",
                   cover: this.state.localTrack? this.state.localTrack.photoUrl: "a.jpg",
-                  musicSrc: this.state.localTrack? this.state.localTrack.audioUrl: "a.mp3"
+                  musicSrc: this.state.localTrack? this.state.localTrack.audioUrl: "a.mp3",
+                  duration: this.props.currentTime
                 }
             ];
             
             const newTrack = {
               name: currentTrack? currentTrack.title : audioList[0].name,
               cover: currentTrack? currentTrack.photoUrl : audioList[0].cover,
-              musicSrc: currentTrack? currentTrack.audioUrl : audioList[0].musicSrc
+              musicSrc: currentTrack? currentTrack.audioUrl : audioList[0].musicSrc,
+              duration: this.props.currentTime
             }
         // split into pieces of the currentTrack
             // then push to the audioList
@@ -102,6 +104,7 @@ class Playhead extends React.Component {
             toggleMode: true,
             showPlayMode: false,
             autoPlay: false,
+            showProgressLoadBar: true
         }
     
         
