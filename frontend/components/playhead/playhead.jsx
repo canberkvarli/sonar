@@ -21,7 +21,10 @@ class Playhead extends React.Component {
             track: this.props.track,
             dummy: this.props.currentTrack,
             localTrack: localTrack,
-            playheadLocalTrack: JSON.parse(localStorage.getItem("localTrack"))
+            playheadLocalTrack: JSON.parse(localStorage.getItem("localTrack")),
+            getAudioInstance: (audio) => {
+            this.audio = audio
+          },
         }
     }else{
             this.state = {
@@ -30,7 +33,7 @@ class Playhead extends React.Component {
         }
     }
 
-    this.handleAudioPlay = this.handleAudioPlay.bind(this)
+    this.getAudioInstance = this.getAudioInstance.bind(this)
     }
     
     componentDidMount(){
@@ -42,7 +45,7 @@ class Playhead extends React.Component {
     
       shouldComponentUpdate(nextProps, nextState){
         if((this.state.track != nextState.track) || (this.state.localTrack != nextState.localTrack) || this.props.currentTrack != nextProps.currentTrack){
-          console.log("playhead is updated")
+          console.log("Playhead is updated")
           return true
         }else{
           return false
@@ -50,17 +53,16 @@ class Playhead extends React.Component {
     }
 
 
-    handleAudioPlay(){
-      // ON waveform play
-
+    getAudioInstance(audio) {
+    console.log('audio instance', audio)
     }
+
 
 
     render() {
 
         console.log(this.props)
         console.log(this.state)
-        console.log(this.audioInstance)
         const playIcon = <FontAwesomeIcon icon={faPlay} />
         const pauseIcon = <FontAwesomeIcon icon={faPause} />
 
@@ -74,11 +76,10 @@ class Playhead extends React.Component {
                   name:  this.state.localTrack? this.state.localTrack.title : "Hello",
                   cover: this.state.localTrack? this.state.localTrack.photoUrl: "a.jpg",
                   musicSrc: this.state.localTrack? this.state.localTrack.audioUrl: "a.mp3",
-                  
                 }
             ];
         // audioList.push(this.state.localTrack)
-
+   
         console.log(audioList)
         // if isPlaying === true, press play on playhead
          const options = {
@@ -91,7 +92,7 @@ class Playhead extends React.Component {
             toggleMode: true,
             showPlayMode: false,
             autoPlay: false,
-            preload:true,
+            preload: true,
             showProgressLoadBar: true,
             mode: "full",
         }
@@ -125,9 +126,6 @@ class Playhead extends React.Component {
                         <ReactJkMusicPlayer 
                         {...options} 
                         audioLists={audioList}
-                        getAudioInstance={(instance) => {
-                        this.audioInstance = instance
-                        }}
                         />
                     </div>
                 </div>
