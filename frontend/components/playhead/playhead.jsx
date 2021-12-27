@@ -22,9 +22,8 @@ class Playhead extends React.Component {
             dummy: this.props.currentTrack,
             localTrack: localTrack,
             playheadLocalTrack: JSON.parse(localStorage.getItem("localTrack")),
-            getAudioInstance: (audio) => {
-            this.audio = audio
-          },
+            progress: this.props.currentTime,
+
         }
     }else{
             this.state = {
@@ -33,7 +32,7 @@ class Playhead extends React.Component {
         }
     }
 
-    this.getAudioInstance = this.getAudioInstance.bind(this)
+    this.handleAudioPlay = this.handleAudioPlay.bind(this)
     }
     
     componentDidMount(){
@@ -45,7 +44,7 @@ class Playhead extends React.Component {
     
       shouldComponentUpdate(nextProps, nextState){
         if((this.state.track != nextState.track) || (this.state.localTrack != nextState.localTrack) || this.props.currentTrack != nextProps.currentTrack){
-          console.log("Playhead is updated")
+          console.log("playhead is updated")
           return true
         }else{
           return false
@@ -53,10 +52,10 @@ class Playhead extends React.Component {
     }
 
 
-    getAudioInstance(audio) {
-    console.log('audio instance', audio)
-    }
+    handleAudioPlay(){
+      // ON waveform play
 
+    }
 
 
     render() {
@@ -66,7 +65,7 @@ class Playhead extends React.Component {
         const playIcon = <FontAwesomeIcon icon={faPlay} />
         const pauseIcon = <FontAwesomeIcon icon={faPause} />
 
-        const { currentTrack, tracks, currentUser } = this.props;
+        const { currentTrack, tracks, currentUser, currentTime } = this.props;
 
         // const location = this.props.match.path
 
@@ -81,6 +80,7 @@ class Playhead extends React.Component {
         // audioList.push(this.state.localTrack)
    
         console.log(audioList)
+        console.log(currentTime)
         // if isPlaying === true, press play on playhead
          const options = {
             audioLists: audioList,
@@ -104,9 +104,10 @@ class Playhead extends React.Component {
              || this.state.localTrack === null 
              || tracks === undefined 
              || !currentUser
-     
+     ``
         ){
-            return <h1 id="playhead-footer">Track is null or undefined probably</h1>
+            return null
+            // <h1 id="playhead-footer">Track is null or undefined probably</h1>
         } else {
             return (
                 <div>         
@@ -126,6 +127,11 @@ class Playhead extends React.Component {
                         <ReactJkMusicPlayer 
                         {...options} 
                         audioLists={audioList}
+                        getAudioInstance={(instance) => {
+                        this.audioInstance = instance
+                        // this.audioInstance.currentTime = 10
+                        }}
+                        
                         />
                     </div>
                 </div>
