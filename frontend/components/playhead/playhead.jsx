@@ -2,6 +2,9 @@ import React from 'react'
 import ReactAudioPlayer from 'react-audio-player'; // Works almost perfectly fine but lacks custom element selections from the player.
 import ReactJkMusicPlayer from 'react-jinke-music-player';
 import Waveform from '../waveform/waveform';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
+import { PlayButton } from '../waveform/playbutton';
 
 
 class Playhead extends React.Component {
@@ -47,12 +50,24 @@ class Playhead extends React.Component {
         }
     }
 
+
+    handleAudioPlay(){
+      // ON waveform play
+
+    }
+
+
     render() {
 
         console.log(this.props)
         console.log(this.state)
 
+        const playIcon = <FontAwesomeIcon icon={faPlay} />
+        const pauseIcon = <FontAwesomeIcon icon={faPause} />
+
         const { currentTrack, tracks, currentUser } = this.props;
+
+        // const location = this.props.match.path
 
             const audioList = [
                 {
@@ -61,7 +76,8 @@ class Playhead extends React.Component {
                   musicSrc: this.state.localTrack? this.state.localTrack.audioUrl: "a.mp3"
                 }
             ];
-        
+        // audioList.push(this.state.localTrack)
+
 
         // if isPlaying === true, press play on playhead
          const options = {
@@ -102,7 +118,6 @@ class Playhead extends React.Component {
                             className={"audioplayer"}
                         />
                     </footer> */}
-                    <button onClick={() => this.audioInstance.play()}>Play</button>
                     <div id="playhead-footer">
                         <ReactJkMusicPlayer 
                         {...options} 
@@ -110,8 +125,6 @@ class Playhead extends React.Component {
                         getAudioInstance={(instance) => {
                         this.audioInstance = instance
                         }}
-                        onAudioPlay={() => this.audioInstance.play()}
-                        onAudioPause={() => this.audioInstance.play()}
                         />
                     </div>
                 </div>

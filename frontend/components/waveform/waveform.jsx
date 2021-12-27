@@ -75,7 +75,6 @@ class Waveform extends React.Component {
     componentDidUpdate(){
         console.log("Waveform is updated")
         this.props.setCurrentTrack(this.props.track)
-
         // const playheadLocalTrack = JSON.parse(localStorage.getItem("playheadTrack"));
     }
     componentWillUnmount(){
@@ -93,7 +92,7 @@ class Waveform extends React.Component {
             //  playhead: true
         });
 
-        this.props.setCurrentTrack(this.props.track)
+        // this.props.setCurrentTrack(this.props.track)
 
         this.waveform.playPause();
         this.waveform.toggleMute();
@@ -104,7 +103,7 @@ class Waveform extends React.Component {
         localStorage.setItem("isPlaying", true)
 
         if(!this.state.isWaveformPlaying){
-            this.props.setCurrentTrack(this.props.track)
+            // this.props.setCurrentTrack(this.props.track)
             this.props.playTrack()
             this.setState({
                 paused: !this.state.paused,

@@ -64,6 +64,7 @@ export class Library extends Component {
                               }
                             })
                             ))}
+            <PlayheadContainer />                            
            </div>
       )
     }  
