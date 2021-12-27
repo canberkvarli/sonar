@@ -1,4 +1,3 @@
-
 export const RECEIVE_CURRENT_TRACK = "RECEIVE_CURRENT_TRACK";
 export const PAUSE_TRACK = "PAUSE_TRACK";
 export const PLAY_TRACK = "PLAY_TRACK";
@@ -26,5 +25,4 @@ export const playTrack = () => ({
 
 
 export const setCurrentTrack = (track) => dispatch => dispatch(receiveCurrentTrack(track));
-export const setCurrentProgress = (progress) => (dispatch) =>
-  dispatch(seekTrack(progress));
+export const setCurrentProgress = (progress) => dispatch => dispatch(seekTrack(progress));
