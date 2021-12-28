@@ -40,6 +40,7 @@ class Header extends React.Component{
         this.props.logout().then(
             window.location.href = "/"
         )
+        localStorage.clear()
     }
 
     render(){

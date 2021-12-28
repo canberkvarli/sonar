@@ -21,7 +21,9 @@ class Playhead extends React.Component {
             track: this.props.track,
             dummy: this.props.currentTrack,
             localTrack: localTrack,
-            playheadLocalTrack: JSON.parse(localStorage.getItem("localTrack"))
+            playheadLocalTrack: JSON.parse(localStorage.getItem("localTrack")),
+            progress: this.props.currentTime,
+
         }
     }else{
             this.state = {
@@ -41,7 +43,10 @@ class Playhead extends React.Component {
       
     
       shouldComponentUpdate(nextProps, nextState){
-        if((this.state.track != nextState.track) || (this.state.localTrack != nextState.localTrack) || this.props.currentTrack != nextProps.currentTrack){
+        if((this.state.track != nextState.track) || 
+        (this.state.localTrack != nextState.localTrack) || 
+        (this.props.currentTrack != nextProps.currentTrack) || (this.props.currentTime != nextProps.currentTime))
+        {
           console.log("playhead is updated")
           return true
         }else{
@@ -49,6 +54,10 @@ class Playhead extends React.Component {
         }
     }
 
+    // componentWillUnmount(){
+    // this.props.setCurrentProgress(this.props.currentTime)
+    // console.log("Playhead is unmounted")
+    // }
 
     handleAudioPlay(){
       // ON waveform play
@@ -60,11 +69,10 @@ class Playhead extends React.Component {
 
         console.log(this.props)
         console.log(this.state)
-        console.log(this.audioInstance)
         const playIcon = <FontAwesomeIcon icon={faPlay} />
         const pauseIcon = <FontAwesomeIcon icon={faPause} />
 
-        const { currentTrack, tracks, currentUser } = this.props;
+        const { currentTrack, tracks, currentUser, currentTime } = this.props;
 
         // const location = this.props.match.path
 
@@ -74,12 +82,12 @@ class Playhead extends React.Component {
                   name:  this.state.localTrack? this.state.localTrack.title : "Hello",
                   cover: this.state.localTrack? this.state.localTrack.photoUrl: "a.jpg",
                   musicSrc: this.state.localTrack? this.state.localTrack.audioUrl: "a.mp3",
-                  
                 }
             ];
         // audioList.push(this.state.localTrack)
-
+   
         console.log(audioList)
+        console.log(currentTime)
         // if isPlaying === true, press play on playhead
          const options = {
             audioLists: audioList,
@@ -91,7 +99,7 @@ class Playhead extends React.Component {
             toggleMode: true,
             showPlayMode: false,
             autoPlay: false,
-            preload:true,
+            preload: true,
             showProgressLoadBar: true,
             mode: "full",
         }
@@ -103,9 +111,9 @@ class Playhead extends React.Component {
              || this.state.localTrack === null 
              || tracks === undefined 
              || !currentUser
-     
         ){
-            return <h1 id="playhead-footer">Track is null or undefined probably</h1>
+            return null
+            // <h1 id="playhead-footer">Track is null or undefined probably</h1>
         } else {
             return (
                 <div>         
@@ -127,7 +135,9 @@ class Playhead extends React.Component {
                         audioLists={audioList}
                         getAudioInstance={(instance) => {
                         this.audioInstance = instance
+                        this.audioInstance.currentTime = currentTime
                         }}
+                        
                         />
                     </div>
                 </div>

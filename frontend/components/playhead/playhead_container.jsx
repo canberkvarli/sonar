@@ -55,9 +55,7 @@ const mSTP = (state, ownProps) => {
             currentTrack: state.playhead.currentTrack,
             paused: state.playhead.paused,
             currentUserLikes: currentUserLikes,
-            currenTime: state.playhead.duration,
-
-
+            currentTime: state.playhead.currentTime,
             trackUrl: (trackLoaded() ? state.entities.tracks[ownProps.match.params.trackId].trackUrl : '')
 
         }
@@ -69,6 +67,7 @@ const mDTP = dispatch => {
     return{
         fetchUser: (userId) => dispatch(fetchUser(userId)),
         setCurrentTrack: (track) => dispatch(setCurrentTrack(track)),
+        setCurrentProgress: (progress) => dispatch(setCurrentProgress(progress)),
         playTrack: () => dispatch(playTrack()),
         pauseTrack: () => dispatch(pauseTrack()),
         fetchTracks: () => dispatch(fetchTracks()),
