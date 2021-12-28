@@ -162,13 +162,10 @@ export default Waveform;
 
 const mSTP = (state)  => {
     return{
-
         trackId: ownProps.match.params.trackId,
         track: state.entities.tracks[ownProps.match.params.trackId],
         currentTrack: state.playhead.currentTrack,
         paused: state.playhead.paused,
-
-
     }
 }
 

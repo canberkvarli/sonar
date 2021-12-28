@@ -43,7 +43,10 @@ class Playhead extends React.Component {
       
     
       shouldComponentUpdate(nextProps, nextState){
-        if((this.state.track != nextState.track) || (this.state.localTrack != nextState.localTrack) || this.props.currentTrack != nextProps.currentTrack){
+        if((this.state.track != nextState.track) || 
+        (this.state.localTrack != nextState.localTrack) || 
+        (this.props.currentTrack != nextProps.currentTrack) || (this.props.currentTime != nextProps.currentTime))
+        {
           console.log("playhead is updated")
           return true
         }else{
@@ -51,6 +54,10 @@ class Playhead extends React.Component {
         }
     }
 
+    // componentWillUnmount(){
+    // this.props.setCurrentProgress(this.props.currentTime)
+    // console.log("Playhead is unmounted")
+    // }
 
     handleAudioPlay(){
       // ON waveform play
@@ -104,7 +111,6 @@ class Playhead extends React.Component {
              || this.state.localTrack === null 
              || tracks === undefined 
              || !currentUser
-     ``
         ){
             return null
             // <h1 id="playhead-footer">Track is null or undefined probably</h1>
@@ -129,7 +135,7 @@ class Playhead extends React.Component {
                         audioLists={audioList}
                         getAudioInstance={(instance) => {
                         this.audioInstance = instance
-                        // this.audioInstance.currentTime = 10
+                        this.audioInstance.currentTime = currentTime
                         }}
                         
                         />
