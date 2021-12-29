@@ -28,9 +28,6 @@ import { WaveformContainer } from './waveform/waveform_container';
 
 const App = () => {
 
-//   window.addEventListener("storage", (e) => {
-//         console.log("listening to the storage")
-//     })
 
     return(
         <div>

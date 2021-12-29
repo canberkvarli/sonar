@@ -13,10 +13,12 @@ export class Library extends Component {
     }
 
     componentDidMount() {
-
       this.props.fetchTracks();
       this.props.fetchUser(this.props.currentUser.id);
-    
+    }
+
+    componentWillUnmount(){
+      this.props.setCurrentProgress(this.props.currentTime)
     }
 
     render() {
