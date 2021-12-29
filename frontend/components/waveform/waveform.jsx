@@ -79,10 +79,11 @@ class Waveform extends React.Component {
     }
     componentWillUnmount(){
         const progress = this.waveform.getCurrentTime();
-        this.setState({
-            progress: progress
-        })
-        this.props.setCurrentProgress(progress)
+        // this.setState({
+        //     progress: progress
+        // })
+        // (!!this.props.currentTime)? this.props.setCurrentProgress(this.props.currentTime) : this.props.setCurrentProgress(progress)
+        this.props.setCurrentProgress(progress);
     }
 
 

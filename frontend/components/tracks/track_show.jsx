@@ -89,7 +89,7 @@ class TrackShow extends React.Component{
 
 
         
-        const {track, currentUser, userLikesTrack, pauseTrack, playTrack, paused, setCurrentProgress, setCurrentTrack} = this.props;
+        const {track, currentUser, userLikesTrack, pauseTrack, playTrack, paused, setCurrentProgress, setCurrentTrack, currentTime} = this.props;
         // localStorage.setItem("localTrack", JSON.stringify(track)) === 'true';
         let temp;
         this.state.isPlaying ? temp = 'container-playhead-passive' : 'container-playhead-active'
@@ -129,6 +129,7 @@ class TrackShow extends React.Component{
                         setCurrentTrack={(track) => setCurrentTrack(track)}
                         setCurrentProgress={(progress) => setCurrentProgress(progress)}
                         paused={paused}
+                        currentTime={currentTime}
                         />
                     <span id="track-show-title">{track.title}</span>
                     <div className="track-interact-buttons">
