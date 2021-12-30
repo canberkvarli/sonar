@@ -102,7 +102,7 @@ class Waveform extends React.Component {
         // this.props.setCurrentTrack(this.props.track)
 
         this.waveform.playPause();
-        this.waveform.toggleMute();
+        this.props.currentUser? this.waveform.toggleMute() : null
 
         localStorage.setItem("localTrack", JSON.stringify(this.props.track)) === 'true';
 

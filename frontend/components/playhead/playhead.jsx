@@ -40,7 +40,6 @@ class Playhead extends React.Component {
         this.props.fetchTrack(this.props.trackId)
         // this.props.setCurrentTrack(this.state.currentTrack);
       }
-      
     
       shouldComponentUpdate(nextProps, nextState){
         if((this.state.track != nextState.track) || 
@@ -54,10 +53,11 @@ class Playhead extends React.Component {
         }
     }
 
-    // componentWillUnmount(){
-    // this.props.setCurrentProgress(this.props.currentTime)
-    // console.log("Playhead is unmounted")
-    // }
+    componentWillUnmount(){
+    this.props.setCurrentProgress(this.audioInstance.currentTime)
+    console.log("Playhead is unmounted")
+    console.log(this.audioInstance.currentTime)
+    }
 
     handleAudioPlay(){
       // ON waveform play

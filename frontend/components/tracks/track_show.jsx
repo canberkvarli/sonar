@@ -128,6 +128,7 @@ class TrackShow extends React.Component{
                         playTrack={() => playTrack()}
                         setCurrentTrack={(track) => setCurrentTrack(track)}
                         setCurrentProgress={(progress) => setCurrentProgress(progress)}
+                        currentUser = {currentUser}
                         paused={paused}
                         currentTime={currentTime}
                         />
