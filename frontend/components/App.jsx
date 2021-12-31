@@ -26,28 +26,31 @@ import { WaveformContainer } from './waveform/waveform_container';
 
 
 
-const App = () => (
+const App = () => {
 
-    <div>
-        <HashRouter>
-            <HeaderContainer />
-            <Route exact path ="/tracks/:trackId" component={TrackShowContainer} />
-            <ProtectedRoute exact path ="/upload" component={TrackUploadContainer}/>
-            <Route exact path="/users/:userId" component={UsersContainer}/>
-            <Route exact path="/" component={TrackIndexContainer} />
-            <ErrorBoundary
-                FallbackComponent={ErrorFallback}
-                onReset={() => {
-                    // reset the state of your app so the error doesn't happen again
-                }}
-            >
-                <Route exact path="/library" component={LibraryContainer}/>
-            {/* <Route path="/tracks/:trackId" component={PlayheadContainer} /> */}
-            </ErrorBoundary>
-            {/* <PlayheadContainer /> */}
-            <WaveformContainer />
-        </HashRouter>
-    </div>
-);
+
+    return(
+        <div>
+            <HashRouter>
+                <HeaderContainer />
+                <Route exact path ="/tracks/:trackId" component={TrackShowContainer} />
+                <ProtectedRoute exact path ="/upload" component={TrackUploadContainer}/>
+                <Route exact path="/users/:userId" component={UsersContainer}/>
+                <Route exact path="/" component={TrackIndexContainer} />
+                <ErrorBoundary
+                    FallbackComponent={ErrorFallback}
+                    onReset={() => {
+                        // reset the state of your app so the error doesn't happen again
+                    }}
+                >
+                    <Route exact path="/library" component={LibraryContainer}/>
+                {/* <Route path="/tracks/:trackId" component={PlayheadContainer} /> */}
+                </ErrorBoundary>
+                {/* <PlayheadContainer /> */}
+                <WaveformContainer />
+            </HashRouter>
+        </div>
+    )
+};
 
 export default App;

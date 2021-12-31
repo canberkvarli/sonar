@@ -20,6 +20,10 @@ class TrackIndex extends React.Component{
         this.props.fetchTracks();
     }
 
+    componentWillUnmount(){
+        this.props.setCurrentProgress(this.props.currentTime)
+    }
+
    
 
     render(){
