@@ -46,6 +46,17 @@ class Playhead extends React.Component {
         (this.state.localTrack != nextState.localTrack) || 
         (this.props.currentTrack != nextProps.currentTrack) || (this.props.currentTime != nextProps.currentTime))
         {
+        // check the store.paused 
+        //if paused
+         // pause the playhead 
+        //  else play it 
+        if(this.audioInstance){
+            if(this.props.paused){
+                this.audioInstance.pause()
+            }else{
+                this.audioInstance.play()
+            } 
+        }
           console.log("playhead is updated")
           return true
         }else{
@@ -54,9 +65,9 @@ class Playhead extends React.Component {
     }
 
     componentWillUnmount(){
-    this.props.setCurrentProgress(this.audioInstance.currentTime)
+    this.audioInstance? this.props.setCurrentProgress(this.audioInstance.currentTime) : null
     console.log("Playhead is unmounted")
-    console.log(this.audioInstance.currentTime)
+    // console.log(this.audioInstance.currentTime)
     }
 
     handleAudioPlay(){

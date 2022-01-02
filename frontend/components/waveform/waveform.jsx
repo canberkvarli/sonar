@@ -5,7 +5,7 @@ import { WaveformContainer } from './waveform_container';
 import { Wave } from './wave';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
-
+import Oval from "react-loader-spinner";
 
 import {connect } from "react-redux";
 import { pauseTrack, playTrack, setCurrentTrack, setCurrentProgress } from '../../actions/playhead_actions';
@@ -36,7 +36,8 @@ class Waveform extends React.Component {
             localTrack,
             paused: this.props.paused,
             playheadDisplay: true,
-            progress: 0
+            progress: 0,
+            loading: false
         };
 
 
@@ -69,6 +70,18 @@ class Waveform extends React.Component {
         this.waveform.on("audioprocess", () => {
             this.props.setCurrentProgress(this.waveform.getCurrentTime())
         })
+
+        this.waveform.on("loading", () => {
+            this.setState({
+                loading: true
+            })
+        })
+        
+        this.waveform.on("ready", () => {
+            this.setState({
+                loading: false
+            })
+        })  
         // this.props.setCurrentTrack(this.props.track)
 
     console.log(this.props)
@@ -148,6 +161,8 @@ class Waveform extends React.Component {
         
         const playIcon = <FontAwesomeIcon icon={faPlay} />
         const pauseIcon = <FontAwesomeIcon icon={faPause} />
+
+        const loader = <Oval arialLabel="loading-indicator" color="darkslategrey" type='Oval' width="750" height="120"/>
         return(
 
             <div className="waveform-outer-div">
@@ -157,7 +172,11 @@ class Waveform extends React.Component {
                     </PlayButton>
                     <Wave id="waveform" />
                     <audio id="track" src={this.props.track.audioUrl} />
+                <div className='loader'>
+                    {this.state.loading? loader : null}
+                </div>
                 </WaveformContainer>
+                {/* If loading render LOADER, if not loading return null */}
             {((!this.state.paused) || (this.state.playheadDisplay))? <PlayheadContainer /> : null}
             </div>  
         );
