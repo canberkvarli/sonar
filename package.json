@@ -40,6 +40,7 @@
     "react-h5-audio-player": "^3.7.2",
     "react-icons": "^4.2.0",
     "react-jinke-music-player": "^4.24.2",
+    "react-loader-spinner": "^4.0.0",
     "react-loading": "^2.0.3",
     "react-modal": "^3.14.3",
     "react-player": "^2.9.0",
