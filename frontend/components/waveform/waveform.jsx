@@ -162,7 +162,7 @@ class Waveform extends React.Component {
         const playIcon = <FontAwesomeIcon icon={faPlay} />
         const pauseIcon = <FontAwesomeIcon icon={faPause} />
 
-        const loader = <Oval arialLabel="loading-indicator" color="orange" type='Oval' width="750" height="130"/>
+        const loader = <Oval arialLabel="loading-indicator" color="darkslategrey" type='Oval' width="750" height="120"/>
         return(
 
             <div className="waveform-outer-div">
