@@ -67,9 +67,9 @@ class Waveform extends React.Component {
         });
 
         this.waveform.load(track);
-        // this.waveform.on("audioprocess", () => {
-        //     this.props.setCurrentProgress(this.waveform.getCurrentTime())
-        // })
+        this.waveform.on("interaction", () => {
+            this.props.setCurrentProgress(this.waveform.getCurrentTime())
+        })
 
         this.waveform.on("loading", () => {
             this.setState({
@@ -120,7 +120,6 @@ class Waveform extends React.Component {
 
         this.waveform.playPause();
         this.props.currentUser? this.waveform.toggleMute() : null
-
         localStorage.setItem("localTrack", JSON.stringify(this.props.track)) === 'true';
 
         // localStorage.setItem("dummyTrack", JSON.stringify(this.state.track)) === 'true';
