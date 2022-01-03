@@ -38,41 +38,43 @@ class Playhead extends React.Component {
     componentDidMount(){
         // this.props.fetchTracks()
         this.props.fetchTrack(this.props.trackId)
-        this.props.setCurrentProgress(this.props.currentTime)
+        this.props.currentTime? this.props.setCurrentProgress(this.props.currentTime) : null
         this.props.setCurrentTrack(this.state.currentTrack);
-      }
+    }
     
-      shouldComponentUpdate(nextProps, nextState){
+    shouldComponentUpdate(nextProps, nextState){
         if((this.state.track != nextState.track) || 
         (this.state.localTrack != nextState.localTrack) || 
         (this.props.currentTrack != nextProps.currentTrack) || 
         (this.props.currentTime != nextProps.currentTime) || 
         this.props.paused != nextProps.paused)
         {
-        // check the store.paused 
-        //if paused
-         // pause the playhead 
-        //  else play it 
-        if(this.audioInstance){
-            if(this.props.paused){
-                this.audioInstance.play()
-                this.props.playTrack()
-            }else{
-                this.audioInstance.pause()
-                this.props.pauseTrack()
-            } 
-        }
-          console.log("playhead is updated")
-          this.forceUpdate()
-          return true
+            // check the store.paused 
+            //if paused
+            // pause the playhead 
+            //  else play it 
+            if(this.audioInstance){
+                if(this.props.paused){
+                    this.audioInstance.play()
+                    this.props.playTrack()
+                }else{
+                    this.audioInstance.pause()
+                    this.props.pauseTrack()
+                } 
+            }
+            console.log("playhead is updated")
+            this.forceUpdate()
+            return true
         }else{
-          return false
+            return false
         }
     }
-
+    
     componentWillUnmount(){
-    this.audioInstance? this.props.setCurrentProgress(this.audioInstance.currentTime) : null
-    console.log("Playhead is unmounted")
+        
+        this.audioInstance? this.props.setCurrentProgress(this.audioInstance.currentTime) : null
+        this.audioInstance.pause()
+        console.log("Playhead is unmounted")
     // console.log(this.audioInstance.currentTime)
     }
 
@@ -86,6 +88,7 @@ class Playhead extends React.Component {
 
         console.log(this.props)
         console.log(this.state)
+
         const playIcon = <FontAwesomeIcon icon={faPlay} />
         const pauseIcon = <FontAwesomeIcon icon={faPause} />
 
@@ -118,7 +121,10 @@ class Playhead extends React.Component {
             autoPlay: true,
             preload: true,
             showProgressLoadBar: true,
-            mode: "mini",
+            mode: "full",
+            autoHiddenCover: true,
+            spaceBar: true
+            // remember: true
         }
     
         
@@ -154,7 +160,7 @@ class Playhead extends React.Component {
                         this.audioInstance = instance
                         this.audioInstance.currentTime = currentTime
                         }}
-                        
+                        onAudioSeeked={() => this.props.setCurrentProgress(this.audioInstance.currentTime)}
                         />
                     </div>
                 </div>
