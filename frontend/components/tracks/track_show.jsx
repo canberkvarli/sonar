@@ -33,6 +33,10 @@ class TrackShow extends React.Component{
         )
     }
 
+    componentWillUnmount(){
+        this.props.currentTime? this.props.setCurrentProgress(this.props.currentTime) : null
+    }
+    
 
     createLike(e) {
         const trackId = this.props.trackId
