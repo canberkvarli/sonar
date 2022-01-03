@@ -44,7 +44,8 @@ class Playhead extends React.Component {
       shouldComponentUpdate(nextProps, nextState){
         if((this.state.track != nextState.track) || 
         (this.state.localTrack != nextState.localTrack) || 
-        (this.props.currentTrack != nextProps.currentTrack) || (this.props.currentTime != nextProps.currentTime))
+        (this.props.currentTrack != nextProps.currentTrack) || (this.props.currentTime != nextProps.currentTime)
+        || this.props.paused != nextProps.paused)
         {
         // check the store.paused 
         //if paused
@@ -52,9 +53,11 @@ class Playhead extends React.Component {
         //  else play it 
         if(this.audioInstance){
             if(this.props.paused){
-                this.audioInstance.pause()
-            }else{
                 this.audioInstance.play()
+                this.props.playTrack()
+            }else{
+                this.audioInstance.pause()
+                this.props.pauseTrack()
             } 
         }
           console.log("playhead is updated")
