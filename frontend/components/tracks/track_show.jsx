@@ -59,25 +59,28 @@ class TrackShow extends React.Component{
         })
             this.setState({ userLikesTrack: false })
         }
-        toggleLike() {
-            
+        toggleLike() {    
             if (!this.state.loggedIn) {
             return (
                <Link to="/login"> <span className="icon-heart"><FaHeart /></span><p className="likes-count">{this.dispNumLikes()}</p></Link>
                 )
             }
             else {
-
                 if (this.state.userLikesTrack) {
                     return (
                     <button 
                     onClick={this.deleteLike}
-                    className='liked'><span className="icon-heart"><FaHeart /></span><p className="likes-count">{this.dispNumLikes()}</p></button>
+                    className='liked'>
+                        <span className="icon-heart">
+                            <FaHeart /> <span id="liked-button-text">Liked</span>
+                        </span>
+                    {/* <p className="likes-count">Liked</p> */}
+                    </button>
                     )
                 }
                 else {
                     return (
-                    <button className="not-liked" onClick={this.createLike}><span className="icon-heart"><FaHeart /></span><p className="likes-count">{this.dispNumLikes()}</p></button>
+                    <button className="not-liked" onClick={this.createLike}><span className="icon-heart"><FaHeart /></span><p className="likes-count">Like</p></button>
                     )
                 }
             }
@@ -85,7 +88,7 @@ class TrackShow extends React.Component{
         dispNumLikes(){
             if (!this.props.track) return
             if (!this.props.track.likes) return 'Like'
-            else return (Object.keys(this.props.track.likes).length)
+            else return (Object.keys(this.props.track.likes).length) 
         }
 
     render(){
@@ -149,11 +152,13 @@ class TrackShow extends React.Component{
                             <img className="track-show-cover-img" src={this.props.track.photoUrl} />
                         </div>
                 </div>
-                        <div className="track-interact-buttons">
-                            <div id="track-like-button">
-                                {this.toggleLike()}
-                            </div>
+                <div className='interact-buttons-container'>
+                    <div className="track-interact-buttons">
+                        <div id="track-like-button">
+                            {this.toggleLike()}
                         </div>
+                    </div>
+                </div>
 
                     {/* <div className='track-banner-left'>
                         <PlayButtonContainer trackId={this.props.trackId} track={this.props.track} />
