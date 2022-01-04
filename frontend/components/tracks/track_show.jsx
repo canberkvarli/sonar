@@ -62,7 +62,12 @@ class TrackShow extends React.Component{
         toggleLike() {    
             if (!this.state.loggedIn) {
             return (
-               <Link to="/login"> <span className="icon-heart"><FaHeart /></span><p className="likes-count">{this.dispNumLikes()}</p></Link>
+               <Link to="/login"> 
+                <span className="icon-heart">
+                    <FaHeart />
+                </span>
+                    <span id="liked-button-text">Like</span>
+                </Link>
                 )
             }
             else {
@@ -107,28 +112,7 @@ class TrackShow extends React.Component{
         this.state.isPlaying ? temp = 'container-playhead-passive' : 'container-playhead-active'
         if ((track === undefined)){
             return null
-        }else if (!currentUser){
-            return (
-                <> 
-                    <img id="track-show-image" src={track.photoUrl} alt={track.title} />
-                        <Waveform 
-                        track={track}
-                        pauseTrack={() => pauseTrack()}
-                        playTrack={() => playTrack()}
-                        paused={paused}/>
-                    <span id="track-show-title">{track.title}</span>
-                    <h1 className="description">
-                        {track.description}
-                    </h1>
-                    <span className="description" id="more-tracks">
-                    <Link to="/">
-                        <FaAngleDoubleLeft/> More tracks
-                    </Link>
-                    </span>
-                </>
-            )
-        } 
-        else {
+        } else {
             return (
                 <> 
                     <div className="track-banner">
