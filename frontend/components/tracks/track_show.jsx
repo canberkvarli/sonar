@@ -59,25 +59,40 @@ class TrackShow extends React.Component{
         })
             this.setState({ userLikesTrack: false })
         }
-        toggleLike() {
-            
+        toggleLike() {    
             if (!this.state.loggedIn) {
             return (
-               <Link to="/login"> <span className="icon-heart"><FaHeart /></span><p className="likes-count">{this.dispNumLikes()}</p></Link>
+               <Link to="/login"> 
+                <span className="icon-heart">
+                    <FaHeart />
+                </span>
+                    <span id="liked-button-text">Like</span>
+                </Link>
                 )
             }
             else {
-
                 if (this.state.userLikesTrack) {
                     return (
                     <button 
                     onClick={this.deleteLike}
-                    className='liked'><span className="icon-heart"><FaHeart /></span><p className="likes-count">{this.dispNumLikes()}</p></button>
+                    className='liked'>
+                        <span className="icon-heart">
+                            <FaHeart /> <span id="liked-button-text">Liked</span>
+                        </span>
+                    {/* <p className="likes-count">Liked</p> */}
+                    </button>
                     )
                 }
                 else {
                     return (
-                    <button className="not-liked" onClick={this.createLike}><span className="icon-heart"><FaHeart /></span><p className="likes-count">{this.dispNumLikes()}</p></button>
+                    <button 
+                    className="not-liked" 
+                    onClick={this.createLike}>
+                        <span className="icon-heart">
+                            <FaHeart /> <span id="liked-button-text">Like</span>
+                        </span>
+                        {/* <p className="likes-count">Like</p> */}
+                    </button>
                     )
                 }
             }
@@ -85,7 +100,7 @@ class TrackShow extends React.Component{
         dispNumLikes(){
             if (!this.props.track) return
             if (!this.props.track.likes) return 'Like'
-            else return (Object.keys(this.props.track.likes).length)
+            else return (Object.keys(this.props.track.likes).length) 
         }
 
     render(){
@@ -97,49 +112,55 @@ class TrackShow extends React.Component{
         this.state.isPlaying ? temp = 'container-playhead-passive' : 'container-playhead-active'
         if ((track === undefined)){
             return null
-        }else if (!currentUser){
+        } else {
             return (
                 <> 
-                    <img id="track-show-image" src={track.photoUrl} alt={track.title} />
-                        <Waveform 
-                        track={track}
-                        pauseTrack={() => pauseTrack()}
-                        playTrack={() => playTrack()}
-                        paused={paused}/>
-                    <span id="track-show-title">{track.title}</span>
-                    <h1 className="description">
-                        {track.description}
-                    </h1>
-                    <span className="description" id="more-tracks">
-                    <Link to="/">
-                        <FaAngleDoubleLeft/> More tracks
-                    </Link>
-                    </span>
-                </>
-            )
-        } 
-        else {
-            return (
-                <> 
-                    <div className='track-banner-left'>
+                    <div className="track-banner">
+                        <div className="track-banner-left">
+
+                            <PlayButtonContainer trackId={this.props.trackId} track={this.props.track} />
+
+                            <div className="track-banner-labels">
+                                <h2 className="track-banner-title">{this.props.track.title}</h2>
+                                {/* <h3><Link className="track-banner-uploader" to={`/users/${this.props.track.uploader.id}`}>{this.props.track.uploader.username}</Link></h3> */}
+                                
+                            </div>
+                        </div>
+                        <div className="track-banner-right">
+                            <div className='track-banner-middle'>
+                                <Waveform 
+                                    track={track} 
+                                    pauseTrack={() => pauseTrack()}
+                                    playTrack={() => playTrack()}
+                                    currentUser = {currentUser}
+                                    paused={paused}
+                                    currentTime={currentTime}
+                                />
+                            </div>
+                            <div className="track-banner-right-labels">
+                                {/* <h3 className="time-ago">{this.props.track.createdTime.includes("about") ? this.props.track.createdTime.slice(6) : this.props.track.createdTime} ago</h3> */}
+                            </div>
+                            <img className="track-show-cover-img" src={this.props.track.photoUrl} />
+                        </div>
+                </div>
+                <div className='interact-buttons-container'>
+                    <div className="track-interact-buttons">
+                        <div id="track-like-button">
+                            {this.toggleLike()}
+                        </div>
+                    </div>
+                </div>
+
+                    {/* <div className='track-banner-left'>
                         <PlayButtonContainer trackId={this.props.trackId} track={this.props.track} />
                     </div>
                     <img id="track-show-image" src={track.photoUrl} alt={track.title} />
-                        <Waveform 
-                        track={track} 
-                        pauseTrack={() => pauseTrack()}
-                        playTrack={() => playTrack()}
-                        currentUser = {currentUser}
-                        paused={paused}
-                        currentTime={currentTime}
-                        />
                     <span id="track-show-title">{track.title}</span>
-                    <div className="track-interact-buttons">
-                        {this.toggleLike()}
-                    </div>
+
                     <h1 className="description">
                         {track.description}
-                    </h1>
+                    </h1> */
+                    }
                 </>
             )
         }

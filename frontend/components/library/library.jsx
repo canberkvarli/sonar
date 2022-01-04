@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
-import Waveform from '../waveform/waveform';
-import TrackShowContainer from '../tracks/track_show_container';
-import TrackShow from '../tracks/track_show';
-import LibraryContainer from "./library_container";
+import PlayButtonContainer from '../play_button/play_button_container';
 import { Redirect, Link } from 'react-router-dom';
 
 export class Library extends Component {
@@ -41,11 +38,8 @@ export class Library extends Component {
                     Object.keys(currentUser.likes).map((key, j) => {
                         const trackId = parseInt(key)
                         if((track.id === trackId) && (tracks !== undefined)){
-
-                            
                                 return (
                                 <>
-                                {/* {console.log(track.id)} */}
                                   <div key={i} className="liked-track">
                                     <div className="wrapper">
                                       <Link to={`/tracks/${track.id}`} onClick={()=>this.props.history.push(`tracks/${track.id}`)}> <img id="track-show-image" src={track.photoUrl} alt={track.title} /> </Link>
