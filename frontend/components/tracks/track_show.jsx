@@ -121,25 +121,47 @@ class TrackShow extends React.Component{
         else {
             return (
                 <> 
-                    <div className='track-banner-left'>
+                    <div className="track-banner">
+                        <div className="track-banner-left">
+
+                            <PlayButtonContainer trackId={this.props.trackId} track={this.props.track} />
+
+                            <div className="track-banner-labels">
+                                <h2 className="track-banner-title">{this.props.track.title}</h2>
+                                {/* <h3><Link className="track-banner-uploader" to={`/users/${this.props.track.uploader.id}`}>{this.props.track.uploader.username}</Link></h3> */}
+                                
+                            </div>
+                        </div>
+                        <div className="track-banner-right">
+                            <div className='track-banner-middle'>
+                                <Waveform 
+                                    track={track} 
+                                    pauseTrack={() => pauseTrack()}
+                                    playTrack={() => playTrack()}
+                                    currentUser = {currentUser}
+                                    paused={paused}
+                                    currentTime={currentTime}
+                                />
+                            </div>
+                            <div className="track-banner-right-labels">
+                                {/* <h3 className="time-ago">{this.props.track.createdTime.includes("about") ? this.props.track.createdTime.slice(6) : this.props.track.createdTime} ago</h3> */}
+                            </div>
+                            <img className="track-show-cover-img" src={this.props.track.photoUrl} />
+                        </div>
+                </div>
+
+                    {/* <div className='track-banner-left'>
                         <PlayButtonContainer trackId={this.props.trackId} track={this.props.track} />
                     </div>
                     <img id="track-show-image" src={track.photoUrl} alt={track.title} />
-                        <Waveform 
-                        track={track} 
-                        pauseTrack={() => pauseTrack()}
-                        playTrack={() => playTrack()}
-                        currentUser = {currentUser}
-                        paused={paused}
-                        currentTime={currentTime}
-                        />
                     <span id="track-show-title">{track.title}</span>
                     <div className="track-interact-buttons">
                         {this.toggleLike()}
                     </div>
                     <h1 className="description">
                         {track.description}
-                    </h1>
+                    </h1> */
+                    }
                 </>
             )
         }

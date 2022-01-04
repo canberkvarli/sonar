@@ -43,16 +43,18 @@ class Waveform extends React.Component {
     componentDidMount() {
 
         this.waveform = WaveSurfer.create({
-            barWidth: 3,
-            cursorWidth: 1,
+            barWidth: 2,
+            cursorWidth: 0,
             container: '#waveform',
             backend: 'WebAudio',
             height: 220,
+            showCursor: false,
+            cursorColor: "black",
             progressColor: '#ff5500',
             responsive: true,
-            waveColor: "#5d5d5d",
-            cursorColor: 'transparent',
-            partialRender: true
+            waveColor: "lightgray",
+            partialRender: true,
+            pixelRatio: 1,
         });
 
         this.waveform.load(track);
@@ -121,11 +123,9 @@ class Waveform extends React.Component {
     };
 
     render() {
-        
-        const playIcon = <FontAwesomeIcon icon={faPlay} />
-        const pauseIcon = <FontAwesomeIcon icon={faPause} />
 
         const loader = <Oval arialLabel="loading-indicator" color="darkslategrey" type='Oval' width="750" height="120"/>
+
         return(
 
             <div className="waveform-outer-div">
@@ -136,7 +136,6 @@ class Waveform extends React.Component {
                     {this.state.loading? loader : null}
                 </div>
                 </WaveformContainer>
-                {/* If loading render LOADER, if not loading return null */}
             </div>  
         );
     }
