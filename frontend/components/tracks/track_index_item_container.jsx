@@ -25,6 +25,7 @@ const mSTP = (state) => {
   }
     return {
     tracks: Object.values(state.entities.tracks),
+    trackId: ownProps.match.params.trackId,
     track: state.entities.tracks[ownProps.trackId],
     currentUser,
     userLikesTrack

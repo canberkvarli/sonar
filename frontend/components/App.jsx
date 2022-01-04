@@ -16,10 +16,9 @@ import TrackUploadContainer from "./tracks/track_upload_container";
 import UsersContainer from "./users/users_container";
 import LibraryContainer from "./library/library_container";
 
-// import TrackIndexItemContainer from "./tracks/track_index_item_container";
-import PlayheadContainer from "./playhead/playhead_container"
-// import { WaveformContainer } from './waveform/waveform_container';
+
 import Waveform from './waveform/waveform';
+import PlayheadContainer from "./playhead/playhead_container";
 import { ErrorBoundary }  from 'react-error-boundary';
 import { ErrorFallback } from '../util/error_boundary';
 import { WaveformContainer } from './waveform/waveform_container';
@@ -32,22 +31,22 @@ const App = () => {
     return(
         <div>
             <HashRouter>
-                <HeaderContainer />
-                <Route exact path ="/tracks/:trackId" component={TrackShowContainer} />
-                <ProtectedRoute exact path ="/upload" component={TrackUploadContainer}/>
-                <Route exact path="/users/:userId" component={UsersContainer}/>
-                <Route exact path="/" component={TrackIndexContainer} />
                 <ErrorBoundary
                     FallbackComponent={ErrorFallback}
                     onReset={() => {
                         // reset the state of your app so the error doesn't happen again
                     }}
                 >
+                    <HeaderContainer />
+                    
+                    <Route exact path ="/tracks/:trackId" component={TrackShowContainer} />
+                    <ProtectedRoute exact path ="/upload" component={TrackUploadContainer}/>
+                    <Route exact path="/users/:userId" component={UsersContainer}/>
+                    <Route exact path="/" component={TrackIndexContainer} />
                     <Route exact path="/library" component={LibraryContainer}/>
-                {/* <Route path="/tracks/:trackId" component={PlayheadContainer} /> */}
                 </ErrorBoundary>
-                {/* <PlayheadContainer /> */}
                 <WaveformContainer />
+                <PlayheadContainer />
             </HashRouter>
         </div>
     )

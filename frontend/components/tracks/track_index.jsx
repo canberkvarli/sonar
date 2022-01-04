@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import PlayButtonContainer from '../play_button/play_button_container';
 import TrackIndexItem from './track_index_item';
-import PlayheadContainer from "../playhead/playhead_container";
 
 
 class TrackIndex extends React.Component{
@@ -33,12 +32,14 @@ class TrackIndex extends React.Component{
             <div className="track-index-container" >
                 <ul className="track-index">
                     {tracks.map((track,idx) => (
-                      <li key={idx}>
+                      <li key={idx} className="track-obj">
                             <TrackIndexItem track={track} />
+                        <div className="play-btn">
+                            <PlayButtonContainer trackId={track.id} track={track} />
+                        </div>
                       </li>  
                     ))}
                 </ul>
-                    <PlayheadContainer />
             </div>
         )
 
