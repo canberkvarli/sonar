@@ -80,7 +80,14 @@ class TrackShow extends React.Component{
                 }
                 else {
                     return (
-                    <button className="not-liked" onClick={this.createLike}><span className="icon-heart"><FaHeart /></span><p className="likes-count">Like</p></button>
+                    <button 
+                    className="not-liked" 
+                    onClick={this.createLike}>
+                        <span className="icon-heart">
+                            <FaHeart /> <span id="liked-button-text">Like</span>
+                        </span>
+                        {/* <p className="likes-count">Like</p> */}
+                    </button>
                     )
                 }
             }
