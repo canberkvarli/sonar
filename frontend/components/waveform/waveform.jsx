@@ -8,19 +8,8 @@ import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
 import Oval from "react-loader-spinner";
 
 import {connect } from "react-redux";
-import { pauseTrack, playTrack, setCurrentTrack, setCurrentProgress } from '../../actions/playhead_actions';
-import { withRouter } from 'react-router';
-
-
-// import ReactLoading from 'react-loading';
-import PlayheadContainer from "../playhead/playhead_container"
 
 import WaveSurfer from 'wavesurfer.js';
-
-// import AudioPlayer from 'react-h5-audio-player'; //autoplay is always true
-// import ReactPlayer from 'react-player' //deferred error
-
-import ReactAudioPlayer from 'react-audio-player'; //This works fine but lacks element change (main audio player)
 
 
 class Waveform extends React.Component {
@@ -67,9 +56,9 @@ class Waveform extends React.Component {
         });
 
         this.waveform.load(track);
-        this.waveform.on("interaction", () => {
-            this.props.setCurrentProgress(this.waveform.getCurrentTime())
-        })
+        // this.waveform.on("interaction", () => {
+
+        // })
 
         this.waveform.on("loading", () => {
             this.setState({
@@ -97,16 +86,7 @@ class Waveform extends React.Component {
         }
     }
     componentWillUnmount(){
-        const waveformProgress = this.waveform.getCurrentTime();
-        // this.setState({
-        //     progress: progress
-        // })
-        // (!!this.props.currentTime)? this.props.setCurrentProgress(this.props.currentTime) : this.props.setCurrentProgress(progress)
         
-        // if waveformProgress > 1 use the waveform current Time 
-
-        this.props.setCurrentProgress(waveformProgress);
-        this.waveform.pause()
     }
 
 
@@ -126,7 +106,6 @@ class Waveform extends React.Component {
         localStorage.setItem("isPlaying", true)
 
         if(!this.state.isWaveformPlaying){
-            this.props.setCurrentTrack(this.props.track)
             this.props.playTrack()
             this.setState({
                 paused: !this.state.paused,
@@ -141,25 +120,6 @@ class Waveform extends React.Component {
         }
     };
 
-    // handlePlayerPlay = () => {
-    //     this.setState({ isWaveformPlaying: !this.state.isWaveformPlaying });
-
-    //     // mute waveform but keep the wave progressing
-    //     this.waveform.play();
-    //     this.waveform.toggleMute();
-
-    // }
-
-    // handlePlayerPause = () => {
-    //     this.setState({ isWaveformPlaying: !this.state.isWaveformPlaying });
-    //     // this.waveform.play()
-    //     this.waveform.pause()
-    //     this.waveform.toggleMute();
-
-    // }
-
-
-
     render() {
         
         const playIcon = <FontAwesomeIcon icon={faPlay} />
@@ -170,9 +130,6 @@ class Waveform extends React.Component {
 
             <div className="waveform-outer-div">
                 <WaveformContainer className="waveform-div">
-                    <PlayButton onClick={this.handlePlay} >
-                        { !this.state.isWaveformPlaying ? playIcon : pauseIcon }
-                    </PlayButton>
                     <Wave id="waveform" />
                     <audio id="track" src={this.props.track.audioUrl} />
                 <div className='loader'>
@@ -180,7 +137,6 @@ class Waveform extends React.Component {
                 </div>
                 </WaveformContainer>
                 {/* If loading render LOADER, if not loading return null */}
-            {((!this.state.paused) || (this.state.playheadDisplay))? <PlayheadContainer /> : null}
             </div>  
         );
     }
@@ -200,7 +156,6 @@ const mSTP = (state)  => {
 
 const mDTP = dispatch => {
     return{
-        setCurrentTrack: (track) => dispatch(setCurrentTrack(track)),
         playTrack: () => dispatch(playTrack()),
         pauseTrack: () => dispatch(pauseTrack()),
     }

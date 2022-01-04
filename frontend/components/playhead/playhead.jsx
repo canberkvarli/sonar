@@ -1,173 +1,159 @@
-import React from 'react'
-import ReactAudioPlayer from 'react-audio-player'; // Works almost perfectly fine but lacks custom element selections from the player.
-import ReactJkMusicPlayer from 'react-jinke-music-player';
-import Waveform from '../waveform/waveform';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
-import { PlayButton } from '../waveform/playbutton';
+import { faPlay, faPause, faRedoAlt, faVolumeDown } from '@fortawesome/free-solid-svg-icons'
 
+const Playhead = ({ track, receivePlayTrack, clearPlayhead, playTrack, pauseTrack }) => {
+    const [time, setCurrentTime] = useState(0);
+    const [duration, setDuration] = useState(0);
+    const [volume, setVolume] = useState(0.4);
+    const [interval, setInterval] = useState(null);
 
-class Playhead extends React.Component {
-    constructor(props){
-        super(props)
+    const currentTrack = document.getElementById("current-song");
+    currentTrack ? currentTrack.volume = volume : null;
 
-         if (!!JSON.parse(localStorage.getItem("localTrack")) && typeof JSON.parse(localStorage.getItem("localTrack")) !== undefined) {
+    useEffect(() => {
+        track ? receivePlayTrack(track) : null;
 
-            const localTrack = JSON.parse(localStorage.getItem("localTrack"));
-            const isPlaying = localStorage.getItem("isPlaying");
-        
-        this.state = {
-            playing: true,
-            track: this.props.track,
-            dummy: this.props.currentTrack,
-            localTrack: localTrack,
-            playheadLocalTrack: JSON.parse(localStorage.getItem("localTrack")),
-            progress: this.props.currentTime,
+        return clearPlayhead;
+    }, [track]);
 
-        }
-    }else{
-            this.state = {
-            playing: true,
-            track: this.props.currentTrack,
-        }
+    useEffect(() => {
+        return () => clearInterval(interval) 
+    })
+
+    const playCurrentTrack = () => {
+        currentTrack.play();
+        playTrack();
+    };
+
+    const pauseCurrentTrack = () => {
+        currentTrack.pause();
+        pauseTrack();
+    };
+
+    const replayTrack = () => {
+        currentTrack.currentTime = 0;
+        currentTrack.play();
     }
 
-    this.handleAudioPlay = this.handleAudioPlay.bind(this)
-    }
-    
-    componentDidMount(){
-        // this.props.fetchTracks()
-        this.props.fetchTrack(this.props.trackId)
-        this.props.currentTime? this.props.setCurrentProgress(this.props.currentTime) : null
-        this.props.setCurrentTrack(this.state.currentTrack);
-    }
-    
-    shouldComponentUpdate(nextProps, nextState){
-        if((this.state.track != nextState.track) || 
-        (this.state.localTrack != nextState.localTrack) || 
-        (this.props.currentTrack != nextProps.currentTrack) || 
-        (this.props.currentTime != nextProps.currentTime) || 
-        this.props.paused != nextProps.paused)
-        {
-            // check the store.paused 
-            //if paused
-            // pause the playhead 
-            //  else play it 
-            if(this.audioInstance){
-                if(this.props.paused){
-                    this.audioInstance.play()
-                    this.props.playTrack()
-                }else{
-                    this.audioInstance.pause()
-                    this.props.pauseTrack()
-                } 
-            }
-            console.log("playhead is updated")
-            this.forceUpdate()
-            return true
-        }else{
-            return false
-        }
-    }
-    
-    componentWillUnmount(){
-        
-        this.audioInstance? this.props.setCurrentProgress(this.audioInstance.currentTime) : null
-        this.audioInstance.pause()
-        console.log("Playhead is unmounted")
-    // console.log(this.audioInstance.currentTime)
+    const updateProgressBar = () => {
+        const progressBar = document.getElementById("progress-bar");
+        progressBar.value = currentTrack.currentTime;
+        //Tells the state and play button that song is done playing
+        Math.floor(time) === Math.floor(currentTrack.duration) ? pauseTrack() : null;
     }
 
-    handleAudioPlay(){
-      // ON waveform play
-
+    const updateTimer = () => {
+        const intervalId = setInterval(() => {
+            setCurrentTime(currentTrack.currentTime)
+        }, 1000);
+        setInterval(intervalId)
     }
 
+ 
 
-    render() {
+    const updateVolume = e => {
+        setVolume(e.target.value)
+    }
 
-        console.log(this.props)
-        console.log(this.state)
+    const formatTime = time => {
+        let minutes = Math.floor(time / 60);
+        let seconds = time % 60;
 
-        const playIcon = <FontAwesomeIcon icon={faPlay} />
-        const pauseIcon = <FontAwesomeIcon icon={faPause} />
-
-        const { currentTrack, tracks, currentUser, currentTime } = this.props;
-
-        // const location = this.props.match.path
-
-        //calculate the the song duration and minus the currentTime
-            const audioList = [
-                {
-                  name:  this.state.localTrack? this.state.localTrack.title : "Hello",
-                  cover: this.state.localTrack? this.state.localTrack.photoUrl: "a.jpg",
-                  musicSrc: this.state.localTrack? this.state.localTrack.audioUrl: "a.mp3",
-                }
-            ];
-        // audioList.push(this.state.localTrack)
-   
-        console.log(audioList)
-        console.log(currentTime)
-        // if isPlaying === true, press play on playhead
-         const options = {
-            audioLists: audioList,
-            showMiniModeCover: true,
-            showDownload: false,
-            showReload: false,
-            showLyric: false,
-            showDestroy: false,
-            toggleMode: true,
-            showPlayMode: false,
-            autoPlay: true,
-            preload: true,
-            showProgressLoadBar: true,
-            mode: "full",
-            autoHiddenCover: true,
-            spaceBar: true
-            // remember: true
-        }
-    
-        
-
-        if(this.state.localTrack === undefined
-
-             || this.state.localTrack === null 
-             || tracks === undefined 
-             || !currentUser
-        ){
-            return null
-            // <h1 id="playhead-footer">Track is null or undefined probably</h1>
+        if (seconds < 10) {
+            return `${minutes}:0${seconds}`
         } else {
-            return (
-                <div>         
-                    {/* <footer id="playhead-footer">
-                        <ReactAudioPlayer 
-                            onPlay={this.handlePlayerPlay}
-                            onPause={this.handlePlayerPause}
-                            src={currentTrack.audioUrl}
-                            controls={true}
-                            autoPlay={false}
-                            //use 'temp' for the className.
-                            className={"audioplayer"}
-                        />
-                    </footer> */}
-                      {/* <button onClick={this.audioInstance.currentTime = 0}>traverse</button> */}
-                    <div id="playhead-footer">
-                        <ReactJkMusicPlayer 
-                        {...options} 
-                        audioLists={audioList}
-                        getAudioInstance={(instance) => {
-                        this.audioInstance = instance
-                        this.audioInstance.currentTime = currentTime
+            return `${minutes}:${seconds}`
+        };
+    }
+
+    const formatDuration = duration => {
+        if (Math.floor(duration % 60) < 10) {
+            return `${Math.floor(duration / 60)}:0${Math.floor(duration) % 60}`
+        } else {
+            return `${Math.floor(duration / 60)}:${Math.floor(duration) % 60}`
+        } 
+    }
+
+    const togglePlay = () => {
+        if (currentTrack) {
+            if (currentTrack.paused) {
+                return <FontAwesomeIcon id="toggle-play-btn" icon={faPlay} onClick={playCurrentTrack} />
+            } else {
+                return <FontAwesomeIcon id="toggle-play-btn" icon={faPause} onClick={pauseCurrentTrack} />
+            }
+        }
+    }
+
+    return track ? (
+        <div className="playhead-bar-container">
+            <div className="playhead-container">
+                <audio
+                    className="playhead"
+                    onLoadedData={() => {
+                        setDuration(currentTrack.duration);
+                        setCurrentTime(currentTrack.currentTime);
+                    }}
+                    onTimeUpdate={() => {
+                        updateProgressBar();
+                        updateTimer();
+                    }}
+                    autoPlay
+                    controlsList="nodownload"
+                    id="current-song"
+                    src={track.audioUrl} 
+                />
+
+                {togglePlay()}
+                <FontAwesomeIcon id="replay-btn" icon={faRedoAlt} onClick={replayTrack} />
+
+                <div id="track-timer">
+                    {formatTime(Math.floor(time))}
+                </div>
+                
+                <div className="progress-bar-div">
+                    <input type="range"
+                        id="progress-bar"
+                        min="0"
+                        max={Math.ceil(duration)}
+                        onChange={e => {
+                            setCurrentTime(e.target.value)
+                            currentTrack.currentTime = e.target.value
                         }}
-                        onAudioSeeked={() => this.props.setCurrentProgress(this.audioInstance.currentTime)}
+                    />
+                </div>
+
+                <div id="track-duration">
+                    {formatDuration(duration)}
+                </div>
+
+                <div className="volume">
+                    <div className="volume-container">
+                        <input type="range"
+                            className="volume-bar"
+                            min="0"
+                            max="1"
+                            step="0.1"
+                            value={volume}
+                            onChange={e => updateVolume(e)}
                         />
                     </div>
+
+                    <div><FontAwesomeIcon id="volume-btn" icon={faVolumeDown} /></div>
                 </div>
-            )
-        }
-    
-        }
-    }
+
+                <div className="playing-track-details">
+                    <img className="playing-track-art" src={track.photoUrl} />
+                    <div className="playing-track-labels">
+                        {<Link className="current-track-title" to={`/tracks/${track.id}`}>{track.title}</Link>}
+                        {/* {<Link className="current-track-uploader" to={`/users/${track.uploader.id}`}>{track.uploader.username}</Link>} */}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    ) : null
+}
 
 export default Playhead;

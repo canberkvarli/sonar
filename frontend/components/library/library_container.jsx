@@ -2,7 +2,6 @@ import { connect } from 'react-redux'
 import { fetchTracks } from '../../actions/track_actions'
 import { fetchUser } from '../../actions/user_actions'
 import { withRouter } from 'react-router'
-import { setCurrentProgress } from '../../actions/playhead_actions'
 import Library from './library'
 
 
@@ -17,7 +16,6 @@ const mapDispatchToProps =  dispatch => (
     {
     fetchTracks: () => dispatch(fetchTracks()),
     fetchUser: (userId) => dispatch(fetchUser(userId)),
-    setCurrentProgress: (progress) => dispatch(setCurrentProgress(progress))
     }
 )
 

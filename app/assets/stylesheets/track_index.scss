@@ -242,3 +242,57 @@ body:not(.mobile) .track-index-item:hover + .arrow {
 #more-tracks:hover{
     color: orangered;
 }
+
+
+
+// ----------------------------------------------------------- //
+
+
+.track-obj {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 25px 0px 0px;
+    font-family: 'Mulish', sans-serif;
+
+};
+
+.play-btn .track-play-btn {
+    display: none;
+    position: absolute;
+    z-index: 123;
+    bottom: 41%;
+    left: 35%;
+    cursor: pointer;
+    font-size: 28px;
+    color: white;
+    background-color: orangered;
+    padding: 15px 15px 15px 20px;
+    border-radius: 50%;
+}
+
+.play-btn .track-pause-btn {
+    display: none;
+    position: absolute;
+    z-index: 123;
+    bottom: 41%;
+    left: 35%;
+    cursor: pointer;
+    font-size: 28px;
+    color: white;
+    background-color: orangered;
+    padding: 15px 17px 15px 17px;
+    border-radius: 50%;
+}
+
+.track-obj:hover > .play-btn .track-play-btn, .track-obj:hover > .play-btn .track-pause-btn {
+    display: inline-block;
+    position: absolute;
+    z-index: 123;
+}
+
+.track-title:visited, .track-uploader:visited, .track-title:link, .track-uploader:link {
+    font-family: 'Mulish', sans-serif;
+    color: rgb(32, 32, 32);
+};
+

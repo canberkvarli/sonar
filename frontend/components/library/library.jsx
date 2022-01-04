@@ -3,7 +3,6 @@ import Waveform from '../waveform/waveform';
 import TrackShowContainer from '../tracks/track_show_container';
 import TrackShow from '../tracks/track_show';
 import LibraryContainer from "./library_container";
-import PlayheadContainer from "../playhead/playhead_container"
 import { Redirect, Link } from 'react-router-dom';
 
 export class Library extends Component {
@@ -17,10 +16,6 @@ export class Library extends Component {
       this.props.fetchUser(this.props.currentUser.id);
     }
 
-    componentWillUnmount(){
-      this.props.setCurrentProgress(this.props.currentTime)
-    }
-
     render() {
     const { tracks , currentUser} = this.props
     if (currentUser.likes === undefined) {
@@ -28,7 +23,6 @@ export class Library extends Component {
       return (
         <div className="outside-wrapper">
           <h1 id="library-username">Hey {currentUser.username}! You don't have any favorite tracks. Start by liking some!</h1>
-          <PlayheadContainer /> 
         </div>
       )
     }else if (tracks === undefined) {
@@ -66,7 +60,6 @@ export class Library extends Component {
                               }
                             })
                             ))}
-            <PlayheadContainer />                            
            </div>
       )
     }  

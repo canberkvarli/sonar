@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { FaHeart, FaAngleDoubleLeft } from 'react-icons/fa'
+import PlayButtonContainer from "../play_button/play_button_container";
 import Waveform from '../waveform/waveform';
 
 class TrackShow extends React.Component{
@@ -28,9 +29,7 @@ class TrackShow extends React.Component{
         // this.props.fetchTracks().then(
         //     this.props.setCurrentTrack(this.props.track)
         // )
-        this.props.fetchTrack(this.props.trackId).then(
-            // this.props.setCurrentTrack(this.props.track)
-        )
+        this.props.fetchTrack(this.props.trackId)
     }
 
     componentWillUnmount(){
@@ -95,7 +94,6 @@ class TrackShow extends React.Component{
         
         const {track, currentUser, userLikesTrack, pauseTrack, playTrack, paused, setCurrentProgress, setCurrentTrack, currentTime} = this.props;
         // localStorage.setItem("localTrack", JSON.stringify(track)) === 'true';
-        let temp;
         this.state.isPlaying ? temp = 'container-playhead-passive' : 'container-playhead-active'
         if ((track === undefined)){
             return null
@@ -107,8 +105,6 @@ class TrackShow extends React.Component{
                         track={track}
                         pauseTrack={() => pauseTrack()}
                         playTrack={() => playTrack()}
-                        setCurrentTrack={(track) => setCurrentTrack(track)}
-                        setCurrentProgress={(progress) => setCurrentProgress(progress)}
                         paused={paused}/>
                     <span id="track-show-title">{track.title}</span>
                     <h1 className="description">
@@ -125,13 +121,14 @@ class TrackShow extends React.Component{
         else {
             return (
                 <> 
+                    <div className='track-banner-left'>
+                        <PlayButtonContainer trackId={this.props.trackId} track={this.props.track} />
+                    </div>
                     <img id="track-show-image" src={track.photoUrl} alt={track.title} />
                         <Waveform 
                         track={track} 
                         pauseTrack={() => pauseTrack()}
                         playTrack={() => playTrack()}
-                        setCurrentTrack={(track) => setCurrentTrack(track)}
-                        setCurrentProgress={(progress) => setCurrentProgress(progress)}
                         currentUser = {currentUser}
                         paused={paused}
                         currentTime={currentTime}

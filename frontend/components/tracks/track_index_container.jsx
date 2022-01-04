@@ -1,12 +1,14 @@
 import { connect } from 'react-redux';
 import { fetchTrack, fetchTracks, uploadTrack, deleteTrack } from '../../actions/track_actions';
-import { setCurrentProgress } from '../../actions/playhead_actions';
 import TrackIndex from './track_index';
 
 
-const mSTP = (state) => ({
+const mSTP = (state, ownProps) => ({
     tracks: Object.values(state.entities.tracks),
-    currentTime: state.playhead.currentTime
+    currentTime: state.playhead.currentTime,
+    track: state.entities.tracks[ownProps.trackId],
+    trackId: ownProps.match.params.trackId
+
     
 })
 
@@ -15,7 +17,6 @@ const mDTP = dispatch => ({
     fetchTrack: (trackId) => dispatch(fetchTrack(trackId)),
     deleteTrack: (trackId) => dispatch(deleteTrack(trackId)),
     uploadTrack: (track) => dispatch(uploadTrack(track)),
-    setCurrentProgress: (progress) => dispatch(setCurrentProgress(progress))
 })
 
 
