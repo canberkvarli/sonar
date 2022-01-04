@@ -149,15 +149,18 @@ class TrackShow extends React.Component{
                             <img className="track-show-cover-img" src={this.props.track.photoUrl} />
                         </div>
                 </div>
+                        <div className="track-interact-buttons">
+                            <div id="track-like-button">
+                                {this.toggleLike()}
+                            </div>
+                        </div>
 
                     {/* <div className='track-banner-left'>
                         <PlayButtonContainer trackId={this.props.trackId} track={this.props.track} />
                     </div>
                     <img id="track-show-image" src={track.photoUrl} alt={track.title} />
                     <span id="track-show-title">{track.title}</span>
-                    <div className="track-interact-buttons">
-                        {this.toggleLike()}
-                    </div>
+
                     <h1 className="description">
                         {track.description}
                     </h1> */

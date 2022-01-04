@@ -124,7 +124,7 @@ class Waveform extends React.Component {
 
     render() {
 
-        const loader = <Oval arialLabel="loading-indicator" color="darkslategrey" type='Oval' width="750" height="120"/>
+        const loader = <Oval arialLabel="loading-indicator" color="whitesmoke" type='Oval' width="750" height="120"/>
 
         return(
 
