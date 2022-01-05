@@ -1,7 +1,8 @@
 // import React from 'react';
 
-// // import { WaveformContainer } from '../tracks/waveform_container';
-// // import { Wave } from '../tracks/wave';
+// import { PlayButton } from './playbutton';
+// import { WaveformContainer } from './waveform_container';
+// import { Wave } from './wave';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
 // import Oval from "react-loader-spinner";
@@ -14,15 +15,30 @@
 // class Waveform extends React.Component {
 //     constructor(props){
 //         super(props)
+//       if (!!JSON.parse(localStorage.getItem("localTrack"))) {
+
+//         const localTrack = JSON.parse(localStorage.getItem("localTrack"));
 
 //         this.state = {
 //             isWaveformPlaying: false,
 //             track: this.props.track,
+//             localTrack,
 //             paused: this.props.paused,
 //             playheadDisplay: true,
 //             progress: 0,
 //             loading: false
 //         };
+
+
+//     } else {
+//         this.state = {
+//             isWaveformPlaying: false,
+//             track: this.props.track,
+//             paused: this.props.paused
+//         }
+//     }
+
+//     this.handlePlay = this.handlePlay.bind(this)
 // }
 
     
@@ -55,6 +71,8 @@
 //             this.setState({
 //                 loading: false
 //             })
+
+
 //         }) 
         
 
@@ -70,7 +88,17 @@
 
 //     }
 
- 
+//     handlePlay = () => {
+//         // this.waveform.play();
+//         // this.waveform.toggleMute()
+//                 //if(!this.props.paused){
+//             // this.props.pauseTrack()
+//         //     this.waveform.pause()
+//         // }else if(this.props.paused){
+//         //     this.props.playTrack()
+//         //     this.waveform.play()
+//         // }
+//     };
 
 
 
@@ -82,7 +110,7 @@
 
 //             <div className="waveform-outer-div">
 //                 <WaveformContainer className="waveform-div">
-//                     <Wave id="waveform" />
+//                     <Wave id="waveform" onClick={this.handlePlay()}/>
 //                     <audio id="track" src={this.props.track.audioUrl} />
 //                 <div className='loader'>
 //                     {this.state.loading? loader : null}
@@ -95,3 +123,21 @@
 
 // export default Waveform;
 
+
+// const mSTP = (state)  => {
+//     return{
+//         trackId: ownProps.match.params.trackId,
+//         track: state.entities.tracks[ownProps.match.params.trackId],
+//         currentTrack: state.playhead.currentTrack,
+//         paused: state.playhead.paused,
+//     }
+// }
+
+// const mDTP = dispatch => {
+//     return{
+//         playTrack: () => dispatch(playTrack()),
+//         pauseTrack: () => dispatch(pauseTrack()),
+//     }
+// }
+
+// connect(mSTP, mDTP)(Waveform)

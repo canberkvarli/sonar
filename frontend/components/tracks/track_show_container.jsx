@@ -55,7 +55,7 @@ const mSTP = (state, ownProps) => {
         userLikesTrack: userLikesTrack,
         currentLikeId,
         currentTime: state.playhead.currentTime,
-        paused: state.playhead.paused
+        isPlaying: state.playhead.isPlaying
       }
     
 } 

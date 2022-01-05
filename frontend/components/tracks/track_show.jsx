@@ -23,7 +23,7 @@ class TrackShow extends React.Component{
             this.deleteLike = this.deleteLike.bind(this)
             this.createLike = this.createLike.bind(this)
             this.dispNumLikes = this.dispNumLikes.bind(this)
-
+            this.handlePlayPause = this.handlePlayPause.bind(this);
         console.log(this.props)
 
             
@@ -38,7 +38,7 @@ class TrackShow extends React.Component{
             cursorWidth: 0,
             container: '#waveform',
             backend: 'WebAudio',
-            height: 220,
+            height: 200,
             showCursor: false,
             cursorColor: "black",
             progressColor: '#ff5500',
@@ -48,6 +48,7 @@ class TrackShow extends React.Component{
             pixelRatio: 1,
             forceDecode: true,
             normalize: true,
+            interact: false
         });
         this.waveform.load(track);
 
@@ -135,7 +136,20 @@ class TrackShow extends React.Component{
             if (!this.props.track.likes) return 'Like'
             else return (Object.keys(this.props.track.likes).length) 
         }
+        handlePlayPause(){
 
+        // this.waveform.play();     
+        // this.waveform.setMute()
+         
+        if(this.props.isPlaying){
+            // this.props.pauseTrack()
+            this.waveform.pause()
+        }else if(!this.props.isPlaying){
+            // this.props.playTrack()
+            this.waveform.play()
+            this.waveform.setMute()
+        }
+        }
 
 
     render(){
@@ -151,10 +165,8 @@ class TrackShow extends React.Component{
             return (
                 <> 
                     <div className="track-banner">
-                        <div className="track-banner-left" onClick={this.handlePlay}>
-
+                        <div className="track-banner-left" onClick={this.handlePlayPause}>
                             <PlayButtonContainer trackId={this.props.trackId} track={this.props.track}/>
-
                             <div className="track-banner-labels">
                                 <h2 className="track-banner-title">{this.props.track.title}</h2>
                                 {/* <h3><Link className="track-banner-uploader" to={`/users/${this.props.track.uploader.id}`}>{this.props.track.uploader.username}</Link></h3> */}
