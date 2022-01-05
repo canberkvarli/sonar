@@ -18,8 +18,8 @@ class Users extends React.Component {
     
     }
     componentDidMount() {
+        this.props.fetchTracks()
         this.props.fetchUser(this.props.userId)
-        // this.props.fetchTracks()
     }
     componentDidUpdate(prevProps) {
         const tempObj = { ...this.props.pageOwner }
