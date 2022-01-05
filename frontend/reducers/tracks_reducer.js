@@ -1,4 +1,4 @@
-import { RECEIVE_TRACKS, REMOVE_TRACK, RECEIVE_TRACK, RECEIVE_MAIN_TRACK } from "../actions/track_actions";
+import { RECEIVE_TRACKS, REMOVE_TRACK, RECEIVE_TRACK } from "../actions/track_actions";
 
 
 

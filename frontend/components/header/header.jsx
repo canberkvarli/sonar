@@ -44,6 +44,7 @@ class Header extends React.Component{
     }
 
     render(){
+
         const {signup, login, logout, currentUser, disabled} = this.props
         const search = <FontAwesomeIcon icon={faSearch}/>
         const github = <FontAwesomeIcon icon={["fab", "github"]} />
@@ -152,7 +153,7 @@ class Header extends React.Component{
                         <SearchContainer />
                     </div>
                     <div className="right-nav-header">
-                    {/* <Link className="link-profile" to={`users/${this.props.currentUserId}`}>{this.props.currentUser.username}</Link> */}
+                        {/* <Link className="link-profile" to={`users/${this.props.currentUserId}`}>{this.props.currentUser.username}</Link> */}
                     <span className="link-profile">{this.props.currentUser.username}</span>
 
                     <a htmlFor="Logout"
@@ -162,7 +163,6 @@ class Header extends React.Component{
                     </a>
                     </div>
                 </nav>
-            
             </div>
         )
 
