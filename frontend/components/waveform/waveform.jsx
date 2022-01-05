@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { PlayButton } from './playbutton';
 import { WaveformContainer } from './waveform_container';
 import { Wave } from './wave';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -88,17 +87,7 @@ class Waveform extends React.Component {
 
     }
 
-    handlePlay = () => {
-        // this.waveform.play();
-        // this.waveform.toggleMute()
-                //if(!this.props.paused){
-        //     this.props.pauseTrack()
-        //     this.waveform.pause()
-        // }else if(this.props.paused){
-        //     this.props.playTrack()
-        //     this.waveform.play()
-        // }
-    };
+ 
 
 
 
