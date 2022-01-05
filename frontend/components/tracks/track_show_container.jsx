@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import { fetchTrack, fetchTracks, setMainTrack } from "../../actions/track_actions";
 import { createLike, deleteLike } from "../../actions/like_actions";
 import { fetchUser } from "../../actions/user_actions";
+import { pauseTrack, playTrack } from "../../actions/playhead_actions";
 import { withRouter } from "react-router";
 
 import TrackShow from "./track_show";

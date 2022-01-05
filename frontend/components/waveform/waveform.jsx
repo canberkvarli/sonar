@@ -37,6 +37,8 @@ class Waveform extends React.Component {
             paused: this.props.paused
         }
     }
+
+    this.handlePlay = this.handlePlay.bind(this)
 }
 
     
@@ -58,9 +60,6 @@ class Waveform extends React.Component {
         });
 
         this.waveform.load(track);
-        // this.waveform.on("interaction", () => {
-
-        // })
 
         this.waveform.on("loading", () => {
             this.setState({
@@ -72,7 +71,11 @@ class Waveform extends React.Component {
             this.setState({
                 loading: false
             })
-        })  
+
+
+        }) 
+        
+
         // this.props.setCurrentTrack(this.props.track)
 
     console.log(this.props)
@@ -81,46 +84,23 @@ class Waveform extends React.Component {
 
     componentDidUpdate(){
         console.log("Waveform is updated")
-        // this.props.setCurrentTrack(this.props.track)
-        // const playheadLocalTrack = JSON.parse(localStorage.getItem("playheadTrack"));
-        if(!this.props.paused){
-            
-        }
-    }
-    componentWillUnmount(){
-        
-    }
+        this.props.currentUser? this.waveform.toggleMute() : null
 
+    }
 
     handlePlay = () => {
-        this.setState({
-             isWaveformPlaying: !this.state.isWaveformPlaying,
-            //  playhead: true
-        });
-
-        // this.props.setCurrentTrack(this.props.track)
-
-        this.waveform.playPause();
-        this.props.currentUser? this.waveform.toggleMute() : null
-        localStorage.setItem("localTrack", JSON.stringify(this.props.track)) === 'true';
-
-        // localStorage.setItem("dummyTrack", JSON.stringify(this.state.track)) === 'true';
-        localStorage.setItem("isPlaying", true)
-
-        if(!this.state.isWaveformPlaying){
-            this.props.playTrack()
-            this.setState({
-                paused: !this.state.paused,
-                playheadDisplay: true
-            })
-
-        }else if(this.state.isWaveformPlaying){
-            this.props.pauseTrack()
-            this.setState({
-                paused: !this.state.paused
-            })
-        }
+        // this.waveform.play();
+        // this.waveform.toggleMute()
+                //if(!this.props.paused){
+        //     this.props.pauseTrack()
+        //     this.waveform.pause()
+        // }else if(this.props.paused){
+        //     this.props.playTrack()
+        //     this.waveform.play()
+        // }
     };
+
+
 
     render() {
 
@@ -130,7 +110,7 @@ class Waveform extends React.Component {
 
             <div className="waveform-outer-div">
                 <WaveformContainer className="waveform-div">
-                    <Wave id="waveform" />
+                    <Wave id="waveform" onClick={this.handlePlay()}/>
                     <audio id="track" src={this.props.track.audioUrl} />
                 <div className='loader'>
                     {this.state.loading? loader : null}
