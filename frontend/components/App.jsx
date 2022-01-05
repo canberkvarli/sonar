@@ -21,7 +21,7 @@ import Waveform from './waveform/waveform';
 import PlayheadContainer from "./playhead/playhead_container";
 import { ErrorBoundary }  from 'react-error-boundary';
 import { ErrorFallback } from '../util/error_boundary';
-import { WaveformContainer } from './waveform/waveform_container';
+import { WaveformContainer } from '../components/tracks/waveform_container';
 
 
 

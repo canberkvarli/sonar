@@ -2,7 +2,11 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { FaHeart, FaAngleDoubleLeft } from 'react-icons/fa'
 import PlayButtonContainer from "../play_button/play_button_container";
-import Waveform from '../waveform/waveform';
+import { WaveformContainer } from '../tracks/waveform_container';
+import WaveSurfer from 'wavesurfer.js';
+import Oval from "react-loader-spinner";
+
+    
 
 class TrackShow extends React.Component{
     constructor(props){
@@ -19,21 +23,51 @@ class TrackShow extends React.Component{
             this.deleteLike = this.deleteLike.bind(this)
             this.createLike = this.createLike.bind(this)
             this.dispNumLikes = this.dispNumLikes.bind(this)
-
+            this.handlePlayPause = this.handlePlayPause.bind(this);
         console.log(this.props)
+
+            
+
     }
 
     
 
     componentDidMount(){
+         this.waveform = WaveSurfer.create({
+            barWidth: 2,
+            cursorWidth: 0,
+            container: '#waveform',
+            backend: 'WebAudio',
+            height: 200,
+            showCursor: false,
+            cursorColor: "black",
+            progressColor: '#ff5500',
+            responsive: true,
+            waveColor: "lightgray",
+            partialRender: true,
+            pixelRatio: 1,
+            forceDecode: true,
+            normalize: true,
+            interact: false
+        });
+        this.waveform.load(track);
+
+        this.waveform.on("loading", () => {
+            this.setState({
+                loading: true
+            })
+        })
+        this.waveform.on("ready", () => {
+            this.setState({
+                loading: false
+            })
+
+        }) 
+        
         // this.props.fetchTracks().then(
         //     this.props.setCurrentTrack(this.props.track)
         // )
         this.props.fetchTrack(this.props.trackId)
-    }
-
-    componentWillUnmount(){
-        this.props.currentTime? this.props.setCurrentProgress(this.props.currentTime) : null
     }
     
 
@@ -102,13 +136,28 @@ class TrackShow extends React.Component{
             if (!this.props.track.likes) return 'Like'
             else return (Object.keys(this.props.track.likes).length) 
         }
+        handlePlayPause(){
+
+        // this.waveform.play();     
+        // this.waveform.setMute()
+         
+        if(this.props.isPlaying){
+            // this.props.pauseTrack()
+            this.waveform.pause()
+        }else if(!this.props.isPlaying){
+            // this.props.playTrack()
+            this.waveform.play()
+            this.waveform.setMute()
+        }
+        }
+
 
     render(){
 
 
-        
+        const loader = <Oval arialLabel="loading-indicator" color="whitesmoke" type='Oval' width="750" height="120"/>
         const {track, currentUser, userLikesTrack, pauseTrack, playTrack, paused, setCurrentProgress, setCurrentTrack, currentTime} = this.props;
-        // localStorage.setItem("localTrack", JSON.stringify(track)) === 'true';
+
         this.state.isPlaying ? temp = 'container-playhead-passive' : 'container-playhead-active'
         if ((track === undefined)){
             return null
@@ -116,26 +165,26 @@ class TrackShow extends React.Component{
             return (
                 <> 
                     <div className="track-banner">
-                        <div className="track-banner-left">
-
-                            <PlayButtonContainer trackId={this.props.trackId} track={this.props.track} />
-
+                        <div className="track-banner-left" onClick={this.handlePlayPause}>
+                            <PlayButtonContainer trackId={this.props.trackId} track={this.props.track}/>
                             <div className="track-banner-labels">
                                 <h2 className="track-banner-title">{this.props.track.title}</h2>
                                 {/* <h3><Link className="track-banner-uploader" to={`/users/${this.props.track.uploader.id}`}>{this.props.track.uploader.username}</Link></h3> */}
-                                
                             </div>
                         </div>
                         <div className="track-banner-right">
                             <div className='track-banner-middle'>
-                                <Waveform 
-                                    track={track} 
-                                    pauseTrack={() => pauseTrack()}
-                                    playTrack={() => playTrack()}
-                                    currentUser = {currentUser}
-                                    paused={paused}
-                                    currentTime={currentTime}
-                                />
+                    <          div className="waveform-outer-div">
+                                    <WaveformContainer className="waveform-div">
+                                            <div id="waveform" />
+
+
+                                        <audio id="track" src={this.props.track.audioUrl} />
+                                    <div className='loader'>
+                                        {this.state.loading? loader : null}
+                                    </div>
+                                    </WaveformContainer>
+                                </div>  
                             </div>
                             <div className="track-banner-right-labels">
                                 {/* <h3 className="time-ago">{this.props.track.createdTime.includes("about") ? this.props.track.createdTime.slice(6) : this.props.track.createdTime} ago</h3> */}
