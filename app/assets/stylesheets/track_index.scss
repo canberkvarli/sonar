@@ -154,9 +154,13 @@
     justify-content: space-between;
     align-items: center;
     height: 3%;
+
   .liked:hover {
     color: orangered;
   }
+}
+.track-interact-buttons:focus{
+    border: 1px solid orangered;
 }
 .liked{
     color: orangered;
