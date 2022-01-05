@@ -2,6 +2,12 @@ class Api::UsersController < ApplicationController
     # skip_before_action :verify_authenticity_token
     # protect_from_forgery with: :exception
     # signup
+
+    def index
+        @users = User.all
+        render :index    
+    end
+
     def create
         @user = User.new(user_params)
         if @user.save
@@ -19,6 +25,7 @@ class Api::UsersController < ApplicationController
 
     def show
         @user = User.find_by(id: params[:id])
+        render :show
     end
 
     def update
