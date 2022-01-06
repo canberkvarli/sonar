@@ -35,6 +35,7 @@ const App = () => {
                     FallbackComponent={ErrorFallback}
                     onReset={() => {
                         // reset the state of your app so the error doesn't happen again
+                        window.location.reload()
                     }}
                 >
                     <HeaderContainer />

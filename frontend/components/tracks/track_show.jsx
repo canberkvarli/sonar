@@ -50,6 +50,7 @@ class TrackShow extends React.Component{
             normalize: true,
             interact: false
         });
+
         this.waveform.load(track);
 
         this.waveform.on("loading", () => {
@@ -61,15 +62,16 @@ class TrackShow extends React.Component{
             this.setState({
                 loading: false
             })
-
+            console.log("loading is finished")
         }) 
+
+        
         
         // this.props.fetchTracks().then(
         //     this.props.setCurrentTrack(this.props.track)
         // )
         this.props.fetchTrack(this.props.trackId)
     }
-    
 
     createLike(e) {
         const trackId = this.props.trackId

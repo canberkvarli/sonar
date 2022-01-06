@@ -28,32 +28,35 @@ export class Library extends Component {
       return null
     } else {
       return(
-        <div className="outside-wrapper">
+        <div className="wrapper">
+          <h1 id="library-username">Hey {currentUser.username}! All your likes in one place.</h1>
+          <hr className='container-line' />
           <div className="grid-header">
             <br />
           </div>
-
-          <h1 id="library-username">Hey {currentUser.username}! All your likes in one place.</h1>
+            <h1 className='container-title'>Likes</h1>
                   {Object.values(tracks).map((track, i) => (
                     Object.keys(currentUser.likes).map((key, j) => {
                         const trackId = parseInt(key)
+                        // liked tracks
                         if((track.id === trackId) && (tracks !== undefined)){
                                 return (
                                 <>
-                                  <div key={i} className="liked-track">
-                                    <div className="wrapper">
+                                  <div key={i} className="likes-container">
                                       <Link to={`/tracks/${track.id}`} onClick={()=>this.props.history.push(`tracks/${track.id}`)}> <img id="track-show-image" src={track.photoUrl} alt={track.title} /> </Link>
+                                       <div className='lib-play-btn'>
                                             {/* <Waveform track={track}/> */}
+                                      <PlayButtonContainer trackId={track.id} track={track} />
+                                      </div>
                                       <Link to={`/tracks/${track.id}`} onClick={()=>this.props.history.push(`/tracks/${track.id}`)}><span id="track-show-title">{track.title}</span> </Link>
-                                    </div>
                                   </div>
                                 </>
                                 )
                               }else if((tracks === undefined) || (track === undefined) ){
                                 // window.location.reload()
                               }
-                            })
-                            ))}
+                      })
+                  ))}
            </div>
       )
     }  
