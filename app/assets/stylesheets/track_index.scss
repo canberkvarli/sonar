@@ -188,7 +188,8 @@
 }
 .waveform-outer-div{
     display: flex;
-}
+    flex-direction: row;
+    justify-content: flex-start;}
 
 .icon-heart{
     margin-right: 5px;
