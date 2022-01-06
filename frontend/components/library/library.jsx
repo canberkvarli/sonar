@@ -28,12 +28,13 @@ export class Library extends Component {
       return null
     } else {
       return(
-        <div className="outside-wrapper">
+        <div className="wrapper">
+          <h1 id="library-username">Hey {currentUser.username}! All your likes in one place.</h1>
+          <hr className='container-line' />
           <div className="grid-header">
             <br />
           </div>
-          <h1 id="library-username">Hey {currentUser.username}! All your likes in one place.</h1>
-            <h1>Likes</h1>
+            <h1 className='container-title'>Likes</h1>
                   {Object.values(tracks).map((track, i) => (
                     Object.keys(currentUser.likes).map((key, j) => {
                         const trackId = parseInt(key)
@@ -41,23 +42,21 @@ export class Library extends Component {
                         if((track.id === trackId) && (tracks !== undefined)){
                                 return (
                                 <>
-                                  <div key={i} className="liked-track">
-                                    <div className="wrapper">
-                                       <div className='play-btn'>
+                                  <div key={i} className="likes-container">
                                       <Link to={`/tracks/${track.id}`} onClick={()=>this.props.history.push(`tracks/${track.id}`)}> <img id="track-show-image" src={track.photoUrl} alt={track.title} /> </Link>
-                                        <PlayButtonContainer trackId={track.id} track={track} />
+                                       <div className='lib-play-btn'>
                                             {/* <Waveform track={track}/> */}
-                                      <Link to={`/tracks/${track.id}`} onClick={()=>this.props.history.push(`/tracks/${track.id}`)}><span id="track-show-title">{track.title}</span> </Link>
+                                      <PlayButtonContainer trackId={track.id} track={track} />
                                       </div>
-                                    </div>
+                                      <Link to={`/tracks/${track.id}`} onClick={()=>this.props.history.push(`/tracks/${track.id}`)}><span id="track-show-title">{track.title}</span> </Link>
                                   </div>
                                 </>
                                 )
                               }else if((tracks === undefined) || (track === undefined) ){
                                 // window.location.reload()
                               }
-                            })
-                            ))}
+                      })
+                  ))}
            </div>
       )
     }  
