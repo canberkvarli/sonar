@@ -1,0 +1,28 @@
+.liked-track{
+    display: flex;
+    position: relative;
+    padding: 5px;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.wrapper{
+    text-align:center;
+    font-size:0;
+    width: 300px;
+}
+
+.outside-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.wrapper>div{
+    display:inline-block;
+    text-align:left;
+    vertical-align:top;
+        font-size:16px;
+}

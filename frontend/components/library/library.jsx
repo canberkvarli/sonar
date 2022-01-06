@@ -32,19 +32,23 @@ export class Library extends Component {
           <div className="grid-header">
             <br />
           </div>
-
           <h1 id="library-username">Hey {currentUser.username}! All your likes in one place.</h1>
+            <h1>Likes</h1>
                   {Object.values(tracks).map((track, i) => (
                     Object.keys(currentUser.likes).map((key, j) => {
                         const trackId = parseInt(key)
+                        // liked tracks
                         if((track.id === trackId) && (tracks !== undefined)){
                                 return (
                                 <>
                                   <div key={i} className="liked-track">
                                     <div className="wrapper">
+                                       <div className='play-btn'>
                                       <Link to={`/tracks/${track.id}`} onClick={()=>this.props.history.push(`tracks/${track.id}`)}> <img id="track-show-image" src={track.photoUrl} alt={track.title} /> </Link>
+                                        <PlayButtonContainer trackId={track.id} track={track} />
                                             {/* <Waveform track={track}/> */}
                                       <Link to={`/tracks/${track.id}`} onClick={()=>this.props.history.push(`/tracks/${track.id}`)}><span id="track-show-title">{track.title}</span> </Link>
+                                      </div>
                                     </div>
                                   </div>
                                 </>
