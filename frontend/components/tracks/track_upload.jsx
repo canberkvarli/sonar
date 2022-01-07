@@ -66,7 +66,6 @@ export default class TrackUpload extends React.Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault();
         const data = new FormData();
 
         
@@ -83,6 +82,7 @@ export default class TrackUpload extends React.Component {
         this.props.uploadTrack(data)
 
         this.setState({ submitted: true }, () => alert( `You have successfully uploaded.`))
+        
 
 
     }
@@ -139,9 +139,6 @@ export default class TrackUpload extends React.Component {
                     </div>
                     <div className="second-form-container">
                         <div className="track-form-image-container">
-                            <div className="basic-info-banner">
-                                <h1 className="sf-basic-info">Basic Info</h1>
-                            </div>
                             <div className="sf-center-content">
                                 <div className="image-container">
                                     {dispImg}

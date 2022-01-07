@@ -29,12 +29,12 @@ export class Library extends Component {
     } else {
       return(
         <div className="wrapper">
-          <h1 id="library-username">Hey {currentUser.username}! All your likes in one place.</h1>
           <hr className='container-line' />
           <div className="grid-header">
             <br />
           </div>
             <h1 className='container-title'>Likes</h1>
+              <ul className='likes-container'>
                   {Object.values(tracks).map((track, i) => (
                     Object.keys(currentUser.likes).map((key, j) => {
                         const trackId = parseInt(key)
@@ -42,7 +42,7 @@ export class Library extends Component {
                         if((track.id === trackId) && (tracks !== undefined)){
                                 return (
                                 <>
-                                  <div key={i} className="likes-container">
+                                  <div key={i} className="likes-box">
                                       <Link to={`/tracks/${track.id}`} onClick={()=>this.props.history.push(`tracks/${track.id}`)}> <img id="track-show-image" src={track.photoUrl} alt={track.title} /> </Link>
                                        <div className='lib-play-btn'>
                                             {/* <Waveform track={track}/> */}
@@ -55,8 +55,9 @@ export class Library extends Component {
                               }else if((tracks === undefined) || (track === undefined) ){
                                 // window.location.reload()
                               }
-                      })
-                  ))}
+                            })
+                            ))}
+                  </ul>
            </div>
       )
     }  
