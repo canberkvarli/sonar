@@ -18,7 +18,7 @@ class TrackIndex extends React.Component{
     componentDidMount(){
         this.props.fetchTracks();
     }
-
+    
     componentWillUnmount(){
         this.props.currentTime? this.props.setCurrentProgress(this.props.currentTime) : null
     }

@@ -29,7 +29,6 @@ export class Library extends Component {
     } else {
       return(
         <div className="wrapper">
-          <h1 id="library-username">Hey {currentUser.username}! All your likes in one place.</h1>
           <hr className='container-line' />
           <div className="grid-header">
             <br />

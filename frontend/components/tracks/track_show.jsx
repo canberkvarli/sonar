@@ -66,14 +66,13 @@ class TrackShow extends React.Component{
         }) 
 
         
-        
         // this.props.fetchTracks().then(
         //     this.props.setCurrentTrack(this.props.track)
         // )
         this.props.fetchTrack(this.props.trackId)
     }
 
-    createLike(e) {
+        createLike(e) {
         const trackId = this.props.trackId
         const currentUserId = this.props.currentUser.id
         this.props.createLike({ liker_id: currentUserId, track_id: trackId }).then(() => {
