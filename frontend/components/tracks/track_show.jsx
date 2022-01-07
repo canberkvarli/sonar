@@ -175,7 +175,7 @@ class TrackShow extends React.Component{
                         </div>
                         <div className="track-banner-right">
                             <div className='track-banner-middle'>
-                    <          div className="waveform-outer-div">
+                    <div className="waveform-outer-div">
                                     <WaveformContainer className="waveform-div">
                                             <div id="waveform" />
 
@@ -190,9 +190,13 @@ class TrackShow extends React.Component{
                             <div className="track-banner-right-labels">
                                 {/* <h3 className="time-ago">{this.props.track.createdTime.includes("about") ? this.props.track.createdTime.slice(6) : this.props.track.createdTime} ago</h3> */}
                             </div>
-                            <img className="track-show-cover-img" src={this.props.track.photoUrl} />
-                        </div>
+                        <img className="track-show-cover-img" src={this.props.track.photoUrl} />
+                    </div>
+
                 </div>
+                    <h1 className="description">
+                        {track.description}
+                    </h1> 
                 <div className='interact-buttons-container'>
                     <div className="track-interact-buttons">
                         <div id="track-like-button">
@@ -206,10 +210,7 @@ class TrackShow extends React.Component{
                     </div>
                     <img id="track-show-image" src={track.photoUrl} alt={track.title} />
                     <span id="track-show-title">{track.title}</span>
-
-                    <h1 className="description">
-                        {track.description}
-                    </h1> */
+                        */
                     }
                 </>
             )

@@ -131,8 +131,9 @@
 
 .track-show-cover-img {
     width: 300px;
-    height: auto;
-    
+    height: 300px;
+    background-image: linear-gradient(
+    135deg, #846170, #70929c);
 }
 
 .track-show-page-under-banner {
