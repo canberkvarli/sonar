@@ -18,6 +18,7 @@ class TrackIndex extends React.Component{
 
     componentDidMount(){
         this.props.fetchTracks();
+        this.props.fetchUser(this.props.userId);
     }
     
     componentWillUnmount(){
@@ -58,7 +59,7 @@ class TrackIndex extends React.Component{
                             ))}
                         </ul>
                     </div>
-                    <div>
+                    <div className='splash-main-container'>
                         <Splash />
                     </div>
                 </>

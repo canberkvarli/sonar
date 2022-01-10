@@ -25,10 +25,10 @@ const Splash = () => {
         </div>
 
             <div className='signupModule'>
-                <div class="signupModule-title">
+                <div className="signupModule-title">
                     Thanks for listening. Now join in.
                 </div>
-                <p class="signupModule-text">
+                <p className="signupModule-text">
                     Save tracks, checkout new stuff and grow together. All for free.
                 </p>
                 <Link to="/signup"
