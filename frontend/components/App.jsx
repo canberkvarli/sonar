@@ -17,7 +17,7 @@ import UsersContainer from "./users/users_container";
 import LibraryContainer from "./library/library_container";
 
 
-import Waveform from './waveform/waveform';
+// import Waveform from './waveform/waveform';
 import PlayheadContainer from "./playhead/playhead_container";
 import { ErrorBoundary }  from 'react-error-boundary';
 import { ErrorFallback } from '../util/error_boundary';
