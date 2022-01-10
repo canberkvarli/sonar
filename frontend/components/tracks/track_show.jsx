@@ -203,6 +203,7 @@ class TrackShow extends React.Component{
                             {this.toggleLike()}
                         </div>
                     </div>
+                        <hr className='container-line'/>
                 </div>
 
                     {/* <div className='track-banner-left'>

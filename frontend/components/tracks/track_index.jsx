@@ -18,7 +18,7 @@ class TrackIndex extends React.Component{
 
     componentDidMount(){
         this.props.fetchTracks();
-        this.props.fetchUser(this.props.userId);
+        this.props.currentUser? this.props.fetchUser(this.props.userId) : null;
     }
     
     componentWillUnmount(){

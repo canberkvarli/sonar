@@ -13,6 +13,10 @@ export class Library extends Component {
       this.props.fetchUser(this.props.currentUser.id);
     }
 
+    componentDidUpdate(){
+      console.log("library updated")
+    }
+
     render() {
     const { tracks , currentUser} = this.props
     if (currentUser.likes === undefined) {
