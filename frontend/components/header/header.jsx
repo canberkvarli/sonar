@@ -83,7 +83,6 @@ class Header extends React.Component{
                 </nav> 
                 <div className="outer-div">
                     <div className="homepage-image">
-                        <img id="nightlife" src="https://images.unsplash.com/photo-1514517356012-03ba2c17a027?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="nightlife" />
                         <span id="outer-onimage-label">What's next in music is first on Sonar</span>
                         <br />
                         <span id="inner-onimage-label">Upload your first track and begin your journey. Sonar gives you space to create, find your fans, and connect with other artists.</span>
