@@ -8,8 +8,6 @@ import { FaGithub } from "react-icons/fa"
 
 import SearchContainer from '../search/search_container';
 
-// import mars from '../../../app/assets/images/moon.jpg';
-
 
 class Header extends React.Component{
     
@@ -40,7 +38,6 @@ class Header extends React.Component{
         this.props.logout().then(
             window.location.href = "/"
         )
-        localStorage.clear()
     }
 
     render(){
@@ -71,7 +68,6 @@ class Header extends React.Component{
                         className="nav-button"
                         id="sign-in-button"
                         >Sign in
-                        
                     </Link>
             
                     <br />
@@ -83,9 +79,7 @@ class Header extends React.Component{
                     Create account</Link>
  
                     <br />
-
                     <label htmlFor="For Creators" id="nav-label-creator">For Creators</label>
-
                 </nav> 
                 <div className="outer-div">
                     <div className="homepage-image">
@@ -113,7 +107,6 @@ class Header extends React.Component{
                         Upload your own</Link>
                 <span id="intro">Hear what’s trending for free in the Sonar community</span>
             </div>
-                
         )
 
         // If Logged In

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import PlayButtonContainer from '../play_button/play_button_container';
+import Splash from '../splash/splash';
 import TrackIndexItem from './track_index_item';
 
 
@@ -17,6 +18,7 @@ class TrackIndex extends React.Component{
 
     componentDidMount(){
         this.props.fetchTracks();
+        this.props.fetchUser(this.props.userId);
     }
     
     componentWillUnmount(){
@@ -27,21 +29,42 @@ class TrackIndex extends React.Component{
 
     render(){
         const {tracks} = this.props;    
-
-        return(
-            <div className="track-index-container" >
-                <ul className="track-index">
-                    {tracks.map((track,idx) => (
-                      <li key={idx} className="track-obj">
-                            <TrackIndexItem track={track} />
-                        <div className="play-btn">
-                            <PlayButtonContainer trackId={track.id} track={track} />
-                        </div>
-                      </li>  
-                    ))}
-                </ul>
-            </div>
-        )
+        if(this.props.currentUser){
+            return(
+                <div className="track-index-container" >
+                    <ul className="track-index">
+                        {tracks.map((track,idx) => (
+                          <li key={idx} className="track-obj">
+                                <TrackIndexItem track={track} />
+                            <div className="play-btn">
+                                <PlayButtonContainer trackId={track.id} track={track} />
+                            </div>
+                          </li>  
+                        ))}
+                    </ul>
+                </div>
+            )
+        }else{
+            return(
+                <>
+                    <div className="track-index-container" >
+                        <ul className="track-index">
+                            {tracks.map((track,idx) => (
+                            <li key={idx} className="track-obj">
+                                    <TrackIndexItem track={track} />
+                                <div className="play-btn">
+                                    <PlayButtonContainer trackId={track.id} track={track} />
+                                </div>
+                            </li>  
+                            ))}
+                        </ul>
+                    </div>
+                    <div className='splash-main-container'>
+                        <Splash />
+                    </div>
+                </>
+            )
+        }
 
     }
 }
