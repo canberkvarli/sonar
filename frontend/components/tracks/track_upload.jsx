@@ -15,6 +15,8 @@ export default class TrackUpload extends React.Component {
         this.updateAudio = this.updateAudio.bind(this)
         this.updateImage = this.updateImage.bind(this)
         this.handleBack = this.handleBack.bind(this)
+        console.log(this.props)
+        console.log(this.state)
     }
 
 
@@ -53,14 +55,14 @@ export default class TrackUpload extends React.Component {
         }
         reader.onloadend = () =>
             this.setState({ 
-                imageUrl: reader.result, 
+                photoUrl: reader.result, 
                 imageFile: file });
 
         if (file) {
             reader.readAsDataURL(file);
         } else {
             this.setState({ 
-                imageUrl: currentUser.avatarUrl, 
+                photoUrl: currentUser.avatarUrl, 
                 imageFile: null });
         }
     }
@@ -115,7 +117,7 @@ export default class TrackUpload extends React.Component {
         
         let dispImg;
         if (this.state.imageFile) {
-            dispImg = <img className="track-form-album-art" src={this.state.imageUrl} />
+            dispImg = <img className="track-form-album-art" src={this.state.photoUrl} />
         }
         else {
             dispImg = <div className="placeholder-album-art" />
