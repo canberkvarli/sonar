@@ -39,7 +39,6 @@ const App = () => {
                     }}
                 >
                     <HeaderContainer />
-                    
                     <Route exact path ="/tracks/:trackId" component={TrackShowContainer} />
                     <ProtectedRoute exact path ="/upload" component={TrackUploadContainer}/>
                     <Route exact path="/users/:userId" component={UsersContainer}/>

@@ -7,7 +7,8 @@ const mSTP = (state, ownProps) => ({
     tracks: Object.values(state.entities.tracks),
     currentTime: state.playhead.currentTime,
     track: state.entities.tracks[ownProps.trackId],
-    trackId: ownProps.match.params.trackId
+    trackId: ownProps.match.params.trackId,
+    currentUser: state.entities.users[state.session.id]
 
     
 })
