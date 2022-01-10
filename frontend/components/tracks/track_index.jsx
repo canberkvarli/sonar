@@ -58,7 +58,7 @@ class TrackIndex extends React.Component{
                             ))}
                         </ul>
                     </div>
-                    <div className='splash-container'>
+                    <div>
                         <Splash />
                     </div>
                 </>
