@@ -68,7 +68,6 @@ class Header extends React.Component{
                         className="nav-button"
                         id="sign-in-button"
                         >Sign in
-                        
                     </Link>
             
                     <br />
