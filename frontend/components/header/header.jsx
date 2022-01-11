@@ -35,9 +35,7 @@ class Header extends React.Component{
             // window.location.href = origin
             // })
 
-        this.props.logout().then(
-            window.location.href = "/"
-        )
+        this.props.logout()
     }
 
     render(){
