@@ -16,7 +16,7 @@ Sonar was built using Rails for the backend, React/Redux for the frontend. Datab
 
 * After setting up the `waveform` using the wavesurfer library, audio can be played and stopped.
 
-![Sonar Track Page](app/assets/images/trackShow.png "Sonar Track")
+![Sonar Track Page](app/assets/images/trackShow2.png "Sonar Track")
 
 
 ### Search
