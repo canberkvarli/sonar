@@ -2,7 +2,7 @@ SONAR
 =====
 [Sonar](https://appsonar.herokuapp.com/#/) is a web page, clone of SoundCloud built with Ruby on Rails, ReactJS, and Redux. On Sonar, artists are able to upload their tracks for the world to stream, share, and like. 
 
-![Sonar Home Page](app/assets/images/homepage.png "Sonar Home")
+![Sonar Home Page](app/assets/images/homepage2.png "Sonar Home")
 
 
 ## Technologies
@@ -16,7 +16,7 @@ Sonar was built using Rails for the backend, React/Redux for the frontend. Datab
 
 * After setting up the `waveform` using the wavesurfer library, audio can be played and stopped.
 
-![Sonar Track Page](app/assets/images/track.png "Sonar Track")
+![Sonar Track Page](app/assets/images/showTrack2.png "Sonar Track")
 
 
 ### Search
@@ -51,7 +51,7 @@ handleChange(e) {
         });
     }
 ```
-![Sonar Tracks](app/assets/images/tracks.png "Sonar Tracks")
+![Sonar Tracks](app/assets/images/search2.png "Sonar Tracks")
 
 ## Future Implementations
 
