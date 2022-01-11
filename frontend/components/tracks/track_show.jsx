@@ -23,10 +23,7 @@ class TrackShow extends React.Component{
             this.deleteLike = this.deleteLike.bind(this)
             this.createLike = this.createLike.bind(this)
             this.dispNumLikes = this.dispNumLikes.bind(this)
-            this.handlePlayPause = this.handlePlayPause.bind(this);
-        console.log(this.props)
-
-            
+            this.handlePlayPause = this.handlePlayPause.bind(this);            
 
     }
 
