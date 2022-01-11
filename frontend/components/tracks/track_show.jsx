@@ -192,7 +192,6 @@ class TrackShow extends React.Component{
                             </div>
                         <img className="track-show-cover-img" src={this.props.track.photoUrl} />
                     </div>
-
                 </div>
                     <h1 className="description">
                         {track.description}
