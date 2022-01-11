@@ -23,10 +23,7 @@ class TrackShow extends React.Component{
             this.deleteLike = this.deleteLike.bind(this)
             this.createLike = this.createLike.bind(this)
             this.dispNumLikes = this.dispNumLikes.bind(this)
-            this.handlePlayPause = this.handlePlayPause.bind(this);
-        console.log(this.props)
-
-            
+            this.handlePlayPause = this.handlePlayPause.bind(this);            
 
     }
 
@@ -192,7 +189,6 @@ class TrackShow extends React.Component{
                             </div>
                         <img className="track-show-cover-img" src={this.props.track.photoUrl} />
                     </div>
-
                 </div>
                     <h1 className="description">
                         {track.description}
