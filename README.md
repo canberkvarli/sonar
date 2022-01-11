@@ -14,14 +14,8 @@ Sonar was built using Rails for the backend, React/Redux for the frontend. Datab
 ### Track Show & Waveform
 <!-- waveform.jsx -->
 
-* After setting up the `waveform` using the wavesurfer library, with this code down below, audio can be played and stopped.
+* After setting up the `waveform` using the wavesurfer library, audio can be played and stopped.
 
-```javascript
-handlePlay = () => {
-        this.setState({ playing: !this.state.playing });
-        this.waveform.playPause();
-    };
-```
 ![Sonar Track Page](app/assets/images/track.png "Sonar Track")
 
 

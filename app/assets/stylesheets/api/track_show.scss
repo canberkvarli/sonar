@@ -18,7 +18,7 @@
 
 #track-show-image{
     margin-top: 100px;
-    margin-left: 50px;
+    // margin-left: 50px;
     // padding-right: 50px;
     width: 180px;
     height: 180px;
@@ -31,15 +31,15 @@
 
 }
 #track-show-title{
-    margin-left: 80px;
+    margin-left: 16%;
     position: relative;
     width: auto;
     display: flex;
     margin-top: 20px;
     height: auto; 
-    font-family: 'Mulish', sans-serif;
-    font-weight: bold;
-    font-size: 20px;
+  font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans,
+Garuda, Verdana, Tahoma, sans-serif;
+    font-size: 16px;
     justify-content: space-between;
     /* align-items: flex-start; */
     width: 225px;
