@@ -61,7 +61,6 @@ class Header extends React.Component{
                     <a href="https://github.com/canberkvarli">
                         <span className="icon-github"> <FaGithubSquare/></span>
                     </a>
-
                     <Link
                         to="/login"
                         type="button"
