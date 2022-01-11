@@ -44,9 +44,8 @@ const App = () => {
                     <Route exact path="/users/:userId" component={UsersContainer}/>
                     <Route exact path="/" component={TrackIndexContainer} />
                     <Route exact path="/library" component={LibraryContainer}/>
-                </ErrorBoundary>
-                {/* <WaveformContainer /> */}
                 <PlayheadContainer />
+                </ErrorBoundary>
             </HashRouter>
         </div>
     )
