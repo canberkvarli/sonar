@@ -57,3 +57,5 @@ handleChange(e) {
 
 * Track Upload (COMPLETED)
 * Slider on the home page
+
+_Note: docker-compose run, bundle exec rails server -p 3001_
