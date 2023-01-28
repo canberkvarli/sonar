@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.6'
+ruby '2.7.7'
 
 
 gem 'aws-sdk-s3', '~> 1'
@@ -9,14 +9,16 @@ gem "rack-cors"
 gem 'jquery-rails'
 gem "meta-tags"
 
+gem "sprockets-rails"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.6'
+gem "rails", "~> 7.0.0"
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+# This gem combines the speed of libsass, the Sass C implementation, with the ease of use of the original Ruby Sass library.
+gem 'sassc'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -29,9 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
- gem 'bcrypt', '~> 3.1.7'
-
-
+gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
@@ -65,9 +65,9 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  # substitute for deprecated chromedriver-helper gem
+  gem 'webdrivers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data'
