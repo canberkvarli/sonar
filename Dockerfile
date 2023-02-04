@@ -17,9 +17,9 @@ RUN bundle install
 # FROM rails-deps as rails-base
 COPY . .
 
-ENV PORT=3001
+ENV PORT=3000
 # https://docs.docker.com/engine/reference/builder/#environment-replacement
-EXPOSE ${PORT:-3001}
+EXPOSE ${PORT:-3000}
 
 RUN chmod +x /usr/src/app/.docker/entry_point.sh
 ENTRYPOINT ["/usr/src/app/.docker/entry_point.sh"]
