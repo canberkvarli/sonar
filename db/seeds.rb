@@ -6,6 +6,8 @@ Like.destroy_all
 
 # USERS
 
+p "creating users"
+
 canberk = User.create!({
                          username: 'canberko560',
                          password_digest: 'some_digest',
@@ -42,11 +44,15 @@ demoUser = User.create!({
                           username: 'demouser',
                           password: 'password'
                         })
+
+p "Users created"
 #  TRACKS
 
 # seeds.rb
 # get photos from s3
 # get audio files from s3
+
+p "creating tracks"
 
 photo_file1 = URI.open('https://sonar-seeds.s3.us-west-1.amazonaws.com/trackImages/cry.jpeg')
 photo_file2 = URI.open('https://sonar-seeds.s3.us-west-1.amazonaws.com/trackImages/1975.jpeg')
@@ -179,5 +185,7 @@ track9.audio.attach(io: audioFile9, filename: 'house')
 track10.audio.attach(io: audioFile10, filename: 'lonelyinthebar')
 track11.audio.attach(io: audioFile11, filename: 'rockthegame')
 track12.audio.attach(io: audioFile12, filename: 'loveintheair')
+
+p "Tracks created"
 
 p 'Seeds created'

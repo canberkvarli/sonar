@@ -59,3 +59,9 @@ handleChange(e) {
 * Slider on the home page
 
 _Note: docker-compose run, bundle exec rails server -p 3001_
+
+
+#### root.html.erb (missing partial error workaround fix)
+ `window.currentUser = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>`
+ Removing the above line from root.html.erb ln:3 is a workaround for jbuilder partial error.
+
