@@ -1,5 +1,6 @@
 <% if logged_in? %>
   <script id="bootstrap-current-user" type="text/javascript">
+    window.currentUser = <%= raw(render partial: "api/users/user", formats: [:json], locals: { user: current_user }) %>;
   </script>
 <% end %>
 <main id="root">Hereee weee gooo :D</main>
