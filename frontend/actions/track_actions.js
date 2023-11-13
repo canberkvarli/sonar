@@ -32,7 +32,6 @@ export const receiveMainTrack = (track) => ({
 
 //thunk actions
 
-
 export const fetchTrack = (trackId) => dispatch => (
     APITrackUtil.fetchTrack(trackId).then(
         (track) => dispatch(receiveTrack(track))

@@ -11,6 +11,8 @@ gem "meta-tags"
 
 gem "sprockets-rails"
 
+gem "net-http"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "rails", "~> 7.0.0"
 # Use postgresql as the database for Active Record

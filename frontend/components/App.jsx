@@ -21,12 +21,8 @@ import LibraryContainer from "./library/library_container";
 import PlayheadContainer from "./playhead/playhead_container";
 import { ErrorBoundary }  from 'react-error-boundary';
 import { ErrorFallback } from '../util/error_boundary';
-// import { WaveformContainer } from '../components/tracks/waveform_container';
-
-
 
 const App = () => {
-
 
     return(
         <div>
