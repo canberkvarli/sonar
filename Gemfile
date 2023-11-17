@@ -16,7 +16,7 @@ gem "net-http"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "rails", "~> 7.0.0"
 # Use postgresql as the database for Active Record
-gem 'pg', '>= 0.18', '< 2.0'
+gem 'pg', '1.2.3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # This gem combines the speed of libsass, the Sass C implementation, with the ease of use of the original Ruby Sass library.
