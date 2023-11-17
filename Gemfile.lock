@@ -171,7 +171,7 @@ GEM
     nio4r (2.6.0)
     nokogiri (1.15.5-arm64-darwin)
       racc (~> 1.4)
-    pg (1.2.3)
+    pg (1.5.4)
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -285,7 +285,7 @@ DEPENDENCIES
   meta-tags
   mini_magick (~> 4.8)
   net-http
-  pg (= 1.2.3)
+  pg (>= 0.18, < 2.0)
   pry-rails
   puma (~> 3.11)
   rack-cors
